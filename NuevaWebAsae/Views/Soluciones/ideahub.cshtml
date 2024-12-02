@@ -1,0 +1,2098 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="~/images/ico.ico">
+    <title>Asae Consultores S.A de C.V</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Template CSS Files
+    ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link href="~/plugins/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!-- Ionicons Fonts Css -->
+    <link href="~/plugins/ionicons/ionicons.min.css" rel="stylesheet" />
+    <!-- animate css -->
+    <link href="~/plugins/animate-css/animate.css" rel="stylesheet" />
+    <!-- Hero area slider css-->
+    @*<link href="~/plugins/slider/slider.css" rel="stylesheet" />*@
+    <!-- owl craousel css -->
+    @*<link href="~/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
+        <link href="~/plugins/owl-carousel/owl.theme.css" rel="stylesheet" />*@
+    <!-- Fancybox -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Glegoo" rel="stylesheet" />
+    <link href="~/plugins/facncybox/jquery.fancybox.css" rel="stylesheet" />
+    <!-- template main css file -->
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/LandingPage/IdeaHub.css" rel="stylesheet" />
+    <script src="~/Scripts/whatsapp.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NT6V24P');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT6V24P"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!--
+       ==================================================
+       Header Section Start
+       ================================================== -->
+    <header id="top-bar" class="navbar-fixed-top animated-header">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="navbar-brand center-block">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img src="~/images/Tickets/LogoAsae.png" width="100%" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="title" style="color: #9E9E9E; font-size: 30px; font-weight: 700; text-transform: initial;margin-bottom: 0px;">
+                        Solicite su cotización
+                    </h2>
+                    <br />
+                    <p style="color: #9E9E9E;">Envía tu solicitud y en breve un ejecutivo te contactara para atender tu solicitud y brindarte asesoría totalmente gratis.</p>
+
+                </div>
+                <div class="modal-body" style=" padding: 25px 25px 30px 25px; background: #f5f5f5; color: #5a5a5a;">
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <br /><br /><br /><br />
+                            <img src="~/images/ideahub/huawei.png" width="100%" />
+                            <br /><br />
+                            <img src="~/images/ideahub/ideahub.png" width="100%" />
+                            <br />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="inputAddress">Nombre</label>
+                                    <input type="text" class="form-control" id="R_Nombre" placeholder="Nombre completo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Email</label>
+                                    <input type="email" class="form-control" id="R_EPer" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Teléfono </label>
+                                    <input type="tel" class="form-control" id="R_TMov" placeholder="Teléfono">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Teléfono Local</label>
+                                    <input type="tel" class="form-control" id="R_TLoc" placeholder="Teléfono Local">
+                                </div>
+                            </div>
+                            <button type="button" id="BtnRegistrarDemo" class="btnM btn-primary">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p style="font-size:12px;"><span style="text-decoration: underline;">Margaritas 426, Álvaro Obregón, Ciudad de México</span> | <span style="text-decoration: underline;">asae_contactanos@asae.com.mx</span> | <span style="text-decoration: underline;">(55) 53 22 05 00</span></p>
+                        </div>
+
+                    </div>
+                    <button type="button" class="btnMC btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="ModalCatalogoPrecios" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="title" style="color: #9E9E9E; font-size: 30px; font-weight: 700; text-transform: initial;margin-bottom: 0px;">
+                        Solicitud de precios
+                    </h2>
+                    <br />
+                    <p style="color: #9E9E9E;">Completa el formulario y en breve será enviada a tu correo electrónico.</p>
+
+                </div>
+                <div class="modal-body" style=" padding: 25px 25px 30px 25px; background: #f5f5f5; color: #5a5a5a;">
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <br /><br /><br /><br />
+                            <img src="~/images/ideahub/huawei.png" width="100%" />
+                            <br /><br />
+                            <img src="~/images/ideahub/ideahub.png" width="100%" />
+                            <br />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="inputAddress">Nombre</label>
+                                    <input type="text" class="form-control" id="P_Nombre" placeholder="Nombre completo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Email</label>
+                                    <input type="email" class="form-control" id="P_Email" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Teléfono </label>
+                                    <input type="tel" class="form-control" id="P_TMov" placeholder="Teléfono">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Teléfono Local</label>
+                                    <input type="tel" class="form-control" id="P_TLoc" placeholder="Teléfono Local">
+                                </div>
+                            </div>
+                            <button type="button" id="BtnSolicitudPrecios" class="btnM btn-primary">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p style="font-size:12px;"><span style="text-decoration: underline;">Margaritas 426, Álvaro Obregón, Ciudad de México</span> | <span style="text-decoration: underline;">asae_contactanos@asae.com.mx</span> | <span style="text-decoration: underline;">(55) 53 22 05 00</span></p>
+                        </div>
+
+                    </div>
+                    <button type="button" class="btnMC btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="title" style="color: #9E9E9E; font-size: 30px; font-weight: 700; text-transform: initial;margin-bottom: 0px;">
+                        Descargar página web
+                    </h2>
+                    <br />
+                    <p style="color: #9E9E9E;">Por favor coloca tus datos para descargar los contenidos de la página.</p>
+                </div>
+                <div class="modal-body" style="padding: 25px 25px 30px 25px; background: #f5f5f5; color: #5a5a5a;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <br /><br /><br /><br />
+                            <img src="~/images/ideahub/huawei.png" width="100%" />
+                            <br /><br />
+                            <img src="~/images/ideahub/ideahub.png" width="100%" />
+                            <br />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="inputAddress">Nombre</label>
+                                    <input type="text" class="form-control" id="DW_Nombre" placeholder="Nombre completo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Email</label>
+                                    <input type="email" class="form-control" id="DW_EPer" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Teléfono </label>
+                                    <input type="tel" class="form-control" id="DW_TMov" placeholder="Teléfono">
+                                </div>
+                            </div>
+                            <button type="button" id="BtnRegistrarDW" class="btnM btn-primary"> Descargar </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p style="font-size:12px;"><span style="text-decoration: underline;">Margaritas 426, Álvaro Obregón, Ciudad de México</span> | <span style="text-decoration: underline;">asae_contactanos@asae.com.mx</span> | <span style="text-decoration: underline;">(55) 53 22 05 00</span></p>
+                        </div>
+                    </div>
+                    <button type="button" class="btnMC btn-secondary" id="BtnCerrarDW" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="hero-area" style="padding: 120px 0px 10px; ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row" id="hero-area-div">
+                        <div class="block wow fadeInUp text-center" data-wow-delay=".1s">
+                            <section class="cd-intro">
+                                <h2 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s">
+
+                                    El nuevo estilo de oficina inteligente
+                                </h2>
+                                <br />
+                            </section>
+                            <div class="col-md-12">
+                                <div class="block wow fadeInUp text-center" data-wow-delay=".1s">
+                                    <div class="text-center">
+                                        <div class="col-md-6">
+                                            <br /><br />
+                                            <img src="~/images/ideahub/huawei.png" width="100%" style="padding:60px 0px" />
+                                            <p>
+                                                3 en 1 <br />
+                                                Pizarrón | Proyector | Sala de Juntas Virtual
+                                            </p>
+                                            <br />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="~/images/ideahub/ideahub.png" width="100%" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <a class="btn-lines  btn text-center" data-toggle="modal" data-target="#exampleModal" data-wow-delay=".1s">Solicitar Más Información </a>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="row" id="hero-area-div2">
+                        <div class="block wow fadeInUp text-center" data-wow-delay=".1s">
+                            <div class="col-md-12">
+                                <div class="block wow fadeInUp text-center" data-wow-delay=".1s">
+                                    <div class="col-md-12">
+                                        <img src="~/images/ideahub/huawei.png" width="100%" style="padding:10px 0px" />
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <h2 class="wow fadeInUp animated cd-headline slide text-left" data-wow-delay=".1s">
+                                            El nuevo estilo de oficina inteligente
+                                        </h2>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <br />
+                                        <img src="~/images/ideahub/ideahub.png" width="100%" height="200PX" />
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p>
+                                            3 en 1 <br />
+                                            Pizarrón | Proyector | Sala de Juntas Virtual
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <a class="btn-lines  btn text-center" data-toggle="modal" data-target="#exampleModal" data-wow-delay=".1s">Solicitar Más Información </a>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="block wow fadeInUp text-center" data-wow-delay=".1s">
+                        <div class="text-center">
+                            <div class="col-md-12">
+                                <br />
+                                <h3>
+                                    IdeaHub de Huawei, una herramienta de productividad para la oficina inteligente, Incluye escritura inteligente, videoconferencias de alta definición (HD) y uso compartido inalámbrico. Ganador del Premio Red Dot 2020, IdeaHub está diseñado para adaptarse a cualquier entorno. Convierta sin esfuerzo las salas de conferencias, las oficinas ejecutivas y las áreas abiertas en espacios inteligentes.
+                                </h3>
+                                <br /><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#main-slider-->
+
+    <section id="service-page2" class="pages" style="padding:0px 0 0px; background-color: #ffffff;">
+        <div class="container">
+            <div class="row">
+                <video muted="muted" autoplay="autoplay" loop width="100%">
+                    <source src="~/images/ideahub/Idea.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section id="service-page2" class="pages" style="padding: 10px 0 40px;">
+        <div class="container">
+            <div class="row" id="service-page2-div">
+                <div class="col-md-6">
+                    <div class="block wow fadeInUp" data-wow-delay=".3s">
+                        <section class="cd-intro">
+                            <h1 class="wow fadeInUp animated cd-headline slide text-center" data-wow-delay=".4s">
+                                <img src="~/images/ideahub/en-artbg-wap.jpg" width="55%" />
+                            </h1>
+                        </section>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="block">
+                        <h2 class="title wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="300ms">
+                            <br />
+                            La elegancia de la  simplicidad
+                            <br />
+                        </h2>
+                        <br /><br />
+                        <p class="wow fadeInUp animated" data-wow-delay=".6s">
+                            Un diseño elegante, contemporáneo y centrado en el usuario.  Con un aire fino y minimalista. IdeaHub se integra sin esfuerzo en cualquier espacio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="service-page2-div2">
+                <div class="col-md-6">
+                    <div class="block wow fadeInUp" data-wow-delay=".3s">
+                        <h2 class="title wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="300ms">
+                            <br />
+                            La elegancia de la  simplicidad
+                            <br />
+                        </h2>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="block">
+                        <section class="cd-intro">
+                            <h1 class="wow fadeInUp animated cd-headline slide text-center" data-wow-delay=".4s">
+                                <img src="~/images/ideahub/en-artbg-wap.jpg" width="50%" />
+                            </h1>
+                        </section>
+                        <br />
+                        <p class="wow fadeInUp animated" data-wow-delay=".6s">
+                            Un diseño elegante, contemporáneo y centrado en el usuario.  Con un aire fino y minimalista. IdeaHub se integra sin esfuerzo en cualquier espacio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service-page" class="pages service-page" style="padding: 20px 0 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <h2 class="title wow fadeInUp animated animated" data-wow-delay=".1s" data-wow-duration="300ms" style="animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp; ">
+                            Despídase de los cables
+                        </h2>
+
+                        <p class="wow fadeInUp animated" data-wow-delay=".1s" id="service-page2-div">
+                            <br />
+                            Las tecnologías combinadas 4K y H.265 ofrecen una experiencia nítida, clara y fluida. Solo tienes que tocar para compartir lo que hay en tu portátil o teléfono. La función de cambio de página en tiempo real y la anotación en pantalla hacen que la colaboración sea verdaderamente flexible y sencilla.
+                            <br /><br />
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <br /><br />
+                        <video muted="muted" autoplay="autoplay" loop width="100%">
+                            <source src="~/images/ideahub/Despidase_de_los_cables.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                    <div class="block wow fadeInUp" data-wow-delay=".1s" id="service-page2-div2">
+                        <p class="wow fadeInUp animated" data-wow-delay=".1s" id="h5Titletap">
+                            <br />
+                            Las tecnologías combinadas 4K y H.265 ofrecen una experiencia nítida, clara y fluida. Solo tienes que tocar para compartir lo que hay en tu portátil o teléfono. La función de cambio de página en tiempo real y la anotación en pantalla hacen que la colaboración sea verdaderamente flexible y sencilla.
+                            <br /><br />
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-xs-4">
+                    <h2 class="title wow fadeInUp animated mediror" data-wow-delay=".3s" data-wow-duration="300ms" style="text-align:center">
+                        4k
+                    </h2>
+                </div>
+                <div class="col-md-4 col-xs-4">
+                    <h2 class="title wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="300ms" style="text-align:center">
+                        H.265
+                    </h2>
+                </div>
+                <div class="col-md-4 col-xs-4">
+                    <h2 class="title wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="300ms" style="text-align:center">
+                        60 fps
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service-page2" class="pages" style="padding: 10px 0 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="block wow fadeInUp" data-wow-delay=".3s">
+                        <h2 class="title wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="300ms" id="service-page2-div4">
+
+                            Tan sencillo como el lápiz y el papel
+                        </h2>
+                        <!-- Slider -->
+                        <section class="cd-intro">
+                            <br /><br />
+                            <video muted="muted" autoplay="autoplay" loop width="100%" id="VideoLapiz">
+                                <source src="~/images/ideahub/Tan_sencillo_como_el_lapiz_y_el_papel.mp4" type="video/mp4" />
+                            </video>
+                        </section> <!-- cd-intro -->
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="block">
+                        <h2 class="title wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="300ms" id="service-page2-div3">
+
+                            Tan sencillo como <br />el lápiz y el papel
+                        </h2>
+                        <br />
+                        <p class="wow fadeInUp animated" data-wow-delay=".6s">
+
+                            Con una latencia de escritura ultrabaja de 35 ms, disfrute de una experiencia sin interrupciones con una altísima capacidad de respuesta. Su reconocimiento de escritura inteligente e innovador identifica automáticamente palabras, figuras y diagrama de flujo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-xs-8">
+                    <h3 class="wow fadeInUp animated mediror" data-wow-delay=".3s" data-wow-duration="300ms">
+                        Reconocimiento inteligente de palabras
+                    </h3>
+                </div>
+                <div class="col-md-4 col-xs-4 text-center">
+                    <h4>Latencia</h4>
+                    <h5 class="wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="300ms">
+                        35ms
+                    </h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <br />
+                        <a class="btn-lines  btn text-center wow fadeInDown" data-toggle="modal" data-target="#exampleModal" data-wow-delay=".1s">Cotizar | más información </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service-page" class="pages service-page" style="padding: 20px 0 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <h2 class="title wow fadeInUp animated animated" data-wow-delay=".1s" data-wow-duration="300ms" style="animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp; padding: 20px 0 30px;">
+                            Máxima nitidez
+                        </h2>
+
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <p class="wow fadeInUp animated" data-wow-delay=".1s" id="service-page-div3">
+                            <br />
+                            Una matriz de 12 micrófonos usa tecnología de conformación de haces para captar voces humanas en un radio de 8 m. Una frecuencia más amplia para transferencias garantiza un audio clarísimo y de alta fidelidad hasta en los sitios más remotos.
+                            <br /><br />
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <video muted="muted" autoplay="autoplay" loop width="100%">
+                        <source src="~/images/ideahub/Maxima_nitidez.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div class="col-md-12">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <p class="wow fadeInUp animated" data-wow-delay=".1s" id="service-page-div4">
+                            <br />
+                            Una matriz de 12 micrófonos usa tecnología de conformación de haces para captar voces humanas en un radio de 8 m. Una frecuencia más amplia para transferencias garantiza un audio clarísimo y de alta fidelidad hasta en los sitios más remotos.
+                            <br /><br />
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!--/#main-slider-->
+
+    <section id="service-page2" class="pages" style="padding: 20px 0 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="block">
+                        <h2 class="title wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="300ms" style="text-align:left;">
+                            Inicie una reunión <br />en un toque
+                        </h2>
+                        <br />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="block wow fadeInUp" data-wow-delay=".3s" id="service-page2-div5">
+                        <p class="wow fadeInUp animated" data-wow-delay=".6s" style="text-align:left;">
+                            El diseño de sistema en chip (SoC) doble combina el cómputo de gráficos independiente, el cómputo alimentado con inteligencia artificial y el motor de códec de audio y video. ¿El resultado final? Videoconferencias de calidad asistidas por operaciones de reunión simplificadas.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <video muted="muted" autoplay="autoplay" loop width="100%">
+                        <source src="~/images/ideahub/Inicie_una_reuni%c3%b3n_en_un_toque.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div class="col-md-12">
+                    <div class="block wow fadeInUp" data-wow-delay=".3s" id="service-page2-div6">
+                        <p class="wow fadeInUp animated" data-wow-delay=".6s" style="text-align:left;">
+                            El diseño de sistema en chip (SoC) doble combina el cómputo de gráficos independiente, el cómputo alimentado con inteligencia artificial y el motor de códec de audio y video. ¿El resultado final? Videoconferencias de calidad asistidas por operaciones de reunión simplificadas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service-page" class="pages service-page" style="padding: 20px 0 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <h2 class="title wow fadeInUp animated animated" data-wow-delay=".1s" data-wow-duration="300ms" style="animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp; padding: 20px 0 30px;">
+                            El centro de atención
+                        </h2>
+
+                        <p class="wow fadeInUp animated" data-wow-delay=".1s" id="h5Titletap">
+                            <br />
+                            Con un rastreo rápido y preciso, el orador es siempre el centro de atención. Marco automático ajusta automáticamente el ángulo de la cámara en función de la sala de conferencias y el número de participantes. Disfrute de una vista panorámica óptima, en cualquier momento y lugar.
+                            <br /><br />
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <video muted="muted" autoplay="autoplay" loop width="100%">
+                            <source src="~/images/ideahub/El_centro_de_atenci%c3%b3n.mp4" type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <br />
+                        <a class="btn-lines  btn text-center wow fadeInDown" data-toggle="modal" data-target="#exampleModal" data-wow-delay=".1s">Cotizar | más información </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="service-page7" class="pages" style="padding: 10px 0 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2 class="title wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="300ms">
+                            Especificaciones de producto
+                        </h2>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="title wow fadeInUp animated mediror" data-wow-delay=".3s" data-wow-duration="300ms">
+                        <img src="~/images/ideahub/ideahub.png" width="100%" />
+                    </h2>
+                    <br />
+                    <h3>IdeaHub S</h3>
+                    <table class="text-justify" width="100%">
+                        <tr>
+                            <td colspan="2"><p>Pantalla</p></td>
+                        </tr>
+                        <tr>
+                            <td><br /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><p>Tamaño</p></td>
+                            <td><p>65 pulgadas/86 pulgadas</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Modelo de pantalla</p></td>
+                            <td><p>E-LED (65")/D-LED (86")</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Resolución</p></td>
+                            <td><p>4K</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Precisión</p></td>
+                            <td><p>±1mm</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Multitáctil</p></td>
+                            <td><p>20 puntos</p></td>
+                        </tr>
+                        <tr>
+                            <td><br /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p>Cámara </p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Resolución</p></td>
+                            <td><p>1080 p a 30 fps</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Rastreo de voz automático</p></td>
+                            <td><p>x</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Marco automático</p></td>
+                            <td><p>√</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Ultra gran angular</p></td>
+                            <td><p>80°</p></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="title wow fadeInUp animated mediror" data-wow-delay=".3s" data-wow-duration="300ms">
+                        <img src="~/images/ideahub/Pd-image-2@1x-.png" width="100%" />
+                    </h2>
+                    <br />
+                    <h3>IdeaHub Pro</h3>
+                    <table class="text-justify" width="100%">
+                        <tr>
+                            <td colspan="2"><p>Pantalla</p></td>
+                        </tr>
+                        <tr>
+                            <td><br /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><p>Tamaño</p></td>
+                            <td><p>65 pulgadas/86 pulgadas</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Modelo de pantalla</p></td>
+                            <td><p>E-LED (65")/D-LED (86")</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Resolución</p></td>
+                            <td><p>4K</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Precisión</p></td>
+                            <td><p>±1mm</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Multitáctil</p></td>
+                            <td><p>20 puntos</p></td>
+                        </tr>
+                        <tr>
+                            <td><br /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p>Cámara </p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Resolución</p></td>
+                            <td><p>4K  a 30 fps</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Rastreo de voz automático</p></td>
+                            <td><p>√</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Marco automático</p></td>
+                            <td><p>√</p></td>
+                        </tr>
+                        <tr>
+                            <td><p>Ultra gran angular</p></td>
+                            <td><p>80°</p></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <br /><br />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        @*<a class="btn-lines  btn text-center wow fadeInDown" data-toggle="modal" data-target="#exampleModal" data-wow-delay=".1s">Descarga fichas técnicas  </a>*@
+                        <a href="../PDF/DATASHEET-IDEAHUB.pdf" class="btn-lines  btn text-center wow fadeInDown" download="huawei-ideahub">
+                            Descarga fichas técnicas
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="service-page10" class="pages" style="padding: 10px 0 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2 class="title wow fadeInUp animated text-center" data-wow-delay=".3s" data-wow-duration="300ms">
+                            CATALOGO DE PRECIOS solución Huawei IdeaHub
+                        </h2>
+                        <br />
+                        <p class="text-center">Todos los paquetes traen por default una caja con 2 bolígrafos, los precios están en dólares americanos y no contiene IVA, el tiempo de entrega es de 8-10 semanas</p>
+                    </div>
+                </div>
+                @*<div class="col-md-12">
+                        <table class="table table-bordered table-hover" width="100%">
+                            <thead>
+                                <tr class="table-primary">
+                                    <th scope="col" class="text-center"><p><strong>CODIGO</strong></p></th>
+                                    <th scope="col" class="text-center"><p><strong>DESCRIPCION</strong></p></th>
+                                    <th scope="col" class="text-center"><p><strong>CANTIDAD</strong></p></th>
+                                    <th scope="col" class="text-center"><p><strong> PU </strong></p></th>
+                                    <th scope="col" class="text-center"><p><strong style="color:#ff6a00">SUB TOTAL VENTA </strong></p></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center"><strong>A</strong></td>
+                                    <td colspan="4"><strong>IdeaHub S_65" OPS Corei5</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313HLP</p></td>
+                                    <td><p>HUAWEI IdeaHub S 65,HUAWEI IdeaHub (65-inch infrared screen, HD Camera, built-in microphone & speaker, cable assembly) </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p> 5,261.05 </p></td>
+                                    <td class="text-right"><p> 5,261.05 </p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02312YNT</p></td>
+                                    <td><p>HUAWEI IdeaHub 65 inch Rolling Stand </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p> 564.48 </p></td>
+                                    <td class="text-right"><p> 564.48 </p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313FMA</p></td>
+                                    <td><p>IdeaHub Series OPS I5, OPS (I5-8500, 8G DDR4, 128G SSD, 4K60, windows10 SAC Hi-Care Basic IdeaHub OPS I5_12Months</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>1,172.67</p></td>
+                                    <td class="text-right"><p>1,172.67</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>23080128</p></td>
+                                    <td><p>Digital Conference System Components, IHC, IdeaHub Controller, NULL</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>88134UFA-4WM</p></td>
+                                    <td><p>HUAWEI IdeaHub S 65, HUAWEI IdeaHub (65-inch infrared screen, HD Camera, builtin microphone & speaker, cable assembly) Hi-Care Basic IdeaHub S 65_12M</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>719.01 </p></td>
+                                    <td class="text-right"><p>719.01</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02170469</p></td>
+                                    <td><p>Media Transfer Unit,IdeaShare-USB,3840*2160,1.5W,5V,IdeaShare Key </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                    <td class="text-right" style="background-color: #e3e3e3"><p><strong style="color:#ff6a00">7,905.90</strong></p></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><strong>A</strong></td>
+                                    <td colspan="4"><strong>IdeaHub S_65" OPS Corei7</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313HLP</p></td>
+                                    <td><p>HUAWEI IdeaHub S 65,HUAWEI IdeaHub (65-inch infrared screen, HD Camera, built-in microphone & speaker, cable assembly)</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>5,261.05</p></td>
+                                    <td class="text-right"><p>5,261.05</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02312YNT</p></td>
+                                    <td><p> HUAWEI IdeaHub 65 inch Rolling Stand</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313FMB</p></td>
+                                    <td><p>IdeaHub Series OPS I7, OPS (I7-8700, 16G DDR4, 256G SSD, 4K60, windows10 SAC Hi-Care Basic IdeaHub OPS I7_12Months </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>1,906.86</p></td>
+                                    <td class="text-right"><p>1,906.86</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>23080128</p></td>
+                                    <td><p>Digital Conference System Components, IHC, IdeaHub Controller, NULL</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>88134UFA-4WM</p></td>
+                                    <td><p>HUAWEI IdeaHub S 65, HUAWEI IdeaHub (65-inch infrared screen, HD Camera, built-in microphone & speaker, cable assembly) Hi-Care Basic IdeaHub S 65_12M</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>719.01</p></td>
+                                    <td class="text-right"><p>719.01</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02170469</p></td>
+                                    <td><p>Media Transfer Unit,IdeaShare-USB,3840*2160,1.5W,5V,IdeaShare Key</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                    <td class="text-right" style="background-color: #e3e3e3"><p><strong style="color:#ff6a00">8,640.09</strong></p></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"><strong>B</strong></td>
+                                    <td colspan="4"><strong>IdeaHub PRO_65" OPS Corei5</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313HLN</p></td>
+                                    <td><p>HUAWEI IdeaHub Pro 65,HUAWEI IdeaHub(65-inch infrared screen,HD Camera,built-in microphone&speaker,cable assembly)</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>6,454.74</p></td>
+                                    <td class="text-right"><p>6,454.74</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02312YNT</p></td>
+                                    <td><p> HUAWEI IdeaHub 65 inch Rolling Stand </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313FMA</p></td>
+                                    <td><p> IdeaHub Series OPS I5, OPS (I5-8500, 8G DDR4, 128G SSD, 4K60, windows10 SAC Hi-Care Basic IdeaHub OPS, I5_12Months </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>1,172.67 </p></td>
+                                    <td class="text-right"><p>1,172.67</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>23080128</p></td>
+                                    <td><p>Digital Conference System Components, IHC, IdeaHub Controller, NULL</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>88134UFA-4WK</p></td>
+                                    <td><p>HUAWEI IdeaHub Pro 65, HUAWEI IdeaHub (65-inch infrared screen, HD Camera, built-in microphone & speaker, cable assembly) Hi-Care Basic IdeaHub Pro 65_12Month(s)</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>860.34</p></td>
+                                    <td class="text-right"><p>860.34</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02170469</p></td>
+                                    <td><p>Media Transfer Unit,IdeaShare-USB,3840*2160,1.5W,5V,IdeaShare Key</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                    <td class="text-right" style="background-color: #e3e3e3"><p><strong style="color:#ff6a00">9,240.92</strong></p></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"><strong>B' </strong></td>
+                                    <td colspan="4"><strong>IdeaHub PRO_65" OPS Corei7</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313HLN</p></td>
+                                    <td><p> UAWEI IdeaHub Pro 65,HUAWEI IdeaHub(65-inch infrared screen,HD Camera,built-in microphone&speaker,cable assembly) </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>6,454.74</p></td>
+                                    <td class="text-right"><p>6,454.74</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02312YNT</p></td>
+                                    <td><p>HUAWEI IdeaHub 65 inch Rolling Stand</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313FMB</p></td>
+                                    <td><p> IdeaHub Series OPS I7, OPS (I7-8700, 16G DDR4, 256G SSD, 4K60, windows10 SAC Hi-Care Basic IdeaHub OPS I7_12Months </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>1,906.86</p></td>
+                                    <td class="text-right"><p>1,906.86</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>23080128</p></td>
+                                    <td><p>Digital Conference System Components, IHC, IdeaHub Controller, NULL</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>88134UFA-4WK</p></td>
+                                    <td><p> HUAWEI IdeaHub Pro 65, HUAWEI IdeaHub (65-inch infrared screen, HD Camera, built-in microphone & speaker, cable assembly) Hi-Care Basic IdeaHub Pro 65_12Month(s) </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>860.34</p></td>
+                                    <td class="text-right"><p>860.34</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02170469</p></td>
+                                    <td><p>Media Transfer Unit,IdeaShare-USB,3840*2160,1.5W,5V,IdeaShare Key </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                    <td class="text-right" style="background-color: #e3e3e3"><p><strong style="color:#ff6a00">9,975.11</strong></p></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"><strong>C </strong></td>
+                                    <td colspan="4"><strong>IdeaHub S_86" OPS Corei5</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313HLS</p></td>
+                                    <td><p>HUAWEI IdeaHub S 86, HUAWEI IdeaHub (86-inch infrared screen, HD Camera, built-in microphone & speaker, cable assembly)</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>10,124.21</p></td>
+                                    <td class="text-right"><p>10,124.21</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>21155854</p></td>
+                                    <td><p>86inch floor stand</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313FMA</p></td>
+                                    <td><p> IdeaHub Series OPS I5, OPS (I5-8500, 8G DDR4, 128G SSD, 4K60, windows10 SAC Hi-Care Basic IdeaHub OPS I5_12Month(s) </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>1,172.67</p></td>
+                                    <td class="text-right"><p>1,172.67</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>23080128</p></td>
+                                    <td><p>Digital Conference System Components,IHC,IdeaHub Controller,NULL</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>88134UFA-4WN </p></td>
+                                    <td><p>HUAWEI IdeaHub S 86, HUAWEI IdeaHub( 86-inch infrared screen, HD Camera, built-in microphone & speaker, cable assembly) Hi-Care Basic IdeaHub S 86_12Months</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>1,295.66</p></td>
+                                    <td class="text-right"><p>1,295.66</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02170469</p></td>
+                                    <td><p>Media Transfer Unit,IdeaShare-USB,3840*2160,1.5W,5V,IdeaShare Key</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                    <td class="text-right" style="background-color: #e3e3e3"><p><strong style="color:#ff6a00">13,345.71</strong></p></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"><strong>C'</strong></td>
+                                    <td colspan="4"><strong>IdeaHub S_86" OPS Corei7</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313HLS</p></td>
+                                    <td><p>HUAWEI IdeaHub S 86, HUAWEI IdeaHub (86-inch infrared screen, HD Camera, built-in microphone & speaker, cable assembly) </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>10,124.21</p></td>
+                                    <td class="text-right"><p>10,124.21</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>21155854</p></td>
+                                    <td><p>86inch floor stand</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313FMB</p></td>
+                                    <td><p> IdeaHub Series OPS I7, OPS (I7-8700,16G DDR4, 256G SSD, 4K60,windows10 SAC Hi-Care Basic IdeaHub OPS I7_12Months </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>1,906.86</p></td>
+                                    <td class="text-right"><p>1,906.86</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>23080128</p></td>
+                                    <td><p>Digital Conference System Components, IHC, IdeaHub Controller, NULL</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>88134UFA-4WN</p></td>
+                                    <td><p>HUAWEI IdeaHub S 86, HUAWEI IdeaHub( 86-inch infrared screen, HD Camera, builtin microphone & speaker, cable assembly) Hi-Care Basic IdeaHub S 86_12Mon</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>1,295.66</p></td>
+                                    <td class="text-right"><p>1,295.66</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02170469</p></td>
+                                    <td><p>Media Transfer Unit, IdeaShare-USB, 3840*2160, 1.5W, 5V, IdeaShare Key</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                    <td class="text-right" style="background-color: #e3e3e3"><p><strong style="color:#ff6a00">14,079.90</strong></p></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"><strong>D</strong></td>
+                                    <td colspan="4"><strong>IdeaHub PRO_86" OPS Corei5</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313HLR</p></td>
+                                    <td><p> HUAWEI IdeaHub Pro 86, HUAWEI IdeaHub (86-inch infrared screen, HD Camera, built-in microphone & speaker, cable assembly </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>11,450.53</p></td>
+                                    <td class="text-right"><p>11,450.53</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>21155854</p></td>
+                                    <td><p>86inch floor stand</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313FMA</p></td>
+                                    <td><p> IdeaHub Series OPS I5, OPS (I5-8500, 8G DDR4, 128G SSD, 4K60,windows10 SAC  Hi-Care Basic IdeaHub OPS I5_12Months </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>1,172.67</p></td>
+                                    <td class="text-right"><p>1,172.67</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>23080128</p></td>
+                                    <td><p>Digital Conference System Components, IHC, IdeaHub Controller, NULL</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>88134UFA-4WL</p></td>
+                                    <td><p>  HUAWEI IdeaHub Pro 86, HUAWEI IdeaHub (86-inch infrared screen, HD Camera, built-in microphone & speaker, cable assembly) Hi-Care Basic IdeaHub Pro 86_12Months </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>1,453.49</p></td>
+                                    <td class="text-right"><p>1,453.49</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02170469</p></td>
+                                    <td><p>Media Transfer Unit,IdeaShare-USB,3840*2160, 1.5W, 5V, IdeaShare Key</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                    <td class="text-right" style="background-color: #e3e3e3"><p><strong style="color:#ff6a00">14,829.86</strong></p></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"><strong>D'</strong></td>
+                                    <td colspan="4"><strong>IdeaHub PRO_86" OPS Corei7</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313HLR</p></td>
+                                    <td><p> HUAWEI IdeaHub Pro 86, HUAWEI IdeaHub (86-inch infrared screen, HD Camera, built-in microphone & speaker, cable assembly) </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>11,450.53</p></td>
+                                    <td class="text-right"><p>11,450.53</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>21155854</p></td>
+                                    <td><p>86inch floor stand</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                    <td class="text-right"><p>564.48</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313FMB</p></td>
+                                    <td><p> IdeaHub Series OPS I7, OPS (I7-8700,16G DDR4, 256G SSD, 4K60,windows10 SAC Hi-Care Basic IdeaHub OPS I7_12Months </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>1,906.86</p></td>
+                                    <td class="text-right"><p>1,906.86</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>1,906.86</p></td>
+                                    <td><p>Digital Conference System Components, IHC, IdeaHub Controller, NULL</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                    <td class="text-right"><p>26.88</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>88134UFA-4WL</p></td>
+                                    <td><p> HUAWEI IdeaHub Pro 86, HUAWEI IdeaHub (86-inch infrared screen, HD Camera, built-in microphone & speaker, cable assembly) Hi-Care Basic IdeaHub Pro  86_12Months </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>1,453.49</p></td>
+                                    <td class="text-right"><p>1,453.49</p></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02170469</p></td>
+                                    <td><p>Media Transfer Unit,IdeaShare-USB,3840*2160,1.5W,5V,IdeaShare Key </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                    <td class="text-right"><p>161.81</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"></td>
+                                    <td class="text-right" style="background-color: #e3e3e3"><p><strong style="color:#ff6a00">15,564.05</strong></p></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center"><strong>F</strong></td>
+                                    <td colspan="4"><strong>Opcional</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02313FHE</p></td>
+                                    <td><p> HUAWEI IdeaHub Screen Touch Pen one box (including two pens) </p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>22.64</p></td>
+                                    <td class="text-right"><p>22.64</p></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5"><br /></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center"><strong>Z</strong></td>
+                                    <td colspan="4"><strong>Esquema de renta</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><p>02717LOD</p></td>
+                                    <td><p> HUAWEI IdeaHub PRO_86" OPS Corei7. Renta por hora. Eventos en Salon Terraza Asae</p></td>
+                                    <td class="text-center"><p>1</p></td>
+                                    <td class="text-right"><p>50.00</p></td>
+                                    <td class="text-right"><p>50.00</p></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>*@
+            </div>
+        </div>
+    </section>
+
+    <section id="service-page7" class="pages" style="padding: 10px 0 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <a class="btn-lines  btn text-center wow fadeInDown" data-toggle="modal" data-target="#ModalCatalogoPrecios" data-wow-delay=".1s">Descargar catálogo de precios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="block">
+                        <h2 class="subtitle wow fadeInDown" data-wow-duration="300ms" data-wow-delay=".1s">Envíanos un mensaje.</h2>
+                        <p class="subtitle-des wow fadeInDown" data-wow-duration="300ms" data-wow-delay=".1s">
+                            Estamos a su disposición, para más información o para programar una reunión, le pedimos que rellene el siguiente formulario y nuestros consultores se pondrán en contacto con usted.
+                        </p>
+                        <div class="contact-form">
+                            <form id="contact-form" method="#" action="#" role="form">
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="300ms" data-wow-delay=".6s">
+                                    <input type="text" placeholder="Tu Nombre" class="form-control" name="name" id="name">
+                                </div>
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="300ms" data-wow-delay=".8s">
+                                    <input type="email" placeholder="Tu Email" class="form-control" name="email" id="email">
+                                </div>
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="300ms" data-wow-delay="1s">
+                                    <input type="text" placeholder="Teléfono" class="form-control" name="phone" id="phone">
+                                </div>
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="300ms" data-wow-delay="1.2s">
+                                    <textarea rows="8" placeholder="Mensaje" class="form-control" name="message" id="message">Me gustaría recibir más información acerca de IdeaHub </textarea>
+                                </div>
+
+                                <div class="g-recaptcha" data-sitekey="6LdXFXcUAAAAABTN8TrSf30UgdaxPjFL1FB4vcaS"></div>
+                                <br />
+                                <div id='alertBoxes'></div><span class='timer' id='timer'></span>
+                                <br />
+                                <div id="success" class="success">
+                                    Gracias, tú mensaje ha sido envido.
+                                </div>
+
+                                <div id="error" class="error">
+                                    Lo sentimos. Intenta más tarde.
+                                </div>
+
+                                <div id="submit" class="wow fadeInDown" data-wow-duration="300ms" data-wow-delay="1.4s">
+                                    <input type="submit" id="contact-submit" class="btn btn-default btn-send" value="Enviar mensaje" style="border-radius: 5px; width: 100%;">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="map-area">
+                        <h2 class="subtitle  wow fadeInDown" data-wow-duration="300ms" data-wow-delay=".1s">Ubicación </h2>
+                        <p class="subtitle-des wow fadeInDown" data-wow-duration="300ms" data-wow-delay=".1s">
+                            Visitas nuestras instalaciones!.
+
+                        </p>
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.429625988862!2d-99.18184978509457!3d19.350541386931017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fff0308f9987%3A0xfb047a70088b8f85!2sAsae+Consultores%2C+S.A.+de+C.V.!5e0!3m2!1ses-419!2smx!4v1530717966296" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+
+                        <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Compartir pagina  </h2>
+                        <div class="widget-content">
+                            <div class="shared-panel">
+                                <a target="_blank" class="shared fb st3" title="Facebook"></a>
+                                <a target="_blank" class="shared tt st3" title="Twitter"></a>
+                                @*<a target="_blank" class="shared gp st3" title="Google+"></a>*@
+                                <a class="shared wa st3" data-action='share/whatsapp/share' title="WhatsApp"></a>
+                                <a target="_blank" class="shared ce st3" title="Email"></a>
+                            </div>
+                        </div>
+                        <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Descargar pagina </h2>
+                        <a class="text-left wow fadeInDown" onclick="ValidarDescarga()" style="cursor: pointer">
+                            <img src="~/images/boton-descargar-pdf.gif" width="40%" />
+                        </a>
+
+                        <a href="../PDF/LandingPage/Formato-IdeaHub.pdf" id="BtnIniciarDW" class="text-left wow fadeInDown" download="huawei-IdeaHub" style="display:none;">
+                            <img src="~/images/boton-descargar-pdf.gif" width="40%" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row address-details">
+                <div class="col-md-4">
+                    <div class="address wow fadeInLeft" data-wow-duration="300ms" data-wow-delay=".1s">
+                        <i class="ion-ios-location-outline"></i>
+                        <h5>Margaritas 426, Álvaro Obregón, Ciudad de México</h5>
+                    </div>
+                </div>
+                <!--
+                    <div class="col-md-3">
+                        <div class="address wow fadeInLeft" data-wow-duration="300ms" data-wow-delay=".1s">
+                            <i class="ion-ios-location-outline"></i>
+                            <h5>125 , Kings Street,Melbourne <br>United Kingdom,600562</h5>
+                        </div>
+                    </div>
+
+                -->
+                <div class="col-md-4">
+                    <div class="email wow fadeInLeft" data-wow-duration="300ms" data-wow-delay=".7s">
+                        <a href="mailto:asae_contactanos@asae.com.mx">
+                            <i class="ion-ios-email-outline"></i>
+                            <p style="color: #243e62"><br /> asae_contactanos@asae.com.mx</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="phone wow fadeInLeft" data-wow-duration="300ms" data-wow-delay=".1s">
+                        <i class="ion-ios-telephone-outline"></i>
+                        <p>(55) 53 22 05 00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+
+            <div class="col-md-12">
+                <!-- Social Media -->
+                <ul class="social">
+                    <li>
+                        <img src="~/images/AsaeLogo.png" width="100%" />
+                    </li>
+                    <br />
+                    <br />
+                    <li>
+                        <a href="https://www.facebook.com/AsaeConsultoresMX/" class="Facebook">
+                            <i class="ion-social-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/asaeconsultores" class="Twitter">
+                            <i class="ion-social-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://mx.linkedin.com/company/asae-consultores-s.a.-de-c.v." class="Linkedin">
+                            <i class="ion-social-linkedin"></i>
+                        </a>
+                    </li>
+                    @*<li>
+                            <a href="#" class="Google Plus">
+                                <i class="ion-social-googleplus"></i>
+                            </a>
+                        </li>*@
+                </ul>
+                <br />
+            </div>
+            <div class="col-md-12">
+                <p class="copyright">
+                    Copyright: <span>
+                        <script>document.write(new Date().getFullYear())</script>
+                    </span> . All Rights Reserved
+                    <a href="#" target="_blank">Asae Consultores S.A de C.V</a>. <br>
+                    Aviso de privacidad
+                    <a href="@Url.Action("AvisoPrivacidad", "Home")" target="_blank">
+                        Asae Consultores S.A de C.V
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+
+    <a href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20de%20IdeaHub%20de%20Huawei" class="btn-wsp" target="_blank">
+        <i class="fa fa-whatsapp icono"></i>
+    </a>
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v9.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat"
+         attribution=setup_tool
+         page_id="682320818526294"
+         theme_color="#0A7CFF">
+    </div>
+
+    <!-- Template Javascript Files
+    ================================================== -->
+    <!-- jquery -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="~/plugins/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="~/plugins/form-validation/jquery.validate.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="~/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="~/plugins/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="~/plugins/slider/slider.js"></script>
+    <!-- template main js -->
+    <script src="~/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="~/Scripts/bootstrap-notify.js"></script>
+
+    <script src="~/Scripts/main.js"></script>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+
+
+
+    <script>
+        function ValidarDescarga()
+        {
+            var pathname = window.location.pathname;
+            var arreglo = [];
+            var obj = {};
+            obj['Ingreso'] = pathname;
+
+            arreglo.push(obj);
+
+            var jsonObject = {
+                "Usuario": arreglo
+            };
+            $.ajax({
+                url: "@Url.Action("ComprobarSolicitudDW", "Registros")",
+                async: false,
+                type: "POST",
+                data: JSON.stringify(jsonObject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                error: function (response) {
+                    $("#exampleModalCenter").modal("show");
+                },
+                success: function (response) {
+                    if (response.Respuesta == 1) {
+                        var lnk = document.getElementById('BtnIniciarDW');
+                        if (lnk) {
+                            lnk.click();
+                        }
+                    } else {
+                        $("#exampleModalCenter").modal("show");
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            var timeSlide = 0;
+            $('#timer').hide(0);
+            $('#timer').css('display', 'none');
+            $('#BtnRegistrarDW').click(function () {
+                $('.box-success,.box-error').slideUp(timeSlide);
+                setTimeout(function () {
+
+                    if (validaFromDW()) {
+                        if (ValidFormEmailDW()) {
+                            var pathname = window.location.pathname;
+                            var arreglo = [];
+                            var obj = {};
+                            obj['Nombre'] = $('#DW_Nombre').val();
+                            obj['CorreoPersonal'] = $('#DW_EPer').val();
+                            obj['TelefonoMovil'] = $('#DW_TMov').val();
+                            obj['Ingreso'] = pathname;
+
+                            arreglo.push(obj);
+
+                            var jsonObject = {
+                                "Usuario": arreglo
+                            };
+
+                            $.ajax({
+                                url: "@Url.Action("SolicitudDW", "Registros")",
+                                async: false,
+                                type: "POST",
+                                data: JSON.stringify(jsonObject),
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                error: function (response) {
+                                    console.log(response);
+                                    swal({
+                                        title: "Algo ocurrió !",
+                                        text: "Ha ocurrido un problema, inténtalo mas tarde ",
+                                        icon: "warning",
+                                        button: "Aceptar",
+                                    });
+                                },
+                                success: function (response) {
+                                    if (response.Respuesta == 1) {
+                                        var lnk = document.getElementById('BtnIniciarDW');
+                                        if (lnk) {
+                                            lnk.click();
+                                        }
+
+                                        $("#BtnCerrarDW").trigger("click");
+
+                                    } else {
+                                        swal({
+                                            title: "¡Ha ocurrido algo! ",
+                                            text: response.RespuestaText,
+                                            icon: "warning"
+                                        });
+                                    }
+                                }
+                            });
+                        }
+                    } else {
+                        $.notify({
+	                    icon: 'fa fa-paw',
+	                    message: "Formulario incompleto."
+                        },{
+                            type: 'danger',
+                            allow_dismiss: false,
+                            animate: {
+		                        enter: 'animated rollIn',
+		                        exit: 'animated rollOut'
+	                        }
+                        });
+                    }
+                }, timeSlide);
+                return false;
+            });
+        });
+
+        function validaFromDW() {
+            var respuesta = false;
+
+            $('#DW_Nombre').css("border", "2px solid #FF5722");
+            $('#DW_EPer').css("border", "2px solid #FF5722");
+            $('#DW_TMov').css("border", "2px solid #FF5722");
+
+            if ($('#DW_Nombre').val().length > 0) {
+                $('#DW_Nombre').css("border", "2px solid #fff");
+            }
+
+            if ($('#DW_EPer').val().length > 0) {
+                $('#DW_EPer').css("border", "2px solid #fff");
+            }
+
+            if ($('#DW_TMov').val().length > 0) {
+                $('#DW_TMov').css("border", "2px solid #fff");
+            }
+
+            if ($('#DW_Nombre').val().length > 0) {
+                if ($('#DW_EPer').val().length > 0) {
+                    if ($('#DW_TMov').val().length > 0) {
+                        respuesta = true;
+                    }
+                }
+            }
+            return respuesta;
+        }
+
+        function ValidFormEmailDW() {
+            var respuesta = false;
+
+            if (CorreoFromDW() == "ok") {
+                $('#DW_EPer').css("border", "2px solid #fff");
+                respuesta = true;
+            } else {
+
+                $('#DW_EPer').css("border", "2px solid #FF5722");
+
+                $.notify({
+                    icon: 'fa fa-paw',
+                    message: "Correo electrónico invalido."
+                }, {
+                    type: 'danger',
+                    allow_dismiss: false,
+                    animate: {
+                        enter: 'animated rollIn',
+                        exit: 'animated rollOut'
+                    }
+                });
+            }
+            return respuesta;
+        }
+
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#contact-form').validate({
+                rules: {
+                    name: {
+                        required: true, minlength: 4
+                    }
+                    , email: {
+                        required: true, email: true
+                    }
+                    , subject: {
+                        required: false,
+                    }
+                    , message: {
+                        required: true,
+                    }
+                    ,
+                }
+                , messages: {
+                    user_name: {
+                        required: "Come on, you have a name don't you?",
+                        minlength: "Your name must consist of at least 2 characters"
+                    }
+                    , email: {
+                        required: "Por favor ingrese su dirección de correo electrónico.",
+                    }
+                    , message: {
+                        required: "Coloca tu mensaje",
+                        minlength: "Your name must consist of at least 2 characters"
+                    }
+                    ,
+                }
+                , submitHandler: function (form) {
+                    EnvioForm();
+                }
+            });
+        });
+
+        function EnvioForm()
+        {
+            var timeSlide = 500;
+            setTimeout(function () {
+
+                if (valida()) {
+                    var arreglo = [];
+                    var obj = {};
+
+                    obj['nombre'] = $('#name').val();
+                    obj['email'] = $('#email').val();
+                    obj['mensaje'] = $('#message').val();
+                    obj['telefono'] = $('#phone').val();
+                    obj['recaptcha'] = grecaptcha.getResponse();
+
+                    arreglo.push(obj);
+
+                    var jsonObject = {
+                        "Email": arreglo
+                    };
+
+                    $.ajax({
+                        url: "@Url.Action("MensajeIdeaHub", "Email")",
+                        type: "POST",
+                        data: JSON.stringify(jsonObject),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        error: function (response) {
+                            swal({
+                                title: "¡Ha ocurrido algo! ",
+                                text: 'Lo sentimos. Intenta más tarde.',
+                                icon: "warning"
+                            })
+                            grecaptcha.reload();
+                            grecaptcha.reset();
+                        },
+                        success: function (response) {
+                            if (response == "ok") {
+
+                                swal({
+                                    title: "Mensaje enviado. !",
+                                    text: response.RespuestaText,
+                                    icon: "success",
+                                    button: "Aceptar",
+                                })
+                                    .then((value) => {
+                                        location.reload();
+                                    });
+                            } else {
+                                swal({
+                                    title: "¡Ha ocurrido algo! ",
+                                    text: response,
+                                    icon: "warning"
+                                });
+
+                                grecaptcha.reload();
+                                grecaptcha.reset();
+
+                            }
+                        }
+                    });
+
+                }
+                else {
+                    swal({
+                        title: "¡Ha ocurrido algo! ",
+                        text: "Recapcha no verificado",
+                        icon: "warning"
+                    });
+                }
+            }, timeSlide);
+
+        }
+
+        function valida() {
+            var respuesta = false;
+            var response = grecaptcha.getResponse();
+
+            if (response.length == 0) {
+                respuesta = false; //"Captcha no verificado";
+            } else {
+                respuesta = true;
+            }
+            return respuesta;
+        };
+    </script>
+
+
+    <script>
+
+        $(document).on('click', ".shared", function () {
+            var url = window.location.href;
+            var title = document.title;
+
+            url = encodeURIComponent(url);
+            title = encodeURIComponent(title);
+
+            //Boton Facebook
+            if ($(this).hasClass('fb')) {
+                url = 'https://www.facebook.com/sharer/sharer.php?u=' + url + '&t=' + title;
+
+                //Boton Twitter
+            } else if ($(this).hasClass('tt')) {
+                user = 'asaeconsultores';//Nuestro usuario de twitter para mostrar como user
+                url = 'https://twitter.com/intent/tweet?text=' + title + '&url=' + url + '&via=' + user;
+
+                //Boyton Google Plus
+            } else if ($(this).hasClass('gp')) {
+                url = 'https://plus.google.com/share?url=' + url;
+
+                //Boton WhtsApp
+            } else if ($(this).hasClass('wa')) {
+                url = 'https://api.whatsapp.com/send?text="' + document.title + '" - "' + window.location.href + '"';
+
+                //Boton correo electronico
+            } else if ($(this).hasClass('ce')) {
+                url = 'mailto:?subject=' + title + '&body=' + url;
+
+                //Ningun boton valido
+            } else return;
+
+            //Abrimos la url
+
+            window.open(url.replace('+', '%2b'), '_blank');
+        });
+
+
+        $(document).ready(function () {
+            var timeSlide = 0;
+            $('#timer').hide(0);
+            $('#timer').css('display', 'none');
+            $('#BtnRegistrarDemo').click(function () {
+                $('.box-success,.box-error').slideUp(timeSlide);
+                setTimeout(function () {
+
+                    if (validaLogin()) {
+                        if (ValidFormEmail()) {
+                            var arreglo = [];
+                            var obj = {};
+                            obj['Nombre'] = $('#R_Nombre').val();
+                            obj['CorreoPersonal'] = $('#R_EPer').val();
+                            obj['TelefonoMovil'] = $('#R_TMov').val();
+                            obj['TelefonoLocal'] = $('#R_TLoc').val();
+
+                            arreglo.push(obj);
+
+                            var jsonObject = {
+                                "Usuario": arreglo
+                            };
+
+                            console.log(jsonObject);
+
+                            $.ajax({
+                                url: "@Url.Action("SolicitudIdeaHub", "Registros")",
+                                type: "POST",
+                                data: JSON.stringify(jsonObject),
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                error: function (response) {
+                                    console.log(response);
+                                    swal({
+                                        title: "Algo ocurrió !",
+                                        text: "Ha ocurrido un problema, inténtalo mas tarde ",
+                                        icon: "warning",
+                                        button: "Aceptar",
+                                    });
+                                },
+                                success: function (response) {
+                                    if (response.RespuestaText == "ok") {
+                                        swal({
+                                            title: "Solicitud enviada. !",
+                                            //text: response.RespuestaText,
+                                            icon: "success",
+                                            button: "Aceptar",
+                                        })
+                                            .then((value) => {
+                                                window.location.reload();
+                                            });
+                                    } else {
+                                        swal({
+                                            title: "¡Ha ocurrido algo! ",
+                                            text: response.RespuestaText,
+                                            icon: "warning"
+                                        });
+                                    }
+                                }
+                            });
+                        }
+                    } else {
+                        $.notify({
+                        icon: 'fa fa-paw',
+                        message: "Formulario incompleto."
+                        },{
+                            type: 'danger',
+                            allow_dismiss: false,
+                            animate: {
+                                enter: 'animated rollIn',
+                                exit: 'animated rollOut'
+                            }
+                        });
+                    }
+                }, timeSlide);
+                return false;
+            });
+        });
+
+        function validaLogin() {
+            var respuesta = false;
+
+            $('#R_Nombre').css("border", "2px solid #FF5722");
+            $('#R_TMov').css("border", "2px solid #FF5722");
+            $('#R_EPer').css("border", "2px solid #FF5722");
+
+            if ($('#R_Nombre').val().length > 0) {
+                $('#R_Nombre').css("border", "2px solid #fff");
+            }
+
+            if ($('#R_EPer').val().length > 0) {
+                $('#R_EPer').css("border", "2px solid #fff");
+            }
+
+            if ($('#R_TMov').val().length > 0) {
+                $('#R_TMov').css("border", "2px solid #fff");
+            }
+
+
+
+            if ($('#R_Nombre').val().length > 0) {
+                if ($('#R_EPer').val().length > 0) {
+                    if ($('#R_TMov').val().length > 0) {
+                        respuesta = true;
+                    }
+                }
+            }
+
+            return respuesta;
+        }
+
+        function ValidFormEmail() {
+            var respuesta = false;
+
+            if (CorreoFromJob() == "ok") {
+                $('#R_EPer').css("border", "2px solid #fff");
+                respuesta = true;
+            } else {
+
+                $('#R_EPer').css("border", "2px solid #FF5722");
+
+                $.notify({
+                icon: 'fa fa-paw',
+                message: "Correo electrónico invalido."
+                },{
+                    type: 'danger',
+                    allow_dismiss: false,
+                    animate: {
+                        enter: 'animated rollIn',
+                        exit: 'animated rollOut'
+                    }
+                });
+            }
+            return respuesta;
+        }
+
+        $(document).ready(function () {
+            // NO ESCRIBIR LETRAS
+            $('#R_TMov').on('input', function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+
+             $('#R_TLoc').on('input', function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        });
+    </script>
+
+
+
+    <script>
+        $('#BtnSolicitudPrecios').click(function () {
+            if (ValidacionPrecios()) {
+                if (CorreoFromSP()) {
+
+                    var arreglo = [];
+                    var obj = {};
+
+                    obj['Nombre'] = $('#P_Nombre').val();
+                    obj['CorreoPersonal'] = $('#P_Email').val();
+                    obj['TelefonoMovil'] = $('#P_TMov').val();
+                    obj['TelefonoLocal'] = $('#P_TLoc').val();
+
+                    arreglo.push(obj);
+
+                    var jsonObject = {
+                        "Usuario": arreglo
+                    };
+
+                    $("#BtnSolicitudPrecios").attr('disabled', 'disabled');
+
+                    $.ajax({
+                        url: "@Url.Action("SolicitudIdeaHubPrecios", "Registros")",
+                        type: "POST",
+                        data: JSON.stringify(jsonObject),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        error: function (response) {
+                            swal({
+                                title: "Algo ocurrió !",
+                                text: "Ha ocurrido un problema, inténtalo mas tarde ",
+                                icon: "warning",
+                                button: "Aceptar",
+                            });
+
+                            $("#BtnSolicitudPrecios").removeAttr('disabled');
+                        },
+                        success: function (response) {
+                            if (response.RespuestaText == "ok") {
+                                swal({
+                                    title: "Solicitud enviada. !",
+                                    //text: response.RespuestaText,
+                                    icon: "success",
+                                    button: "Aceptar",
+                                })
+                                    .then((value) => {
+                                        window.location.reload();
+                                    });
+                            } else {
+                                swal({
+                                    title: "¡Ha ocurrido algo! ",
+                                    text: response.RespuestaText,
+                                    icon: "warning"
+                                });
+
+                                $("#BtnSolicitudPrecios").removeAttr('disabled');
+                            }
+                        }
+                    });
+
+
+                } else {
+                    $('#P_Email').css("border", "2px solid #FF5722");
+
+                    $.notify({
+                        icon: 'fa fa-paw',
+                        message: "Correo electrónico invalido."
+                    }, {
+                        type: 'danger',
+                        allow_dismiss: false,
+                        animate: {
+                            enter: 'animated rollIn',
+                            exit: 'animated rollOut'
+                        }
+                    });
+                }
+            } else {
+                $.notify({
+                    icon: 'fa fa-paw',
+                    message: "Formulario incompleto."
+                }, {
+                    type: 'danger',
+                    allow_dismiss: false,
+                    animate: {
+                        enter: 'animated rollIn',
+                        exit: 'animated rollOut'
+                    }
+                });
+            }
+        });
+
+        function ValidacionPrecios() {
+
+            var respuesta = false;
+
+            $('#P_Nombre').css("border", "2px solid #FF5722");
+            $('#P_Email').css("border", "2px solid #FF5722");
+
+            if ($('#P_Nombre').val().length > 0) {
+                $('#P_Nombre').css("border", "2px solid #fff");
+            }
+
+            if ($('#P_Email').val().length > 0) {
+                $('#P_Email').css("border", "2px solid #fff");
+            }
+
+            if ($('#P_Nombre').val().length > 0) {
+                if ($('#P_Email').val().length > 0) {
+                    respuesta = true;
+                }
+            }
+
+            return respuesta;
+        }
+
+        function CorreoFromSP() {
+            var respuesta = false;
+            object = document.getElementById("P_Email");
+            valueForm = object.value;
+
+            var patronTelefono = new RegExp("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$");
+            if ($(object).val() == "") {
+                var respuesta = "";
+
+            } else if (valueForm.search(patronTelefono)) {
+                var respuesta = false;
+                return;
+            } else {
+                var respuesta = true;
+            }
+            return respuesta;
+        }
+
+    </script>
+
+
+</body>
+</html>

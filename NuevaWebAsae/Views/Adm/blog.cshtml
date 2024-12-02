@@ -1,0 +1,625 @@
+﻿@{
+    ViewBag.Title = "blog";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="~/Assets/js/plugins/EditorText/css/froala_editor.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/froala_style.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/code_view.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/draggable.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/colors.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/emoticons.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/image_manager.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/image.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/line_breaker.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/table.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/char_counter.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/video.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/fullscreen.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/file.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/quick_insert.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/help.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/third_party/spell_checker.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/special_characters.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+
+
+<div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <div class="card card-plain">
+                    <div class="card-header pb-0 text-left">
+                        <h3 class="font-weight-bolder text-info text-gradient">Agregar nueva categoría</h3>
+                        <p class="mb-0">Escribe el nuevo nombre de la categoría, en caso de ya existir no permitirá registrarla </p>
+                    </div>
+                    <div class="card-body">
+                        <form role="form text-left">
+                            <label>Categoria</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Categoria" id="Text_Categoria" >
+                            </div>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-round bg-gradient-info btn-lg w-100 mt-4 mb-0" id="NuevaCategoria">Registrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-11 col-7">
+                            <h6>Registrar nuevo contenido </h6>
+                            @*<p class="mb-0">Escribe el nuevo nombre de la categoría, en caso de ya existir no permitirá registrarla </p>*@
+                        </div>
+                        <div class="col-lg-1 col-5 my-auto text-end">
+                            <div class="dropdown float-lg-end pe-4">
+                                <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-v text-secondary"></i>
+                                </a>
+                                <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
+                                    <li><a class="dropdown-item border-radius-md" data-bs-toggle="modal" data-bs-target="#modal-form">Agregar categoría </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label for="largeInput"> Categoria :  </label>
+                                    <div class="select2-input">
+                                        <select id="Select_Categoria" name="Select_Categoria" class="form-control" style="width:100%" onchange="ValidaSelect('Select_Categoria')">
+                                            <option value="0">Seleccionar</option>
+                                            @foreach (var item1 in ViewBag.Categorias)
+                                            {
+                                                <option value="@item1.Id">@item1.Nombre </option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label for="largeInput">* Titulo  </label>
+                                    <input type="text" class="form-control form-control" id="Text_Titulo" onchange="ValidaInput('Text_Titulo')">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="largeInput">* Autor   </label>
+                                    <input type="text" class="form-control form-control" id="Text_Autor" onchange="ValidaInput('Text_Autor')">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <br />
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="UsuarUsuario" onchange="Usuario()">
+                                    <label class="form-check-label" for="rememberMe">Usar mi usuario </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label for="largeInput">* Resumen  </label>
+                                    <textarea class="form-control form-control" name="text_Resumen" id="text_Resumen" onchange="ValidaInput('text_Resumen')">
+
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Imagen  </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pb-0">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0" onclick="CargaArchivo()">Cargar imagen de portada  </button>
+                            <input id="fileInput" type="file" style="visibility:hidden">
+
+                        </div>
+                        <div class="col-md-12 col-lg-12 text-center" id="Contenido">
+                            <!-- Product main img -->
+                            <p>Visualizar imagen </p>
+                            <br /><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="card mb-4">
+
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Nota</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div id="editor">
+                                    <textarea name="editor_content" id="edit">
+
+                                    </textarea>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4">
+                                <button type="button" id="BtnRegistrar" class="btn bg-gradient-info w-100 mt-4 mb-0">Registrar  </button>
+                                <br /><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.7/purify.min.js"></script>
+<script src="~/Assets/js/plugins/EditorText/js/froala_editor.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/align.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/char_counter.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/code_beautifier.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/code_view.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/colors.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/draggable.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/emoticons.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/entities.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/file.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/font_size.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/font_family.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/fullscreen.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/image.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/image_manager.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/line_breaker.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/inline_style.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/link.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/lists.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/paragraph_format.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/paragraph_style.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/quick_insert.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/quote.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/table.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/save.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/url.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/video.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/help.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/print.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/third_party/spell_checker.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/special_characters.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/word_paste.min.js"></script>
+
+<script>
+    (function () {
+        new FroalaEditor("#edit", {
+            attribution: false,
+            events: {
+                "image.beforeUpload": function (files) {
+                    var editor = this;
+                    if (files.length) {
+                        // Create a File Reader.
+                        var reader = new FileReader();
+                        // Set the reader to insert images when they are loaded.
+                        reader.onload = function (e) {
+                            var result = e.target.result;
+                            editor.image.insert(result, null, null, editor.image.get());
+                        };
+                        // Read image as base64.
+                        reader.readAsDataURL(files[0]);
+                    }
+                    editor.popups.hideAll();
+                    // Stop default upload chain.
+                    return false;
+                }
+            }
+        })
+
+    })()
+</script>
+
+
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#NuevaCategoria').click(function () {
+            var Valid = false;
+            var obj = {};
+
+            if ($('#Text_Categoria').val().length > 0) {
+                $('#Text_Categoria').css("border", "1px solid #d2d6da");
+                Valid = true;
+            } else {
+                $('#Text_Categoria').css("border", "1px solid #e293d3");
+            }
+
+            if (Valid) {
+                obj['Nombre'] = $('#Text_Categoria').val();
+                var jsonObject = {
+                    "Cat_categorias": obj
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("NuevaCategoria", "Adm")",
+                    data: JSON.stringify(jsonObject),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: ResultadoNuevaCategoria,
+                    error: Error
+                });
+
+            } else {
+                Mensaje('Coloca la nueva categoría.');
+            }
+        });
+    });
+
+    function ResultadoNuevaCategoria(result) {
+        if (result.Resultado > 0) {
+            swal({
+                title: "Registro. !",
+                text: "Categoría registrada",
+                icon: "success",
+                button: "Aceptar",
+            })
+                .then((value) => {
+                    location.reload();
+                });
+        } else if (result.Resultado == -1) {
+            Mensaje("La categoría que intentas agregar ya existe");
+        } else {
+            Mensaje("La categoría no registrada ");
+        }
+    }
+
+    jQuery(document).ready(function ($) {
+        $('#fileInput').change(function () {
+            var Carga = false;
+            var formdata = new FormData();
+            //FormData object
+            var fileInput = document.getElementById('fileInput');
+            //Iterating through each files selected in fileInput
+
+            for (i = 0; i < fileInput.files.length; i++) {
+                var ext = fileInput.files[i].name.split('.').pop();
+
+                // Convertimos en minúscula porque
+                // la extensión del archivo puede estar en mayúscula
+                ext = ext.toLowerCase();
+
+                if (ext == 'png' || ext == 'jpg' || ext == 'jpeg') {
+                    Carga = true;
+                } else {
+                    Carga = false;
+                    Formato = ext;
+                    break;
+                }
+            }
+
+            if (Carga) {
+                for (i = 0; i < fileInput.files.length; i++) {
+                    //Appending each file to FormData object
+                    formdata.append(fileInput.files[i].name, fileInput.files[i]);
+                }
+                //Creating an XMLHttpRequest and sending
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/Adm/CargaImagen');
+                xhr.responseType = "json";
+                xhr.send(formdata);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var Galeria = '';
+                        Galeria = '<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">' +
+                            '<div class="carousel-inner">';
+                        Galeria +=
+                            '<div class="carousel-item active">' +
+                                '<img src="https://' + xhr.response.Descripcion + '" class="d-block w-100" alt="..." />' +
+                                '<br>' +
+                                '<span>' +
+                                    '<button class="btn btn-success" onclick="EliminarElmento(' + xhr.response.IdArchivo + ')">' +
+                                        '<span class="btn-label">' +
+                                            '<i class="fa fa-trash"></i>' +
+                                        '</span>&nbsp;&nbsp;' +
+                                        'Eliminar Imagen' +
+                                    '</button>' +
+                                '</span > ' +
+                            '</div>';
+
+                        Galeria += '</div>' +
+                            '</div>';
+                        $('#Contenido').html(Galeria);
+                    }
+                }
+            } else {
+                swal({
+                    title: "Intentas cargar un formato no permitido: " + Formato,
+                    text: "Formato de imágenes permitidos: .jpg, .jpeg ó.png ",
+                    icon: "warning",
+                    button: "Aceptar",
+                });
+            }
+
+            return false;
+        });
+    });
+
+    function EliminarElmento(contenido) {
+        var obj = {};
+        obj['IdArchivo'] = contenido;
+        var jsonObject = {
+            "Imagen": obj
+        };
+
+        console.log(jsonObject);
+
+        $.ajax({
+            url: "@Url.Action("EliminarImagen", "Adm")",
+            type: "POST",
+            data: JSON.stringify(jsonObject),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            error: function (response) {
+                alert("MANDAR MENSAJE SE ERROR");
+            },
+            success: function (response) {
+                console.log(response);
+                if (response.Activo == 0) {
+                    var Galeria = '';
+                    Galeria = '<p>Visualizar imagen </p>' +
+                        '<br/><br/>';
+
+                    $('#Contenido').html(Galeria);
+
+                    MEnsajeEliminar();
+                }
+            }
+        });
+
+    }
+
+    function MEnsajeEliminar() {
+        $.notify({
+            icon: 'fa fa-paw',
+            message: "Imagen eliminada."
+        }, {
+            type: 'warning',
+            allow_dismiss: false,
+            animate: {
+                enter: 'animated rollIn',
+                exit: 'animated rollOut'
+            }
+        });
+    }
+
+    function CargaArchivo() {
+        $("#fileInput").click();
+    }
+
+    $(document).ready(function () {
+        $('#BtnRegistrar').click(function () {
+
+            if (ValidarForm()) {
+                var obj = {};
+                var User = 0;
+                var Autor = "";
+                if ($('#UsuarUsuario').prop('checked')) {
+                    User = 1;
+                } else {
+                    Autor = $('#Text_Autor').val()
+                }
+
+                obj['IdCategoria'] = $("#Select_Categoria option:selected").val();
+                obj['Titulo'] = $('#Text_Titulo').val();
+                obj['Usuario'] = User;
+                obj['Autor'] = Autor;
+                obj['Resumen'] = $('#text_Resumen').val();
+                obj['Contenido'] = $('textarea#edit').val();
+
+
+                var jsonObject = {
+                    "Articulo": obj
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("NuevoArticulo", "Adm")",
+                    data: JSON.stringify(jsonObject),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: Resultado,
+                    error: Error
+                });
+
+                console.log(jsonObject);
+            }
+
+
+            /*console.log($('textarea#edit').val());*/
+        });
+    });
+
+    function Resultado(result) {
+
+        console.log(result);
+
+        if (result.Resultado > 0) {
+            swal({
+                title: "Registro. !",
+                text: "Articulo registrado",
+                icon: "success",
+                button: "Aceptar",
+            })
+            .then((value) => {
+                window.location.href = '@Url.Action("dashboardblog", "Adm")';
+            });
+        } else {
+            Mensaje(result.ResultadoText);
+        }
+    }
+
+    function Error(result) {
+        Mensaje("Problemas en la ejecución, intento mas tarde!");
+    }
+
+    function ValidarForm() {
+        var result = false;
+        var User = false;
+
+        if ($("#Select_Categoria option:selected").val() > 0) {
+            $('#Select_Categoria').css("border", "1px solid #d2d6da");
+        } else {
+            $('#Select_Categoria').css("border", "1px solid #e293d3");
+        }
+
+        if ($('#Text_Titulo').val().length > 0) {
+            $('#Text_Titulo').css("border", "1px solid #d2d6da");
+        } else {
+            $('#Text_Titulo').css("border", "1px solid #e293d3");
+        }
+
+        if (!$('#UsuarUsuario').prop('checked')) {
+            if ($('#Text_Autor').val().length > 0) {
+                $('#Text_Autor').css("border", "1px solid #d2d6da");
+            } else {
+                $('#Text_Autor').css("border", "1px solid #e293d3");
+            }
+        }
+
+        if ($('#text_Resumen').val().length > 0) {
+            $('#text_Resumen').css("border", "1px solid #d2d6da");
+        } else {
+            $('#text_Resumen').css("border", "1px solid #e293d3");
+        }
+
+
+        if ($('#UsuarUsuario').prop('checked')) {
+            var User = true;
+        } else {
+            if ($('#Text_Autor').val().length > 0) {
+                User = true;
+            }
+        }
+
+
+        if ($("#Select_Categoria option:selected").val() > 0) {
+            if ($('#Text_Titulo').val().length > 0) {
+                if (User) {
+                    if ($('#text_Resumen').val().length > 0) {
+                        if ($('#edit').val().length > 0) {
+                            result = true;
+                        } else {
+                            Mensaje('Coloca el contenido. ');
+                        }
+                    }
+                    else {
+                        Mensaje('Coloca el resumen. ');
+                    }
+                } else {
+                    Mensaje('Coloca el autor. ');
+                }
+            } else {
+                Mensaje('Coloca el titulo. ');
+            }
+        } else {
+            Mensaje('Selecciona una categoría.');
+        }
+
+        return result;
+    }
+
+    function Mensaje(text) {
+        $.notify({
+            icon: 'fa fa-paw',
+            message: text
+        }, {
+            type: 'warning',
+            allow_dismiss: false,
+            animate: {
+                enter: 'animated rollIn',
+                exit: 'animated rollOut'
+            }
+        });
+    }
+
+
+    function Usuario() {
+        if (!$('#UsuarUsuario').prop('checked')) {
+            $('#Text_Autor').prop('disabled', false);
+            if ($('#Text_Autor').val().length > 0) {
+                $('#Text_Autor').css("border", "1px solid #d2d6da");
+            } else {
+                $('#Text_Autor').css("border", "1px solid #e293d3");
+            }
+
+        } else {
+            $('#Text_Autor').prop('disabled', true);
+            $('#Text_Autor').css("border", "1px solid #d2d6da");
+        }
+    }
+
+
+    function ValidaInput(name) {
+        if ($('#' + name).val().length > 0) {
+            $('#' + name).css("border", "1px solid #d2d6da");
+        } else {
+            $('#' + name).css("border", "2px solid #e293d3");
+        }
+    }
+
+    function ValidaSelect(name) {
+        if ($('#' + name + ' option:selected').val() > 0) {
+            $('#' + name).css("border", "1px solid #d2d6da");
+        } else {
+            $('#' + name).css("border", "2px solid #e293d3");
+        }
+    }
+
+    $(document).ready(function () {
+        $('#text_Resumen').text("");
+        $('#Menu_Blog').addClass("nav-link active");
+    });
+</script>

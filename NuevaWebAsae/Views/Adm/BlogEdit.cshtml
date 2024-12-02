@@ -1,0 +1,431 @@
+﻿
+@{
+    ViewBag.Title = "BlogEdit";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="~/Assets/js/plugins/EditorText/css/froala_editor.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/froala_style.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/code_view.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/draggable.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/colors.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/emoticons.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/image_manager.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/image.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/line_breaker.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/table.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/char_counter.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/video.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/fullscreen.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/file.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/quick_insert.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/help.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/third_party/spell_checker.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/special_characters.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+
+
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Registrar nuevo contenido </h6>
+                        </div>
+                        <div class="col-lg-6 col-5 my-auto text-end">
+                            <div class="dropdown float-lg-end pe-4">
+                                <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-v text-secondary"></i>
+                                </a>
+                                <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
+                                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Agregar categoría </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label for="largeInput"> Categoria :  </label>
+                                    <div class="select2-input">
+                                        <select id="Select_Categoria" name="Select_Categoria" class="form-control" style="width:100%" onchange="ValidaSelect('Select_Categoria')">
+                                            <option value="0">Seleccionar</option>
+                                            @foreach (var item1 in ViewBag.Categorias)
+                                            {
+                                                if (ViewBag.Artiuclo.IdCategoria == item1.Id)
+                                                {
+                                                    <option value="@item1.Id" selected>@item1.Nombre</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@item1.Id">@item1.Nombre</option>
+                                                }
+                                            }
+
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label for="largeInput">* Titulo  </label>
+                                    <input type="text" class="form-control form-control" id="Text_Titulo" onchange="ValidaInput('Text_Titulo')" value="@ViewBag.Artiuclo.Titulo">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="largeInput">* Autor   </label>
+                                    <input type="text" class="form-control form-control" id="Text_Autor" onchange="ValidaInput('Text_Autor')" value="@ViewBag.Artiuclo.Autor">
+                                </div>
+                            </div>
+                            @*<div class="col-md-6 col-lg-6">
+                                <br />
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="UsuarUsuario" onchange="Usuario()">
+                                    <label class="form-check-label" for="rememberMe">Usar mi usuario </label>
+                                </div>
+                            </div>*@
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label for="largeInput">* Resumen  </label>
+                                    <textarea class="form-control form-control" name="text_Resumen" id="text_Resumen" onchange="ValidaInput('text_Resumen')">
+                                        
+                                    </textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Imagen  </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pb-0">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 text-center" id="Contenido">
+                             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                             <div class="carousel-inner"> 
+                             <div class="carousel-item active"> 
+                                <img src="https://@ViewBag.Artiuclo.Imagen" class="d-block w-100" alt="..." /> 
+                                <br> 
+                                @*<span> 
+                                    <button class="btn btn-success" onclick="EliminarElmento()"> 
+                                        <span class="btn-label"> 
+                                            <i class="fa fa-trash"></i> 
+                                        </span>&nbsp;&nbsp;
+                                        Eliminar Imagen
+                                    </button>
+                                </span >*@
+                            </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="card mb-4">
+
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Nota</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div id="editor">
+                                    <textarea name="editor_content" id="edit">
+                                        @Html.Raw(ViewBag.Artiuclo.Contenido)
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class='d-flex align-items-center justify-content-between'>
+                                <button type="button" id="BtnRegistrar" class="btn bg-gradient-info w-30 mt-4 mb-0"> Editar  </button>
+                                <button type="button" class="btn btn-outline-danger w-30 mt-4 mb-0" onclick="DesactivarArtiuclo(@ViewBag.Id)">Desactivar artículo  </button>
+                            </div>
+                        </div>
+                        <br /><br />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.7/purify.min.js"></script>
+<script src="~/Assets/js/plugins/EditorText/js/froala_editor.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/align.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/char_counter.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/code_beautifier.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/code_view.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/colors.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/draggable.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/emoticons.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/entities.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/file.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/font_size.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/font_family.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/fullscreen.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/image.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/image_manager.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/line_breaker.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/inline_style.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/link.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/lists.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/paragraph_format.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/paragraph_style.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/quick_insert.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/quote.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/table.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/save.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/url.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/video.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/help.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/print.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/third_party/spell_checker.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/special_characters.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/word_paste.min.js"></script>
+
+<script>
+    (function () {
+        new FroalaEditor("#edit", {
+            attribution: false,
+            events: {
+                "image.beforeUpload": function (files) {
+                    var editor = this;
+                    if (files.length) {
+                        // Create a File Reader.
+                        var reader = new FileReader();
+                        // Set the reader to insert images when they are loaded.
+                        reader.onload = function (e) {
+                            var result = e.target.result;
+                            editor.image.insert(result, null, null, editor.image.get());
+                        };
+                        // Read image as base64.
+                        reader.readAsDataURL(files[0]);
+                    }
+                    editor.popups.hideAll();
+                    // Stop default upload chain.
+                    return false;
+                }
+            }
+        })
+
+    })()
+</script>
+<script src="~/Assets/js/plugins/jquery/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#text_Resumen').text("");
+        $('#text_Resumen').text("@Html.Raw(ViewBag.Artiuclo.Resumen)");
+
+
+        $('#Menu_Blog').addClass("nav-link active");
+
+    });
+
+    $(document).ready(function () {
+        $('#BtnRegistrar').click(function () {
+            if (ValidarForm()) {
+                var obj = {};
+                var User = 0;
+                var Autor = "";
+
+                Autor = $('#Text_Autor').val();
+
+                obj['Id'] = @ViewBag.Id;
+                obj['IdCategoria'] = $("#Select_Categoria option:selected").val();
+                obj['Titulo'] = $('#Text_Titulo').val();
+                obj['Autor'] = Autor;
+                obj['Resumen'] = $('#text_Resumen').val();
+                obj['Contenido'] = $('textarea#edit').val();
+
+
+                var jsonObject = {
+                    "Articulo": obj
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("BlogActualizar", "Adm")",
+                    data: JSON.stringify(jsonObject),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: ResultadoActualizar,
+                    error: Error
+                });
+
+            }
+        });
+    });
+
+    function ResultadoActualizar(result) {
+        if (result.Resultado > 0) {
+            swal({
+                title: "Operación exitosa",
+                text: "Articulo actualizado!",
+                icon: "success",
+                button: "Aceptar",
+            })
+                .then((value) => {
+                    window.location.href = '@Url.Action("BlogShow", "Adm")?Id=' + result.Resultado;
+              
+                @*window.location.href = '@Url.Action("BlogEdit", "Adm")?Id='result.Resultado;*@
+            });
+        } else {
+            Mensaje(result.ResultadoText);
+        }
+    }
+
+    function DesactivarArtiuclo(Id)
+    {
+        var obj = {};
+        obj['Id'] = Id;
+
+        var jsonObject = {
+            "Articulo": obj
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("DesactivarArticulo", "Adm")",
+            data: JSON.stringify(jsonObject),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: Resultado,
+            error: Error
+        });
+    }
+
+    function Resultado(result) {
+        if (result.Resultado > 0) {
+            swal({
+                title: "Operación exitosa",
+                text: "Articulo desactivado !",
+                icon: "success",
+                button: "Aceptar",
+            })
+            .then((value) => {
+                window.location.href = '@Url.Action("ConsultaArticulo", "Adm")'     ;
+            });
+        } else {
+            Mensaje(result.ResultadoText);
+        }
+    }
+
+
+    function ValidarForm() {
+        var result = false;
+        var User = false;
+
+        if ($("#Select_Categoria option:selected").val() > 0) {
+            $('#Select_Categoria').css("border", "1px solid #d2d6da");
+        } else {
+            $('#Select_Categoria').css("border", "1px solid #e293d3");
+        }
+
+        if ($('#Text_Titulo').val().length > 0) {
+            $('#Text_Titulo').css("border", "1px solid #d2d6da");
+        } else {
+            $('#Text_Titulo').css("border", "1px solid #e293d3");
+        }
+
+        if ($('#text_Resumen').val().length > 0) {
+            $('#text_Resumen').css("border", "1px solid #d2d6da");
+        } else {
+            $('#text_Resumen').css("border", "1px solid #e293d3");
+        }
+
+        if ($('#Text_Autor').val().length > 0) {
+            $('#Text_Autor').css("border", "1px solid #d2d6da");
+        } else {
+            $('#Text_Autor').css("border", "1px solid #e293d3");
+        }
+
+
+        if ($("#Select_Categoria option:selected").val() > 0) {
+            if ($('#Text_Titulo').val().length > 0) {
+                if ($('#Text_Autor').val().length > 0) {
+                    if ($('#text_Resumen').val().length > 0) {
+                        if ($('#edit').val().length > 0) {
+                            result = true;
+                        } else {
+                            Mensaje('Coloca el contenido. ');
+                        }
+                    }
+                    else {
+                        Mensaje('Coloca el resumen. ');
+                    }
+                } else {
+                    Mensaje('Coloca el autor. ');
+                }
+            } else {
+                Mensaje('Coloca el titulo. ');
+            }
+        } else {
+            Mensaje('Selecciona una categoría.');
+        }
+
+        return result;
+    }
+
+
+    function Error(result) {
+        Mensaje("Problemas en la ejecución, intento mas tarde!");
+    }
+
+    function Mensaje(text) {
+        $.notify({
+            icon: 'fa fa-paw',
+            message: text
+        }, {
+            type: 'warning',
+            allow_dismiss: false,
+            animate: {
+                enter: 'animated rollIn',
+                exit: 'animated rollOut'
+            }
+        });
+    }
+
+
+</script>

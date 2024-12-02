@@ -1,0 +1,758 @@
+﻿#top-bar.animated-header {
+    padding: 15px 0;
+    background: #fff;
+    box-shadow: none;
+}
+
+.navbar-header .navbar-brand a {
+    height: auto;
+    display: inline-block;
+    margin-top: 0px;
+}
+
+#top-bar {
+    background: #fff;
+    color: #fff;
+    transition: all 0.2s ease-out 0s;
+    padding: 5px 0;
+    box-shadow: 0 0 3px 0 rgb(0 0 0 / 10%);
+    border-bottom: 1px solid #dedede;
+}
+
+
+#footer .social li a {
+    font-size: 22px;
+    color: #9e9e9e;
+}
+
+#contact-section .address i, #contact-section .email i, #contact-section .phone i {
+    font-size: 45px;
+    color: #477bc7;
+}
+
+#contact-section {
+    padding: 0px 0;
+}
+
+#footer .copyright a {
+    color: #b53d3d;
+}
+
+#footer .social {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#footer .copyright {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 0px solid #ddd;
+}
+
+#hero-area3 {
+    background: url('../../images/Bantotal/negro.png');
+    background-size: cover;
+    /* background-attachment: fixed;*/
+    padding: 30px 0;
+    color: #fff;
+    /*box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);*/
+    position: relative;
+}
+
+#hero-area3:before {
+    content: '';
+   /* z-index: 9;*/
+    /*background-image: linear-gradient( 114deg, #ffffff 26%,#ffa0a400 94%);*/
+    background: rgb(255 255 255 / 0%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#hero-area3 .btn {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    color: #000;
+    padding: 15px 25px;
+    margin-top: 3px;
+    font-size: 15px;
+    line-height: 1em;
+    font-family: roboto-bold,roboto,sans-serif;
+    text-transform: initial;
+    letter-spacing: normal;
+    /* border-radius: 0; */
+    transition: -webkit-box-shadow, -moz-box-shadow, box-shadow,background-color .4s;
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(125,125,125,1);
+    -moz-box-shadow: 0px 0px 3px 1px rgba(125,125,125,1);
+    box-shadow: 0px 0px 3px 1px rgba(125,125,125,1);
+}
+
+    #hero-area3 .btn:hover {
+        background-color: #b8c0c5;
+        /* text-transform: uppercase; */
+        letter-spacing: normal;
+        /* border-radius: 0; */
+        /* -webkit-box-shadow: 0px 9px 20px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 9px 20px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 9px 20px -9px rgba(0,0,0,0.75);*/
+    }
+
+#hero-area h3 {
+    font-weight: 200;
+    margin-bottom: 38px;
+    line-height: 30px;
+    text-transform: initial;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+#hero-area3 h2 {
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 30px;
+    text-transform: initial;
+    color: #fefefe;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 15px;
+    font-size: 22px;
+}
+#hero-area3 p {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 25px;
+    text-transform: initial;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+#hero-area2 {
+    background: url('../../images/Bantotal/12345.png');
+    background-size: cover;
+    /* background-attachment: fixed;*/
+    padding-top: 110px;
+    padding-bottom: 50px;
+    color: #fff;
+    /*box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);*/
+    position: relative;
+}
+
+    #hero-area2:before {
+        content: '';
+        /*z-index: 9;*/
+        /* background-image: linear-gradient( 114deg, #ffffff 26%,#ffa0a400 94%); */
+        background: rgb(255 255 255 / 0%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+#hero-area2 h3 {
+    font-family: roboto-bold,roboto,sans-serif;
+    font-size: 33px;
+    line-height: 35px;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+
+
+
+#hero-area2 p {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: initial;
+    color: #2f2e2e;
+    font-family: 'Roboto', sans-serif;
+}
+
+    #hero-area2 .btn {
+        background-color: #ffffff;
+        border-radius: 10px;
+        border: none;
+        color: #000;
+        padding: 15px 25px;
+        margin-top: 3px;
+        font-size: 15px;
+        line-height: 1em;
+        font-family: roboto-bold,roboto,sans-serif;
+        text-transform: initial;
+        letter-spacing: normal;
+        /* border-radius: 0; */
+        transition: -webkit-box-shadow, -moz-box-shadow, box-shadow,background-color .4s;
+        -webkit-box-shadow: 0px 0px 3px 1px rgba(125,125,125,1);
+        -moz-box-shadow: 0px 0px 3px 1px rgba(125,125,125,1);
+        box-shadow: 0px 0px 3px 1px rgba(125,125,125,1);
+    }
+
+    #hero-area2 .btn:hover {
+        background-color: #b8c0c5;
+        /* text-transform: uppercase; */
+        letter-spacing: normal;
+        /* border-radius: 0; */
+        /* -webkit-box-shadow: 0px 9px 20px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 9px 20px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 9px 20px -9px rgba(0,0,0,0.75);*/
+    }
+
+#hero-area {
+    background: url('../../images/Bantotal/32f14995d06746e5a47dd13972bde7c2.png') no-repeat 40%;
+    background-size: cover;
+   /* background-attachment: fixed;*/
+    padding: 110px 0;
+    color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+    #hero-area:before {
+        content: '';
+        z-index: 9;
+        /*background-image: linear-gradient( 114deg, #ffffff 26%,#ffa0a400 94%);*/
+        background: rgb(255 255 255 / 0%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+
+    #hero-area .btn {
+        background-color: #b53c3c;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        padding: 20px 35px;
+        margin-top: 3px;
+        font-size: 13px;
+        line-height: 1em;
+        font-family: roboto-bold,roboto,sans-serif;
+        text-transform: initial;
+        letter-spacing: normal;
+        /* border-radius: 0; */
+        transition: -webkit-box-shadow, -moz-box-shadow, box-shadow,background-color .4s;
+        -webkit-box-shadow: 0px 0px 3px 1px rgba(125,125,125,1);
+        -moz-box-shadow: 0px 0px 3px 1px rgba(125,125,125,1);
+        box-shadow: 0px 0px 3px 1px rgba(125,125,125,1);
+    }
+
+    #hero-area .btn:hover {
+        background-color: #bd7171;
+        /* text-transform: uppercase; */
+        letter-spacing: normal;
+        /* border-radius: 0; */
+        /* -webkit-box-shadow: 0px 9px 20px -9px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 9px 20px -9px rgba(0,0,0,0.75);
+        box-shadow: 0px 9px 20px -9px rgba(0,0,0,0.75);*/
+    }
+
+
+    #hero-area h1 {
+        font-size: 30px;
+        line-height: 30px;
+        color: #2f2e2e;
+        font-weight: 700;
+        margin-bottom: 15px;
+        text-transform: initial;
+    }
+
+    #hero-area h2 {
+        font-weight: 300;
+        margin-bottom: 38px;
+        line-height: 30px;
+        text-transform: initial;
+        color: #2f2e2e;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 25px;
+        font-size: 20px;
+    }
+
+    #hero-area p {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 25px;
+        text-transform: initial;
+        color: #2f2e2e;
+        font-family: 'Roboto', sans-serif;
+    }
+
+#Img1Bloque1 {
+    width: 70%;
+}
+
+#Img2Bloque1 {
+    display: block;
+}
+
+#Img3Bloque1 {
+    display: none;
+}
+
+#Img1Bloque3 {
+    width: 40%;
+}
+
+#Img2Bloque3 {
+    width: 70%;
+}
+
+#DivImg1Bloque1{
+    text-align:left;
+}
+
+.columna{
+    display:none;
+}
+
+.columna2 {
+    display: block;
+}
+
+
+.titulo3 {
+    display: none;
+}
+
+.titulo31 {
+    display: block;
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 10px;
+    margin-block: 10px;
+    -webkit-box-shadow: 0px 0px 13px 0px rgba(79,79,79,1);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(79,79,79,1);
+    box-shadow: 0px 0px 13px 0px rgb(64 64 64);
+}
+
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+
+#call-to-action {
+    background-image: linear-gradient( 114deg, #fff3f3 30%, #223c60 99%);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    color: #fff;
+}
+
+#service-page h2 {
+    font-size: 25px;
+    line-height: 25px;
+    color: rgb(189 19 26);
+    font-weight: 700;
+    margin-bottom: 0px;
+    text-transform: initial;
+}
+
+#service-page h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+#service-page-div {
+    display: none;
+}
+
+#service-page-div2 {
+    display: block;
+}
+
+
+#service-page .btn {
+    background: #d71a22;
+    border: none;
+    color: #fff;
+    padding: 15px 35px;
+    margin-top: 0px;
+    font-size: 13px;
+    line-height: 1em;
+    text-transform: initial;
+    letter-spacing: normal;
+    border-radius: 5px;
+    font-family: Helvetica;
+    -webkit-box-shadow: -1px 9px 15px -5px rgb(0 0 0 / 75%);
+    -moz-box-shadow: -1px 9px 15px -5px rgba(0,0,0,0.75);
+    box-shadow: -1px 9px 15px -5px rgb(0 0 0 / 75%);
+}
+
+#service-page .btn:hover {
+    background: #00a4ba;
+    border-color: #FFF;
+    color: #FFF;
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
+
+#service-page5 {
+    display: block;
+}
+
+.btnM {
+    background-color: #223c60;
+    border: none;
+    color: #fff;
+    padding: 15px 35px;
+    margin-top: 3px;
+    font-size: 16px;
+    font-size: 13px;
+    line-height: 1em;
+    font-family: roboto-bold,roboto,sans-serif;
+    /*text-transform: uppercase;*/
+    letter-spacing: normal;
+    /* border-radius: 0; */
+    transition: -webkit-box-shadow, -moz-box-shadow, box-shadow,background-color .4s;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px solid #000000;
+    width: 100%;
+}
+
+    .btnM:hover {
+        background-color: #82b7e0;
+        border: none;
+        color: #fff;
+        padding: 15px 35px;
+        margin-top: 3px;
+        font-size: 16px;
+        font-size: 13px;
+        line-height: 1em;
+        font-family: roboto-bold,roboto,sans-serif;
+        /* text-transform: uppercase; */
+        letter-spacing: normal;
+        /* border-radius: 0; */
+        -webkit-box-shadow: 0px 6px 6px -9px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 6px 6px -9px rgba(0,0,0,0.75);
+        box-shadow: 0px 6px 6px -9px rgba(0,0,0,0.75);
+    }
+
+.btnMC {
+    background-color: #cccccc;
+    border: none;
+    color: #393939;
+    padding: 15px 35px;
+    margin-top: 3px;
+    font-size: 16px;
+    font-size: 13px;
+    line-height: 1em;
+    font-family: roboto-bold,roboto,sans-serif;
+    /*text-transform: uppercase;*/
+    letter-spacing: normal;
+    /* border-radius: 0; */
+    transition: -webkit-box-shadow, -moz-box-shadow, box-shadow,background-color .4s;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px solid #000000;
+}
+
+    .btnMC:hover {
+        background-color: #b1b1b1;
+        border: none;
+        color: #fff;
+        padding: 15px 35px;
+        margin-top: 3px;
+        font-size: 16px;
+        font-size: 13px;
+        line-height: 1em;
+        font-family: roboto-bold,roboto,sans-serif;
+        /* text-transform: uppercase; */
+        letter-spacing: normal;
+        /* border-radius: 0; */
+    }
+#service-page4 {
+    background-image: linear-gradient( rgb(255 255 255 / 91%), rgb(255 255 255 / 96%) ), url(../../images/CorporativoIndustria/Hikvision.jpg);
+    /*background: url('../../images/hikvision/FondoAsesorias.jpg') no-repeat 100%;*/
+    background-attachment: fixed;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    #top-bar {
+        padding: 5px 0;
+    }
+
+
+    #hero-area {
+        padding: 180px 0;
+    }
+
+    .btn-lines {
+        width: 30%;
+    }
+
+
+    .subtitle-des {
+        margin-bottom: 35px;
+    }
+
+    #top-bar {
+        padding: 5px 0;
+    }
+
+
+    #hero-area {
+        padding-top: 100px;
+        padding-bottom: 10px;
+        /*padding: 100px 0;*/
+    }
+
+    .btn-lines {
+        width: 25%;
+    }
+
+    #service-page .btn-lines {
+        width: 30%;
+        padding: 20px 35px;
+    }
+
+    #hero-area h1 {
+        font-size: 33px;
+        line-height: 35px;
+    }
+
+    #hero-area h2 {
+        font-size: 23px;
+    }
+
+    #hero-area h3 {
+        font-family: roboto-bold,roboto,sans-serif;
+        font-size: 33px;
+        line-height: 35px;
+        margin-bottom: 30px;
+        font-weight: 900;
+    }
+
+    #hero-area .btn {
+        padding: 16px 35px;
+        width: 70%;
+    }
+
+    .jobCtrl {
+        width: 35%;
+    }
+
+
+    
+
+    #service-page h2 {
+        font-size: 40px;
+        line-height: 50px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+    #service-page h3 {
+        font-size: 33px;
+        line-height: 35px;
+    }
+
+    #service-page-div {
+        display: block;
+    }
+
+    #service-page-div2 {
+        display: none;
+    }
+    #service-page5 {
+        display: none;
+    }
+
+    #service-page4 {
+        display: block;
+    }
+
+}
+
+
+.btn-wsp {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    line-height: 63px;
+    bottom: 90px;
+    right: 23px;
+    background: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: all 300ms ease;
+}
+
+    .btn-wsp:hover {
+        background: #20ba5a;
+        -webkit-box-shadow: 10px 10px 18px -15px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 18px -15px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 18px -15px rgba(0,0,0,0.75);
+    }
+
+@media only screen and (min-width:320px) and (max-width:768px) {
+
+    .asaeim {
+        width: 32%;
+    }
+
+    .jobCtrl {
+        width: 75%;
+    }
+
+    #hero-area {
+        padding: 89px 0;
+    }
+
+    #hero-area h1 {
+        font-size: 26px;
+        line-height: 30px;
+        color: #2f2e2e;
+        font-weight: 700;
+        margin-bottom: 5px;
+        text-transform: initial;
+        text-align: center;
+    }
+
+   
+    #hero-area h2 {
+        font-weight: 400;
+        margin-bottom: 16px;
+        line-height: 22px;
+        text-transform: initial;
+        color: #000000;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 15px;
+        font-size: 17px;
+    }
+
+    #hero-area h3 {
+        font-weight: 900;
+        margin-bottom: 16px;
+        line-height: 38px;
+        color: #3a3a3a;
+        margin-top: 0px;
+        font-size: 28px;
+    }
+
+    #hero-area .btn {
+        padding: 15px 35px;
+    }
+
+       
+
+    .btn-lines {
+        width: 57%;
+    }
+
+    #Img1Bloque1{
+        width:80%;
+        text-align:center;
+
+    }
+
+    #Img2Bloque1 {
+        display:none;
+    }
+
+    #Img3Bloque1 {
+        display: block;
+    }
+
+    #Img1Bloque3 {
+        width: 80%;
+    }
+
+    #Img2Bloque3 {
+        width: 80%;
+    }
+
+    #DivImg1Bloque1{
+        text-align:center;
+    }
+
+    .columna {
+        display: block;
+    }
+
+    .columna2 {
+        display: none;
+    }
+
+    .titulo3 {
+        display: block;
+        color: #fff;
+    }
+
+    .titulo31 {
+        display: none;
+    }
+
+    #hero-area2 {
+        background: url('../../images/Bantotal/12345.png') no-repeat 0%;
+        background-size: cover;
+         background-attachment: fixed; 
+        padding-top: 0px;
+        padding-bottom: 50px;
+        color: #fff;
+         box-shadow: 0 0 8px rgb(0 0 0 / 30%); 
+        position: relative;
+    }
+
+    #hero-area3 h2 {
+        font-size: 21px;
+        line-height: 25px;
+    }
+
+    #hero-area3 p {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 30px;
+        text-transform: initial;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+    }
+
+
+    .btn-wsp {
+        width: 63px;
+        height: 63px;
+        line-height: 66px;
+    }
+
+    
+}
+

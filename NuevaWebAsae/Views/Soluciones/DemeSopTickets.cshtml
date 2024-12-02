@@ -1,0 +1,701 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="~/images/asae.ico">
+    <title>Asae Consultores S.A de C.V</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="190653246723-m7rj9rl0gq1krbhbgaa0r5k5km39habf.apps.googleusercontent.com">
+    <!-- Template CSS Files
+    ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link href="~/plugins/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!-- Ionicons Fonts Css -->
+    <link href="~/plugins/ionicons/ionicons.min.css" rel="stylesheet" />
+    <!-- animate css -->
+    <link href="~/plugins/animate-css/animate.css" rel="stylesheet" />
+    <!-- Hero area slider css-->
+    <link href="~/plugins/slider/slider.css" rel="stylesheet" />
+    <!-- owl craousel css -->
+    <link href="~/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
+    <link href="~/plugins/owl-carousel/owl.theme.css" rel="stylesheet" />
+    <!-- Fancybox -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Glegoo" rel="stylesheet" />
+    <link href="~/plugins/facncybox/jquery.fancybox.css" rel="stylesheet" />
+    <!-- template main css file -->
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <style>
+        #hero-area {
+            background: url('../../images/xpinnit/Cambia-de-aire.jpg') no-repeat 50%;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 150px 0;
+            color: #fff;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+            #hero-area:before {
+                content: '';
+                z-index: 9;
+                background-image: linear-gradient( 114deg, #11707b1f 11%,#7b0f6914 94%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+
+        .form-top-left h3 {
+            margin-top: 0;
+            color: #9E9E9E;
+        }
+
+        .form-top-left p {
+            opacity: 0.8;
+            color: #9E9E9E;
+        }
+
+        .form-top {
+            overflow: hidden;
+            padding: 0 25px 15px 25px;
+            background: #9E9E9E;
+            background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);
+            background: linear-gradient(to right, #ffffff, #ffffffa1);
+            -moz-border-radius: 4px 4px 0 0;
+            -webkit-border-radius: 4px 4px 0 0;
+            border-radius: 4px 4px 0 0;
+            text-align: left;
+        }
+
+        .form-top-left {
+            float: left;
+            width: 75%;
+            padding-top: 25px;
+        }
+
+        .top-content .form-box {
+            padding-top: 20px;
+        }
+
+        .form-top-right {
+            float: left;
+            width: 25%;
+            padding-top: 5px;
+            font-size: 66px;
+            color: #fff;
+            line-height: 100px;
+            text-align: right;
+            opacity: 0.3;
+        }
+
+        .form-bottom {
+            padding: 25px 25px 30px 25px;
+            background: #444;
+            /*background: rgba(0, 0, 0, 0.3);*/
+            background: #e9e9e9a6;
+            -moz-border-radius: 0 0 4px 4px;
+            -webkit-border-radius: 0 0 4px 4px;
+            border-radius: 0 0 4px 4px;
+            font-family: 'Roboto Condensed', sans-serif;
+            color: #5a5a5a;
+            text-align: left;
+        }
+
+        input[type="text"], [type="password"], textarea, textarea.form-control {
+            height: 40px;
+            margin: 0;
+            padding: 0 10px;
+            vertical-align: middle;
+            background: #fff;
+            border: 2px solid #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 50px;
+            color: #888;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            -o-transition: all .3s;
+            -moz-transition: all .3s;
+            -webkit-transition: all .3s;
+            -ms-transition: all .3s;
+            transition: all .3s;
+        }
+
+
+        button.btn {
+            width: 100%;
+            height: 50px;
+            margin: 0;
+            padding: 0 20px;
+            vertical-align: middle;
+            background: #15436d;
+            background: linear-gradient(to right, #46b7e9, #3f51a3);
+            border: 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 50px;
+            color: #fff;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            text-shadow: none;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            -o-transition: all .3s;
+            -moz-transition: all .3s;
+            -webkit-transition: all .3s;
+            -ms-transition: all .3s;
+            transition: all .3s;
+        }
+
+            button.btn:hover {
+                opacity: 0.6;
+                color: #fff;
+            }
+
+            button.btn:active {
+                outline: 0;
+                opacity: 0.6;
+                color: #fff;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+            }
+
+            button.btn:focus {
+                outline: 0;
+                opacity: 0.6;
+                background: #15436d;
+                color: #fff;
+            }
+
+            button.btn:active:focus, button.btn.active:focus {
+                outline: 0;
+                opacity: 0.6;
+                background: #15436d;
+                color: #fff;
+            }
+
+        #hero-area .btn {
+            background: #7b0e68;
+            border: none;
+            color: #fff;
+            padding: 20px 35px;
+            margin-top: 20px;
+            font-size: 16px;
+            font-size: 15px;
+            line-height: 1em;
+            text-transform: initial;
+            letter-spacing: normal;
+            /* border-radius: 0; */
+        }
+
+        #call-to-action {
+            background-image: linear-gradient( 114deg, #810b68 30%, #0f737c 99%);
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            color: #fff;
+        }
+
+        #footer .copyright a {
+            color: #42afe2;
+        }
+
+        #footer .social {
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        #footer .copyright {
+            font-size: 13px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        #footer .social li a {
+            font-size: 22px;
+            color: #9e9e9e;
+        }
+        .form-top-left {
+    float: left;
+     width: 100%; 
+    padding-top: 25px;
+}
+    </style>
+
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v10.0&appId=495879918073189&autoLogAppEvents=1" nonce="bsXOxmSS"></script>
+
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NT6V24P');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT6V24P"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!--
+       ==================================================
+       Header Section Start
+       ================================================== -->
+    <header id="top-bar" class="navbar-fixed-top animated-header">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- responsive nav button -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- /responsive nav button -->
+                <!-- logo -->
+                <div class="navbar-brand center-block">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img src="~/images/Tickets/LogoAsae.png" width="100%" />
+                    </a>
+                </div>
+                <!-- /logo -->
+            </div>
+
+            <!-- /main nav -->
+        </div>
+    </header>
+
+
+    <!--
+    ==================================================
+    Slider Section Start
+    ================================================== -->
+    <section id="hero-area">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-5">
+                    <div class="block wow fadeInUp" data-wow-delay=".3s">
+
+
+
+                        <!-- Slider -->
+                        <section class="cd-intro">
+
+                            <div class="form-top">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-top-left ">
+                                            <h3>Solicitud de demo gratuita   </h3>
+                                            <p>Envía tu solicitud y en breve un ejecutivo te contactara para atender tu solicitud y brindarte una demo totalmente gratis.</p>
+                                        </div>
+                                        <div class="form-top-right">
+                                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <form role="form" action="">
+                                    <div class="row">
+                                        <div class="form-group col-sm-12">
+                                            <label>Nombre</label>
+                                            <input type="text" name="form-name" placeholder="Nombre ..." class="form-email form-control" id="R_Nombre">
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label>Email</label>
+                                            <input type="text" name="form-emailEmpresarial" placeholder="Email ..." class="form-email form-control" id="R_EPer">
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label>Teléfono móvil</label>
+                                            <input type="text" name="form-movile" placeholder="Teléfono móvil ..." class="form-email form-control" maxlength="12" id="R_TMov">
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label>Teléfono local </label>
+                                            <input type="text" name="form-phone" placeholder="Teléfono local ..." class="form-email form-control" maxlength="12" id="R_TLoc">
+                                        </div>
+                                    </div>
+                                    <div id="alertBoxes"></div><span class="timer" id="timer" style="display: none; overflow: hidden;"></span>
+
+                                    <button type="button" id="BtnRegistrarDemo" class="btn">Enviar </button>
+                                    <br /><br />
+                                    <div class="g-signin2" data-onsuccess="onSignIn" data-width="405" data-height="40"></div>
+                                    <br />
+                                    <div>
+                                        <div class="fb-login-button" data-width="500" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+
+
+                    </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-6">
+                    <div class="block wow fadeInUp" data-wow-delay=".3s">
+                        <!-- Slider -->
+                        <section class="cd-intro">
+                            <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
+                                <img src="~/images/Tickets/Banner.png" width="100%" />
+                            </h1>
+                        </section> <!-- cd-intro -->
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section><!--/#main-slider-->
+    <!--
+           ==================================================
+           Call To Action Section Start
+           ================================================== -->
+    <section id="call-to-action" style="padding: 5px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+    <footer id="footer">
+        <div class="container">
+
+            <div class="col-md-12">
+                <!-- Social Media -->
+                <ul class="social">
+                    <li>
+                        <img src="~/images/AsaeLogo.png" width="100%" />
+                    </li>
+                    <br />
+                    <br />
+                    <li>
+                        <a href="https://www.facebook.com/AsaeConsultoresMX/" class="Facebook">
+                            <i class="ion-social-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/asaeconsultores" class="Twitter">
+                            <i class="ion-social-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://mx.linkedin.com/company/asae-consultores-s.a.-de-c.v." class="Linkedin">
+                            <i class="ion-social-linkedin"></i>
+                        </a>
+                    </li>
+                    @*<li>
+                            <a href="#" class="Google Plus">
+                                <i class="ion-social-googleplus"></i>
+                            </a>
+                        </li>*@
+                </ul>
+                <br />
+            </div>
+            <div class="col-md-12">
+                <p class="copyright">
+                    Copyright: <span>
+                        <script>document.write(new Date().getFullYear())</script>
+                    </span> . All Rights Reserved
+                    <a href="#" target="_blank">Asae Consultores S.A de C.V</a>. <br>
+                    Aviso de privacidad
+                    <a href="@Url.Action("AvisoPrivacidad", "Home")" target="_blank">
+                        Asae Consultores S.A de C.V
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v9.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat"
+         attribution=setup_tool
+         page_id="682320818526294"
+         theme_color="#0A7CFF">
+    </div>
+
+    <!-- Template Javascript Files
+    ================================================== -->
+    <!-- jquery -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="~/plugins/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="~/plugins/form-validation/jquery.form.js"></script>
+    <script src="~/plugins/form-validation/jquery.validate.min.js"></script>
+    <!-- owl carouserl js -->
+    <script src="~/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="~/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="~/plugins/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="~/plugins/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="~/plugins/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="~/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="~/Scripts/bootstrap-notify.js"></script>
+
+    <script src="~/Scripts/main.js"></script>
+
+
+    <script>
+
+        $(document).on('click', ".shared", function () {
+            var url = window.location.href;
+            var title = document.title;
+
+            url = encodeURIComponent(url);
+            title = encodeURIComponent(title);
+
+            //Boton Facebook
+            if ($(this).hasClass('fb')) {
+                url = 'https://www.facebook.com/sharer/sharer.php?u=' + url + '&t=' + title;
+
+                //Boton Twitter
+            } else if ($(this).hasClass('tt')) {
+                user = 'asaeconsultores';//Nuestro usuario de twitter para mostrar como user
+                url = 'https://twitter.com/intent/tweet?text=' + title + '&url=' + url + '&via=' + user;
+
+                //Boyton Google Plus
+            } else if ($(this).hasClass('gp')) {
+                url = 'https://plus.google.com/share?url=' + url;
+
+                //Boton WhtsApp
+            } else if ($(this).hasClass('wa')) {
+                url = 'https://api.whatsapp.com/send?text="' + document.title + '" - "' + window.location.href + '"';
+
+                //Boton correo electronico
+            } else if ($(this).hasClass('ce')) {
+                url = 'mailto:?subject=' + title + '&body=' + url;
+
+                //Ningun boton valido
+            } else return;
+
+            //Abrimos la url
+
+            window.open(url.replace('+', '%2b'), '_blank');
+        });
+
+        $(document).ready(function () {
+            var timeSlide = 0;
+            $('#timer').hide(0);
+            $('#timer').css('display', 'none');
+            $('#BtnRegistrarDemo').click(function () {
+                $('.box-success,.box-error').slideUp(timeSlide);
+                setTimeout(function () {
+
+                    if (validaLogin()) {
+                        if (ValidFormEmail()) {
+                            var arreglo = [];
+                            var obj = {};
+                            obj['Nombre'] = $('#R_Nombre').val();
+                            obj['CorreoPersonal'] = $('#R_EPer').val();
+                            obj['TelefonoMovil'] = $('#R_TMov').val();
+                            obj['TelefonoLocal'] = $('#R_TLoc').val();
+                            arreglo.push(obj);
+                            var jsonObject = {
+                                "Usuario": arreglo
+                            };
+
+                            console.log(jsonObject);
+
+                            $.ajax({
+                                url: "@Url.Action("NuevoRegistroTicket", "Registros")",
+                                type: "POST",
+                                data: JSON.stringify(jsonObject),
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                error: function (response) {
+                                    console.log(response);
+                                    swal({
+                                        title: "Algo ocurrió !",
+                                        text: "Ha ocurrido un problema, inténtalo mas tarde ",
+                                        icon: "warning",
+                                        button: "Aceptar",
+                                    });
+                                },
+                                success: function (response) {
+                                    if (response.RespuestaText == "ok") {
+                                        swal({
+                                            title: "Solicitud enviada. !",
+                                            text: response.RespuestaText,
+                                            icon: "success",
+                                            button: "Aceptar",
+                                        })
+                                            .then((value) => {
+                                                location.reload();
+                                                var url = "https://www.asae.com.mx/soptickets";
+                                                $(location).attr('href', url);
+                                            });
+                                    } else {
+                                        swal({
+                                            title: "¡Ha ocurrido algo! ",
+                                            text: response.RespuestaText,
+                                            icon: "warning"
+                                        });
+                                    }
+                                }
+                            });
+                        }
+                    } else {
+                        $.notify({
+	                    icon: 'fa fa-paw',
+	                    message: "Formulario incompleto."
+                        },{
+                            type: 'danger',
+                            allow_dismiss: false,
+                            animate: {
+		                        enter: 'animated rollIn',
+		                        exit: 'animated rollOut'
+	                        }
+                        });
+                    }
+                }, timeSlide);
+                return false;
+            });
+        });
+
+        function validaLogin() {
+            var respuesta = false;
+
+            $('#R_Nombre').css("border", "2px solid #f44336");
+            $('#R_TMov').css("border", "2px solid #f44336");
+            $('#R_EPer').css("border", "2px solid #f44336");
+
+            if ($('#R_Nombre').val().length > 0) {
+                $('#R_Nombre').css("border", "2px solid #fff");
+            }
+
+            if ($('#R_EPer').val().length > 0) {
+                $('#R_EPer').css("border", "2px solid #fff");
+            }
+
+            if ($('#R_TMov').val().length > 0) {
+                $('#R_TMov').css("border", "2px solid #fff");
+            }
+
+
+
+            if ($('#R_Nombre').val().length > 0) {
+                if ($('#R_EPer').val().length > 0) {
+                    if ($('#R_TMov').val().length > 0) {
+                        respuesta = true;
+                    }
+                }
+            }
+
+            return respuesta;
+        }
+
+        function ValidFormEmail() {
+            var respuesta = false;
+
+            if (CorreoFromJob() == "ok") {
+                $('#R_EPer').css("border", "2px solid #fff");
+                respuesta = true;
+            } else {
+
+                $('#R_EPer').css("border", "2px solid #FF5722");
+
+                $.notify({
+	            icon: 'fa fa-paw',
+	            message: "Correo electrónico invalido."
+                },{
+                    type: 'danger',
+                    allow_dismiss: false,
+                    animate: {
+		                enter: 'animated rollIn',
+		                exit: 'animated rollOut'
+	                }
+                });
+            }
+            return respuesta;
+        }
+
+        $(document).ready(function () {
+            // NO ESCRIBIR LETRAS
+            $('#R_TMov').on('input', function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+
+             $('#R_TLoc').on('input', function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        });
+    </script>
+
+</body>
+</html>
+

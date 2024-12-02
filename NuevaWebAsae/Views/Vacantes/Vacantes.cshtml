@@ -1,0 +1,173 @@
+﻿
+@{
+    ViewBag.Title = "Vacantes";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+<style>
+    table.dataTable thead th, table.dataTable thead td {
+        padding: 10px 18px;
+        border-bottom: 1px solid #fff;
+    }
+
+    .dataTables_wrapper.no-footer .dataTables_scrollBody {
+        border-bottom: 1px solid #fff;
+    }
+
+    thead, tbody, tfoot, tr, td, th {
+        border-color: inherit;
+        border-style: none;
+        border-width: 0;
+    }
+
+    .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+        color: #8392ab;
+        FONT-SIZE: 10px;
+    }
+
+    .dataTable-wrapper .dataTable-bottom .dataTable-pagination .dataTable-pagination-list li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #8392ab;
+        padding: 0;
+        margin: 0 3px;
+        border: 1px solid #dee2e6;
+        border-radius: 50% !important;
+        width: 36px;
+        height: 36px;
+        font-size: .875rem;
+        margin-left: 0;
+    }
+</style>
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4">
+
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Vacantes registradas  </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="row">
+                                <div class="table-responsive">
+                                    <table class="table align-items-center mb-0 table-hover table-striped" id="TableList" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Titulo </th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Empresa  </th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Cliente  </th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Prospectos  </th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">  </th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">  </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @{
+                                                if (ViewBag.Vacantes != null)
+                                                {
+                                                    foreach (var item in ViewBag.Vacantes)
+                                                    {
+                                                        <tr>
+                                                            <td class="align-middle"> <p class="text-xs text-secondary mb-0 text-center"> @item.Titulo </p></td>
+                                                            <td class="text-center">
+                                                                <p class="text-xs text-secondary mb-0 "> @item.EmpresaPuestos.EmpresasDepartamento.Empresas.NombreComercial </p>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <p class="text-xs text-secondary mb-0 "> @item.Cat_ProyectoServicios.Cat_Clientes.Nombre </p>
+                                                            </td>
+                                                            <td class="text-center">@item.Prospecto</td>
+                                                            <td class="text-center"><a onclick="EditarVacante(@item.Id);" class="btn btn-outline-primary btn-sm mb-0">Editar</a></td>
+                                                            <td class="text-center"><a onclick="MostrarMas(@item.Id);" class="btn btn-outline-primary btn-sm mb-0">Mostrar</a></td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#Menu_work').addClass("nav-link active");
+        $('#TitlePage').html("Bolsa de trabajo");
+        $('#SubTitlePage').html("Dashboard");
+    });
+
+     function EditarVacante(Id) {
+        var obj = {};
+
+        obj['UrlVaible'] = Id;
+
+        var jsonObject = {
+            "URL": obj
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("URL_Cifrar", "URLS")",
+            async: false,
+            data: JSON.stringify(jsonObject),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                window.location.href = '@Url.Action("VacanteEditar", "Vacantes")?Id=' + result.Url;
+
+            },
+            error: function () {
+                AlertDanger("Problemas al consultar ", "Intentolo mas tarde.");
+            }
+        });
+     }
+
+    function MostrarMas(Id) {
+            var obj = {};
+
+            obj['UrlVaible'] = Id;
+
+            var jsonObject = {
+                "URL": obj
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("URL_Cifrar", "URLS")",
+                async: false,
+                data: JSON.stringify(jsonObject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    window.location.href = '@Url.Action("MostrarVacante", "Vacantes")?Id=' + result.Url;
+
+                },
+                error: function () {
+                    AlertDanger("Problemas al consultar ", "Intentolo mas tarde.");
+                }
+            });
+    }
+
+</script>

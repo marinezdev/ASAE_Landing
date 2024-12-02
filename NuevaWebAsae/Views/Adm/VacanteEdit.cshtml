@@ -1,0 +1,210 @@
+﻿
+@{
+    ViewBag.Title = "VacanteEdit";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="~/Assets/js/plugins/EditorText/css/froala_editor.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/froala_style.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/code_view.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/draggable.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/colors.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/emoticons.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/image_manager.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/image.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/line_breaker.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/table.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/char_counter.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/video.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/fullscreen.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/file.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/quick_insert.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/help.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/third_party/spell_checker.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/special_characters.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+
+
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4">
+
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Registrar nueva vacante </h6>
+                        </div>
+                        <div class="col-lg-6 col-5 my-auto text-end">
+                            <div class="dropdown float-lg-end pe-4">
+                                <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-v text-secondary"></i>
+                                </a>
+                                <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
+                                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
+                                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
+                                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label for="largeInput"> Categoria :  </label>
+                                    <div class="select2-input">
+                                        <select id="Select_Categoria" name="Select_Categoria" class="form-control" style="width:100%" onchange="ValidaSelect('Select_Categoria')">
+                                            <option value="0">Seleccionar</option>
+                                            @foreach (var item1 in ViewBag.Categorias)
+                                            {
+                                                if (ViewBag.Vacante.Id == item1.Id)
+                                                {
+                                                    <option value="@item1.Id" selected>@item1.Nombre</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@item1.Id">@item1.Nombre</option>
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="largeInput">* Titulo  </label>
+                                    <input type="text" class="form-control form-control" id="Text_Titulo" onchange="ValidaInput('Text_Titulo')" value="@ViewBag.Vacante.Titulo">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="largeInput">* Dirección   </label>
+                                    <input type="text" class="form-control form-control" id="Text_Direccion" onchange="ValidaInput('Text_Direccion')" value="@ViewBag.Vacante.Direccion">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="largeInput">* Sueldo   </label>
+                                    <input type="text" class="form-control form-control" id="Text_Sueldo" onchange="ValidaInput('Text_Sueldo')" value="@ViewBag.Vacante.Sueldo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="card mb-4">
+
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Información del empleo</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div id="editor">
+                                    <textarea name="editor_content" id="edit">
+                                        @Html.Raw(ViewBag.Vacante.Contenido)
+                                    </textarea>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4">
+                                <button type="button" id="BtnRegistrar" class="btn bg-gradient-info w-100 mt-4 mb-0">Registrar  </button>
+                                <br /><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.7/purify.min.js"></script>
+<script src="~/Assets/js/plugins/EditorText/js/froala_editor.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/align.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/char_counter.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/code_beautifier.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/code_view.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/colors.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/draggable.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/emoticons.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/entities.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/file.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/font_size.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/font_family.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/fullscreen.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/image.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/image_manager.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/line_breaker.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/inline_style.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/link.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/lists.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/paragraph_format.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/paragraph_style.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/quick_insert.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/quote.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/table.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/save.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/url.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/video.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/help.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/print.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/third_party/spell_checker.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/special_characters.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/word_paste.min.js"></script>
+
+<script>
+    (function () {
+        new FroalaEditor("#edit", {
+            attribution: false,
+            events: {
+                "image.beforeUpload": function (files) {
+                    var editor = this;
+                    if (files.length) {
+                        // Create a File Reader.
+                        var reader = new FileReader();
+                        // Set the reader to insert images when they are loaded.
+                        reader.onload = function (e) {
+                            var result = e.target.result;
+                            editor.image.insert(result, null, null, editor.image.get());
+                        };
+                        // Read image as base64.
+                        reader.readAsDataURL(files[0]);
+                    }
+                    editor.popups.hideAll();
+                    // Stop default upload chain.
+                    return false;
+                }
+            }
+        })
+
+    })()
+</script>
+

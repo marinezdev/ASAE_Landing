@@ -1,0 +1,357 @@
+﻿
+@{
+    ViewBag.Title = "Work";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+<style>
+    table.dataTable thead th, table.dataTable thead td {
+        padding: 10px 18px;
+        border-bottom: 1px solid #fff;
+    }
+
+    .dataTables_wrapper.no-footer .dataTables_scrollBody {
+        border-bottom: 1px solid #fff;
+    }
+
+    thead, tbody, tfoot, tr, td, th {
+        border-color: inherit;
+        border-style: none;
+        border-width: 0;
+    }
+
+    .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+        color: #8392ab;
+        FONT-SIZE: 10px;
+    }
+
+    .dataTable-wrapper .dataTable-bottom .dataTable-pagination .dataTable-pagination-list li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #8392ab;
+        padding: 0;
+        margin: 0 3px;
+        border: 1px solid #dee2e6;
+        border-radius: 50% !important;
+        width: 36px;
+        height: 36px;
+        font-size: .875rem;
+        margin-left: 0;
+    }
+</style>
+<!-- End Navbar -->
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-xl-6 mb-xl-0 mb-4">
+                    <div class="card bg-transparent shadow-xl">
+                        <div class="overflow-hidden position-relative border-radius-xl" style="background-image: url('../assets/img/curved-images/curved14.jpg');">
+                            <span class="mask bg-gradient-dark"></span>
+                            <div class="card-body position-relative z-index-1 p-3">
+                                <h5 class="text-white mt-4 mb-5 pb-2"> @ViewBag.Usuario.Nombre</h5>
+                                <div class="d-flex">
+                                    <div class="d-flex">
+                                        <div class="me-4">
+                                            <p class="text-white text-sm opacity-8 mb-0">#Postulaciones</p>
+                                            <h6 class="text-white mb-0">
+                                                #  @if (ViewBag.Prospectos != null)
+                                                {@ViewBag.Prospectos.Count;
+                                            }
+                                            else
+                                            { <span>0</span>}
+                                            </h6>
+                                        </div>
+                                        <div>
+                                            <p class="text-white text-sm opacity-8 mb-0">Utima Actividad</p>
+                                            <h6 class="text-white mb-0">
+                                                <script>
+                                                    document.write(new Date().toLocaleDateString('es-ES', {
+                                                        year: 'numeric',
+                                                        month: 'long',
+                                                        day: 'numeric'
+                                                    }))
+                                                </script>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="ms-auto w-20 d-flex align-items-end justify-content-end">
+                                        <img class="w-60 mt-2" src="~/images/jobctrl/asaelogo.png" alt="logo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header  p-3 text-center">
+                                    <div class="icon icon-shape icon-lg bg-gradient-primary shadow text-center border-radius-lg">
+                                        <i class="fas fa-landmark opacity-10"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0 p-3 text-center">
+                                    <h6 class="text-center mb-0">Vacantes </h6>
+                                    <span class="text-xs">Publicadas </span>
+                                    <hr class="horizontal dark my-3">
+                                    <h5 class="mb-0">#  @if (ViewBag.Vacante != null)
+                                    {@ViewBag.Vacante.Count;
+                                }
+                                else
+                                { <span>0</span>} </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-md-0 mt-4">
+                            <div class="card">
+                                <div class="card-header p-3 text-center">
+                                    <div class="icon icon-shape icon-lg bg-gradient-primary shadow text-center border-radius-lg">
+                                        <i class="fas fa-id-badge opacity-10"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0 p-3 text-center">
+                                    <h6 class="text-center mb-0">Prospectos </h6>
+                                    <span class="text-xs">Registrados</span>
+                                    <hr class="horizontal dark my-3">
+                                    <h5 class="mb-0"># @if (ViewBag.Prospectos != null)
+                                    {@ViewBag.Prospectos.Count;
+                                }
+                                else
+                                { <span>0</span>}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-lg-0 mb-4">
+                    <div class="card mt-4">
+                        <div class="card-header pb-0 p-3">
+                            <div class="row">
+                                <div class="col-6 d-flex align-items-center">
+                                    <h6 class="mb-0">Vacantes </h6>
+                                </div>
+                                <div class="col-6 text-end">
+                                    @*href="@Url.Action("NewWork", "Vacantes")"*@
+                                    <a class="btn bg-gradient-dark mb-0" onclick="Crearvacante()"><i class="fas fa-plus"></i>&nbsp;&nbsp;Agregar nueva </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <div class="row">
+
+                                <div class="table-responsive">
+                                    <table class="table align-items-center mb-0 table-hover " id="TableListaVacantes2" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Vacante </th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">  </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @{
+                                                if (ViewBag.Vacante != null)
+                                                {
+                                                    foreach (var item1 in ViewBag.Vacante)
+                                                    {
+                                                        <tr class="border card-plain  border-radius-lg " style="border: 1px solid #dee2e6 !important;">
+                                                            <td class="align-middle">
+                                                                <img class="w-10 me-3 mb-0" src="../images/jobctrl/asaelogo.png" alt="logo">
+                                                                <h6 class="mb-0">
+                                                                    @item1.Titulo.ToUpper() <br />
+                                                                    <span class="text-xs">@item1.Cat_ProyectoServicios.Cat_Clientes.Nombre </span>
+                                                                </h6>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <i onclick="EditarVacante(@item1.Id);" class="fas fa-pencil-alt ms-auto text-dark cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar vacante"></i>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card h-100">
+                <div class="card-header pb-0 p-3">
+                    <div class="row">
+                        <div class="col-6 d-flex align-items-center">
+                            <h6 class="mb-0">Vacantes y postulaciones </h6>
+                        </div>
+                        <div class="col-6 text-end">
+                            <a class="btn btn-outline-primary btn-sm mb-0" href="@Url.Action("Vacantes","Vacantes")">Mostrar todas</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body p-3 pb-0 ">
+                    <div class="table-responsive">
+                        <table class="table align-items-center mb-0 table-hover " id="TableListaVacantes" width="100%">
+                            <thead>
+                                <tr>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Vacante </th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Prospectos  </th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">  </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    if (ViewBag.Vacante != null)
+                                    {
+                                        foreach (var item1 in ViewBag.Vacante)
+                                        {
+                                            <tr>
+                                                <td class="align-middle">
+                                                    <div class="d-flex flex-column">
+                                                        <h6 class="mb-1 text-dark font-weight-bold text-sm">@item1.Titulo.ToUpper()</h6>
+                                                        <span class="text-xs font-weight-bold">@item1.Cat_ProyectoServicios.Cat_Clientes.Nombre </span>
+                                                        <span class="text-xs" style="width: 200px; white-space: pre-wrap;">@item1.ClienteDirecciones.Direccion </span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">@item1.Prospecto</td>
+                                                <td class="text-center"><a onclick="MostrarMas(@item1.Id);" class="btn btn-outline-primary btn-sm mb-0">Mostrar</a></td>
+                                            </tr>
+                                        }
+                                    }
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+
+<script>
+    function MostrarVacante(Id) {
+        window.location.href = '@Url.Action("VacanteEdit", "Adm")?Id='+Id;
+    }
+
+    function EditarVacante(Id) {
+        var obj = {};
+
+        obj['UrlVaible'] = Id;
+
+        var jsonObject = {
+            "URL": obj
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("URL_Cifrar", "URLS")",
+            async: false,
+            data: JSON.stringify(jsonObject),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                window.location.href = '@Url.Action("VacanteEditar", "Vacantes")?Id=' + result.Url;
+
+            },
+            error: function () {
+            }
+        });
+    }
+
+    $(document).ready(function () {
+    $('#Menu_work').addClass("nav-link active");
+    $('#TitlePage').html("Bolsa de trabajo");
+    $('#SubTitlePage').html("Dashboard");
+
+
+    $(document).ready(function () {
+        var tabla = $('#TableListaVacantes').DataTable({
+            scrollY: 400,
+            scrollX: true,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+            },
+            "pageLength": 10,
+        });
+    });
+
+});
+
+    $(document).ready(function () {
+        var tabla = $('#TableListaVacantes2').DataTable({
+            scrollY: 300,
+            scrollX: true,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+            },
+            "pageLength": 10,
+        });
+    });
+
+     function MostrarMas(Id) {
+            var obj = {};
+
+            obj['UrlVaible'] = Id;
+
+            var jsonObject = {
+                "URL": obj
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("URL_Cifrar", "URLS")",
+                async: false,
+                data: JSON.stringify(jsonObject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    window.location.href = '@Url.Action("MostrarVacante", "Vacantes")?Id=' + result.Url;
+
+                },
+                error: function () {
+                   /* AlertDanger("Problemas al consultar ", "Intentolo mas tarde.");*/
+                }
+            });
+     }
+
+    function Crearvacante() {
+        swal({
+            title: "Selecciona una opción",
+            text: "¿Qué tipo de vacante deseas crear?",
+            imageUrl: "../Assets/img/small-logos/1640643.png",
+            showCancelButton: true,
+            confirmButtonColor: "#3070A9",
+            confirmButtonText: "Nueva Vacante",
+            cancelButtonColor: "#3070A9",
+            cancelButtonText: "Vacante Prediseñada",
+            closeOnConfirm: false,
+            closeOnCancel: false
+        },
+        function (isConfirm) {
+            if (isConfirm) {
+                window.location.href = "@Url.Action("NewWork", "Vacantes")";
+            } else {
+                 window.location.href = "@Url.Action("VacantePredisenio", "Vacantes")";
+            }
+        });
+    }
+
+</script>
+

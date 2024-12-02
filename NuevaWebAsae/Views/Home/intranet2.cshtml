@@ -1,0 +1,470 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="~/images/ico.ico">
+    <title>Asae Consultores S.A de C.V</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Template CSS Files
+    ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link href="~/plugins/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!-- Ionicons Fonts Css -->
+    <link href="~/plugins/ionicons/ionicons.min.css" rel="stylesheet" />
+    <!-- Fancybox -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Glegoo" rel="stylesheet" />
+    <!-- template main css file -->
+
+
+    <link href="~/plugins/jquery-flipster-carousel/demo/demo.css" rel="stylesheet" />
+    <link href="~/plugins/jquery-flipster-carousel/dist/jquery.flipster.min.css" rel="stylesheet" />
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="~/plugins/jquery-flipster-carousel/dist/jquery.flipster.min.js"></script>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/Intranet2/Style.css" rel="stylesheet" />
+    <style>
+        .flipster__nav__child {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: -1px;
+            padding: 0.5em;
+            /* background: #4e4441; */
+            background-image: linear-gradient(114deg, #449fd8 30%, #405baa 99%);
+            z-index: 1;
+        }
+
+        .flipster__nav__item--current > .flipster__nav__link, .flipster__nav__link:hover, .flipster__nav__link:focus {
+            color: #4163b0;
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+       ==================================================
+       Header Section Start
+       ================================================== -->
+    <header id="top-bar" class="navbar-fixed-top animated-header">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="navbar-brand center-block">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img src="~/images/Tickets/LogoAsae.png" width="100%" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="service-page" class="pages" style="padding: 80px 0 0px; background-color: #f5f5f5;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" style="background-color: #ffffff;">
+                    <div class="justify-content-center">
+                        <br />
+                        <h2 class="title wow fadeInUp animated " data-wow-delay=".3s" data-wow-duration="900ms">
+                            Asae Intranet
+                        </h2>
+                        <br />
+                        <h3 class="title wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="300ms">
+                            Bienvenido a la intranet de <strong>ASAE CONSULTORES</strong>, selecciona el servicio que deseas utilizar.
+                        </h3>
+                        <br /><br />
+                        <h2 class="title wow fadeInUp animated text-center " data-wow-delay=".3s" data-wow-duration="900ms">
+                            <img src="~/images/jobctrl/asaelogo.png" width="50%" />
+                        </h2>
+                        <br /><br />
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <article id="demo-carousel" class="demo">
+
+                        <div id="carousel">
+                            <ul class="flip-items">
+                                <li data-flip-title="Xpinnit">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/Xpinnit.png" alt="Picture by Nathan Dumlao" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/xpinnit-logo.png" />
+                                                <h4 class="card__title">Xpinnit</h4>
+                                                <p class="card__snippet">Crea eventos y ordena cada aspecto de tu vida.</p>
+                                                <a href="https://sistema.xpinnit.com/" class="card__button">Iniciar sesión </a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+                                <li data-flip-title="Met Work Tool" data-flip-category="MetLife">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/Met-Work-Tool.png" alt="Picture by Nathan Dumlao" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/Met-Work-Tool-logo.png" />
+                                                <h4 class="card__title">MetLife</h4>
+                                                <p class="card__snippet">
+                                                    Work Flow de servicios MetLife
+                                                </p>
+                                                <a href="https://www.cloud-asae.com.mx/MetLife/" class="card__button">Iniciar sesión</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+                                <li data-flip-title="SIPAC" data-flip-category="Asae">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/sipac.png" alt="Picture by Daniel Lincoln" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/asaelogo.png" />
+                                                <h4 class="card__title">SIPAC</h4>
+                                                <p class="card__snippet">
+                                                    Sistema de pagos y cobranza.
+                                                </p>
+                                                <a href="https://sipac.asae.com.mx" class="card__button">Iniciar sesión</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+                                <li data-flip-title="Colinas" data-flip-category="Asae">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/CRM.png" alt="Picture by Kyle Cottrell" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/CBLogo.png" />
+                                                <h4 class="card__title">Colinas</h4>
+                                                <p class="card__snippet">Administración sitio web .</p>
+                                                <a href="http://187.248.23.163:86/" class="card__button">Iniciar sesión</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+                                <li data-flip-title="Nuevo CRM" data-flip-category="Asae">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/CRM_Nuevo.png" alt="Picture by Kyle Cottrell" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/asaelogo.png" />
+                                                <h4 class="card__title">Nuevo CRM</h4>
+                                                <p class="card__snippet">Gestión de Relaciones con el Cliente.</p>
+                                                <a href="https://crm.asae.com.mx/" class="card__button">Iniciar sesión</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+                                <li data-flip-title="CID" data-flip-category="Asae">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/GCB.png" alt="Picture by Nathan Dumlao" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/asaelogo.png" />
+                                                <h4 class="card__title">CID</h4>
+                                                <p class="card__snippet">Centro de información Digital de Asae.</p>
+                                                <a href="https://cid.asae.com.mx/" class="card__button">Iniciar sesión</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+                                <li data-flip-title="RH Asae" data-flip-category="Asae">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/RH.png" alt="Picture by Nathan Dumlao" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/asaelogo.png" />
+                                                <h4 class="card__title">RH</h4>
+                                                <p class="card__snippet">Administración de personal Asae Consultores .</p>
+                                                <a href="https://rechumanos.asae.com.mx/" class="card__button">Iniciar sesión</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+                                <li data-flip-title="ASD Altecsa" data-flip-category="Asae">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/ASD.png" alt="Picture by Nathan Dumlao" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/asaelogo.png" />
+                                                <h4 class="card__title">ASD Altecsa</h4>
+                                                <p class="card__snippet">Lleva el control de cada incidente de soporte técnico en una sola plataforma.</p>
+                                                <a href="http://187.248.23.163:1181/" class="card__button">Iniciar sesión</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+
+                                </li>
+                                <li data-flip-title="ASD Tickets" data-flip-category="Asae">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/ASDAsae.png" alt="Picture by Nathan Dumlao" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/asaelogo.png" />
+                                                <h4 class="card__title">ASD tickets</h4>
+                                                <p class="card__snippet">Lleva el control de cada incidente de soporte técnico en una sola plataforma.</p>
+                                                <a href="https://asd.asae.com.mx" class="card__button">Iniciar sesión</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+                                <li data-flip-title="Administración web" data-flip-category="Asae">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/ASAE-ADMIN.png" alt="Picture by Daniel Lincoln" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/asaelogo.png" />
+                                                <h4 class="card__title">Administración web </h4>
+                                                <p class="card__snippet">
+                                                    Administración de plataformas internas
+                                                </p>
+                                                <a href="@Url.Action("Index", "Adm")" class="card__button">Iniciar sesión </a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+                                <li data-flip-title="mail asae" data-flip-category="Email Asae">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/mail-asae.png" alt="Picture by Kyle Cottrell" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/asaelogo.png" />
+                                                <h4 class="card__title">mail asae</h4>
+                                                <p class="card__snippet">Correo corporativo de Asae consultores. <br /> Asaec\clave-usuario </p>
+                                                <a href="https://mail.asae.com.mx/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fmail.asae.com.mx%2fowa" class="card__button">Iniciar sesión</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+                                <li data-flip-title="mail asae op" data-flip-category="Email Asae">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/webmail.png" alt="Picture by Daniel Lincoln" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/asaelogo.png" />
+                                                <h4 class="card__title">mail asae op</h4>
+                                                <p class="card__snippet">Correo de operaciones de Asae consultores. </p>
+                                                <a href="https://mail.asaeop.com.mx/webmail" class="card__button">Iniciar sesión</a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+
+                                <li data-flip-title="IdeaShare" data-flip-category="Huawei">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/ideashare.png" alt="Picture by Nathan Dumlao" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/logo-en.png" />
+                                                <h4 class="card__title">IDEASHARE</h4>
+                                                <p class="card__snippet">Software de proyección de pantalla. Inalámbrico y fácil de compartir</p>
+                                                <a href="https://www.huaweicloud.com/intl/en-us/product/ideashare.html" class="card__button">Ingresar  </a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+                                <li data-flip-title="Carta responsiva" data-flip-category="Huawei">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/Carta.png" alt="Picture by Nathan Dumlao" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/asaelogo.png" />
+                                                <h4 class="card__title">Carta</h4>
+                                                <p class="card__snippet">Carta responsiva de equipo HUAWEI IDEAHUB_86 </p>
+                                                <a href="~/images/Intranet/Carta_Responsiva_Ideahub.pdf" download="Carta_Responsiva_Ideahub" class="card__button">Descargar </a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+                                <li data-flip-title="Servicios Asae" data-flip-category="Presentaciones">
+                                    <div class="card">
+                                        <figure class="card__thumb">
+                                            <img src="~/images/Intranet/Galeria/ServiciosProfecionalesPresentacion.png" alt="Picture by Nathan Dumlao" class="card__image" />
+                                            <figcaption class="card__caption">
+                                                <img src="~/images/Intranet/asaelogo.png" />
+                                                <h4 class="card__title">Servicios</h4>
+                                                <p class="card__snippet">Presentación diseño canva (Servicios Asae)  </p>
+                                                <a href="https://www.canva.com/design/DAFJr_uYtmk/LR3PwrOFnUg8k519J6VZ5Q/view?utm_content=DAFJr_uYtmk&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink" download="Carta_Responsiva_Ideahub" class="card__button">Ingresar </a>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <script>
+                            var carousel = $("#carousel").flipster({
+                                style: 'carousel',
+                                spacing: -0.5,
+                                nav: true,
+                                buttons: true,
+                            });
+                        </script>
+
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section id="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="map-area">
+
+                        <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Compartir pagina  </h2>
+                        <div class="widget-content">
+                            <div class="shared-panel">
+                                <a target="_blank" class="shared fb st3" title="Facebook"></a>
+                                <a target="_blank" class="shared tt st3" title="Twitter"></a>
+                                @*<a target="_blank" class="shared gp st3" title="Google+"></a>*@
+                                <a class="shared wa st3" data-action='share/whatsapp/share' title="WhatsApp"></a>
+                                <a target="_blank" class="shared ce st3" title="Email"></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="address wow fadeInLeft" data-wow-duration="300ms" data-wow-delay=".1s">
+                        <i class="ion-ios-location-outline"></i>
+                        <h5>Margaritas 426, Álvaro Obregón, Ciudad de México</h5>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="email wow fadeInLeft" data-wow-duration="300ms" data-wow-delay=".7s">
+                        <a href="mailto:asae_contactanos@asae.com.mx">
+                            <i class="ion-ios-email-outline"></i>
+                            <p style="color: #243e62"><br /> asae_contactanos@asae.com.mx</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="phone wow fadeInLeft" data-wow-duration="300ms" data-wow-delay=".1s">
+                        <i class="ion-ios-telephone-outline"></i>
+                        <p>(55) 53 22 05 00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+
+            <div class="col-md-12">
+                <!-- Social Media -->
+                <ul class="social">
+                    <li>
+                        <img src="~/images/AsaeLogo.png" width="100%" />
+                    </li>
+                    <br />
+                    <br />
+                    <li>
+                        <a href="https://www.facebook.com/AsaeConsultoresMX/" class="Facebook">
+                            <i class="ion-social-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/asaeconsultores" class="Twitter">
+                            <i class="ion-social-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://mx.linkedin.com/company/asae-consultores-s.a.-de-c.v." class="Linkedin">
+                            <i class="ion-social-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+                <br />
+            </div>
+            <div class="col-md-12">
+                <p class="copyright">
+                    Copyright: <span>
+                        <script>document.write(new Date().getFullYear())</script>
+                    </span> . All Rights Reserved
+                    <a href="#" target="_blank">Asae Consultores S.A de C.V</a>. <br>
+                    Aviso de privacidad
+                    <a href="@Url.Action("AvisoPrivacidad", "Home")" target="_blank">
+                        Asae Consultores S.A de C.V
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+
+
+    <script src="~/plugins/bootstrap/bootstrap.min.js"></script>
+    <script>
+        function Direccion(num) {
+            alert(num);
+        }
+
+
+        $(document).on('click', ".shared", function () {
+            var url = window.location.href;
+            var title = document.title;
+
+            url = encodeURIComponent(url);
+            title = encodeURIComponent(title);
+
+            //Boton Facebook
+            if ($(this).hasClass('fb')) {
+                url = 'https://www.facebook.com/sharer/sharer.php?u=' + url + '&t=' + title;
+
+                //Boton Twitter
+            } else if ($(this).hasClass('tt')) {
+                user = 'asaeconsultores';//Nuestro usuario de twitter para mostrar como user
+                url = 'https://twitter.com/intent/tweet?text=' + title + '&url=' + url + '&via=' + user;
+
+                //Boyton Google Plus
+            } else if ($(this).hasClass('gp')) {
+                url = 'https://plus.google.com/share?url=' + url;
+
+                //Boton WhtsApp
+            } else if ($(this).hasClass('wa')) {
+                url = 'https://api.whatsapp.com/send?text="' + document.title + '" - "' + window.location.href + '"';
+
+                //Boton correo electronico
+            } else if ($(this).hasClass('ce')) {
+                url = 'mailto:?subject=' + title + '&body=' + url;
+
+                //Ningun boton valido
+            } else return;
+
+            //Abrimos la url
+
+            window.open(url.replace('+', '%2b'), '_blank');
+        });
+    </script>
+</body>
+</html>

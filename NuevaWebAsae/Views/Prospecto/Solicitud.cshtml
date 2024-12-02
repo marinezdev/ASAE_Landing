@@ -1,0 +1,1100 @@
+﻿
+@{
+    ViewBag.Title = "Solicitud";
+    Layout = "~/Views/Shared/_LayoutVacantes.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<link href="~/Assets/js/plugins/EditorText/css/froala_editor.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/froala_style.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/code_view.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/draggable.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/colors.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/emoticons.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/image_manager.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/image.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/line_breaker.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/table.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/char_counter.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/video.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/fullscreen.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/file.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/quick_insert.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/help.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/third_party/spell_checker.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/special_characters.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+
+
+<!-- Modal -->
+<div class="modal fade" id="AgregarExperienciaLaboral" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Experiencia laboral </h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label for="largeInput">* Cargo  </label>
+                            <input type="text" class="form-control" id="Modal_Cargo" onchange="ValidaInput('Modal_Cargo')" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label for="largeInput">* Empresa  </label>
+                            <input type="text" class="form-control" id="Modal_Empresa" onchange="ValidaInput('Modal_Empresa')" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <label for="Modal_Funciones" class="col-form-label">Funciones:</label>
+                            <textarea class="form-control" id="Modal_Funciones"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <p><small> Sueldo mensual dentro de la empresa </small> </p>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label for="largeInput">* Sueldo inicial </label>
+                            <input type="text" class="form-control numberPositivo" id="Modal_SueldoInicial" onchange="ValidaInput('Modal_SueldoInicial')">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label for="largeInput">* Sueldo final </label>
+                            <input type="text" class="form-control numberPositivo" id="Modal_SueldoFinal" onchange="ValidaInput('Modal_SueldoFinal')">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <p><small> Fechas de colaboración con la empresa </small> </p>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label for="largeInput">* Fecha inicio </label>
+                            <input type="date" class="form-control" id="Modal_FechaInicio" onchange="ValidaInput('Modal_FechaInicio')">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4" id="ModalFechaFin">
+                        <div class="form-group">
+                            <label for="largeInput">* Fecha termino </label>
+                            <input type="date" class="form-control" id="Modal_FechaTermino" onchange="ValidaInput('Modal_FechaTermino')">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <br />
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="MostrarFecha" name="MostrarFecha" onchange="AgregarFechaFin()">
+                            <label class="form-check-label" for="MostrarFecha"> Actualmente trabajo aquí   </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="BtnCerrarExperiencia"> Cancelar</button>
+                <button type="button" class="btn bg-gradient-info" id="BTnNuevaExperiencia"> Agregar  </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalPDF" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Archivo </h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <iframe id="iframepdf" width="100%" height="400px;" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-4">
+
+                        <div class="card-header pb-0">
+                            <div class="row">
+                                <div class="col-lg-6 col-7">
+                                    <h6>Postulación: </h6>
+                                    <small>Completa los campos marcados con <strong>*</strong></small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-body pb-0">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-6">
+                                            <div class="form-group">
+                                                <label for="largeInput">* Nombre  </label>
+                                                <input type="text" class="form-control form-control" id="Propecto_Nombre" onchange="ValidaInput('Propecto_Nombre')">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6">
+                                            <div class="form-group">
+                                                <label for="largeInput">* Apellido Paterno  </label>
+                                                <input type="text" class="form-control form-control" id="Propecto_ApellidoPaterno" onchange="ValidaInput('Propecto_ApellidoPaterno')">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6">
+                                            <div class="form-group">
+                                                <label for="largeInput">* Apellido Materno  </label>
+                                                <input type="text" class="form-control form-control" id="Propecto_ApellidoMaterno" onchange="ValidaInput('Propecto_ApellidoMaterno')">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-6">
+                                            <div class="form-group">
+                                                <label for="largeInput">* Correo electrónico     </label>
+                                                <input type="text" class="form-control form-control" id="Propecto_Correo" onchange="ValidaInput('Propecto_Correo')">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 col-lg-6">
+                                            <div class="form-group">
+                                                <label for="largeInput">* Teléfono celular   </label>
+                                                <input type="text" class="form-control input-number" id="Propecto_TelefonoCelular" onchange="ValidaInput('Propecto_TelefonoCelular ')">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6">
+                                            <div class="form-group">
+                                                <label for="largeInput"> Teléfono fijo    </label>
+                                                <input type="text" class="form-control input-number" id="Propecto_TelefonoFijo" onchange="ValidaInput('Propecto_TelefonoFijo')">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="MostrarExperiencia" name="MostrarExperiencia" onchange="AgregarExperiencia()">
+                                    <label class="form-check-label" for="MostrarExperiencia">Agregar experiencia laboral  </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="card mb-4" id="DivExperiencia" style="display:none">
+                        <div class="card-header pb-0">
+                            <div class="row">
+                                <div class="col-lg-9 col-9">
+                                    <h6>Experiencia laboral   <strong>  </strong> </h6>
+                                    <small>Agrega tu experiencia laboral dando clic sobre el botón <strong>nueva experiencia laboral</strong>, completa los campos marcados con <strong> * </strong></small>
+                                </div>
+                                <div class="col-lg-3 col-3" style="text-align:right">
+                                    <a class="btn bg-gradient-dark mb-0" data-bs-toggle="modal" data-bs-target="#AgregarExperienciaLaboral">Nueva experiencia laboral </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body pb-0">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12" id="ListaEmpleos">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4 col-lg-4">
+            <div class="row">
+                <div class="col-xl-12 mb-xl-0 mb-4">
+                    <div class="card mb-4 bg-transparent shadow-xl">
+                        <div class="overflow-hidden position-relative border-radius-xl" style="background-image: url('../assets/img/curved-images/curved14.jpg');">
+                            <span class="mask bg-gradient-dark"></span>
+                            <div class="card-body position-relative z-index-1 p-3">
+                                <h5 class="text-white mt-4 mb-5 pb-2">@ViewBag.Vacante.Titulo</h5>
+                                <div class="d-flex">
+                                    <div class="d-flex">
+                                        <div>
+                                            <p class="text-white text-sm opacity-8 mb-0">Fecha publicación  </p>
+                                            <h6 class="text-white mb-0">@ViewBag.Vacante.FechaRegistro</h6>
+                                        </div>
+                                    </div>
+                                    <div class="ms-auto w-20 d-flex align-items-end justify-content-end">
+                                        <img class="w-60 mt-2" src="~/images/jobctrl/asaelogo.png" alt="logo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 mb-xl-0 ">
+                    <div class="card mb-4">
+                        <div class="card-header pb-0">
+                            <div class="row">
+                                <div class="col-lg-12 col-12">
+                                    <h6>Curriculum vitae </h6>
+                                    <small>Archivo formato <strong>PDF</strong> o <strong>word</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body pb-0">
+                            <div class="row">
+                                <div class="col-lg-12 col-12 text-center">
+                                    <a class="btn bg-gradient-dark mb-0" onclick="SubirArchivo()">Agregar CV</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <input id="fileInputArchivo" type="file" style="visibility:hidden">
+                                    <progress id="fileProgresArchivo" style="width: 100%; display: none;"></progress>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12" id="DivListPDF">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <div class="card">
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <h6>Déjanos un mensaje o alguna observación </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pb-0">
+                    <div class="row">
+                        <div class="col-lg-12 col-12 text-center">
+                            <div id="editor">
+                                <textarea name="editor_content" id="edit">
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-4">
+                            <button type="button" id="BtnRegistrar" class="btn bg-gradient-info w-100 mt-4 mb-0">Enviar postulación   </button>
+                            <br /><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+    <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="modal-title-notification">Procesando solicitud </h6>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <img src="~/images/loading-gif-png-4.gif" width="25%" height="100px" />
+                    <h4 class="text-gradient text-info mt-4">Espera un momento!</h4>
+                    <p>Estamos registrando tu solicitud.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.7/purify.min.js"></script>
+
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/froala_editor.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+
+
+<script>
+
+</script>
+
+<script>
+    $('#BtnRegistrar').click(function () {
+        if (ValidarForm())
+        {
+            $("#BtnRegistrar").prop("disabled", true);
+            $("#modal-notification").modal('show');
+
+            setTimeout(function () {
+                EnviarInformacion();
+            }, 2000);
+
+        } else {
+            $.notify({
+                message: "Formulario incompleto!."
+            }, {
+                type: 'danger'
+            });
+        }
+    });
+
+    function EnviarInformacion() {
+
+        var Vacante = new Object();
+        Vacante.Id = @ViewBag.Vacante.Id;
+        Vacante.Titulo = '@ViewBag.Vacante.Titulo';
+
+        var Prospecto = new Object();
+        Prospecto.Vacante = Vacante;
+        Prospecto.Nombre = $('#Propecto_Nombre').val();
+        Prospecto.ApellidoPaterno = $('#Propecto_ApellidoPaterno').val();
+        Prospecto.ApellidoMaterno = $('#Propecto_ApellidoMaterno').val();
+        Prospecto.TelefonoCelular = $('#Propecto_TelefonoCelular').val();
+        Prospecto.TelefonoFijo = $('#Propecto_TelefonoFijo').val();
+        Prospecto.CorreElectronico = $('#Propecto_Correo').val();
+        Prospecto.Observaciones = $('#edit').val().replace('<p data-f-id="pbf" style="text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;">Powered by <a href="https://www.froala.com/wysiwyg-editor?pb=1" title="Froala Editor">Froala Editor</a></p>', '');
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("Prospecto_Agregar", "Prospecto")",
+            async: false,
+            data: JSON.stringify(Prospecto),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+
+                $("#modal-notification").modal("hide");
+                $("#BtnRegistrar").prop("disabled", false);
+
+                console.log(result);
+
+                if(result.Id > 0){
+                    swal({
+                        title: "Postulación registrada.",
+                        text: "Felicitaciones has termino tu postulación. Se ha enviado a tu correo las siguientes indicaciones.",
+                        imageUrl: "../Assets/img/small-logos/1237439_verificado.png",
+                        showCancelButton: false,
+                        confirmButtonColor: "#3070A9",
+                        confirmButtonText: "Aceptar",
+                        closeOnConfirm: false,
+                    },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            window.location.href = '@Url.Action("Solicitud", "Prospecto")';
+                        }
+                    });
+                }
+                else{
+                    swal({
+                        title: "Problemas en la solicitud",
+                        text: "Postulación no registrada !",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    }).then((willDelete) => {
+
+                    });
+                }
+
+            },
+            error: function () {
+                $("#modal-notification").modal("hide");
+                $("#BtnRegistrar").prop("disabled", false);
+            }
+        });
+    }
+
+    function ValidarForm() {
+        var result = false;
+        var From = false;
+
+        $('#Propecto_Nombre').css("border", "1px solid #e293d3");
+        $('#Propecto_ApellidoPaterno').css("border", "1px solid #e293d3");
+        $('#Propecto_ApellidoMaterno').css("border", "1px solid #e293d3");
+        $('#Propecto_Correo').css("border", "1px solid #e293d3");
+        $('#Propecto_TelefonoCelular').css("border", "1px solid #e293d3");
+
+        if ($('#Propecto_Nombre').val().length > 0) {
+            $('#Propecto_Nombre').css("border", "1px solid #d2d6da");
+        }
+
+        if ($('#Propecto_ApellidoPaterno').val().length > 0) {
+            $('#Propecto_ApellidoPaterno').css("border", "1px solid #d2d6da");
+        }
+
+        if ($('#Propecto_ApellidoMaterno').val().length > 0) {
+            $('#Propecto_ApellidoMaterno').css("border", "1px solid #d2d6da");
+        }
+
+        if ($('#Propecto_Correo').val().length > 0) {
+            $('#Propecto_Correo').css("border", "1px solid #d2d6da");
+        }
+
+        if ($('#Propecto_TelefonoCelular').val().length > 0) {
+            $('#Propecto_TelefonoCelular').css("border", "1px solid #d2d6da");
+        }
+
+        if ($('#Propecto_Nombre').val().length > 0) {
+            if ($('#Propecto_ApellidoPaterno').val().length > 0) {
+                if ($('#Propecto_ApellidoMaterno').val().length > 0) {
+                    if ($('#Propecto_Correo').val().length > 0) {
+                        if ($('#Propecto_TelefonoCelular').val().length > 0) {
+                            From = true;
+                        }
+                    }
+                }
+            }
+        }
+
+        var email = $("#Propecto_Correo").val();
+
+        if (validateEmail(email)) {
+            if (From) {
+                result = true;
+            }
+        } else {
+            $('#Propecto_Correo').css("border", "1px solid #e293d3");
+        }
+
+        return result;
+    }
+
+    function validateEmail(email) {
+        var emailRegex = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+        return emailRegex.test(email);
+    }
+
+</script>
+
+<script>
+    $('#BTnNuevaExperiencia').click(function () {
+        if (ValidarFormExperiencia())
+        {
+            var ProspectoExperiencia = new Object();
+            ProspectoExperiencia.Cargo = $('#Modal_Cargo').val();
+            ProspectoExperiencia.NombreEmpresa = $('#Modal_Empresa').val();
+            ProspectoExperiencia.Funciones = $('#Modal_Funciones').val();
+            ProspectoExperiencia.SueldoInicial = $('#Modal_SueldoInicial').val();
+            ProspectoExperiencia.SueldoFinal = $('#Modal_SueldoFinal').val();
+            ProspectoExperiencia.FechaInicio = $('#Modal_FechaInicio').val();
+            ProspectoExperiencia.TrabajoActivo = 1;
+            if (!$("#MostrarFecha").is(':checked')) {
+                ProspectoExperiencia.TrabajoActivo = 0;
+                ProspectoExperiencia.FechaTermino = $('#Modal_FechaTermino').val();
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("ProspectoExperiencia_Agregar_Lista", "ProspectoExperiencia")",
+                async: false,
+                data: JSON.stringify(ProspectoExperiencia),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+
+                    $('#Modal_Cargo').val("");
+                    $('#Modal_Empresa').val("");
+                    $('#Modal_Funciones').val("");
+                    $('#Modal_SueldoInicial').val("");
+                    $('#Modal_SueldoFinal').val("");
+                    $('#Modal_FechaInicio').val("");
+                    $('#Modal_FechaTermino').val("");
+
+                    $("#BtnCerrarExperiencia").click();
+
+                    CargaExperiencia();
+                },
+                error: function () {
+                    $("#BtnCerrarExperiencia").click();
+                }
+            });
+
+        } else {
+            $.notify({
+                message: "Formulario incompleto!."
+            }, {
+                type: 'danger'
+            });
+        }
+    });
+
+    function EliminarExperiencia(Id) {
+        var ProspectoExperiencia = new Object();
+        ProspectoExperiencia.Id = Id;
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("ProspectoExperiencia_Eliminar_Lista", "ProspectoExperiencia")",
+            async: false,
+            data: JSON.stringify(ProspectoExperiencia),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                CargaExperiencia();
+            },
+            error: function () {
+                CargaExperiencia();
+            }
+        });
+    }
+
+    function CargaExperiencia() {
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("ProspectoExperiencia_Listar", "ProspectoExperiencia")",
+            async: false,
+            data: "",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                var Table = "<div class='timeline timeline-one-side'> ";
+
+                for (var b = 0; b < result.length; b++) {
+
+                    Table += "<div class='timeline-block mb-3'>" +
+                        "<span class='timeline-step'>" +
+                        "<i class='ni ni-briefcase-24 text-primary text-gradient'></i>" +
+                        "</span>" +
+                        "<div class='timeline-content'>" +
+                        "<h6 class='text-dark text-sm font-weight-bold mb-0'>" + result[b].Cargo + "</h6>" +
+                        "<h6 class='text-dark text-sm font-weight-bold mb-0'>" + result[b].NombreEmpresa + "</h6>";
+
+                    if (result[b].TrabajoActivo == 1) {
+                        Table += "<p class='text-secondary font-weight-bold text-xs mt-1 mb-0'>" + FormatoDefecha(result[b].FechaInicio) + "- Actualmente trabajo aquí </p>";
+                    } else {
+                        Table += "<p class='text-secondary font-weight-bold text-xs mt-1 mb-0'>" + FormatoDefecha(result[b].FechaInicio) + " - " + FormatoDefecha(result[b].FechaTermino) + " </p>";
+                    }
+                    Table += "<a class='btn btn-link' onclick='EliminarExperiencia(" + result[b].Id + ")'>Eliminar</a>";
+                    Table += "</div>" +
+                        "</div>";
+                }
+                Table += "</div>";
+
+                $("#ListaEmpleos").html(Table);
+            },
+            error: function () {
+
+            }
+        });
+    }
+
+    function ValidarFormExperiencia() {
+        var result = false;
+        var From = false;
+        var FechaTermino = false;
+
+        $('#Modal_Cargo').css("border", "1px solid #e293d3");
+        $('#Modal_Empresa').css("border", "1px solid #e293d3");
+        $('#Modal_Funciones').css("border", "1px solid #e293d3");
+        $('#Modal_SueldoInicial').css("border", "1px solid #e293d3");
+        $('#Modal_SueldoFinal').css("border", "1px solid #e293d3");
+        $('#Modal_FechaInicio').css("border", "1px solid #e293d3");
+
+        if ($('#Modal_Cargo').val().length > 0) {
+            $('#Modal_Cargo').css("border", "1px solid #d2d6da");
+        }
+
+        if ($('#Modal_Empresa').val().length > 0) {
+            $('#Modal_Empresa').css("border", "1px solid #d2d6da");
+        }
+
+        if ($('#Modal_Funciones').val().length > 0) {
+            $('#Modal_Funciones').css("border", "1px solid #d2d6da");
+        }
+
+        if ($('#Modal_SueldoInicial').val().length > 0) {
+            $('#Modal_SueldoInicial').css("border", "1px solid #d2d6da");
+        }
+
+        if ($('#Modal_SueldoFinal').val().length > 0) {
+            $('#Modal_SueldoFinal').css("border", "1px solid #d2d6da");
+        }
+
+        if ($('#Modal_FechaInicio').val().length > 0) {
+            $('#Modal_FechaInicio').css("border", "1px solid #d2d6da");
+        }
+
+        if (!$("#MostrarFecha").is(':checked')) {
+            $('#Modal_FechaTermino').css("border", "1px solid #e293d3");
+
+            if ($('#Modal_FechaTermino').val().length > 0) {
+                $('#Modal_FechaTermino').css("border", "1px solid #d2d6da");
+                FechaTermino = true;
+            }
+        } else {
+            FechaTermino = true;
+        }
+
+        if ($('#Modal_Cargo').val().length > 0) {
+            if ($('#Modal_Empresa').val().length > 0) {
+                if ($('#Modal_Funciones').val().length > 0) {
+                    if ($('#Modal_SueldoInicial').val().length > 0) {
+                        if ($('#Modal_SueldoFinal').val().length > 0) {
+                            if ($('#Modal_FechaInicio').val().length > 0) {
+                                From = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if (From) {
+            if (FechaTermino) {
+                result = true;
+            }
+        }
+
+        return result;
+    }
+
+    function FormatoDefecha(fechaEnFormatoJSON) {
+
+        var FormatoDecha = "";
+
+        // Extraer el número de milisegundos de la cadena utilizando una expresión regular
+        var milisegundos = parseInt(fechaEnFormatoJSON.match(/\d+/)[0]);
+
+        // Crear un objeto de fecha a partir de los milisegundos
+        var fecha = new Date(milisegundos);
+
+        // Obtener el día, mes y año
+        var dia = fecha.getDate();
+        var mes = fecha.getMonth() + 1; // Los meses comienzan desde 0, así que sumamos 1
+        var año = fecha.getFullYear();
+
+        // Formatear la fecha como "dd-MM-yyyy"
+        var fechaFormateada = ('0' + dia).slice(-2) + '-' + ('0' + mes).slice(-2) + '-' + año;
+
+        FormatoDecha = fechaFormateada;
+
+        return FormatoDecha;
+    }
+</script>
+
+<script>
+    function SubirArchivo() {
+        $("#fileInputArchivo").click();
+    }
+
+    $('#fileInputArchivo').change(function () {
+        var fileInput = document.getElementById('fileInputArchivo');
+
+        if (fileInput.files.length > 0) {
+            for (i = 0; i < fileInput.files.length; i++) {
+                var ext = fileInput.files[i].name.split('.').pop();
+                Extencion = fileInput.files[i].name.split('.').pop();
+
+                // Convertimos en minúscula porque
+                // la extensión del archivo puede estar en mayúscula
+                ext = ext.toLowerCase();
+
+                if (ext == 'pdf' || ext == 'docx' || ext == 'doc') {
+                    Carga = true;
+                } else {
+                    Carga = false;
+                    Formato = ext;
+                    break;
+                }
+            }
+
+            for (i = 0; i < fileInput.files.length; i++) {
+                var filesize = ((fileInput.files[i].size / 1024) / 1024).toFixed(4);
+
+                if (filesize < 10) {
+                    CargaTam = true;
+                } else {
+                    CargaTam = false;
+                    Tam = filesize;
+                    break;
+                }
+            }
+
+            if (Carga) {
+                if (CargaTam) {
+
+                    var formData = new FormData();
+
+                    for (i = 0; i < fileInput.files.length; i++) {
+                        formData.append(fileInput.files[i].name, fileInput.files[i]);
+                    }
+
+                    $("#fileProgresArchivo").show();
+
+                    $.ajax({
+                        url: '/api/FileAPI/UploadFileArchivo',
+                        type: 'POST',
+                        data: formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: function (documento) {
+                            CargaArchivo(documento);
+                        },
+                        xhr: function () {
+                            var fileXhr = $.ajaxSettings.xhr();
+                            if (fileXhr.upload) {
+                                $("progress").show();
+                                fileXhr.upload.addEventListener("progress", function (e) {
+                                    if (e.lengthComputable) {
+                                        $("#fileProgresArchivo").attr({
+                                            value: e.loaded,
+                                            max: e.total
+                                        });
+                                    }
+                                }, false);
+                            }
+                            return fileXhr;
+                        },
+                        error: function () {
+                            $.notify({
+                                message: "Problemas para leer el archivo"
+                            }, {
+                                type: 'danger'
+                            });
+                            CerrarProgresArchivo();
+                        }
+                    }).done(function (results) {
+                        setTimeout(CerrarProgresArchivo, 1000);
+                    });
+
+                } else {
+                    $.notify({
+                        message: "Intentas cargar un archivo muy pesado: " + Tam + " MG" + " Límite permitido 10 MG"
+                    }, {
+                        type: 'danger'
+                    });
+                }
+            } else {
+                $.notify({
+                    message: "Intentas cargar un formato no permitido: " + Formato + " Formato de archivo permitido: .pdf, .docx, doc ."
+                }, {
+                    type: 'danger'
+                });
+            }
+
+        } else {
+            $.notify({
+                message: "Formulario incompleto , Selecciona un archivo."
+            }, {
+                type: 'danger'
+            });
+        }
+    });
+
+    function CerrarProgresArchivo() {
+        $("#fileProgresArchivo").css("display", "none");
+    }
+
+    function CargaArchivo(documento) {
+
+        var Cat_TipoArchivo = new Object();
+        Cat_TipoArchivo.Id = 1;
+
+        var ProspectoArchivo = new Object();
+        ProspectoArchivo.Id = documento.Id;
+        ProspectoArchivo.Cat_TipoArchivo = Cat_TipoArchivo;
+        ProspectoArchivo.NmArchivo = documento.NmArchivo;
+        ProspectoArchivo.NmOriginal = documento.NmOriginal;
+        ProspectoArchivo.Extencion = documento.Extencion;
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("ProspectoArchivo_Agregar_Lista", "ProspectoArchivo")",
+            async: false,
+            data: JSON.stringify(ProspectoArchivo),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                if (data.Id > 0) {
+                    MostrarCV(ProspectoArchivo);
+
+                } else  {
+                    $.notify({
+                        message: "Archivo no registrado ! , Verifica tu información"
+                    }, {
+                        type: 'danger'
+                    });
+                }
+            },
+            error: function () {
+                $.notify({
+                    message: "Archivo no registardo ! , Intentelo mas tarde."
+                }, {
+                    type: 'danger'
+                });
+            }
+        });
+
+    }
+
+    function MostrarCV(ProspectoArchivo)
+    {
+
+        var Table = "<ul class='list-group'>" +
+                        "<li class='list-group-item border-0 d-flex align-items-center px-0 mb-2'>" +
+                            "<div class='avatar me-3'>";
+                            if (ProspectoArchivo.Extencion == '.pdf') {
+                                Table += "<img src='../images/ImgPdf.png' class='border-radius-lg shadow'>";
+                            } else {
+                                Table += "<img src='../images/ImgWork.jpg' class='border-radius-lg shadow'>";
+                            }
+        Table +=            "</div>" +
+                            "<div class='d-flex align-items-start flex-column justify-content-center'>" +
+                                "<h6 class='mb-0 text-sm'>Curriculum vitae.</h6>" +
+                                "<p class='mb-0 text-xs'>" + ProspectoArchivo.NmOriginal + "</p>" +
+                                "<a class='btn btn-link' onclick='EliminarArchivo(" + ProspectoArchivo.Id + ")'>Eliminar</a>" +
+                            "</div>";
+                            if (ProspectoArchivo.Extencion == '.pdf') {
+                                Table += "<a class='btn btn-link pe-3 ps-0 mb-0 ms-auto' onclick='MostrarPDF()'>Mostrar</a>";
+                            } else {
+                                Table += "<a class='btn btn-link pe-3 ps-0 mb-0 ms-auto' onclick='DescargarArchivo()'>Descargar</a>";
+                            }
+        Table +=        "" +
+                        "</li>" +
+                    "</ul>";
+
+        $("#DivListPDF").html(Table);
+    }
+
+    function MostrarPDF() {
+           
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("ProspectoArchivo_Consultar_Lista", "ProspectoArchivo")",
+            async: false,
+            data: "",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                var mail = "https://" + data.NmArchivo;
+                $('#iframepdf').attr('src', mail);
+            },
+            error: function () {
+
+            }
+        });
+        $("#ModalPDF").modal("show");
+    }
+
+    function DescargarArchivo() {
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("ProspectoArchivo_Consultar_Lista", "ProspectoArchivo")",
+            async: false,
+            data: "",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                var pdfUrl = "https://" + data.NmArchivo;
+
+                var link = document.createElement('a');
+                link.href = pdfUrl;
+                link.download = data.NmOriginal; // Nombre del archivo
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+            },
+            error: function () {
+
+            }
+        });
+    }
+
+    function EliminarArchivo() {
+
+        $("#DivListPDF").html("");
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("ProspectoArchivo_Eliminar_Lista", "ProspectoArchivo")",
+            async: false,
+            data: JSON.stringify(ProspectoArchivo),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+
+            },
+            error: function () {
+
+            }
+        });
+
+    }
+</script>
+<script>
+
+    function AgregarFechaFin() {
+        if ($('#MostrarFecha').prop('checked')) {
+            $("#ModalFechaFin").css("display", "none");
+        } else {
+            $("#ModalFechaFin").show();
+        }
+    }
+
+    function AgregarExperiencia() {
+        if ($('#MostrarExperiencia').prop('checked')) {
+            $("#DivExperiencia").show();
+        } else {
+            $("#DivExperiencia").css("display", "none");
+        }
+    }
+</script>
+
+<script>
+
+    (function () {
+        new FroalaEditor("#edit", {
+            attribution: false,
+            events: {
+                "image.beforeUpload": function (files) {
+                    var editor = this;
+                    if (files.length) {
+                        // Create a File Reader.
+                        var reader = new FileReader();
+                        // Set the reader to insert images when they are loaded.
+                        reader.onload = function (e) {
+                            var result = e.target.result;
+                            editor.image.insert(result, null, null, editor.image.get());
+                        };
+                        // Read image as base64.
+                        reader.readAsDataURL(files[0]);
+                    }
+                    editor.popups.hideAll();
+                    // Stop default upload chain.
+                    return false;
+                }
+            }
+        })
+
+    })()
+
+    function ValidaInput(name) {
+        if ($('#' + name).val().length > 0) {
+            $('#' + name).css("border", "1px solid #d2d6da");
+        } else {
+            $('#' + name).css("border", "1px solid #e293d3");
+        }
+    }
+
+    function ValidaSelect(name) {
+        if ($('#' + name + ' option:selected').val() > 0) {
+        } else {
+            $('#' + name).css("border", "1px solid #e293d3");
+        }
+    }
+
+    function Mayus(e) {
+        e.value = e.value.toUpperCase();
+    }
+
+    const MILLARES = ",";
+    const DECIMALES = ".";
+    const DTFLOCAL = new Intl.NumberFormat('en-US');
+
+    // Formatear solamente numeros decimales positivos
+    function numberFormatPositivo(e) {
+        if (this.value === "") {
+            return;
+        }
+        // Obtenemos un array con el numero y los decimales si hay
+        let contenido = "";
+        if (MILLARES === ",") {
+            contenido = this.value.replace(/[^0-9\.]/g, "").split(".");
+        } else {
+            contenido = this.value.replace(/[^0-9\,]/g, "").split(",");
+        }
+        // añadimos los separadores de miles al primer numero del array
+        contenido[0] = contenido[0].length ? DTFLOCAL.format(parseInt(contenido[0])) : "0";
+        // Juntamos el numero con los decimales si hay decimales
+        this.value = contenido.length > 1 ? contenido.slice(0, 2).join(".") : contenido[0];
+    }
+
+    window.onload = function () {
+        //SE EJECUTA DESPUES CARGAR EL CODIGO CSS y HTML
+        // Creamos el evento keyup
+        document.querySelectorAll(".numberPositivo").forEach(el => el.addEventListener("keyup", numberFormatPositivo));
+    };
+
+    $(document).ready(function () {
+        $('#Dashboard').addClass("nav-link active");
+        $('#TitlePage').html("Vacante disponible");
+        $('#SubTitlePage').html("@ViewBag.Vacante.Titulo");
+    });
+
+
+
+    $(document).ready(function () {
+        setTimeout(function () {
+            EliminaPublicidad();
+        }, 1000);
+        
+    });
+
+    function EliminaPublicidad() {
+        // Remove the HTML code
+        $('div[style="z-index:9999;width:100%;position:relative"]').remove();
+        $('#fr-logo').remove();
+    }
+</script>

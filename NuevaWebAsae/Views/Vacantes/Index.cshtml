@@ -1,0 +1,319 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutVacantes.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css" integrity="sha512-6qkvBbDyl5TDJtNJiC8foyEVuB6gxMBkrKy67XpqnIDxyvLLPJzmTjAj1dRJfNdmXWqD10VbJoeN4pOQqDwvRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    li {
+        list-style: none;
+        margin-bottom: 20px;
+    }
+    .cartaVacante {
+        transition: background-color 0.3s ease;
+    }
+
+    .cartaVacante:hover {
+        background-color: #F7FBFF;
+        border-radius: 10px;
+        background-clip: content-box;
+    }
+
+    @@media (max-width: 767px) {
+        .Vacante {
+            display: none;
+        }
+        .Vacante2 {
+            display: none;
+        }
+    }
+
+
+</style>
+
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="row">
+                <div class="col-md-12 mb-lg-0 mb-4">
+                    <div id="barra1" class="card mt-4 custom_scrollbar-js" style="max-height: 100vh; overflow-y: auto;">
+                        <div class="card-header pb-0 p-3">
+                            <div class="row">
+                                <div class="col-6 d-flex align-items-center">
+                                    <h6 class="mb-0">Ofertas Disponibles </h6>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <ul style="margin-top:3%;">
+                                    @{
+                                        if (ViewBag.Vacantes != null)
+                                        {
+                                            foreach (var item in ViewBag.Vacantes)
+                                            {
+                                                <li onclick="InfoVacante(@item.Id);" style="cursor:pointer" class="cartaVacante">
+                                                    <div class="card crd-boday border card-plain border-radius-lg d-flex" style="padding:3%">
+                                                        <div class="row">
+                                                            <div class="col-10">
+                                                                <h5>@item.Titulo</h5>
+                                                                <div class="col" style="margin-bottom:3%">
+                                                                    <span style="border: 1px solid #D1E3F2; color: #313944; background-color: #fff; border-radius: 10px; padding: 1.5%; font-size: 74%; margin-right: 10px;">@item.Cat_Modalidad.Nombre</span>
+                                                                    @if (item.SalarioInicial == 0)
+                                                                    {<span style="border: 1px solid #D1E3F2; color: #313944; background-color: #fff; border-radius: 10px; padding: 1.5%; font-size: 74%; margin-right: 10px;">Sueldo oculto</span>}
+                                                                    else
+                                                                    {<span style="border: 1px solid #D1E3F2; color: #313944; background-color: #fff; border-radius: 10px; padding: 1.5%; font-size: 74%; margin-right: 10px;">$@item.SalarioInicial a $@item.SalarioFinal</span>}
+                                                                    <span style="border: 1px solid #D1E3F2; color: #313944; background-color: #fff; border-radius: 10px; padding: 1.5%; font-size: 74%; margin-right: 10px;">@item.Cat_EsquemaContratacion.Nombre</span>
+                                                                </div>
+                                                                <div class="col" style="margin-bottom:3%">
+                                                                    <i class="fa fa-clock-o" style="margin-right: 7px; color: #418CCB"></i><span style="font-size: 74%">@item.Cat_JornadaTrabajo.Nombre</span>
+                                                                </div>
+
+                                                                <i class="fa fa-map-marker" style="margin-right: 10px; color: #418CCB"></i><span>@item.ClienteDirecciones.Direccion</span>
+                                                                <p></p>
+                                                                <p style="font-size:75%">Fecha de publicación: @item.FechaRegistro</p>
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <img src="~/images/jobctrl/asaelogo.png" style="width: 100%; padding-top: 50%;" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            }
+                                        }
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Vacante col-lg-6 col-md-6" style="display:none">
+            <div class="row">
+                <div class="col-md-12 mb-lg-0 mb-4">
+                    <div id="barra2" class="card mt-4" style="height: 100vh; overflow-y: auto;">
+                        <div class="card-header pb-0 p-3">
+                            <div class="row">
+                                <div class="col-10 align-items-center">
+                                    <h6 id="Titulo" class="mb-0">Seleccione una vacante de la lista para ver más detalles.</h6>
+                                    <i class="fa fa-map-marker" style="margin-right: 10px; color: #418CCB"></i><span id="direccion">Dirección</span>
+                                    <p></p>
+                                    <div class="col-md-12 col-lg-12">
+                                        <div id="botonjs1">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <img src="~/images/jobctrl/asaelogo.png" style="width: 100%;" />
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="card-body p-3" style="padding-top: 0px !important;">
+                            <div class="row">
+                                <div class="col-12" style="margin-bottom:3%">
+                                    <span id="modalidad" style="border: 1px solid #D1E3F2; color: #313944; background-color: #fff; border-radius: 10px; padding: 1.5%; font-size: 74%; margin-right: 10px;">Modalidad</span>
+                                    <span id="Salario" style="border: 1px solid #D1E3F2; color: #313944; background-color: #fff; border-radius: 10px; padding: 1.5%; font-size: 74%; margin-right: 10px;">Salario</span>
+                                    <span id="esquema" style="border: 1px solid #D1E3F2; color: #313944; background-color: #fff; border-radius: 10px; padding: 1.5%; font-size: 74%; margin-right: 10px;">esquema</span>
+
+                                    <i class="fa fa-clock-o" style="margin-right: 7px; color: #418CCB"></i><span id="jornada" style="font-size: 74%">Jornada</span>
+                                </div>
+
+                                <div class="col-12" style="text-align:justify">
+                                    <div id="contenido">
+                                       
+                                    </div>
+                                </div>
+
+                                <p id="Fecha" style="font-size:75%">Fecha de publicación: 3 de septiembre de 2023</p>
+
+                                <div class="col-md-12 col-lg-12 text-center">
+                                    <div id="botonjs2">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Vacante2 col-lg-6 col-md-6">
+            <div class="row">
+                <div class="col-md-12 mb-lg-0 mb-4">
+                    <div id="barra2" class="card mt-4" style="height: 100vh; overflow-y: auto;">
+                        <div class="card-header pb-0 p-3">
+                            <div class="row">
+                                <div class="col-10 align-items-center">
+                                    <h6 class="mb-0">Seleccione una vacante de la lista para ver más detalles.</h6>                                    
+                                </div>
+                                <div class="col-2">
+                                    <img src="~/images/jobctrl/asaelogo.png" style="width: 100%;" />
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="card-body p-3" style="padding-top: 0px !important;">
+                            <div class="row">
+                             
+
+                                <div class="col-12" style="text-align:justify">
+                                    <div>
+                                        <br />
+                                        <h3 style="text-align: center;">Bienvenido a la página de selección de vacantes</h3>
+                                        <div style="text-align: center;">
+                                            <img src="~/images/jobctrl/empleo.gif" alt="Texto alternativo de la imagen" width="75%">
+                                        </div>
+                                    </div>
+                                </div>
+                               
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js" integrity="sha512-2hIlk2fL+NNHkULe9gGdma/T5vSYk80U5tvAFSy3dGEl8XD4h2i6frQvHv5B+bm/Itmi8nJ6krAcj5FWFcBGig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+    $(document).ready(function () {
+        $('#Dashboard').addClass("nav-link active");
+        $("#miElemento").mCustomScrollbar();
+        $("#barra1").mCustomScrollbar({
+            theme: "minimal-dark"
+        });
+        $("#barra2").mCustomScrollbar({
+            theme: "minimal-dark"
+        });
+
+
+    });
+
+    function InfoVacante(Id) {
+         var anchoPantalla = $(window).width();
+
+        if (anchoPantalla <= 767) {
+           var obj = {};
+
+            obj['UrlVaible'] = Id;
+
+            var jsonObject = {
+                "URL": obj
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("URL_Cifrar", "URLS")",
+                async: false,
+                data: JSON.stringify(jsonObject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    window.location.href = '@Url.Action("InfoVacante", "Vacantes")?Id=' + result.Url;
+
+                },
+                error: function () {
+                    AlertDanger("Problemas al consultar ", "Intentolo mas tarde.");
+                }
+            });
+
+        } else {
+            VerVacante(Id);
+        }
+    }
+
+    function VerVacante(Id) {
+
+        $(".Vacante2").css("display", "none");
+        $(".Vacante").css("display", "block");
+        var obj = {};
+        obj['Id'] = Id;
+
+        var jsonObject = {
+            "vacante": obj
+        };
+
+        $.ajax({
+            url: "@Url.Action("Vacante_Seleccionar_Id", "Vacantes")",
+            data: JSON.stringify(jsonObject),
+            type: "POST",
+            contentType: "application/json",
+            dataType: "json",
+
+            success: function (resultado) {
+
+                $('#Titulo').text(resultado.Titulo);
+                if (resultado.SalarioInicial === 0) {
+                    $('#Salario').text('Salario no disponible');
+                } else {
+                    $('#Salario').text('$' + resultado.SalarioInicial + ' a ' + '$' + resultado.SalarioFinal);
+                }
+                $('#Fecha').text('Fecha de publicación: ' + resultado.FechaRegistro);
+                $('#direccion').text(resultado.ClienteDirecciones.Direccion);
+                $('#contenido').html(resultado.Contenido);
+                $('#jornada').html(resultado.Cat_JornadaTrabajo.Nombre);
+                $('#modalidad').html(resultado.Cat_Modalidad.Nombre);
+                $('#esquema').html(resultado.Cat_EsquemaContratacion.Nombre);
+
+                
+                $('#botonjs1').empty();
+                $('#botonjs2').empty();
+
+                var boton = $('<a>');
+                boton.addClass('btn bg-gradient-info w-50 mb-0 mx-auto');
+                boton.text('Postularme');
+                boton.on('click', function () {
+                    postularse(resultado.Id);
+                });
+                $('#botonjs1, #botonjs2').append(boton);
+
+            },
+            error: function (resultado) {
+                alert("Error de ejecucion ");
+            }
+        });
+    }
+
+    function postularse(Id) {
+            var obj = {};
+
+            obj['UrlVaible'] = Id;
+
+            var jsonObject = {
+                "URL": obj
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("URL_Cifrar", "URLS")",
+                async: false,
+                data: JSON.stringify(jsonObject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    window.location.href = '@Url.Action("Solicitud", "Prospecto")?Id=' + result.Url;
+
+                },
+                error: function () {
+                    AlertDanger("Problemas al consultar ", "Intentolo mas tarde.");
+                }
+            });
+    }
+
+
+</script>
+
+

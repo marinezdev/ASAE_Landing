@@ -1,0 +1,269 @@
+﻿
+@{
+    ViewBag.Title = "VacantePredisenio";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css" integrity="sha512-6qkvBbDyl5TDJtNJiC8foyEVuB6gxMBkrKy67XpqnIDxyvLLPJzmTjAj1dRJfNdmXWqD10VbJoeN4pOQqDwvRA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    .container {
+        width: 90%;
+        padding: 10px 40px;
+    }
+
+        .container .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .container .swiper-slide {
+            position: relative;
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            border-radius: 15px;
+            text-align: start;
+            box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
+        }
+
+            .container .swiper-slide img {
+                display: block;
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+            }
+
+            .container .swiper-slide .card-description {
+                padding: 1rem 1rem;
+            }
+
+            .container .swiper-slide .card-title, .container .swiper-slide .card-text {
+                margin-bottom: .5rem;
+            }
+
+            .container .swiper-slide .card-link {
+                text-align: center;
+            }
+
+                .container .swiper-slide .card-link a {
+                    text-decoration: none;
+                    color: #1d6ce2;
+                }
+
+    .swiper-button-next {
+        right: 26px !important;
+    }
+
+    .swiper-button-prev {
+        left: 26px !important;
+    }
+</style>
+
+
+
+
+
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card h-100">
+                <div class="card-header pb-0 p-3">
+                    <div class="row">
+                        <div class="col-6 d-flex align-items-center">
+                            <h6 class="mb-0">Vacantes prediseñadas </h6>
+                        </div>
+                        <p>
+                            Elige el diseño de vacante que desees usar.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-body p-3 pb-0 ">
+                    <!-- Swiper -->
+                    <div class="container" style="overflow:hidden">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-container mySwiper">
+                            <div class="swiper-wrapper">
+                                @{
+                                    if (ViewBag.Vacantes != null)
+                                    {
+                                        foreach (var item in ViewBag.Vacantes)
+                                        {
+
+
+                                            <div class="swiper-slide">
+                                                <div class="card-container">
+                                                    <img src="@item.img" alt="">
+                                                    <div class="barra card-content" style="height:11vh; overflow-y: auto;">
+                                                        <p></p>
+                                                        <div class="card-title text-center">
+                                                            <h4>@item.Titulo</h4>
+                                                        </div>
+                                                        @*<div class="card-text">
+                                                            <p>
+                                                                @Html.Raw(@item.Contenido)
+                                                            </p>
+                                                        </div>*@
+                                                    </div>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <div class="row">
+                                                        <a style="color:white" class="btn bg-gradient-dark mb-0" onclick="Usarvacante(@item.Id)">Usar plantilla</a>
+                                                        <p></p>
+                                                        <a style="color:white" class="btn bg-gradient-dark mb-0" onclick="Vistavacante(@item.Id)">Vista previa</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        }
+
+                                    }
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Swiper JS -->
+
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js" integrity="sha512-2hIlk2fL+NNHkULe9gGdma/T5vSYk80U5tvAFSy3dGEl8XD4h2i6frQvHv5B+bm/Itmi8nJ6krAcj5FWFcBGig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $(".barra").mCustomScrollbar({
+            theme: "minimal-dark"
+        });
+
+
+    });
+
+    var swiper = new Swiper('.swiper-container', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        },
+        slidesPerView: 1,
+        spaceBetween: 10,
+        //init: false,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+
+        breakpoints: {
+            620: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            680: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+            },
+            920: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+            },
+            1240: {
+                slidesPerView: 4,
+                spaceBetween: 50,
+            },
+        }
+    });
+
+    function Usarvacante(Id) {
+          var obj = {};
+
+            obj['UrlVaible'] = Id;
+
+            var jsonObject = {
+                "URL": obj
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("URL_Cifrar", "URLS")",
+                async: false,
+                data: JSON.stringify(jsonObject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    window.location.href = '@Url.Action("NewWork", "Vacantes")?Id=' + result.Url;
+
+                },
+                error: function () {
+                    AlertDanger("Problemas al consultar ", "Intentolo mas tarde.");
+                }
+            });
+    }
+
+    function Vistavacante(Id) {
+       
+        var obj = {};
+        obj['Id'] = Id;
+
+        var jsonObject = {
+            "vacante": obj
+        };
+
+        $.ajax({
+            url: "@Url.Action("PlantillaVacante_Listar_Id", "Vacantes")",
+            data: JSON.stringify(jsonObject),
+            type: "POST",
+            contentType: "application/json",
+            dataType: "json",
+
+            success: function (resultado) {
+    
+                const info = `
+                  <div>
+                    <img src="${resultado.img}" alt="Imagen" style="width: 90px; height: 90px; border-radius: 50%;">
+                    <div><strong>Título:</strong>${resultado.Titulo}</div>
+                    <div><strong>Contenido:</strong></div>
+                    <div>${resultado.Contenido}</div>
+                  </div>
+                `;
+
+                swal({
+                    title: "",
+                    text: info,
+                    html: true
+                });
+
+                //swal({
+                //    title: '',
+                //    content: {
+                //        element: "div",
+                //        attributes: {
+                //            innerHTML: info
+                //        },
+                //    },
+                //    button: {
+                //        text: "Aceptar",
+                //        closeModal: true,
+                //    }
+                //});
+            },
+            error: function (resultado) {
+                alert("Error de ejecucion ");
+            }
+        });
+    }
+</script>

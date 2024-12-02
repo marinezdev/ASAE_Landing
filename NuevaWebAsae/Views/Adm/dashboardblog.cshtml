@@ -1,0 +1,634 @@
+﻿
+@{
+    ViewBag.Title = "dashboardblog";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<link href="~/Assets/js/plugins/chart.js/datasc.css" rel="stylesheet" />
+<style>
+    table.dataTable thead th {
+        border-bottom: 1px solid #111;
+    }
+
+    table.dataTable tfoot th {
+        border-top: 1px solid #111;
+    }
+
+    table.dataTable.no-footer {
+        border-bottom: 0px solid rgb(255 255 255 / 90%);
+    }
+
+    .btn {
+        margin-bottom: 0;
+        letter-spacing: -0.025rem;
+        text-transform: uppercase;
+        box-shadow: 0 4px 7px -1px rgb(0 0 0 / 11%), 0 2px 4px -1px rgb(0 0 0 / 7%);
+        background-size: 150%;
+        background-position-x: 25%;
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+        color: rgb(255 255 255 / 90%) !important;
+        border: 0px solid #979797;
+        background-color: white;
+        background-image: linear-gradient( 310deg, #2152ff 0%, #21d4fd 100%);
+        border-radius: 0.5rem;
+    }
+</style>
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <a href="@Url.Action("blog", "Adm")" class="btn bg-gradient-info w-100 mt-4 mb-0"> Nuevo Articulo  </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <a href="@Url.Action("ConsultaArticulo", "Adm")" class="btn bg-gradient-info w-100 mt-4 mb-0"> Consultar artículos   </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <a href="@Url.Action("Categorias", "Adm")" class="btn bg-gradient-info w-100 mt-4 mb-0"> Categorías </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pb-0">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card mb-3">
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <h6>Total, de artículos registrados  </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12 text-center" height="200">
+                                <h1 style="font-size:100px">@ViewBag.Total</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Categorías mas vistas </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <canvas id="myChart3" width="600" height="250"> </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6> Actividad de visualizaciones  </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <canvas id="densityChart2" width="600" height="150"> </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Artículos publicados por categoría  </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <canvas id="myChart" width="600" height="250"> </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Artículos publicados por categoría  % </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <canvas id="myChart2" width="600" height="250"> </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+
+
+
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+<script src="~/Scripts/jquery.min.js"></script>
+
+
+<script>
+    var densityCanvas = document.getElementById("myChart3");
+
+    Chart.defaults.global.defaultFontFamily = "Arial, sans-serifapple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif";
+    Chart.defaults.global.defaultFontSize = 14;
+
+    var densityData = {
+        label: 'Total, Categorias.',
+
+        options: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    //fontColor: 'black',
+                    defaultFontFamily: 'Arial, sans-serifapple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
+                    fontColor: 'rgb(154, 154, 154)',
+                    usePointStyle: true,
+                }
+            }
+        },
+
+
+        data: [
+                @foreach(var Com in ViewBag.Categorias)
+                {
+                    @Html.Raw(@Com.Total)
+                    @Html.Raw(",")
+                }
+            ],
+    backgroundColor: [
+        'rgba(67, 206, 162, 0.9)',
+        'rgba(63, 194, 162, 0.9)',
+        'rgba(63, 195, 162, 0.9)',
+        'rgba(54, 169, 161, 0.9)',
+        'rgba(50, 160, 160, 0.9)',
+        'rgba(49, 158, 160, 0.9)',
+        'rgba(44, 145, 159, 0.9)',
+        'rgba(37, 126, 159, 0.9)',
+        'rgba(34, 116, 158, 0.9)',
+        'rgba(28, 101, 158, 0.9)',
+        'rgba(26, 95, 157, 0.9)',
+        'rgba(25, 91, 157, 0.9)',
+
+        'rgba(26, 95, 157, 0.9)',
+        'rgba(28, 101, 158, 0.9)',
+        'rgba(34, 116, 158, 0.9)',
+        'rgba(37, 126, 159, 0.9)',
+        'rgba(44, 145, 159, 0.9)',
+        'rgba(49, 158, 160, 0.9)',
+        'rgba(50, 160, 160, 0.9)',
+        'rgba(54, 169, 161, 0.9)',
+        'rgba(63, 195, 162, 0.9)',
+        'rgba(63, 194, 162, 0.9)',
+        'rgba(67, 206, 162, 0.9)',
+
+    ],
+        borderColor: [
+            'rgba(63, 194, 162, 0.9)',
+            'rgba(63, 195, 162, 0.9)',
+            'rgba(54, 169, 161, 0.9)',
+            'rgba(50, 160, 160, 0.9)',
+            'rgba(49, 158, 160, 0.9)',
+            'rgba(44, 145, 159, 0.9)',
+            'rgba(37, 126, 159, 0.9)',
+            'rgba(34, 116, 158, 0.9)',
+            'rgba(28, 101, 158, 0.9)',
+            'rgba(26, 95, 157, 0.9)',
+            'rgba(25, 91, 157, 0.9)',
+
+
+            'rgba(26, 95, 157, 0.9)',
+            'rgba(28, 101, 158, 0.9)',
+            'rgba(34, 116, 158, 0.9)',
+            'rgba(37, 126, 159, 0.9)',
+            'rgba(44, 145, 159, 0.9)',
+            'rgba(49, 158, 160, 0.9)',
+            'rgba(50, 160, 160, 0.9)',
+            'rgba(54, 169, 161, 0.9)',
+            'rgba(63, 195, 162, 0.9)',
+            'rgba(63, 194, 162, 0.9)',
+
+        ],
+            borderWidth: 1,
+                hoverBorderWidth: 0,
+                    hoverBackgroundColor: [
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                    ],
+        };
+
+    var chartOptions = {
+        scales: {
+            yAxes: [{
+                barPercentage: 0
+            }]
+        },
+        elements: {
+            rectangle: {
+                borderSkipped: 'left',
+            }
+        }
+    };
+
+    var barChart = new Chart(densityCanvas, {
+        type: 'bar',
+        data: {
+            labels: [
+                    @foreach(var Com in ViewBag.Categorias)
+                    {
+                        @Html.Raw("'")
+                        @Html.Raw(@Com.Nombre)
+                        @Html.Raw("'")
+                        @Html.Raw(",")
+                    }
+                ],
+    datasets: [densityData],
+            },
+    options: chartOptions
+        });
+
+</script>
+
+
+<script>
+    var xValues = [
+        @foreach(var Com in ViewBag.CategoriasTotal)
+        {
+            @Html.Raw("'")
+            @Html.Raw(@Com.Nombre)
+            @Html.Raw("'")
+            @Html.Raw(",")
+        }
+    ];
+    var yValues = [
+        @foreach(var Com in ViewBag.CategoriasTotal)
+        {
+            @Html.Raw(@Com.Total)
+            @Html.Raw(",")
+        }
+    ];
+    var barColors = [
+        'rgba(67, 206, 162, 0.9)',
+        'rgba(63, 194, 162, 0.9)',
+        'rgba(63, 195, 162, 0.9)',
+        'rgba(54, 169, 161, 0.9)',
+        'rgba(50, 160, 160, 0.9)',
+        'rgba(49, 158, 160, 0.9)',
+        'rgba(44, 145, 159, 0.9)',
+        'rgba(37, 126, 159, 0.9)',
+        'rgba(34, 116, 158, 0.9)',
+        'rgba(28, 101, 158, 0.9)',
+        'rgba(26, 95, 157, 0.9)',
+        'rgba(25, 91, 157, 0.9)',
+
+        'rgba(26, 95, 157, 0.9)',
+        'rgba(28, 101, 158, 0.9)',
+        'rgba(34, 116, 158, 0.9)',
+        'rgba(37, 126, 159, 0.9)',
+        'rgba(44, 145, 159, 0.9)',
+        'rgba(49, 158, 160, 0.9)',
+        'rgba(50, 160, 160, 0.9)',
+        'rgba(54, 169, 161, 0.9)',
+        'rgba(63, 195, 162, 0.9)',
+        'rgba(63, 194, 162, 0.9)',
+        'rgba(67, 206, 162, 0.9)',
+    ];
+
+    new Chart("myChart2", {
+        type: "pie",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "World Wide Wine Production 2018"
+            }
+        }
+    });
+</script>
+
+<script>
+    var densityCanvas = document.getElementById("myChart");
+
+    Chart.defaults.global.defaultFontFamily = "Arial, sans-serifapple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif";
+    Chart.defaults.global.defaultFontSize = 14;
+
+    var densityData = {
+        label: 'Total, Categorias.',
+
+        options: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    //fontColor: 'black',
+                    defaultFontFamily: 'Arial, sans-serifapple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
+                    fontColor: 'rgb(154, 154, 154)',
+                    usePointStyle: true,
+                }
+            }
+        },
+
+
+        data: [
+                @foreach(var Com in ViewBag.CategoriasTotal)
+                {
+                    @Html.Raw(@Com.Total)
+                    @Html.Raw(",")
+                }
+            ],
+    backgroundColor: [
+        'rgba(67, 206, 162, 0.9)',
+        'rgba(63, 194, 162, 0.9)',
+        'rgba(63, 195, 162, 0.9)',
+        'rgba(54, 169, 161, 0.9)',
+        'rgba(50, 160, 160, 0.9)',
+        'rgba(49, 158, 160, 0.9)',
+        'rgba(44, 145, 159, 0.9)',
+        'rgba(37, 126, 159, 0.9)',
+        'rgba(34, 116, 158, 0.9)',
+        'rgba(28, 101, 158, 0.9)',
+        'rgba(26, 95, 157, 0.9)',
+        'rgba(25, 91, 157, 0.9)',
+
+        'rgba(26, 95, 157, 0.9)',
+        'rgba(28, 101, 158, 0.9)',
+        'rgba(34, 116, 158, 0.9)',
+        'rgba(37, 126, 159, 0.9)',
+        'rgba(44, 145, 159, 0.9)',
+        'rgba(49, 158, 160, 0.9)',
+        'rgba(50, 160, 160, 0.9)',
+        'rgba(54, 169, 161, 0.9)',
+        'rgba(63, 195, 162, 0.9)',
+        'rgba(63, 194, 162, 0.9)',
+        'rgba(67, 206, 162, 0.9)',
+
+    ],
+        borderColor: [
+            'rgba(63, 194, 162, 0.9)',
+            'rgba(63, 195, 162, 0.9)',
+            'rgba(54, 169, 161, 0.9)',
+            'rgba(50, 160, 160, 0.9)',
+            'rgba(49, 158, 160, 0.9)',
+            'rgba(44, 145, 159, 0.9)',
+            'rgba(37, 126, 159, 0.9)',
+            'rgba(34, 116, 158, 0.9)',
+            'rgba(28, 101, 158, 0.9)',
+            'rgba(26, 95, 157, 0.9)',
+            'rgba(25, 91, 157, 0.9)',
+
+
+            'rgba(26, 95, 157, 0.9)',
+            'rgba(28, 101, 158, 0.9)',
+            'rgba(34, 116, 158, 0.9)',
+            'rgba(37, 126, 159, 0.9)',
+            'rgba(44, 145, 159, 0.9)',
+            'rgba(49, 158, 160, 0.9)',
+            'rgba(50, 160, 160, 0.9)',
+            'rgba(54, 169, 161, 0.9)',
+            'rgba(63, 195, 162, 0.9)',
+            'rgba(63, 194, 162, 0.9)',
+
+        ],
+            borderWidth: 1,
+                hoverBorderWidth: 0,
+                    hoverBackgroundColor: [
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                        'rgba(0, 69, 69, 1)',
+                    ],
+        };
+
+    var chartOptions = {
+        scales: {
+            yAxes: [{
+                barPercentage: 0
+            }]
+        },
+        elements: {
+            rectangle: {
+                borderSkipped: 'left',
+            }
+        }
+    };
+
+    var barChart = new Chart(densityCanvas, {
+        type: 'bar',
+        data: {
+            labels: [
+                    @foreach(var Com in ViewBag.CategoriasTotal)
+                    {
+                        @Html.Raw("'")
+                        @Html.Raw(@Com.Nombre)
+                        @Html.Raw("'")
+                        @Html.Raw(",")
+                    }
+                ],
+    datasets: [densityData],
+            },
+    options: chartOptions
+        });
+
+</script>
+
+<script>
+
+    var densityCanvas = document.getElementById("densityChart2");
+
+    //Chart.defaults.global.defaultFontFamily = "Arial, sans-serifapple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif";
+    //Chart.defaults.global.defaultFontSize = 14;
+
+    var dataFirst = {
+        label: "Visualizaciones",
+        options: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    //fontColor: 'black',
+                    /*defaultFontFamily: 'Arial, sans-serifapple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',*/
+                    fontColor: 'rgb(154, 154, 154)',
+                    usePointStyle: true,
+                }
+            },
+            /*backgroundColor: 'transparent',*/
+        },
+        borderColor: [
+            'rgba(63, 194, 162, 0.9)'
+        ],
+        /*backgroundColor: 'transparent',*/
+        borderWidth: 2,
+        hoverBorderWidth: 3,
+        data: [
+            @foreach (var Com in ViewBag.Actividad)
+            {
+                @Html.Raw(@Com.Total)
+                @Html.Raw(",")
+            }
+        ],
+        lineTension: 0.3,
+    };
+
+    var chartOptions = {
+        responsive: true,
+        /*backgroundColor: 'transparent',*/
+        title: {
+            display: true,
+            text: 'Visualizaciones del mes '
+        },
+        //tooltips: {
+        //    mode: 'index',
+        //    intersect: false,
+        //},
+        //hover: {
+        //    mode: 'nearest',
+        //    intersect: true
+        //},
+        //scales: {
+        //    yAxes: [{
+        //        barPercentage: 0.5
+        //    }]
+        //},
+        //elements: {
+        //    rectangle: {
+        //        borderSkipped: 'left',
+        //    }
+        //}
+    };
+
+    var barChart = new Chart(densityCanvas, {
+        type: 'line',
+        data: {
+            labels: [
+            @foreach (var Com in ViewBag.Actividad)
+            {
+                @Html.Raw("'")
+                @Html.Raw(@Com.Dia)
+                @Html.Raw("'")
+                @Html.Raw(",")
+            }
+            ],
+            datasets: [dataFirst],
+        },
+        options: chartOptions
+    });
+</script>
+
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $('#TableList').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+            },
+        });
+    });
+
+    function MostrarArticulo(Id) {
+        window.location.href = '@Url.Action("BlogEdit", "Adm")?Id='+Id;
+    }
+
+    $(document).ready(function () {
+        $('#Menu_Blog').addClass(" nav-link active");
+        });
+</script>

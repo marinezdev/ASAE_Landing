@@ -1,0 +1,457 @@
+﻿
+@{
+    ViewBag.Title = "Desarrollo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/whatsapp.js"></script>
+<style>
+    .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+        padding: 8px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border-top: 0px solid #ddd;
+    }
+
+
+    #hero-area {
+        background: url('../../images/soluciones/ist_Desarrollo.jpg') no-repeat 50%;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 110px 0;
+        color: #fff;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+
+        #hero-area:before {
+            content: '';
+            z-index: 9;
+            background-image: linear-gradient( 114deg, #ffffff -6%,#11707b00 65%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        #hero-area h1 {
+            font-size: 25px;
+            line-height: 25px;
+            color: rgb(101 98 100);
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: initial;
+        }
+
+        #hero-area h2 {
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 38px;
+            line-height: 27px;
+            text-transform: initial;
+            color: #605e5e;
+            font-family: 'Roboto', sans-serif;
+            margin-top: 25px;
+        }
+
+    #call-to-action {
+        background-image: linear-gradient( 114deg, #46b5e6 30%, #4059a9 99%);
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 80px 0;
+        text-align: center;
+        position: relative;
+        color: #fff;
+    }
+
+    #service-page h2 {
+        font-size: 25px;
+        line-height: 25px;
+        color: rgb(103 100 102);
+        font-weight: 700;
+        margin-bottom: 0px;
+        text-transform: initial;
+    }
+
+    #service-page h3 {
+        font-size: 14px;
+        font-weight: 300;
+        margin-bottom: 38px;
+        line-height: 22px;
+        text-transform: initial;
+        color: #605e5e;
+        font-family: 'Roboto', sans-serif;
+    }
+
+
+    #service-page2 h2 {
+        font-size: 25px;
+        line-height: 25px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #ffff;
+        text-transform: initial;
+    }
+
+    #service-page2 h3 {
+        font-size: 14px;
+        font-weight: 300;
+        margin-bottom: 38px;
+        line-height: 27px;
+        text-transform: initial;
+        color: #ffff;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    @@media (min-width: 768px) {
+        #top-bar {
+            padding: 5px 0;
+        }
+
+
+        #hero-area {
+            padding: 180px 0;
+        }
+
+        .btn-lines {
+            width: 30%;
+        }
+
+
+        .subtitle-des {
+            margin-bottom: 35px;
+        }
+
+        #top-bar {
+            padding: 5px 0;
+        }
+
+
+        #hero-area {
+            padding: 100px 0;
+        }
+
+
+        #service-page .btn-lines {
+            width: 30%;
+            padding: 20px 35px;
+        }
+
+        #hero-area h1 {
+            font-size: 40px;
+            line-height: 50px;
+        }
+
+        #hero-area h2 {
+            font-size: 18px;
+            line-height: 50px;
+        }
+
+        #service-page h2 {
+            font-size: 40px;
+            line-height: 50px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        #service-page h3 {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 38px;
+            line-height: 27px;
+            text-transform: initial;
+            color: #605e5e;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #service-page2 h2 {
+            font-size: 40px;
+            line-height: 50px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffff;
+            text-transform: initial;
+        }
+
+        #service-page2 h3 {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 38px;
+            line-height: 27px;
+            text-transform: initial;
+            color: #ffff;
+            font-family: 'Roboto', sans-serif;
+        }
+    }
+
+    .btn-wsp {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        line-height: 63px;
+        bottom: 90px;
+        right: 23px;
+        background: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 35px;
+        box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+        z-index: 1000;
+        transition: all 300ms ease;
+    }
+
+        .btn-wsp:hover {
+            background: #20ba5a;
+            -webkit-box-shadow: 10px 10px 18px -15px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 18px -15px rgba(0,0,0,0.75);
+            box-shadow: 10px 10px 18px -15px rgba(0,0,0,0.75);
+        }
+
+    @@media only screen and (min-width:320px) and (max-width:768px) {
+        .btn-wsp {
+            width: 63px;
+            height: 63px;
+            line-height: 66px;
+        }
+    }
+</style>
+
+<section id="hero-area">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="block wow fadeInUp" data-wow-delay=".1s">
+                    <section class="cd-intro">
+                        <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s">
+                            <span>
+                                Convertimos tus necesidades en soluciones innovadoras, mejorando tus procesos.
+                            </span>
+                        </h1>
+                    </section>
+                    <h2 class="wow fadeInUp animated" data-wow-delay=".1s" id="h2Titletap">
+                        Desarrollamos soluciones personalizadas de TI de acuerdo a las necesidades de negocio y requerimientos de nuestros clientes.
+                    </h2>
+
+                    <table width="100%" class="table borderless" id="Table1">
+                        <tbody>
+                            <tr>
+                                <td width="10%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" src="~/images/soluciones/250check.png" /> </td>
+                                <td width="40%">
+                                    <p class="subtitle-des wow fadeInUp animated text-justify" data-wow-delay=".1s" data-wow-duration="300ms" style=" text-align: left; font-size: 17px; margin-bottom: 1px;">
+                                        Desarrollo de Soluciones.
+                                    </p>
+                                </td>
+                                <td width="10%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" src="~/images/soluciones/250check.png" /> </td>
+                                <td width="40%">
+                                    <p class="subtitle-des wow fadeInUp animated text-justify" data-wow-delay=".1s" data-wow-duration="300ms" style="text-align: left; font-size: 17px;  margin-bottom: 1px;">
+                                        Desarrollo de Aplicaciones Móviles.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="10%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" src="~/images/soluciones/250check.png" /> </td>
+                                <td width="40%">
+                                    <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="300ms" style=" text-align: left; margin-bottom: 1px; font-size: 17px; ">
+                                        Ciclo de vida.
+                                    </p>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="block wow fadeInUp" data-wow-delay=".3s">
+                    <section class="cd-intro text-center">
+                        <br /><br />
+                        <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
+                            <img src="~/images/soluciones/Policy-Administration-768x410.png" width="100%" />
+                            @*<img src="~/images/jobctrl/asaelogo.png" width="50%" />*@
+                        </h1>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="call-to-action" style="padding: 0px 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h2 class="title wow fadeInDown" data-wow-delay=".2s" data-wow-duration="300ms">
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="service-page" class="pages service-page" style="padding: 40px 0 10px; ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="block">
+                    <h2 class="title wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+
+                        Desarrollo de Soluciones
+                    </h2>
+                    <h3 class="wow fadeInUp animated" data-wow-delay=".6s">
+                        Desarrollo y mantenimiento de Soluciones a la medida; desarrollamos aplicaciones que se ajustan a las necesidades de cada cliente.
+
+                    </h3>
+                    <h3 class="wow fadeInUp animated" data-wow-delay=".6s">
+                        Desarrollamos soluciones personalizadas de TI de acuerdo a las necesidades de negocio y requerimientos de nuestros clientes, con diferentes
+                        tecnologías y plataformas, apoyados con metodologías agiles de desarrollo. Y usted puede ir viendo resultados tangibles periódicamente.
+
+                    </h3>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <br /><br />
+                <img src="~/images/home/maintabs-13.png" width="100%" />
+            </div>
+            <div class="col-md-12">
+                <h3 class="wow fadeInUp animated" data-wow-delay=".6s">
+
+                    Una vez que su aplicación está en funcionamiento le ofrecemos soporte para implementarle mejoras o requerimientos adicionales, o cualquier
+                    cambio imprevisto por cambios legislativos y normativos (Hacienda, Gobierno y Asociaciones).
+                    <br /><br />
+                    Contamos con la capacidad de desarrollo de forma segura y eficiente, nuestra fábrica de Software se encargará de atender el código haciendo
+                    la programación de los requerimientos de negocio más rápido, entregando resultados oportunos y en mayor cantidad.
+                    <br /><br />
+                    Podemos operar dentro o fuera de las oficinas de nuestros Clientes, contamos con un equipo de programadores dedicados a desarrollar los requerimientos
+                    que les lleguen, ya sean normativos, evolutivos o de mejora.
+                </h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="service-page2" class="pages service-page" style="padding: 40px 0 10px; background-image: linear-gradient( 114deg, #0783fd 57%, #4059a9 99%); ">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <br /><br />
+                <img src="~/images/soluciones/tipos-de-aplicaciones-y-ejemplos-1024x683.jpg" width="100%" />
+            </div>
+            <div class="col-md-6">
+                <div class="block">
+                    <h2 class="title wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                        Desarrollo de Aplicaciones Móviles
+                    </h2>
+                    <h3 class="wow fadeInUp animated" data-wow-delay=".6s">
+                        Desarrollamos Apps para dispositivos móviles en los principales sistemas operativos, Android,  iOS y Windows iPhone para los diferentes tipos de empresas o instituciones de acuerdo a los requerimientos del cliente
+                        <br /><br />
+                        Analizamos tus necesidades, diseñamos tu solución para que cumpla con los requisitos planteados y funciones en los diferentes dispositivos.
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="service-page" class="pages service-page" style="padding: 0px 0 0px; ">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="block">
+                    <h2 class="title wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" style="text-align:center">
+                        Contamos con herramientas Low-code
+                    </h2>
+                    <h3 class="wow fadeInUp animated" data-wow-delay=".6s" style="text-align:center">
+                        Si es requerido una solución de software sin precedentes, de forma automática, brindamos un desarrollo de software con apoyo de Low-Code.
+                    </h3>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <img src="~/images/soluciones/GeneXus.png" width="100%"/>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section id="service-page" class="pages service-page" style="padding: 40px 0 40px; background-color:#f6f6f6 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="block">
+                    <h2 class="title wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+
+                        Ciclo de vida
+                    </h2>
+                    @*<h3 class="wow fadeInUp animated" data-wow-delay=".6s">
+                    Analizamos necesidades, desarrollamos la solución, la probamos y aseguramos su funcionamiento y la calidad, la implementamos y te acompañamos durante la maduración de la solución, y seguimos juntos en las mejoras
+                </h3>*@
+                    <table width="100%" class="table borderless">
+                        <tbody>
+                            <tr>
+                                <td width="2%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="300ms" src="~/images/soluciones/250check.png" /> </td>
+                                <td width="40%">
+                                    <p class="subtitle-des wow fadeInUp animated text-justify" data-wow-delay=".5s" data-wow-duration="300ms" style=" text-align: left; font-size: 17px; margin-bottom: 1px;">
+                                        Analizamos necesidades.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="2%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="300ms" src="~/images/soluciones/250check.png" /> </td>
+                                <td>
+                                    <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="300ms" style=" text-align: left; margin-bottom: 1px; font-size: 17px; ">
+
+                                        Desarrollamos la solución.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="2%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="300ms" src="~/images/soluciones/250check.png" /> </td>
+                                <td>
+                                    <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="300ms" style=" text-align: left; margin-bottom: 1px; font-size: 17px; ">
+                                        Probamos, aseguramos su funcionamiento y calidad.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="2%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="300ms" src="~/images/soluciones/250check.png" /> </td>
+                                <td>
+                                    <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="300ms" style=" text-align: left; margin-bottom: 1px; font-size: 17px; ">
+                                        Implementamos y te acompañamos durante la maduración de la solución.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="2%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="300ms" src="~/images/soluciones/250check.png" /> </td>
+                                <td>
+                                    <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="300ms" style=" text-align: left; margin-bottom: 1px; font-size: 17px; ">
+                                        Seguimos juntos en las mejoras.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <br /><br />
+                <img src="~/images/soluciones/diagra.png" width="100%" />
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<a href="https://api.whatsapp.com/send?phone=+5215531381839&text=Buen%20día,%20Solicito%20conocer%20más%20información%20de%20desarrollo%20de%20soluciones%20a%20la%20medida" class="btn-wsp" target="_blank">
+    <i class="fa fa-whatsapp icono"></i>
+</a>

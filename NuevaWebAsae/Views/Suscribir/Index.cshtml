@@ -1,0 +1,635 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="~/images/ico.ico">
+    <title>Asae Consultores S.A de C.V</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Template CSS Files
+    ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link href="~/plugins/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!-- Ionicons Fonts Css -->
+    <link href="~/plugins/ionicons/ionicons.min.css" rel="stylesheet" />
+    <!-- animate css -->
+    <link href="~/plugins/animate-css/animate.css" rel="stylesheet" />
+    <!-- Hero area slider css-->
+    <link href="~/plugins/slider/slider.css" rel="stylesheet" />
+    <!-- owl craousel css -->
+    <link href="~/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
+    <link href="~/plugins/owl-carousel/owl.theme.css" rel="stylesheet" />
+    <!-- Fancybox -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Glegoo" rel="stylesheet" />
+    <link href="~/plugins/facncybox/jquery.fancybox.css" rel="stylesheet" />
+    <!-- template main css file -->
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <style>
+
+        #top-bar.animated-header {
+            padding: 15px 0;
+            background: #fff;
+            box-shadow: none;
+        }
+
+        .navbar-header .navbar-brand a {
+            height: auto;
+            display: inline-block;
+            margin-top: 0px;
+        }
+
+        #top-bar {
+            background: #fff;
+            color: #fff;
+            transition: all 0.2s ease-out 0s;
+            padding: 10px 0;
+            box-shadow: 0 0 3px 0 rgb(0 0 0 / 10%);
+            border-bottom: 1px solid #dedede;
+        }
+
+        #hero-area {
+            background: url(images/2.jpg) no-repeat 50%;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 230px 0;
+            color: #fff;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .global-page-header {
+            background-attachment: fixed;
+            background-size: cover;
+            padding: 60px;
+            position: relative;
+            background-image: linear-gradient(114deg, #509197 30%, #04bdd5 99%);
+            color: #fff;
+        }
+
+        #call-to-action {
+            /*background: #02bdd5;*/
+            background-image: linear-gradient(114deg, #509197 30%, #04bdd5 99%);
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            color: #fff;
+        }
+
+
+        .box-error {
+            padding: 10px;
+            color: #D8000C;
+            border-radius: 2px;
+            font-size: 14px;
+            background-color: #FFBABA;
+        }
+
+        .box-success {
+            background-color: #6cb670;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        #footer .social li a {
+            font-size: 22px;
+            color: #9e9e9e;
+        }
+
+        #contact-section .address i, #contact-section .email i, #contact-section .phone i {
+            font-size: 45px;
+            color: #47b5e6;
+        }
+
+        #contact-section {
+            padding: 0px 0;
+        }
+
+        #footer .copyright a {
+            color: #42afe2;
+        }
+
+        #footer .social {
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        #footer .copyright {
+            font-size: 13px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+    </style>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NT6V24P');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT6V24P"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!--
+       ==================================================
+       Header Section Start
+       ================================================== -->
+    <header id="top-bar" class="navbar-fixed-top animated-header">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- responsive nav button -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- /responsive nav button -->
+                <!-- logo -->
+                <div class="navbar-brand">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img src="~/images/Tickets/LogoAsae.png" width="100%" />
+                    </a>
+                </div>
+                <!-- /logo -->
+            </div>
+            <!-- main menu -->
+            <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                <div class="main-menu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="@Url.Action("Eventos", "Home")">Eventos</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Soluciones <span class="caret"></span></a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hikvision</a>
+                                        <div class="">
+                                            <ul>
+                                                <li><a href="@Url.Action("hikvision", "Soluciones")">Residencial y negocios</a></li>
+                                                <li><a href="@Url.Action("CorporativoIndustria", "Soluciones")">Corporativo e industria </a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-submenu ">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Huawei</a>
+                                        <div class="">
+                                            <ul>
+                                                <li><a href="@Url.Action("OceanstorDorado", "Soluciones")">Oceanstor Dorado</a></li>
+                                                <li><a href="@Url.Action("IdeaHub", "Soluciones")">IdeaHub </a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+                                    <li><a href="@Url.Action("Tickets", "Soluciones")">ASD</a></li>
+                                    <li><a href="@Url.Action("Xpinnit", "Soluciones")">Xpinnit</a></li>
+                                    <li><a href="@Url.Action("jobctrl", "Soluciones")">JobCTRL</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="@Url.Action("index", "Home")#feature" class="dropdown-toggle" data-toggle="dropdown">Servicios <span class="caret"></span></a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a href="@Url.Action("Soporte", "Servicios")">Soporte y Mantenimiento Multivendor</a></li>
+                                    <li><a href="@Url.Action("Infraestructura", "Servicios")">Administración de Infraestructura</a></li>
+                                    <li><a href="@Url.Action("Documental", "Servicios")">Gestión documental y de Procesos</a></li>
+                                    <li><a href="@Url.Action("Telecomunicaciones", "Servicios")">Telecomunicaciones</a></li>
+                                    <li><a href="@Url.Action("Impresion", "Servicios")">Servicios Administrados de Impresión</a></li>
+                                    <li><a href="@Url.Action("Index", "IntegracionTalento")">Integración de talento</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="@Url.Action("index", "Home")#SolucionesTI" class="dropdown-toggle" data-toggle="dropdown">Consultoría <span class="caret"></span></a>
+                            <div class="dropdown-menu">
+                                <ul>
+                                    <li><a href="@Url.Action("Desarrollo", "SolucionesTI")">Desarrollo de Soluciones a la Medida</a></li>
+                                    <li><a href="@Url.Action("Proyectos", "SolucionesTI")">Administración de Proyectos</a></li>
+                                    <li><a href="@Url.Action("NUBE", "Servicios")">Servicios en la NUBE</a></li>
+                                    <li><a href="@Url.Action("Seguridad", "Servicios")">Seguridad</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+
+                        @*<li><a href="@Url.Action("index", "Home")#feature">Servicios </a></li>
+        <li><a href="@Url.Action("index", "Home")#SolucionesTI">Consultoría </a></li>*@
+                        <li><a href="@Url.Action("index", "Contacto")">Contacto </a></li>
+                        <li><a href="@Url.Action("new", "Blog")">Blog </a></li>
+                        <li><a href="@Url.Action("intranet2", "Home")">Intranet </a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- /main nav -->
+        </div>
+    </header>
+
+
+    <br /><br /><br /><br />
+
+    <!--
+           ==================================================
+           Call To Action Section Start
+           ================================================== -->
+    <section id="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2 class="title wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
+                            ¡ Te damos la bienvenida  !
+                        </h2>
+                        <p class="wow fadeInDown" data-wow-delay=".5s" data-wow-duration="500ms">Estamos aquí para asistirte. <br /> Suscríbete y recibe nuestras ultimas noticias y promociones en las mejores herramientas en soluciones TI</p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="block">
+                        <h2 class="subtitle wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Suscríbete.</h2>
+                        <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
+                            Disfruta de contenido y las mejores promociones, cursos, capacitaciones sobre lo último en tecnología e innovación.
+                        </p>
+                        <div class="contact-form">
+                            <form id="contact-form" method="#" action="#" role="form">
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".6s">
+                                    <input type="text" placeholder="Tu Nombre" class="form-control" name="name" id="name">
+                                </div>
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".8s">
+                                    <input type="email" placeholder="Tu Email" class="form-control" name="email" id="email">
+                                </div>
+
+                                <div class="g-recaptcha" data-sitekey="6LdXFXcUAAAAABTN8TrSf30UgdaxPjFL1FB4vcaS"></div>
+                                <br />
+                                <div id='alertBoxes'></div><span class='timer' id='timer'></span>
+                                <br />
+                                <div id="success" class="success">
+                                    Gracias, tú mensaje ha sido envido.
+                                </div>
+
+                                <div id="error" class="error">
+                                    Lo sentimos. Intenta más tarde.
+                                </div>
+
+                                <div id="submit" class="wow fadeInDown" data-wow-duration="500ms" data-wow-delay="1.4s">
+                                    <input type="submit" id="contact-submit" class="btn btn-default btn-send" value="Suscribirme">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="map-area">
+                        <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Ubicación </h2>
+                        <p class="subtitle-des wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".5s">
+                            Visitas nuestras instalaciones!.
+
+                        </p>
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.429625988862!2d-99.18184978509457!3d19.350541386931017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fff0308f9987%3A0xfb047a70088b8f85!2sAsae+Consultores%2C+S.A.+de+C.V.!5e0!3m2!1ses-419!2smx!4v1530717966296" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row address-details">
+                <div class="col-md-4">
+                    <div class="address wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".3s">
+                        <i class="ion-ios-location-outline"></i>
+                        <h5>Margaritas 426, Álvaro Obregón, Ciudad de México</h5>
+                    </div>
+                </div>
+                <!--
+                    <div class="col-md-3">
+                        <div class="address wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".5s">
+                            <i class="ion-ios-location-outline"></i>
+                            <h5>125 , Kings Street,Melbourne <br>United Kingdom,600562</h5>
+                        </div>
+                    </div>
+
+                -->
+                <div class="col-md-4">
+                    <div class="email wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".7s">
+                        <i class="ion-ios-email-outline"></i>
+                        <p>asae_contactanos@asae.com.mx <br></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="phone wow fadeInLeft" data-wow-duration="500ms" data-wow-delay=".9s">
+                        <i class="ion-ios-telephone-outline"></i>
+                        <p>(55) 53 22 05 00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--
+            ==================================================
+            Footer Section Start
+            ================================================== -->
+    <footer id="footer">
+        <div class="container">
+
+            <div class="col-md-12">
+                <!-- Social Media -->
+                <ul class="social">
+                    <li>
+                        <img src="~/images/AsaeLogo.png" width="100%" />
+                    </li>
+                    <br />
+                    <br />
+                    <li>
+                        <a href="https://www.facebook.com/AsaeConsultoresMX/" class="Facebook">
+                            <i class="ion-social-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/asaeconsultores" class="Twitter">
+                            <i class="ion-social-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://mx.linkedin.com/company/asae-consultores-s.a.-de-c.v." class="Linkedin">
+                            <i class="ion-social-linkedin"></i>
+                        </a>
+                    </li>
+                    @*<li>
+                            <a href="#" class="Google Plus">
+                                <i class="ion-social-googleplus"></i>
+                            </a>
+                        </li>*@
+                </ul>
+                <br />
+            </div>
+            <div class="col-md-12">
+                <p class="copyright">
+                    Copyright: <span>
+                        <script>document.write(new Date().getFullYear())</script>
+                    </span> . All Rights Reserved
+                    <a href="#" target="_blank">Asae Consultores S.A de C.V</a>. <br>
+                    Aviso de privacidad
+                    <a href="@Url.Action("AvisoPrivacidad", "Home")" target="_blank">
+                        Asae Consultores S.A de C.V
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v9.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat"
+         attribution=setup_tool
+         page_id="682320818526294"
+         theme_color="#0A7CFF">
+    </div>
+
+    <!-- Template Javascript Files
+    ================================================== -->
+    <!-- jquery -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="~/plugins/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="~/plugins/form-validation/jquery.form.js"></script>
+    <script src="~/plugins/form-validation/jquery.validate.min.js"></script>
+    <!-- owl carouserl js -->
+    <script src="~/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="~/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="~/plugins/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="~/plugins/slider/slider.js"></script>
+    <!-- Fancybox -->
+    <script src="~/plugins/facncybox/jquery.fancybox.js"></script>
+    <!-- template main js -->
+    <script src="~/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="~/Scripts/bootstrap-notify.js"></script>
+
+    <script src="~/Scripts/main.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('#contact-form').validate({
+                rules: {
+                    name: {
+                        required: true, minlength: 4
+                    }
+                    , email: {
+                        required: true, email: true
+                    }
+                    //, subject: {
+                    //    required: false,
+                    //}
+                    //, message: {
+                    //    required: true,
+                    //}
+                    ,
+                }
+                , messages: {
+                    user_name: {
+                        required: "Come on, you have a name don't you?",
+                        minlength: "Your name must consist of at least 2 characters"
+                    }
+                    , email: {
+                        required: "Por favor ingrese su dirección de correo electrónico.",
+                    }
+                    , message: {
+                        required: "Coloca tu mensaje",
+                        minlength: "Your name must consist of at least 2 characters"
+                    }
+                    ,
+                }
+                , submitHandler: function (form) {
+                    EnvioForm();
+                    //$(form).ajaxSubmit( {
+                    //    type:"POST", data: $(form).serialize(), url:"sendmail.php", success: function() {
+                    //        $('#contact-form #success').fadeIn();
+                    //    }
+                    //    , error: function() {
+                    //        $('#contact-form #error').fadeIn();
+                    //    }
+                    //}
+                    //);
+                }
+            });
+        });
+
+        function EnvioForm()
+        {
+            var timeSlide = 500;
+            //$('#timer').hide(0);
+            //$('#timer').css('display', 'none');
+
+            //$('.box-success,.box-error').slideUp(timeSlide);
+            setTimeout(function () {
+
+                if (valida()) {
+                    var arreglo = [];
+                    var obj = {};
+
+                    obj['nombre'] = $('#name').val();
+                    obj['email'] = $('#email').val();
+
+                    arreglo.push(obj);
+
+                    var jsonObject = {
+                        "Email": arreglo
+                    };
+
+                    $.ajax({
+                        url: "@Url.Action("LlamarJson", "Suscribir")",
+                        type: "POST",
+                        data: JSON.stringify(jsonObject),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        error: function (response) {
+                            swal({
+                                title: "¡Ha ocurrido algo! ",
+                                text: 'Lo sentimos. Intenta más tarde.',
+                                icon: "warning"
+                            })
+                            grecaptcha.reload();
+                            grecaptcha.reset();
+                        },
+                        success: function (response) {
+                            if (response == "ok") {
+
+                                swal({
+                                    title: "Suscripción enviada. !",
+                                    text: response.RespuestaText,
+                                    icon: "success",
+                                    button: "Aceptar",
+                                })
+                                    .then((value) => {
+                                        window.location.href = '@Url.Action("Index","Home")';
+                                    });
+
+
+                                //$('#alertBoxes').html('<div class="box-success"></div>');
+                                //$('.box-success').hide(0).html('Mensaje enviado.');
+                                //$('.box-success').slideDown(timeSlide);
+
+                                //window.setTimeout('location.reload()', 3000); //Reloads after three seconds
+
+
+                            } else {
+                                swal({
+                                    title: "¡Ha ocurrido algo! ",
+                                    text: response,
+                                    icon: "warning"
+                                });
+
+                                grecaptcha.reload();
+                                grecaptcha.reset();
+
+                                //$('#timer').fadeOut(300);
+                                //$('#alertBoxes').html('<div class="box-error"></div>');
+                                //$('.box-error').hide(0).html(response);
+                                //$('.box-error').slideDown(timeSlide);
+                                //grecaptcha.reload();
+                                //grecaptcha.reset();
+                            }
+                        }
+                    });
+
+                }
+                else {
+                    swal({
+                        title: "¡Ha ocurrido algo! ",
+                        text: "Recapcha no verificado",
+                        icon: "warning"
+                    });
+
+                    //$('#timer').fadeOut(300);
+                    //$('#alertBoxes').html('<div class="box-error"></div>');
+                    //$('.box-error').hide(0).html("Recapcha no verificado.");
+                    //$('.box-error').slideDown(timeSlide);
+                }
+            }, timeSlide);
+
+        }
+
+
+
+        function valida() {
+            var respuesta = false;
+            var response = grecaptcha.getResponse();
+
+            if (response.length == 0) {
+                respuesta = false; //"Captcha no verificado";
+            } else {
+                respuesta = true;
+            }
+            return respuesta;
+        };
+
+    </script>
+
+</body>
+</html>

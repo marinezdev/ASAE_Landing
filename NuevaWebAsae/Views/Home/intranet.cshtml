@@ -1,0 +1,174 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Asae Consultores S.A de C.V</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="~/Content/Intranet/style.css" rel="stylesheet" />
+    <!-- Favicons -->
+    <link rel="icon" href="~/images/ico.ico">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body class="page1" id="top">
+    <!--==============================
+                  header
+    =================================-->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="grid_12 rel">
+                    <h1>
+                        <a href="@Url.Action("index", "Home")">
+                            <img src="~/images/IntraAsae.png" />
+                        </a>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <section id="stuck_container">
+            <!--==============================
+                        Stuck menu
+            =================================-->
+            <div class="container">
+                <div class="row">
+                    <div class="grid_12 ">
+                        <div class="navigation ">
+                            <nav>
+                                <ul class="sf-menu">
+                                    <li class="current"><a href="@Url.Action("index", "Intranet")">Intranet</a></li>
+                                    <li><a href="@Url.Action("index", "Home")#contact">Contacto</a></li>
+                                </ul>
+                            </nav>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br><br>
+        <section class="page1_header">
+            <div class="container">
+                <div class="row">
+                    <div class="grid_4">
+                        <a href="https://mail.asae.com.mx/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fmail.asae.com.mx%2fowa" class="banner">
+                            <div class="maxheight">
+                                <div class="fa fa-calendar"></div>mail asae <br> mail.asae.com.mx
+                            </div>
+                        </a>
+                        <a href="https://www.cloud-asae.com.mx/MetLife/" class="banner ">
+                            <div class="maxheight">
+                                <div class="fa fa-globe"></div>MetLife <br>
+                                Workflow Operation
+                            </div>
+                        </a>
+                        <a href="https://mail.asaeop.com.mx/webmail" class="banner " >
+                            <div class="maxheight1">
+                                <div class="fa fa-calendar"></div>mail asae op  <br> mail.asaeop.com.mx
+                            </div>
+                        </a>
+                        <a href="https://sipac.asae.com.mx" class="banner ">
+                            <div class="maxheight1">
+                                <div class="fa fa-briefcase"></div>Asae <br> SIPAC
+                            </div>
+                        </a>
+                        <a href="http://187.248.23.163:1053/" class="banner ">
+                            <div class="maxheight">
+                                <div class="fa fa-user"></div>Asae <br> CRM
+                            </div>
+                        </a>
+                        <a href="http://187.248.23.163:1181/" class="banner ">
+                            <div class="maxheight">
+                                <div class="fa fa-ticket"></div> Asae  <br>
+                                Tickets
+                            </div>
+                        </a>
+                        <a href="https://sistema.xpinnit.com/" class="banner ">
+                            <div class="maxheight">
+                                <img src="~/images/xpinnit/XPIN.png" style="width:76%" />
+                                @*<div class="fa fa-ticket"></div>*@   <br>
+                                Asae
+                                <br /><br />
+
+                            </div>
+                        </a>
+                        <a href="@Url.Action("Index", "Adm")" class="banner ">
+                            <div class="maxheight">
+                                <div class="fa fa-lock"></div>Asae <br> Administración web
+                            </div>
+                        </a>
+                        <!--<a href="#" class="banner " onclick="window.open('https://mail.asae.com.mx/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fmail.asae.com.mx%2fowa', '_blank');">
+        <div class="maxheight">
+            <div class="fa fa-calendar"></div>mail asae <br> mail.asae.com.mx
+        </div>
+    </a>
+    <a href="#" class="banner " onclick="window.open('https://www.cloud-asae.com.mx/MetLife/', '_blank');">
+        <div class="maxheight">
+            <div class="fa fa-globe"></div>MetLife <br>
+            Workflow Operation
+        </div>
+    </a>
+    <a href="#" class="banner " onclick="window.open('https://mail.asaeop.com.mx/webmail', '_blank');">
+        <div class="maxheight1">
+            <div class="fa fa-calendar"></div>mail asae op  <br> mail.asaeop.com.mx
+        </div>
+    </a>
+    <a href="#" class="banner " onclick="window.open('https://sipac.asae.com.mx', '_blank');">
+        <div class="maxheight1">
+            <div class="fa fa-briefcase"></div>Asae <br> SIPAC
+        </div>
+    </a>
+    <a href="#" class="banner " onclick="window.open('http://187.248.23.163:1053/', '_blank');">
+        <div class="maxheight">
+            <div class="fa fa-user"></div>Asae <br> CRM
+        </div>
+    </a>
+    <a href="#" class="banner " onclick="window.open('http://187.248.23.163:1181/', '_blank');" style="background-color: #00b1ba;">
+        <div class="maxheight">
+            <div class="fa fa-ticket"></div> Asae  <br>
+            Tickets
+        </div>
+    </a>
+    <a href="#" class="banner " onclick="window.open('https://sistema.xpinnit.com/', '_blank');" style="background-color: #00b1ba;">
+        <div class="maxheight">
+            <img src="~/images/xpinnit/XPIN.png" style="width:76%" />-->
+                        @*<div class="fa fa-ticket"></div>*@
+                        <!--<br>
+            Asae
+            <br /><br />
+
+        </div>
+    </a>
+    <a href="@Url.Action("Index", "Adm")" class="banner ">
+        <div class="maxheight">
+            <div class="fa fa-lock"></div>Asae <br> Administración web
+        </div>
+    </a>-->
+                    </div>
+                    <div class="grid_5">
+                        <br>
+                        <h2>Asae Intranet </h2>
+                        Bienvenido a la intranet de ASAE CONSULTORES, selecciona el servicio que deseas utilizar.
+                        <hr>
+                        <br><br><br>
+                        <div>
+                            <a href="@Url.Action("index", "Home")" class="btn" data-type="submit"> <i class="fa fa-reply-all" aria-hidden="true"></i> Regresar al sitio web</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+</body>
+</html>

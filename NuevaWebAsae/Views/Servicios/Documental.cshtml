@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "Documental";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #hero-area {
+        background: url('../../images/servicios/revis.jpg') no-repeat 100%;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 130px 0;
+        color: #fff;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+
+    /*#hero-area:before {
+            content: '';
+            z-index: 9;
+            background-image: linear-gradient(114deg, #05105682 11%,#009688a6 94%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }*/
+
+    .cd-headline.slide .cd-words-wrapper {
+        color: #9E9E9E;
+    }
+
+    #hero-area h1 {
+        font-size: 40px;
+        line-height: 50px;
+        color: #08bbd2;
+        font-weight: 700;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+
+    .title {
+        font-size: 30px;
+        line-height: 1.1;
+        font-weight: 300;
+        color: #03bdd5;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+</style>
+<!--
+==================================================
+Slider Section Start
+================================================== -->
+<section id="hero-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="block wow fadeInUp" data-wow-delay=".3s">
+                    <!-- Slider -->
+                    <section class="cd-intro">
+                        <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
+                            <span> Gestión documental y de Procesos </span><br>
+                            <br />
+
+                            <span class="cd-words-wrapper">
+                                <b class="is-visible">Desarrollo</b>
+                                <b>implementación</b>
+                                <b>gestores</b>
+                                <b>documentales</b>
+                            </span>
+                        </h1>
+                    </section> <!-- cd-intro -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="global-page-header" style="padding: 35px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="service-page" class="pages service-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <p style="color: #777;" class="text-justify wow fadeInUp" data-wow-delay=".3s" data-wow-duration="500ms">
+                        Los últimos años la <strong>gestión documental</strong> se ha vuelto un requerimiento constante dentro de los procesos empresariales. En ASAE CONSULTORES se cuenta con amplia experiencia en el desarrollo e implementación de gestores documentales y <strong> flujos de trabajo </strong>, que van desde la 
+                        digitalización del documento donde se origina, hasta llegar a los emisores o autorizadores, para que decidan aceptarlo y gestionarlo o rechazarlo indicando los motivos o bien requerir de mayor información. Esto permite a las empresas agilizar sus procesos internos, 
+                        además de contar con una base de datos documental y un proceso de gestión centralizado, permitiendo la consulta de documentos sin importar donde se haya generado ya que todas las áreas autorizadas los podrán acceder, manteniendo registro del proceso e identificando 
+                        quién ha consultado los documentos y por qué etapas del proceso ha transitado el trámite.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<section id="services">
+    <div class="container">
+        <header class="section-header wow fadeInUp">
+            <div class="row about-cols">
+                <div class="col-md-5 wow fadeInUp">
+                    <div id="demo" class="carousel slide" data-ride="carousel">
+
+                        <!-- The slideshow -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="~/images/servicios/revis.jpg" width="100%" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-7 wow fadeInUp">
+                    <p style="text-align:justify; color: #777;" ">
+                        Nuestros desarrollos van desde un proceso básico de digitalización y consulta de documentos, hasta <strong> el desarrollo de un flujo de trabajo (workflow) </strong>,
+                        esto dependerá de los requerimientos de nuestros Clientes y de lo crítico que signifique para la empresa el poder consultar documentos como parte de
+                        su operación y atención a sus clientes.
+                        <br />
+                        También contamos con el <strong>Servicio de Gestión Operativa</strong> para la operación y automatización de procesos, mediante un Worflow propio y <strong> con personal operativo </strong> capacitado y
+                        con experiencia en los productos y servicios que el cliente ofrece. Asae se convierte en parte de la empresa al participar en la operación de los procesos de negocio y
+                        permite al cliente enfocar sus esfuerzos y recursos al crecimiento del mismo.
+                        <br /><br />
+                        En <span style="font-weight:bold">ASAE CONSULTORES</span> nos ajustamos a sus necesidades de negocio y ponemos a su disposición nuestra amplia experiencia en la Gestión Documental y de Procesos.
+                    </p>
+                    <br />
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-primary" style="background-color:#9E9E9E">Administración de Contenido</li>
+                        <li class="list-group-item list-group-item-light">Digitalización de Documentos</li>
+                        <li class="list-group-item list-group-item-primary" style="background-color:#9E9E9E">Flujos de Trabajo</li>
+                        <li class="list-group-item list-group-item-light">Gestión de procesos con personal operativo en nuestras instalaciones o en sus instalaciones</li>
+                    </ul>
+                </div>
+                <div class="col-md-12 wow fadeInUp">
+                    <p style="text-align:justify; color: #777;" ">
+                        <br />
+                        @*Asae Consultores a través de Soluciones Microsoft, también ofrece las tecnologías necesarias para habilitar la integración de su gente, sus procesos y su tecnología, a través de la implementación de soluciones de colaboración y productividad que mejore la disponibilidad y control de los datos, la información y los procesos internos de su empresa.
+                        <br /><br />
+                        Ayudamos a simplificar el trabajo en equipo, mejorando la eficiencia de los procesos y la gestión de contenidos, obteniendo un mayor rendimiento global de su empresa al mismo tiempo que se mejora la capacidad de adaptación y respuesta de TI ante nuevas demandas y futuros retos , mediante la implementación de las soluciones Microsoft para colaboración.
+                        <br /><br /><br />*@
+                        Ayudamos a simplificar el trabajo en equipo, <strong> mejorando la eficiencia de los procesos y la gestión de contenidos </strong>, obteniendo un mayor rendimiento global de su empresa al mismo 
+                        tiempo que se mejora la capacidad de adaptación y respuesta de TI ante nuevas demandas y futuros retos.
+                    </p>
+                </div>
+            </div>
+        </header>
+    </div>
+</section><!-- #services -->

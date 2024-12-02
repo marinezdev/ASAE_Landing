@@ -1,0 +1,1068 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    #hero-area {
+        /*background: url(images/2.jpg) no-repeat 50%;*/
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 150px 0;
+        color: #fff;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+
+    .form-top {
+        overflow: hidden;
+        padding: 0 25px 15px 25px;
+        background: #9E9E9E;
+        background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);
+        background: linear-gradient(to right, #ffffff, #ffffffa1);
+        -moz-border-radius: 4px 4px 0 0;
+        -webkit-border-radius: 4px 4px 0 0;
+        border-radius: 4px 4px 0 0;
+        text-align: left;
+    }
+
+    .form-bottom {
+        padding: 25px 25px 30px 25px;
+        background: #444;
+        /*background: rgba(0, 0, 0, 0.3);*/
+        background: #d3d3d3a6;
+        -moz-border-radius: 0 0 4px 4px;
+        -webkit-border-radius: 0 0 4px 4px;
+        border-radius: 0 0 4px 4px;
+        font-family: 'Roboto Condensed', sans-serif;
+        color: #5a5a5a;
+        text-align: left;
+    }
+
+    .form-top-left h3 {
+        margin-top: 0;
+        color: #9E9E9E;
+    }
+
+    .form-top-left p {
+        opacity: 0.8;
+        color: #9E9E9E;
+    }
+
+    .form-top-left {
+        float: left;
+        width: 75%;
+        padding-top: 25px;
+    }
+</style>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bakgraunMensaje">
+            <div class="modal-body ">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="row">
+
+                    <div class="col-md-5 col-xs-5 text-center">
+                        <div class="block wow fadeInUp" data-wow-delay=".1s">
+                            <!-- Slider -->
+                            <section class="cd-intro">
+                                <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s">
+                                    <img src="~/images/asaelogo_Blanco.png" class="ImgAsae" />
+                                </h1>
+                                <p class="MensajeTitulo1"> ASAE</p>
+                                <p class="MensajeTitulo3">CONSULTORES</p>
+                                <br />
+                                <img src="~/images/BanTotal.png" class="ImgAsae" />
+                            </section> <!-- cd-intro -->
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-xs-7 text-center">
+                        <div class="block wow fadeInUp" data-wow-delay=".1s">
+                            <!-- Slider -->
+                            <section class="cd-intro">
+                                <br /><br />
+                                <p class="MensajeTitulo2"> <span style="color: #67b6e0">Patrocinador</span> en AMSOFIPO 2023</p>
+                                <h1 class="wow fadeInUp animated cd-headline slide " data-wow-delay=".1s">
+                                    <img src="~/images/AMS.png" class="ImgAsae" />
+                                </h1>
+                            </section> <!-- cd-intro -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <br /><br />
+            <p class="Texto_Mensaje text-center">8a Convención. 7 y 8 septiembre, Nuevo Vallarta</p>
+            <div class="row">
+                <div class="col-md-12 col-xs-12 text-center">
+                    <a class="btn btn-default btn-green" data-wow-delay=".9s" href="@Url.Action("BanTotal", "Registros")" style="width: 25%;">Mas información</a>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>
+
+<!--
+==================================================
+Slider Section Start
+================================================== -->
+<section id="hero-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="block wow fadeInUp text-center" data-wow-delay=".3s">
+                    <!-- Slider -->
+                    <section class="cd-intro">
+                        <br /><br /><br /><br />
+                        <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
+                            <span>Asae Consultores S.A de C.V</span><br>
+                            <span class="cd-words-wrapper">
+                                <b class="is-visible">Servicios</b>
+                                <b>Soluciones TI</b>
+                                <b>Clientes</b>
+                                @*<b>Capacitación </b>*@
+                                <b>Integración</b>
+                            </span>
+                        </h1>
+                    </section> <!-- cd-intro -->
+                    <!-- /.slider -->
+                    <h2 class="wow fadeInUp animated" data-wow-delay=".6s">
+                        Asae Tu mejor Aliado en soluciones de Tecnología. <br> Desarrollamos Soluciones Personalizadas de TI de acuerdo a sus necesidades y presupuesto.
+                    </h2>
+                    <a class="btn-lines  btn btn-default btn-green" data-wow-delay=".9s" href="@Url.Action("Asae", "Home")">acerca de nosotros</a>
+                    <br /><br />
+                    @*<img src="~/images/VIDEO-2021-03-09-07-15-56.gif" class="img-responsive center-block"/>*@
+                </div>
+            </div>
+            @*<div class="col-sm-1 form-box">
+                </div>
+                <div class="col-md-5 form-box">
+                    <div class="block wow fadeInUp" data-wow-delay=".3s">
+                        <section class="cd-intro">
+
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3 style="color:#01c17e;">¡ INSCRÍBETE A NUESTRO EVENTO !  </h3>
+                                    <img src="~/images/jobctrl/jobctrllog.png" width="100%" />
+                                    <br><br />
+                                    <p>Complete el siguiente formulario para obtener tu acceso:</p>
+                                </div>
+                                <div class="form-top-right">
+                                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <form role="form" action="">
+                                    <div class="row">
+                                        <img src="~/images/xpinnit/DpQvvsvUwAEu0Bb.jpg" width="100%" />
+                                    </div>
+                                    <div id="alertBoxes"></div><span class="timer" id="timer" style="display: none; overflow: hidden;"></span>
+                                    <a href="@Url.Action("xpinnit", "Registros")" id="BtnRegistrarJob" class="btn" style="background:#01c47d">INSCRIBIRME AL EVENTO </a>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </div>*@
+        </div>
+    </div>
+</section><!--/#main-slider-->
+
+
+
+<section class="global-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h2>Las mejores herramientas en la administración y control de proyectos </h2>
+                    <div class="portfolio-meta">
+                        <!-- <span>Dec 11, 2020</span>| -->
+                        @*|<span> Categoría: administración  </span>|*@
+                        <!-- <span> website: <a href="http://www.themefisher.com">Themefisher</a></span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="service-page" class="pages service-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="block">
+                    <h2 class="subtitle wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms">acerca de nosotros</h2>
+                    <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms">Nos hemos consolidado como una organización integradora de tecnología, abarcando productos y servicios para mercados verticales y soluciones horizontales, con presencia a nivel nacional.</p>
+                    <div class="row service-parts">
+                        <div class="col-md-6">
+                            <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
+                                <a href="@Url.Action("Asae", "Home")">
+                                    <i class="ion-android-globe"></i>
+                                    <h4>
+                                        ¿Quién es Asae?
+                                    </h4>
+                                    <p>
+                                        Integrador de soluciones de Tecnologías de la Información.
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="800ms">
+                                <a href="@Url.Action("Historia", "Home")">
+                                    <i class="ion-ios-bell-outline"></i>
+                                    <h4>Historia Asae</h4>
+                                    <p>
+                                        35 años creciendo, transformándose y evolucionando.
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="1s">
+                                <a href="@Url.Action("Experiencia", "Home")">
+                                    <i class="ion-ios-flame-outline"></i>
+                                    <h4>Experiencia</h4>
+                                    <p>
+                                        Expertos en el sector Financiero.
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <!--
+                            <div class="col-md-6">
+                                <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="1.1s">
+                                    <i class="ion-ios-paper-outline"></i>
+                                    <h4>THEMEING</h4>
+                                    <p>Veritatis eligendi, dignissimos. Porta fermentum mus aute pulvinar earum minus platea massa feugiat rutrum urna facilisi ipsameum.</p>
+                                </div>
+                            </div>
+                        -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <br /><br />
+                <video muted="muted" autoplay="autoplay" loop width="100%">
+                    <source src="~/images/Video/AsaeConsultores_Quienes_Somos.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="global-page-header" style="padding: 20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="works works-fit" style="padding: 20px 0; ">
+    <div class="container">
+        <h2 class="subtitle" style="text-align:center;color:#509197">Incrementa el 30 % de productividad, con herramientas que analizan y miden el tiempo de trabajo de tu personal.</h2>
+        <!--
+            <p class="subtitle-des">
+                Incrementa el 30 porciento de productividad, con herramientas que analizan y miden el tiempo de trabajo de tu personal.
+            </p>
+        -->
+        <div class="row">
+
+            <div class="col-sm-4">
+                <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+                    <div class="img-wrapper">
+                        <img src="images/portfolio/xpinnit.jpg" class="img-responsive" alt="portfolio items">
+                        <div class="overlay">
+                            <div class="buttons">
+                                <a rel="gallery" title="Un software de gestión de proyectos para mejorar tu productividad y alcanzar tus metas." class="fancybox" href="images/portfolio/xpinnit.jpg">Ampliar imagen </a>
+                                <a target="_blank" href="@Url.Action("Xpinnit", "Soluciones")">Detalles </a>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <h4>
+                            <a href="@Url.Action("Xpinnit", "Soluciones")">
+                                Xpinnit
+                            </a>
+                        </h4>
+                        <p>
+                            Tu software de gestión proyectos.
+                            <br><br>
+                        </p>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="col-sm-4">
+                <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 300ms; -webkit-animation-delay: 300ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+                    <div class="img-wrapper">
+                        <img src="images/portfolio/maxresdefault.jpg" class="img-responsive" alt="">
+                        <div class="overlay">
+                            <div class="buttons">
+                                <a rel="gallery" title="Una solución en la nube para gestionar y utilizar actividades de tu equipo de trabajo de forma remota o home office" class="fancybox" href="images/portfolio/maxresdefault.jpg">Ampliar imagen </a>
+                                <a target="_blank" href="@Url.Action("jobctrl", "Soluciones")">Detalles </a>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <h4>
+                            <a href="@Url.Action("jobctrl", "Soluciones")">
+                                JobCTRL
+                            </a>
+                        </h4>
+                        <p>
+                            Documentar, analizar y mejorar
+                            <br><br>
+                        </p>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="col-sm-4">
+                <figure class="wow fadeInLeft animated animated" data-wow-duration="300ms" data-wow-delay="600ms" style="visibility: visible; animation-duration: 300ms; -webkit-animation-duration: 300ms; animation-delay: 600ms; -webkit-animation-delay: 600ms; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+                    <div class="img-wrapper">
+                        <img src="images/portfolio/camara.jpg" class="img-responsive" alt="">
+                        <div class="overlay">
+                            <div class="buttons">
+                                <a rel="gallery" title="
+                        En cualquier lugar, en cualquier momento y bajo cualquier condición las cámaras térmicas Hikvision pueden detectar la temperatura de diversos objetos, combinando imágenes térmicas y visuales, para una detección más precisa y una mejor toma de decisiones." class="fancybox" href="images/portfolio/camara.jpg">Ampliar imagen </a>
+                                <a target="_blank" href="@Url.Action("CorporativoIndustria", "Soluciones")">Detalles </a>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <h4>
+                            <a href="@Url.Action("CorporativoIndustria", "Soluciones")">
+                                Cámaras de video vigilancia
+                            </a>
+                        </h4>
+                        <p>
+
+                            Solución De Cámaras Térmicas Para Detección De Fiebre.
+
+                        </p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="feature" class="feature" style="padding: 20px 0; ">
+    <div class="container">
+        <div class="section-heading">
+            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Servicios</h1>
+            <p class="wow fadeInDown" data-wow-delay=".5s">
+                En Asae Consultores ofrecemos nuestra amplia experiencia en el soporte y mantenimiento para equipos de cómputo, terminales puntos de venta y equipos de telecomunicaciones, ofreciendo un soporte integral, compuesto por ingenieros expertos, y con una mesa de ayuda para la toma de reportes y atención de tickets de servicio.
+            </p>
+            <p class="wow fadeInDown" data-wow-delay=".5s">
+                Gestión documental y de procesos con personal operativo capacitado y con experiencia.
+            </p>
+            <p class="wow fadeInDown" data-wow-delay=".5s">
+                La demanda de nuestros clientes por servicios de calidad, nos exigen que nuestro servicio sea continuo, eficiente y de alta calidad, implementando acuerdos de niveles de servicio superiores al 95% (SLA's), con presencia a nivel nacional y con la experiencia de varios años en la atención a equipos multivendor (equipos de distintas marcas).
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <i class="ion-headphone"></i>
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <a href="@Url.Action("Soporte", "Servicios")">
+                            <h4 class="media-heading">Soporte y Mantenimiento Multivendor</h4>
+                        </a>
+                        <p>
+                            Contamos con un equipo de profesionales que le ayudaran a lograrlo con el soporte a sus equipos de atención a Clientes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <i class="ion-ios-lightbulb-outline"></i>
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <a href="@Url.Action("Infraestructura", "Servicios")">
+                            <h4 class="media-heading">Administración de Infraestructura.</h4>
+                        </a>
+                        <p>
+
+                            Brindamos nuestro equipo de expertos para la administración de su infraestructura de servidores.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <i class="ion-document-text"></i>
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <a href="@Url.Action("Documental", "Servicios")">
+                            <h4 class="media-heading">Gestión documental y de Procesos.</h4>
+                        </a>
+                        <p>
+                            Los últimos años la gestión documental se ha vuelto un requerimiento constante dentro de los procesos empresariales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-md-4 col-lg-4 col-xs-12">
+                    <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1200ms">
+                        <div class="media-left">
+                            <div class="icon">
+                                <i class="ion-android-cloud-done"></i>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <a href="@Url.Action("NUBE", "Servicios")">
+                                <h4 class="media-heading">Servicios en la NUBE</h4>
+                            </a>
+                            <p>
+                                No invierta en infraestructura y en procesos costosos de respaldo, mantenimiento ...
+                            </p>
+                        </div>
+                    </div>
+                </div>*@
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="800ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <i class="ion-wifi"></i>
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <a href="@Url.Action("Telecomunicaciones", "Servicios")">
+                            <h4 class="media-heading">Telecomunicaciones</h4>
+                        </a>
+                        <p>
+                            Las telecomunicaciones son un punto crítico en la atención a Clientes, Proveedores y Colaboradores.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="800ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <i class="ion-ios-printer-outline"></i>
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <a href="@Url.Action("Impresion", "Servicios")">
+                            <h4 class="media-heading">
+                                Servicios Administrados de Impresión.
+                            </h4>
+                        </a>
+                        <p>
+                            Permitirá a su organización acceder a nuevas capacidades, liberar recursos para otros propósitos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="800ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <i class="ion-ios-lightbulb-outline"></i>
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <a href="@Url.Action("Index", "IntegracionTalento")">
+                            <h4 class="media-heading">Integración de talento</h4>
+                        </a>
+                        <p>
+                            Contamos con el servicio REPSE.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</section> <!-- /#feature -->
+
+<section class="global-page-header" style="padding: 35px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="SolucionesTI" class="SolucionesTI">
+    <div class="container">
+        <div class="section-heading">
+            <br /><br />
+            <h1 class="title wow fadeInDown" data-wow-delay=".3s">CONSULTORÍA </h1>
+            <p class="wow fadeInDown" data-wow-delay=".5s">
+                Creamos, modificamos e integramos sistemas de cómputo personalizados de acuerdo a sus necesidades para ayudarlos a obtener mejores resultados operativos y financieros, alineando los requerimientos de su negocio con la operación de los sistemas, en calidad, tiempo, costo y forma.
+
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+                    <div class="img-wrapper">
+                        <img src="~/images/home/maintabs-13.png" class="img-responsive" alt="this is a title">
+                        <div class="overlay">
+                            <div class="buttons">
+                                <a target="_blank" href="@Url.Action("Desarrollo", "SolucionesTI")">Mostrar más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <h4>
+                            <a href="@Url.Action("Desarrollo", "SolucionesTI")">
+
+                                Desarrollo de Soluciones a la Medida
+
+                            </a>
+                        </h4>
+                        <p>
+                            Soluciones personalizadas de TI
+                        </p>
+                    </figcaption>
+                </figure>
+            </div>
+
+
+
+
+
+            @*<div class="col-sm-3">
+                    <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <div class="img-wrapper">
+                            <img src="~/images/home/portada-sn-overlay.jpg" class="img-responsive" alt="this is a title">
+                            <div class="overlay">
+                                <div class="buttons">
+                                    <a target="_blank" href="@Url.Action("Fabrica", "SolucionesTI")">Mostrar más</a>
+                                </div>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h4>
+                                <a href="@Url.Action("Fabrica", "SolucionesTI")">
+                                    Fábrica de Software
+                                    <br /><br />
+                                </a>
+                            </h4>
+                            <p>
+                                Desarrollos seguros y eficientes.
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>*@
+
+            @*<div class="col-sm-3">
+                    <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <div class="img-wrapper">
+                            <img src="~/images/home/Pagina-wallpaper.jpg" class="img-responsive" alt="">
+                            <div class="overlay">
+                                <div class="buttons">
+                                    <a target="_blank" href="@Url.Action("Pruebas", "SolucionesTI")">Mostrar más</a>
+                                </div>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h4>
+                                <a href="@Url.Action("Pruebas", "SolucionesTI")">
+                                    Fábrica de Pruebas
+                                    <br /><br />
+                                </a>
+                            </h4>
+                            <p>
+                                Mitigación total de fallas.
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>*@
+
+            <div class="col-sm-4">
+                <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
+                    <div class="img-wrapper">
+                        <img src="~/images/home/herramientas-y-tecnicas-it-pm.jpg" class="img-responsive" alt="">
+                        <div class="overlay">
+                            <div class="buttons">
+                                <a target="_blank" href="@Url.Action("Proyectos", "SolucionesTI")">Mostrar más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <h4>
+                            <a href="@Url.Action("Proyectos", "SolucionesTI")">
+                                Administración de Proyectos
+                                <br />@*<br />*@
+                            </a>
+                        </h4>
+                        <p>
+                            Gestión y control de proyectos.
+                        </p>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="col-sm-4">
+                <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="img-wrapper">
+                        <img src="~/images/CorporativoIndustria/datos-en-la-nube.jpg" class="img-responsive" alt="this is a title">
+                        <div class="overlay">
+                            <div class="buttons">
+                                <a target="_blank" href="@Url.Action("NUBE", "Servicios")">Mostrar más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <h4>
+                            <a href="@Url.Action("NUBE", "Servicios")">
+                                Servicios en la NUBE
+                                <br />
+                            </a>
+                        </h4>
+                        <p>
+                            No invierta en infraestructura y en procesos costosos de respaldo, mantenimiento ...
+                        </p>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <div class="col-sm-4">
+            </div>
+
+            <div class="col-sm-4">
+                <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
+                    <div class="img-wrapper">
+                        <img src="~/images/home/PAU-SEGURIDAD.jpg" class="img-responsive" alt="" />
+                        <div class="overlay">
+                            <div class="buttons">
+                                <a target="_blank" href="@Url.Action("Seguridad", "Servicios")">Mostrar más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <h4>
+                            <a href="@Url.Action("Seguridad", "Servicios")">
+
+                                Seguridad
+                                <br /><br />
+                            </a>
+                        </h4>
+                        <p>
+                            Integración de soluciones y servicios de tecnologías de la información ...
+                        </p>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- /#feature -->
+@*<section id="works" >
+        <div class="container">
+            <div class="section-heading">
+                <h1 class="title wow fadeInDown" data-wow-delay=".3s">Casos de éxito</h1>
+                <p class="wow fadeInDown" data-wow-delay=".5s">
+                    Aliquam lobortis. Maecenas vestibulum mollis diam. Pellentesque auctor neque nec urna. Nulla sit amet est. Aenean posuere <br> tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <figure class="wow fadeInLeft animated portfolio-item" data-wow-duration="500ms" data-wow-delay="0ms">
+                        <div class="img-wrapper">
+                            <img src="images/portfolio/Captura.jpg" class="img-responsive" alt="this is a title">
+                            <div class="overlay">
+                                <div class="buttons">
+                                    <a rel="gallery" class="fancybox" href="images/portfolio/Captura.jpg">Demo</a>
+                                    <a target="_blank" href="single-portfolio.html">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h4>
+                                <a href="#">
+                                    MetLife
+                                </a>
+                            </h4>
+                            <p>
+                                Met Work Tool
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <div class="img-wrapper">
+                            <img src="images/portfolio/Captura.jpg" class="img-responsive" alt="this is a title">
+                            <div class="overlay">
+                                <div class="buttons">
+                                    <a rel="gallery" class="fancybox" href="images/portfolio/Captura.jpg">Demo</a>
+                                    <a target="_blank" href="single-portfolio.html">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h4>
+                                <a href="#">
+                                    MetLife
+                                </a>
+                            </h4>
+                            <p>
+                                Met Work Tool
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <div class="img-wrapper">
+                            <img src="images/portfolio/Captura.jpg" class="img-responsive" alt="">
+                            <div class="overlay">
+                                <div class="buttons">
+                                    <a rel="gallery" class="fancybox" href="images/portfolio/Captura.jpg">Demo</a>
+                                    <a target="_blank" href="single-portfolio.html">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h4>
+                                <a href="#">
+                                    MetLife
+                                </a>
+                            </h4>
+                            <p>
+                                Met Work Tool.
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="600ms">
+                        <div class="img-wrapper">
+                            <img src="images/portfolio/Captura.jpg" class="img-responsive" alt="">
+                            <div class="overlay">
+                                <div class="buttons">
+                                    <a rel="gallery" class="fancybox" href="images/portfolio/Captura.jpg">Demo</a>
+                                    <a target="_blank" href="single-portfolio.html">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h4>
+                                <a href="#">
+                                    MetLife
+                                </a>
+                            </h4>
+                            <p>
+                                Met Work Tool.
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="900ms">
+                        <div class="img-wrapper">
+                            <img src="images/portfolio/Captura.jpg" class="img-responsive" alt="">
+                            <div class="overlay">
+                                <div class="buttons">
+                                    <a rel="gallery" class="fancybox" href="images/portfolio/Captura.jpg">Demo</a>
+                                    <a target="_blank" href="single-portfolio.html">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h4>
+                                <a href="#">
+                                    MetLife
+                                </a>
+                            </h4>
+                            <p>
+                                Met Work Tool
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="1200ms">
+                        <div class="img-wrapper">
+                            <img src="images/portfolio/Captura.jpg" class="img-responsive" alt="">
+                            <div class="overlay">
+                                <div class="buttons">
+                                    <a rel="gallery" class="fancybox" href="images/portfolio/Captura.jpg">Demo</a>
+                                    <a target="_blank" href="single-portfolio.html">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <h4>
+                                <a href="#">
+                                    MetLife
+                                </a>
+                            </h4>
+                            <p>
+                                Met Work Tool
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>*@
+
+
+
+@*<section class="works service-page">
+        <div class="container">
+            <div class="section-heading">
+                <h1 class="title wow fadeInDown" data-wow-delay=".3s">Integración de talento </h1>
+                <p class="wow fadeInDown" data-wow-delay=".5s">
+                    Contamos con un proceso de reclutamiento especializado, en el cual todos los candidatos son evaluados rigurosamente para garantizar que cuentan con los conocimientos técnicos y el perfil de personalidad apropiados para colaborar en sus proyectos exitosamente. Adicionalmente ofrecemos algunos servicios adicionales que aportan información importante para su empresa.
+                </p>
+                <article class="wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
+
+                    <div class="blog-content">
+                        <a href="@Url.Action("Index", "IntegracionTalento")" class="btn btn-dafault btn-details">SEGUIR LEYENDO</a>
+                    </div>
+
+                </article>
+
+                <br /><br />
+                <div class="row service-parts">
+                    <div class="col-md-4">
+                        <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="600ms">
+                            <a href="@Url.Action("Reclutamiento", "IntegracionTalento")">
+                                <i class="ion-ios-personadd"></i>
+                                <h4>Reclutamiento de Personal </h4>
+                                <p>Veritatis eligendi, dignissimos. Porta fermentum mus aute pulvinar earum minus platea massa feugiat rutrum urna facilisi ipsameum.</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="800ms">
+                            <a href="@Url.Action("Evaluacion", "IntegracionTalento")">
+                                <i class="ion-ios-folder"></i>
+                                <h4>Evaluación Psicométricas </h4>
+                                <p>Veritatis eligendi, dignissimos. Porta fermentum mus aute pulvinar earum minus platea massa feugiat rutrum urna facilisi ipsameum.</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="1s">
+                            <a href="@Url.Action("Nomina", "IntegracionTalento")">
+                                <i class="ion-android-notifications"></i>
+                                <h4>Administración de Nómina </h4>
+                                <p>Veritatis eligendi, dignissimos. Porta fermentum mus aute pulvinar earum minus platea massa feugiat rutrum urna facilisi ipsameum.</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
+
+
+<section id="clients" class="clients">
+    <div class="container">
+        <div class="section-heading">
+            <h1 class="title wow fadeInDown" data-wow-delay=".3s">SOCIOS DE NEGOCIOS/ALIADOS</h1>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="socios-logo" class="owl-carousel">
+                    <div>
+                        <img src="~/images/socios/huawei.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/socios/microsoft.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/socios/hikvision.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/socios/syscom.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/socios/ingram.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/socios/CVA.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- #works -->
+<!--
+        ==================================================
+            Clients Section Start
+        ================================================== -->
+<section id="clients" class="clients">
+    <div class="container">
+        <div class="section-heading">
+            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Clientes</h1>
+            <p class="wow fadeInDown" data-wow-delay=".5s">
+                Asae consultores se esfuerza por conocer y entender las necesidades de sus clientes y busca como reforzar sus fortalezas y áreas de oportunidad, mediante los proyectos tecnológicos. Diseñamos e implementamos soluciones a la medida de las necesidades de nuestros clientes.
+            </p>
+            <p class="wow fadeInDown" data-wow-delay=".5s">
+                Nos hemos consolidado como una organización integradora de tecnología, abarcando productos y servicios para mercados verticales y soluciones horizontales para ello contamos con presencia a nivel nacional.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <div id="clients-logo" class="owl-carousel">
+
+                    <div>
+                        <img src="~/images/clients/client-1.jpg" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-2.JPG" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-3.jpg" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-4.jpg" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-5.jpg" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-6.jpg" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-7.jpg" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-8.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-9.jpg" />
+                    </div>
+
+                    <div>
+                        <img src="~/images/clients/client-10.jpg" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-11.jpg" />
+                    </div>
+
+                    <div>
+                        <img src="~/images/clients/client-12.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-13.jpg" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-14.jpg" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-15.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-16.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-17.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-18.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-19.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-20.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-21.jpg" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-22.png" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-23.jpg" />
+                    </div>
+                    <div>
+                        <img src="~/images/clients/client-24.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="~/plugins/jQurey/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var owl = $("#clients-logo");
+        var owl2 = $("#socios-logo");
+        owl.owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            items: 5,
+            autoplay: true,
+            autoplayTimeout: 1000,
+        });
+
+        owl2.owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            items: 5,
+            autoplay: true,
+            autoplayTimeout: 1000,
+        });
+
+    });
+
+    $(document).ready(function () {
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 50) {
+                $(".navbar-brand a").css("color", "#fff");
+                $("#top-bar").removeClass("animated-header");
+            } else {
+                $(".navbar-brand a").css("color", "inherit");
+                $("#top-bar").addClass("animated-header");
+            }
+        });
+
+
+    });
+</script>

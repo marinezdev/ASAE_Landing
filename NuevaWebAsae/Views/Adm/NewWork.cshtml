@@ -1,0 +1,910 @@
+﻿
+@{
+    ViewBag.Title = "NewWork";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="~/Assets/js/plugins/EditorText/css/froala_editor.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/froala_style.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/code_view.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/draggable.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/colors.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/emoticons.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/image_manager.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/image.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/line_breaker.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/table.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/char_counter.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/video.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/fullscreen.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/file.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/quick_insert.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/help.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/third_party/spell_checker.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/special_characters.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+
+
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4">
+
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Registrar nueva vacante </h6>
+                        </div>
+                        <div class="col-lg-6 col-5 my-auto text-end">
+                            <div class="dropdown float-lg-end pe-4">
+                                <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-v text-secondary"></i>
+                                </a>
+                                <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
+                                    <li><a class="dropdown-item border-radius-md" href="javascript:;">Agregar categoría </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="form-group">
+                                    <label for="largeInput">* Titulo  </label>
+                                    <input type="text" class="form-control form-control" id="Text_Titulo" onchange="ValidaInput('Text_Titulo')">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="largeInput"> Categoria :  </label>
+                                    <div class="select2-input">
+                                        <select id="Select_Categoria" name="Select_Categoria" class="form-control" style="width:100%" onchange="ValidaSelect('Select_Categoria')">
+                                            <option value="0">Seleccionar</option>
+                                            @foreach (var item1 in ViewBag.Categorias)
+                                            {
+                                                <option value="@item1.Id">@item1.Nombre </option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="largeInput"> Tipo de vacante:  </label>
+                                    <div class="select2-input">
+                                        <select id="Select_TipoVacante" name="Select_TipoVacante" class="form-control" style="width:100%" onchange="ValidaSelect('Select_TipoVacante')">
+                                            <option value="0">Seleccionar</option>
+                                            @foreach (var item1 in ViewBag.Vacante)
+                                            {
+                                                <option value="@item1.Id">@item1.Nombre </option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 col-lg-4">
+                                <div class="form-group">
+                                    <label for="largeInput">* Salario (Rango inicial) </label>
+                                    <input type="text" class="form-control input-number" id="Text_Sueldo" onchange="ValidaInput('Text_Sueldo')">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-4">
+                                <div class="form-group">
+                                    <label for="largeInput"> Salario (Rango final)   </label>
+                                    <input type="text" class="form-control input-number" id="Text_SueldoF" >
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-4">
+                                <div class="form-group">
+                                    <label for="largeInput"> Pago:  </label>
+                                    <div class="select2-input">
+                                        <select id="Select_Pago" name="Select_Pago" class="form-control" style="width:100%" onchange="ValidaSelect('Select_Pago')">
+                                            <option value="0">Seleccionar</option>
+                                            @foreach (var item1 in ViewBag.Pago)
+                                            {
+                                                <option value="@item1.Id">@item1.Nombre </option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="largeInput">* Dirección   </label>
+                                    <input type="text" class="form-control form-control" id="Text_Direccion" onchange="ValidaInput('Text_Direccion')">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                <br />
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="BuscarDireccion" onchange="BuscarDireccion()">
+                                    <label class="form-check-label" for="rememberMe">Buscar dirección  </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="DivCP" style="display: none;">
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="largeInput"> Código postal  </label>
+                                        <input type="text" class="form-control" id="CP" placeholder="Código postal" onchange="CPBuscar(this.value)">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="largeInput"> Estado:  </label>
+                                        <div class="select2-input">
+                                            <select id="Select_DEstado" name="Select_DEstado" class="form-control" style="width:100%" onchange="callEstados(this.value)">
+                                                <option value="0">Seleccionar </option>
+                                                @foreach (var item1 in ViewBag.CatEstados)
+                                                {
+                                                    <option value="@item1.Id">@item1.Nombre</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="largeInput"> Ciudad o municipio:  </label>
+                                        <div class="select2-input">
+                                            <select id="Select_Delegacion_Municipio" name="Select_Delegacion_Municipio" class="form-control" style="width:100%"  onchange="callColonias(this.value)">
+                                                <option value="0">Seleccionar</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="largeInput"> Colonia:  </label>
+                                        <div class="select2-input">
+                                            <select id="Select_Colonia" name="Select_Colonia" class="form-control" style="width:100%" onchange="callCP(this.value)">
+                                                <option value="0">Seleccionar</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="card mb-4">
+
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Información del empleo</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div id="editor">
+                                    <textarea name="editor_content" id="edit">
+
+                                    </textarea>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4">
+                                <button type="button" id="BtnRegistrar" class="btn bg-gradient-info w-100 mt-4 mb-0">Registrar  </button>
+                                <br /><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.7/purify.min.js"></script>
+<script src="~/Assets/js/plugins/EditorText/js/froala_editor.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/align.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/char_counter.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/code_beautifier.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/code_view.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/colors.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/draggable.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/emoticons.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/entities.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/file.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/font_size.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/font_family.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/fullscreen.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/image.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/image_manager.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/line_breaker.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/inline_style.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/link.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/lists.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/paragraph_format.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/paragraph_style.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/quick_insert.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/quote.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/table.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/save.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/url.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/video.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/help.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/print.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/third_party/spell_checker.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/special_characters.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/word_paste.min.js"></script>
+
+<script>
+    function BuscarDireccion() {
+        if (!$('#BuscarDireccion').prop('checked')) {
+            $('#Text_Direccion').prop('disabled', false);
+            $("#DivCP").css("display", "none");
+
+            if ($('#Text_Direccion').val().length > 0) {
+                $('#Text_Direccion').css("border", "1px solid #d2d6da");
+            } else {
+                $('#Text_Direccion').css("border", "1px solid #e293d3");
+            }
+
+        } else {
+
+            $("#DivCP").show();
+            $('#Text_Direccion').prop('disabled', true);
+            $('#Text_Direccion').css("border", "1px solid #d2d6da");
+        }
+    }
+
+    function callCP(valor)
+    {
+        if (valor > 0) {
+
+            //$('#Select_Colonia').css("border", "1px solid #c2c2c2");
+
+            var obj = {};
+            obj['Id'] = valor;
+
+            var jsonObject = {
+                "Catalogos": obj
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Consulta_CP", "Adm")",
+                data: JSON.stringify(jsonObject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: resultado3,
+                error: Error
+            });
+        }
+    }
+
+    function resultado3(data) {
+        $("#CP").val(data[0].Nombre);
+    }
+
+     function callColonias(valor) {
+        if (valor > 0) {
+
+            var obj = {};
+            obj['Id'] = valor;
+
+            var jsonObject = {
+                "Catalogos": obj
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Consulta_Colonias", "Adm")",
+                data: JSON.stringify(jsonObject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: resultado2,
+                error: Error
+            });
+
+        }
+    }
+
+    function resultado2(data) {
+
+        $("#Select_Colonia").empty();
+
+        if (data.length > 0) {
+
+            var option = $(document.createElement('option'));
+            option.text("Seleccionar");
+            option.val(0);
+
+            $("#Select_Colonia").append(option);
+
+            $(data).each(function () {
+                var option = $(document.createElement('option'));
+
+                option.text(this.Nombre);
+                option.val(this.Id);
+
+                $("#Select_Colonia").append(option);
+            });
+        }
+    }
+
+    function callEstados(valor) {
+
+        if (valor > 0) {
+            //$('#DivSubCategoria').css("border-bottom", "1px solid #e6e6e6");
+            //$('#Select_DEstado').css("border", "1px solid #c2c2c2");
+
+            $("#Select_Colonia").empty();
+            //$("#Select_CP").empty();
+
+            var option = $(document.createElement('option'));
+            option.text("Seleccionar");
+            option.val(0);
+
+            //var option2 = $(document.createElement('option'));
+            //option2.text("Seleccionar");
+            //option2.val(0);
+
+            $("#Select_Colonia").append(option);
+            //$("#Select_CP").append(option2);
+
+
+            var obj = {};
+            obj['Id'] = valor;
+
+            var jsonObject = {
+                "Catalogos": obj
+            };
+
+            console.log(jsonObject);
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Consulta_DelegacionMunicipio", "Adm")",
+                data: JSON.stringify(jsonObject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: resultado,
+                error: Error
+            });
+
+        }
+    }
+
+    function resultado(data) {
+        console.log(data);
+
+        $("#Select_Delegacion_Municipio").empty();
+
+        if (data.length > 0) {
+
+            var option = $(document.createElement('option'));
+            option.text("Seleccionar");
+            option.val(0);
+
+            $("#Select_Delegacion_Municipio").append(option);
+
+            $(data).each(function () {
+                var option = $(document.createElement('option'));
+
+                option.text(this.Nombre);
+                option.val(this.Id);
+
+                $("#Select_Delegacion_Municipio").append(option);
+            });
+        }
+    }
+
+    function CPBuscar(valor) {
+
+        if ($('#CP').val().length > 0) {
+            $('#CP').css("border", "1px solid #d2d6da");
+        } else {
+            $('#CP').css("border", "1px solid #e293d3");
+        }
+
+        if (valor.length > 0) {
+            var obj = {};
+            obj['Nombre'] = valor;
+
+            var jsonObject = {
+                "Catalogos": obj
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("CP_Busqueda", "Adm")",
+                data: JSON.stringify(jsonObject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: resultadoBusqueda,
+                error: Error
+            });
+        } else {
+            $.notify({
+                message: "Coloca tu código postal."
+            }, {
+                type: 'danger',
+                allow_dismiss: false,
+                animate: {
+                    enter: 'animated rollIn',
+                    exit: 'animated rollOut'
+                }
+            });
+        }
+    }
+
+    function resultadoBusqueda(data) {
+        if (data.length > 0) {
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Consulta_Estados", "Adm")",
+                async: false,
+                //data: JSON.stringify(jsonObject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (dataestados) {
+                    $("#Select_DEstado").empty();
+                    if (dataestados.length > 0) {
+                        var option = $(document.createElement('option'));
+                        option.text("Seleccionar");
+                        option.val(0);
+
+                        $("#Select_DEstado").append(option);
+
+                        $(dataestados).each(function () {
+                            var option = $(document.createElement('option'));
+
+                            option.text(this.Nombre);
+                            option.val(this.Id);
+
+                            $("#Select_DEstado").append(option);
+                        });
+
+                        $('#Select_DEstado option[value="' + data[0]["IdEstado"] + '"]').attr("selected", true);
+
+                        var IdPoblacion = $("#Select_DEstado option:selected").val();
+
+                        if (IdPoblacion > 0) {
+                            var obj = {};
+                            obj['Id'] = IdPoblacion;
+
+                            var jsonObject = {
+                                "Catalogos": obj
+                            };
+
+                            $.ajax({
+                                type: "POST",
+                                url: "@Url.Action("Consulta_DelegacionMunicipio", "Adm")",
+                                data: JSON.stringify(jsonObject),
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                success: function (result) {
+
+                                    $("#Select_Delegacion_Municipio").empty();
+
+                                    if (result.length > 0) {
+
+                                        var option = $(document.createElement('option'));
+                                        option.text("Seleccionar");
+                                        option.val(0);
+
+                                        $("#Select_Delegacion_Municipio").append(option);
+
+                                        $(result).each(function () {
+                                            var option = $(document.createElement('option'));
+
+                                            option.text(this.Nombre);
+                                            option.val(this.Id);
+
+                                            $("#Select_Delegacion_Municipio").append(option);
+                                        });
+                                    }
+                                    $('#Select_Delegacion_Municipio option[value="' + data[0]["IdPoblacion"] + '"]').attr("selected", true);
+
+
+                                    $("#Select_Colonia").empty();
+
+                                    if (data.length > 0) {
+
+                                        var option = $(document.createElement('option'));
+                                        option.text("Seleccionar");
+                                        option.val(0);
+
+                                        $("#Select_Colonia").append(option);
+
+                                        $(data).each(function () {
+                                            var option = $(document.createElement('option'));
+
+                                            option.text(this.Colonia);
+                                            option.val(this.IdCP);
+
+                                            $("#Select_Colonia").append(option);
+                                        });
+                                    }
+
+                                    $('#Select_Colonia option[value="' + data[0]["IdCP"] + '"]').attr("selected", true);
+
+                                }
+                            });
+
+                        }
+                    }
+
+                },
+                error: function () {
+                    $.notify({
+                        message: "Inténtelo mas tarde."
+                    }, {
+                        type: 'danger',
+                        allow_dismiss: false,
+                        animate: {
+                            enter: 'animated rollIn',
+                            exit: 'animated rollOut'
+                        }
+                    });
+                }
+            });
+
+        } else {
+
+            $("#Select_Delegacion_Municipio").empty();
+
+            var option = $(document.createElement('option'));
+            option.text("Seleccionar");
+            option.val(0);
+
+            $("#Select_Delegacion_Municipio").append(option);
+
+            $("#Select_Colonia").empty();
+            var option = $(document.createElement('option'));
+            option.text("Seleccionar");
+            option.val(0);
+
+            $("#Select_Colonia").append(option);
+
+
+            $.notify({
+                message: "Código postal no encontrado."
+            }, {
+                type: 'danger',
+                allow_dismiss: false,
+                animate: {
+                    enter: 'animated rollIn',
+                    exit: 'animated rollOut'
+                }
+            });
+        }
+
+    }
+
+    (function () {
+        new FroalaEditor("#edit", {
+            attribution: false,
+            events: {
+                "image.beforeUpload": function (files) {
+                    var editor = this;
+                    if (files.length) {
+                        // Create a File Reader.
+                        var reader = new FileReader();
+                        // Set the reader to insert images when they are loaded.
+                        reader.onload = function (e) {
+                            var result = e.target.result;
+                            editor.image.insert(result, null, null, editor.image.get());
+                        };
+                        // Read image as base64.
+                        reader.readAsDataURL(files[0]);
+                    }
+                    editor.popups.hideAll();
+                    // Stop default upload chain.
+                    return false;
+                }
+            }
+        })
+
+    })()
+</script>
+
+
+
+
+<script src="~/Scripts/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.input-number').on('input', function () {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+
+        $('#BtnRegistrar').click(function () {
+            if (ValidarForm()) {
+                var obj = {};
+                var direccion = "";
+
+                obj['Titulo'] = $('#Text_Titulo').val();
+                obj['IdCategoria'] = $("#Select_Categoria option:selected").val();
+                obj['IdTipoVacante'] = $("#Select_TipoVacante option:selected").val();
+                obj['Sueldo'] = $('#Text_Sueldo').val();
+                
+
+                if ($('#Text_SueldoF').val().length > 0) {
+                    obj['SueldoF'] = $('#Text_SueldoF').val();
+                } else {
+                    obj['SueldoF'] = 0;
+                }
+
+                obj['IdPago'] = $("#Select_Pago option:selected").val();
+                obj['Contenido'] = $('textarea#edit').val();
+
+                if (!$('#BuscarDireccion').prop('checked')) {
+                    obj['Direccion'] = $('#Text_Direccion').val();
+                    obj['DireccionActivo'] = 0;
+                   
+                    obj['CP'] = " ";
+                    obj['IdEstado'] = 0;
+                    obj['IdPoblacion'] = 0;
+                    obj['IdColonia'] = 0;
+
+                } else {
+                    obj['Direccion'] = " ";
+                    obj['DireccionActivo'] = 1;
+                    obj['CP'] = $('#CP').val();
+                    obj['IdEstado'] = $("#Select_DEstado option:selected").val();
+                    obj['IdPoblacion'] = $("#Select_Delegacion_Municipio option:selected").val();
+                    obj['IdColonia'] = $("#Select_Colonia option:selected").val();
+                }
+
+                var jsonObject = {
+                    "Vacante": obj
+                };
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("NuevaVacante", "Adm")",
+                    data: JSON.stringify(jsonObject),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: Resultado,
+                    error: Error
+                });
+
+            }
+
+        });
+    });
+
+    function Resultado(result) {
+
+        if (result.Resultado > 0) {
+            swal({
+                title: "Registro. !",
+                text: "Vacante registrada",
+                icon: "success",
+                button: "Aceptar",
+            })
+            .then((value) => {
+                window.location.href = '@Url.Action("work", "Adm")';
+            });
+        } else {
+            Mensaje(result.ResultadoText);
+        }
+    }
+
+    function Error(result) {
+        Mensaje("Problemas en la ejecución, intento mas tarde!");
+    }
+
+
+    function ValidarForm() {
+        var result = false;
+        var direccion = false;
+        var vacante = false;
+
+        if ($('#Text_Titulo').val().length > 0) {
+            $('#Text_Titulo').css("border", "1px solid #d2d6da");
+        } else {
+            $('#Text_Titulo').css("border", "1px solid #e293d3");
+        }
+
+        if ($("#Select_Categoria option:selected").val() > 0) {
+            $('#Select_Categoria').css("border", "1px solid #d2d6da");
+        } else {
+            $('#Select_Categoria').css("border", "1px solid #e293d3");
+        }
+
+        if ($("#Select_TipoVacante option:selected").val() > 0) {
+            $('#Select_TipoVacante').css("border", "1px solid #d2d6da");
+        } else {
+            $('#Select_TipoVacante').css("border", "1px solid #e293d3");
+        }
+
+        if ($('#Text_Sueldo').val().length > 0) {
+            $('#Text_Sueldo').css("border", "1px solid #d2d6da");
+        } else {
+            $('#Text_Sueldo').css("border", "1px solid #e293d3");
+        }
+
+        //if ($('#Text_SueldoF').val().length > 0) {
+        //    $('#Text_SueldoF').css("border", "1px solid #d2d6da");
+        //} else {
+        //    $('#Text_SueldoF').css("border", "1px solid #e293d3");
+        //}
+        
+        if ($("#Select_Pago option:selected").val() > 0) {
+            $('#Select_Pago').css("border", "1px solid #d2d6da");
+        } else {
+            $('#Select_Pago').css("border", "1px solid #e293d3");
+        }
+
+        
+
+        if (!$('#BuscarDireccion').prop('checked')) {
+
+            if ($('#Text_Direccion').val().length > 0) {
+                $('#Text_Direccion').css("border", "1px solid #d2d6da");
+            } else {
+                $('#Text_Direccion').css("border", "1px solid #e293d3");
+            }
+
+            if ($('#Text_Direccion').val().length > 0) {
+                result = true;
+            } else {
+                Mensaje('Coloca la Dirección. ');
+            }
+
+        } else {
+
+            $('#Text_Direccion').css("border", "1px solid #d2d6da");
+
+            if ($('#CP').val().length > 0) {
+                $('#CP').css("border", "1px solid #d2d6da");
+            } else {
+                $('#CP').css("border", "1px solid #e293d3");
+            }
+
+            if ($("#Select_DEstado option:selected").val() > 0) {
+                $('#Select_DEstado').css("border", "1px solid #d2d6da");
+            } else {
+                $('#Select_DEstado').css("border", "1px solid #e293d3");
+            }
+
+            if ($("#Select_Delegacion_Municipio option:selected").val() > 0) {
+                $('#Select_Delegacion_Municipio').css("border", "1px solid #d2d6da");
+            } else {
+                $('#Select_Delegacion_Municipio').css("border", "1px solid #e293d3");
+            }
+
+            if ($("#Select_Colonia option:selected").val() > 0) {
+                $('#Select_Colonia').css("border", "1px solid #d2d6da");
+            } else {
+                $('#Select_Colonia').css("border", "1px solid #e293d3");
+            }
+
+            if ($('#CP').val().length > 0) {
+                if ($("#Select_DEstado option:selected").val() > 0) {
+                    if ($("#Select_Delegacion_Municipio option:selected").val() > 0) {
+                        if ($("#Select_Colonia option:selected").val() > 0) {
+                            direccion = true;
+                        } else {
+                            Mensaje('Selecciona la colonia.');
+                        }
+                    } else {
+                        Mensaje('Selecciona la delegación o municipio.');
+                    }
+                } else {
+                    Mensaje('Selecciona el estado.');
+                }
+            } else {
+                Mensaje('Código postal.');
+            }
+
+        }
+
+
+        if ($('#Text_Titulo').val().length > 0) {
+            if ($("#Select_Categoria option:selected").val() > 0) {
+                if ($("#Select_TipoVacante option:selected").val() > 0) {
+                    if ($('#Text_Sueldo').val().length > 0) {
+                        /*if ($('#Text_SueldoF').val().length > 0) {*/
+                            if ($("#Select_Pago option:selected").val() > 0) {
+                                if ($('#edit').val().length > 0) {
+                                    vacante = true;
+                                } else {
+                                    Mensaje('Coloca el contenido. ');
+                                }
+                            } else {
+                                Mensaje('Selecciona el tipo de pago. ');
+                            }
+                        //} else {
+                        //    Mensaje('Coloca el sueldo (Rango final). ');
+                        //}
+                    } else {
+                        Mensaje('Coloca el sueldo (Rango inicial). ');
+                    }
+                } else {
+                    Mensaje('Selecciona el tipo de vacante. ');
+                }
+            } else {
+                Mensaje('Selecciona una categoría.');
+            }
+        } else {
+            Mensaje('Coloca el titulo. ');
+        }
+
+        if (vacante) {
+            if (direccion) {
+                result = true;
+            }
+        }
+
+        return result;
+    }
+
+    function Mensaje(text) {
+        $.notify({
+            icon: 'fa fa-paw',
+            message: text
+        }, {
+            type: 'warning',
+            allow_dismiss: false,
+            animate: {
+                enter: 'animated rollIn',
+                exit: 'animated rollOut'
+            }
+        });
+    }
+
+    function ValidaInput(name) {
+        if ($('#' + name).val().length > 0) {
+            $('#' + name).css("border", "1px solid #d2d6da");
+        } else {
+            $('#' + name).css("border", "2px solid #e293d3");
+        }
+    }
+
+    function ValidaSelect(name) {
+        if ($('#' + name + ' option:selected').val() > 0) {
+            $('#' + name).css("border", "1px solid #d2d6da");
+        } else {
+            $('#' + name).css("border", "2px solid #e293d3");
+        }
+    }
+
+    $(document).ready(function () {
+        $('#Menu_work').addClass("nav-link active");
+    });
+</script>

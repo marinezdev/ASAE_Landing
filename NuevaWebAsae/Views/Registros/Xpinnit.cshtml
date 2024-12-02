@@ -1,0 +1,541 @@
+﻿
+@{
+    ViewBag.Title = "Xpinnit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #hero-area {
+        background: url('../../images/jobctrl/images1699-5ca7a7dfb26d5-1024x683.jpg') no-repeat 50%;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 160px 0;
+        color: #fff;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+
+        #hero-area:before {
+            content: '';
+            z-index: 9;
+            background-image: linear-gradient(114deg, #4cc8552b 11%,#32abba2b 94%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+    .cd-headline.slide .cd-words-wrapper {
+        color: #4cc855;
+    }
+
+    #call-to-action {
+        /* background: #02bdd5; */
+        /*background-image: linear-gradient(114deg, #FF5722 30%, #FF9800 99%);*/
+        background-image: linear-gradient( 114deg, #4cc855 30%, #2da5cc 99%);
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 80px 0;
+        text-align: center;
+        position: relative;
+        color: #fff;
+    }
+
+    .service-page .service-parts .block i {
+        font-size: 35px;
+        color: #4cc855 ;
+    }
+
+    .title {
+        font-size: 30px;
+        line-height: 1.1;
+        font-weight: 300;
+        color: #4cc855 ;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+
+
+    .top-content .form-box {
+        padding-top: 20px;
+    }
+
+    .top-content .book img {
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        padding-top: 25px;
+    }
+
+    .form-top-left h3 {
+        margin-top: 0;
+        color: #9E9E9E;
+    }
+
+    .form-top-left p {
+        opacity: 0.8;
+        color: #9E9E9E;
+    }
+
+    .form-top {
+        overflow: hidden;
+        padding: 0 25px 15px 25px;
+        background: #9E9E9E;
+        background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);
+        background: linear-gradient(to right, #ffffff, #ffffffa1);
+        -moz-border-radius: 4px 4px 0 0;
+        -webkit-border-radius: 4px 4px 0 0;
+        border-radius: 4px 4px 0 0;
+        text-align: left;
+    }
+
+    .form-top-left {
+        float: left;
+        width: 75%;
+        padding-top: 25px;
+    }
+
+    .top-content .form-box {
+        padding-top: 20px;
+    }
+
+    .form-top-right {
+        float: left;
+        width: 25%;
+        padding-top: 5px;
+        font-size: 66px;
+        color: #fff;
+        line-height: 100px;
+        text-align: right;
+        opacity: 0.3;
+    }
+
+    .form-bottom {
+        padding: 25px 25px 30px 25px;
+        background: #444;
+        /*background: rgba(0, 0, 0, 0.3);*/
+        background: #d3d3d3a6;
+        -moz-border-radius: 0 0 4px 4px;
+        -webkit-border-radius: 0 0 4px 4px;
+        border-radius: 0 0 4px 4px;
+        font-family: 'Roboto Condensed', sans-serif;
+        color: #5a5a5a;
+        text-align: left;
+    }
+
+    input[type="text"], [type="password"], textarea, textarea.form-control {
+        height: 40px;
+        margin: 0;
+        padding: 0 10px;
+        vertical-align: middle;
+        background: #fff;
+        border: 2px solid #fff;
+        font-family: 'Roboto', sans-serif;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 50px;
+        color: #888;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -o-transition: all .3s;
+        -moz-transition: all .3s;
+        -webkit-transition: all .3s;
+        -ms-transition: all .3s;
+        transition: all .3s;
+    }
+
+    button.btn {
+        width: 100%;
+        height: 50px;
+        margin: 0;
+        padding: 0 20px;
+        vertical-align: middle;
+        background: #15436d;
+        background: linear-gradient(to right, #46b7e9, #3f51a3);
+        border: 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 50px;
+        color: #fff;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        text-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        -o-transition: all .3s;
+        -moz-transition: all .3s;
+        -webkit-transition: all .3s;
+        -ms-transition: all .3s;
+        transition: all .3s;
+    }
+
+        button.btn:hover {
+            opacity: 0.6;
+            color: #fff;
+        }
+
+        button.btn:active {
+            outline: 0;
+            opacity: 0.6;
+            color: #fff;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        button.btn:focus {
+            outline: 0;
+            opacity: 0.6;
+            background: #15436d;
+            color: #fff;
+        }
+
+        button.btn:active:focus, button.btn.active:focus {
+            outline: 0;
+            opacity: 0.6;
+            background: #15436d;
+            color: #fff;
+        }
+
+    #hero-area .btn {
+        background: #4cc855;
+        border: none;
+        color: #fff;
+        padding: 20px 35px;
+        margin-top: 30px;
+        font-size: 16px;
+        font-size: 13px;
+        line-height: 1em;
+        text-transform: uppercase;
+        letter-spacing: normal;
+        /* border-radius: 0; */
+    }
+</style>
+<section id="hero-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 text-center">
+                <div class="block wow fadeInUp" data-wow-delay=".3s">
+                    <!-- Slider -->
+                    <section class="cd-intro">
+                        @*<h2 class="title wow fadeInDown animated" data-wow-delay=".3s" data-wow-duration="500ms" style=" font-size:22px; color:#FF5722; text-align: center; visibility: visible; animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInDown;">
+                                El secreto de un trabajo a distancia sin perder control del trabajo y aumentando la productividad lo queremos compartir con tu empresa
+                            </h2>*@
+                        <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
+
+                            @*<span> Asae Consultores S.A de C.V</span><br><br />*@
+                            <span class="cd-words-wrapper" style="text-align:center">
+                                <b class="is-visible">WEBINAR</b>
+                                <b>24 FEBRERO</b>
+                                <b>13 HORAS</b>
+                            </span>
+                            <img src="~/images/xpinnit/DpQvvsvUwAEu0Bb.jpg" width="80%" />
+                            <br />
+
+
+                        </h1>
+                    </section> <!-- cd-intro -->
+                    <!-- /.slider -->
+
+                    <h2 class="wow fadeInUp animated" data-wow-delay=".6s">
+                        Registra tu asistencia, <strong> se enviará a tu correo electrónico </strong> toda la información necesaria de tu acceso, además de poder <strong> confirmar tu participación </strong> con nosotros.
+                    </h2>
+                    <a href="@Url.Action("Xpinnit", "Soluciones")" class="btn" style="width:70%">Mas información de xpinnit</a>
+                    <br /><br />
+                </div>
+            </div>
+            <div class="col-sm-5 form-box">
+                <div class="block wow fadeInUp" data-wow-delay=".3s">
+                    <!-- Slider -->
+                    <section class="cd-intro">
+
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>Formulario de registro  </h3>
+                                @*<img src="~/images/xpinnit/xpinnit.png" width="100%"/>
+                                <br><br />*@
+                                <p>Complete el siguiente formulario para obtener tu acceso:</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form role="form" action="">
+                                <div class="row">
+                                    <div class="form-group col-sm-6">
+                                        <label>Nombre</label>
+                                        <input type="text" name="form-name" placeholder="Nombre ..." class="form-email form-control" id="R_Nombre">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Apellido Paterno</label>
+                                        <input type="text" name="form-ap" placeholder="Apellidos ..." class="form-email form-control" id="R_ApellidoPat">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Apellido Materno</label>
+                                        <input type="text" name="form-am" placeholder="Apellidos ..." class="form-email form-control" id="R_ApellidoMat">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Empresa</label>
+                                        <input type="text" name="form-empresa" placeholder="Apellidos ..." class="form-email form-control" id="R_Empresa">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label>Email empresarial  </label>
+                                        <input type="text" name="form-emailEmpresarial" placeholder="Email empresarial ..." class="form-email form-control" id="R_EEm">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <label>Email personal</label>
+                                        <input type="text" name="form-email" placeholder="Email personal ..." class="form-email form-control" id="R_EPer">
+                                    </div>
+
+                                    <div class="form-group col-sm-6">
+                                        <label>Teléfono móvil</label>
+                                        <input type="text" name="form-movile" placeholder="Teléfono móvil ..." class="form-email form-control" maxlength="12" id="R_TMov">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Teléfono local </label>
+                                        <input type="text" name="form-phone" placeholder="Teléfono local ..." class="form-email form-control" maxlength="12" id="R_TLoc">
+                                    </div>
+                                </div>
+                                <div id="alertBoxes"></div><span class="timer" id="timer" style="display: none; overflow: hidden;"></span>
+
+                                <button type="button" id="BtnRegistrarJob" class="btn">Registrar</button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/#main-slider-->
+<script src="~/plugins/jQurey/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var timeSlide = 0;
+        $('#timer').hide(0);
+        $('#timer').css('display', 'none');
+        $('#BtnRegistrarJob').click(function () {
+            $('.box-success,.box-error').slideUp(timeSlide);
+            setTimeout(function () {
+
+                if (validaLogin()) {
+                    if (ValidFormEmail()) {
+                        var arreglo = [];
+                        var obj = {};
+                        obj['Nombre'] = $('#R_Nombre').val();
+                        obj['ApellidoPaterno'] = $('#R_ApellidoPat').val();
+                        obj['ApellidoMaterno'] = $('#R_ApellidoMat').val();
+                        obj['NombreEmpresa'] = $('#R_Empresa').val();
+                        obj['CorreoEmpresa'] = $('#R_EEm').val();
+                        obj['CorreoPersonal'] = $('#R_EPer').val();
+                        obj['TelefonoMovil'] = $('#R_TMov').val();
+                        obj['TelefonoLocal'] = $('#R_TLoc').val();
+                        obj['Ingreso'] = "@ViewBag.Ingreso";
+                        obj['Evento'] = "WEBINAR XPINNIT";
+                        arreglo.push(obj);
+                        var jsonObject = {
+                            "Usuario": arreglo
+                        };
+                        //console.log(jsonObject);
+
+                        $.ajax({
+                            url: "@Url.Action("NuevoRegistroXpinnit", "Registros")",
+                            type: "POST",
+                            data: JSON.stringify(jsonObject),
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            error: function (response) {
+                                console.log(response);
+                                swal({
+                                    title: "Algo ocurrió !",
+                                    text: "Ha ocurrido un problema, inténtalo mas tarde ",
+                                    icon: "warning",
+                                    button: "Aceptar",
+                                });
+                            },
+                            success: function (response) {
+                                console.log(response);
+                                if (response.Respuesta == 1) {
+                                    swal({
+                                        title: "Registro exitoso. !",
+                                        text: response.RespuestaText,
+                                        icon: "success",
+                                        button: "Aceptar",
+                                    })
+                                        .then((value) => {
+                                            window.location.href = '@Url.Action("Xpinnit","Registros")';
+                                        });
+                                } else if (response.Respuesta == 2) {
+                                    swal({
+                                        title: "¡Ha ocurrido algo! ",
+                                        text: response.RespuestaText,
+                                        icon: "warning",
+                                        buttons: true,
+                                        dangerMode: true,
+                                        buttons: ["Cancelar", "Enviar correo"],
+                                    })
+                                        .then((willDelete) => {
+                                            if (willDelete) {
+                                                $.ajax({
+                                                    url: "@Url.Action("EnviarCorreoXpinnit", "Registros")",
+                                                    type: "POST",
+                                                    data: JSON.stringify(jsonObject),
+                                                    contentType: "application/json; charset=utf-8",
+                                                    dataType: "json",
+                                                    error: function (response) {
+                                                        swal({
+                                                            title: "¡ Algo ocurrió !",
+                                                            text: "Ha ocurrido un problema, inténtalo mas tarde ",
+                                                            icon: "warning",
+                                                            button: "Aceptar",
+                                                        });
+                                                    },
+                                                    success: function (response) {
+                                                        if (response.Respuesta == 1 ) {
+                                                            swal({
+                                                                title: "Correo enviado !",
+                                                                text: response.RespuestaText,
+                                                                icon: "success",
+                                                                button: "Aceptar",
+                                                            })
+                                                            .then((value) => {
+                                                                window.location.href = '@Url.Action("Xpinnit","Registros")';
+                                                            });
+                                                        }
+                                                    }
+                                                });
+
+                                            }
+                                            //else {
+                                            //    swal("Tu sesión, se encuentra activa!");
+                                            //}
+                                        });
+
+                                } else {
+                                    swal({
+                                        title: "¡ Algo ocurrió !",
+                                        text: response.RespuestaText,
+                                        icon: "warning",
+                                        button: "Aceptar",
+                                    })
+                                }
+
+
+
+
+                            }
+                        });
+                    }
+                } else {
+                    $.notify({
+	                icon: 'fa fa-paw',
+	                message: "Formulario incompleto."
+                    },{
+                        type: 'danger',
+                        allow_dismiss: false,
+                        animate: {
+		                    enter: 'animated rollIn',
+		                    exit: 'animated rollOut'
+	                    }
+                    });
+                }
+
+            }, timeSlide);
+            return false;
+        });
+    });
+
+    function validaLogin() {
+        var respuesta = false;
+
+        $('#R_Nombre').css("border", "2px solid #FF5722");
+        $('#R_ApellidoPat').css("border", "2px solid #FF5722");
+        //$('#R_ApellidoMat').css("border", "2px solid #FF5722");
+        $('#R_EPer').css("border", "2px solid #FF5722");
+        $('#R_TMov').css("border", "2px solid #FF5722");
+
+        if ($('#R_Nombre').val().length > 0) {
+            $('#R_Nombre').css("border", "2px solid #fff");
+        }
+
+        if ($('#R_ApellidoPat').val().length > 0) {
+            $('#R_ApellidoPat').css("border", "2px solid #fff");
+        }
+
+        //if ($('#R_ApellidoMat').val().length > 0) {
+        //    $('#R_ApellidoMat').css("border", "2px solid #fff");
+        //}
+
+        if ($('#R_EPer').val().length > 0) {
+            $('#R_EPer').css("border", "2px solid #fff");
+        }
+
+        if ($('#R_TMov').val().length > 0) {
+            $('#R_TMov').css("border", "2px solid #fff");
+        }
+
+
+
+        if ($('#R_Nombre').val().length > 0) {
+            if ($('#R_ApellidoPat').val().length > 0) {
+                //if ($('#R_ApellidoMat').val().length > 0) {
+                    if ($('#R_EPer').val().length > 0) {
+                        if ($('#R_TMov').val().length > 0) {
+                            respuesta = true;
+                        }
+                    }
+                //}
+            }
+        }
+
+        return respuesta;
+    }
+
+    function ValidFormEmail() {
+        var respuesta = false;
+
+        if (CorreoFromJob() == "ok") {
+            $('#R_EPer').css("border", "2px solid #fff");
+            respuesta = true;
+        } else {
+
+            $('#R_EPer').css("border", "2px solid #FF5722");
+
+            $.notify({
+	        icon: 'fa fa-paw',
+	        message: "Correo electrónico invalido."
+            },{
+                type: 'danger',
+                allow_dismiss: false,
+                animate: {
+		            enter: 'animated rollIn',
+		            exit: 'animated rollOut'
+	            }
+            });
+        }
+
+        return respuesta;
+    }
+
+
+
+    $(document).ready(function () {
+        // NO ESCRIBIR LETRAS
+        $('#R_TMov').on('input', function () {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+
+         $('#R_TLoc').on('input', function () {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    });
+</script>

@@ -1,0 +1,217 @@
+﻿
+@{
+    ViewBag.Title = "Categoria";
+    Layout = "~/Views/Shared/_LayoutBlog_.cshtml";
+}
+<style>
+
+    .shared-panel {
+        overflow: auto;
+    }
+
+        .shared-panel span {
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+    .shared {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 5px 0;
+        padding: 0;
+        background: url('../../Assets/img/shared.png') no-repeat;
+        float: left;
+        margin-right: 5px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+        .shared:hover {
+            opacity: 0.7;
+        }
+
+        .shared.gp {
+            background-position: 0px 0px;
+            background-color: #E62B34;
+        }
+
+        .shared.tt {
+            background-position: 0px -30px;
+            background-color: #43BDF0;
+        }
+
+        .shared.ce {
+            background-position: 0px -60px;
+            background-color: #8A898D;
+        }
+
+        .shared.wa {
+            background-position: 0px -90px;
+            background-color: #0dc143;
+        }
+
+        .shared.fb {
+            background-position: 0px -120px;
+            background-color: #6081C4;
+        }
+
+    .st2 {
+        border-radius: 0;
+    }
+
+    .st3 {
+        border-radius: 5px;
+    }
+</style>
+
+@Html.Raw(ViewBag.Header)
+
+<div class="main-content-wrapper section-padding-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- ============= Post Content Area Start ============= -->
+            <div class="col-12 col-lg-8">
+                <div class="post-content-area mb-100">
+                    @Html.Raw(ViewBag.Blog)
+                </div>
+            </div>
+
+
+            <!-- ========== Sidebar Area ========== -->
+            <div class="col-12 col-md-8 col-lg-4">
+                <div class="post-sidebar-area wow fadeInUpBig" data-wow-delay="0.2s">
+                    <div class="sidebar-widget-area">
+                        <h5 class="title">Compartir Blog </h5>
+                        <div class="widget-content">
+                            <div class="shared-panel">
+                                <a target="_blank" class="shared fb st3" title="Facebook"></a>
+                                <a target="_blank" class="shared tt st3" title="Twitter"></a>
+                                <a target="_blank" class="shared gp st3" title="Google+"></a>
+                                <a class="shared wa st3" data-action='share/whatsapp/share' title="WhatsApp"></a>
+                                <a target="_blank" class="shared ce st3" title="Email"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Widget Area -->
+                    <div class="sidebar-widget-area">
+                        <h5 class="title">Nuestro Blog Asae</h5>
+                        <div class="widget-content">
+                            <p>Bienvenido a nuestro blog, donde podrás ver las mejores noticias informativas con temas de interés tecnológico.</p>
+                        </div>
+                    </div>
+                    <!-- Widget Area -->
+                    <div class="sidebar-widget-area">
+                        <h5 class="title">Artículos destacados</h5>
+                        <div class="widget-content">
+                            @Html.Raw(ViewBag.Blog_Post)
+                        </div>
+                    </div>
+                    <!-- Widget Area -->
+                    <div class="sidebar-widget-area">
+                        <h5 class="title">Mantente conectado</h5>
+                        <div class="widget-content">
+                            <div class="social-area d-flex justify-content-between">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                <a href="#"><i class="fa fa-vimeo"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-google"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Widget Area -->
+                    <div class="sidebar-widget-area">
+                        <h5 class="title">Ultimo artículo </h5>
+                        <div class="widget-content">
+                            @Html.Raw(ViewBag.New_Articulo)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <!-- ========== Single Blog Post ========== -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    @Html.Raw(ViewBag.Articulo1)
+                </div>
+                <!-- ========== Single Blog Post ========== -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    @Html.Raw(ViewBag.Articulo2)
+                </div>
+                <!-- ========== Single Blog Post ========== -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    @Html.Raw(ViewBag.Articulo3)
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/Assets/js/plugins/jquery-3.2.1.min.js"></script>
+<script>
+    function Post(artiuclo) {
+        window.location.href = '@Url.Action("Post", "Blog")?Id=' + artiuclo;
+    }
+
+    function Categoria(categoria) {
+        window.location.href = '@Url.Action("Categoria", "Blog")?Id=' + categoria;
+    }
+
+</script>
+
+
+<script>
+    function Post(artiuclo) {
+        window.location.href = '@Url.Action("Post", "Blog")?Id=' + artiuclo;
+    }
+
+    function Categoria(categoria) {
+        window.location.href = '@Url.Action("Categoria", "Blog")?Id=' + categoria;
+    }
+
+    $(document).on('click', ".shared", function () {
+        var url = window.location.href;
+        var title = document.title;
+
+        url = encodeURIComponent(url);
+        title = encodeURIComponent(title);
+
+        //Boton Facebook
+        if ($(this).hasClass('fb')) {
+            url = 'https://www.facebook.com/sharer/sharer.php?u=' + url + '&t=' + title;
+
+            //Boton Twitter
+        } else if ($(this).hasClass('tt')) {
+            user = 'asaeconsultores';//Nuestro usuario de twitter para mostrar como user
+            url = 'https://twitter.com/intent/tweet?text=' + title + '&url=' + url + '&via=' + user;
+
+            //Boyton Google Plus
+        } else if ($(this).hasClass('gp')) {
+            url = 'https://plus.google.com/share?url=' + url;
+
+            //Boton WhtsApp
+        } else if ($(this).hasClass('wa')) {
+            url = 'https://api.whatsapp.com/send?text="' + document.title + '" - "' + window.location.href + '"';
+
+            //Boton correo electronico
+        } else if ($(this).hasClass('ce')) {
+            url = 'mailto:?subject=' + title + '&body=' + url;
+
+            //Ningun boton valido
+        } else return;
+
+        //Abrimos la url
+
+        window.open(url.replace('+', '%2b'), '_blank');
+    });
+
+</script>

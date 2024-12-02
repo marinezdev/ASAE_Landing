@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{595EDAF5-0550-466B-9B8D-055A4F81E807}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NuevaWebAsae.Data</RootNamespace>
+    <AssemblyName>NuevaWebAsae.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Articulo.cs" />
+    <Compile Include="AsaeWebSeccion.cs" />
+    <Compile Include="CatColonias.cs" />
+    <Compile Include="CatCP.cs" />
+    <Compile Include="CatEstados.cs" />
+    <Compile Include="CatgoriaVacante.cs" />
+    <Compile Include="CatPago.cs" />
+    <Compile Include="CatPoblacion.cs" />
+    <Compile Include="CatVacante.cs" />
+    <Compile Include="Cat_categorias.cs" />
+    <Compile Include="Cat_Clientes.cs" />
+    <Compile Include="Cat_EsquemaContratacion.cs" />
+    <Compile Include="Cat_estados.cs" />
+    <Compile Include="Cat_JornadaTrabajo.cs" />
+    <Compile Include="Cat_Modalidad.cs" />
+    <Compile Include="Cat_MotivosBajaEmpleado.cs" />
+    <Compile Include="Cat_ProyectoServicios.cs" />
+    <Compile Include="ClienteDirecciones.cs" />
+    <Compile Include="Comentario.cs" />
+    <Compile Include="ControlArchivo.cs" />
+    <Compile Include="Control_Archivos.cs" />
+    <Compile Include="Empleados.cs" />
+    <Compile Include="EmpresaPuestos.cs" />
+    <Compile Include="Empresas.cs" />
+    <Compile Include="EmpresasDepartamento.cs" />
+    <Compile Include="Imagen.cs" />
+    <Compile Include="ManejoDatos.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prospecto.cs" />
+    <Compile Include="ProspectoArchivo.cs" />
+    <Compile Include="ProspectoBitacora.cs" />
+    <Compile Include="ProspectoCorreo.cs" />
+    <Compile Include="ProspectoExperiencia.cs" />
+    <Compile Include="ProspectoMensaje.cs" />
+    <Compile Include="ProspectoNota.cs" />
+    <Compile Include="UsuarioResponsable.cs" />
+    <Compile Include="Usuarios.cs" />
+    <Compile Include="Vacante.cs" />
+    <Compile Include="ProspectoEntrevista.cs" />
+    <Compile Include="VacanteBitacora.cs" />
+    <Compile Include="VacanteNota.cs" />
+    <Compile Include="VacanteResponsable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NuevaWebAsae.Models\NuevaWebAsae.Models.csproj">
+      <Project>{efc45869-52a8-4ef9-b84e-e469f96364e3}</Project>
+      <Name>NuevaWebAsae.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

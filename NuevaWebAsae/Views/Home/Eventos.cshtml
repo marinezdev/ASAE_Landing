@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewBag.Title = "Eventos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br /><br /><br /><br />
+<!--
+==================================================
+    Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h2>Eventos y clasificaciones</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="@Url.Action("Index", "Home")">
+                                <i class="ion-ios-home"></i>
+                                Asae Consultores
+                            </a>
+                        </li>
+                        <li class="active">Eventos</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--=============================================
+=            Blog With Right Sidebar            =
+==============================================-->
+<section id="blog-full-width">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <article class="wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
+                    <div class="blog-post-image">
+                        <a href="@Url.Action("Xpinnit", "Soluciones")">
+                            <img src="~/images/xpinnit/DpQvvsvUwAEu0Bb.jpg" width="45%" class="img-responsive center-block"/>
+                            @*<img src="~/images/jobctrl/maxresdefault.jpg" class="img-responsive" />*@
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <h2 class="blogpost-title">
+                            <a href="@Url.Action("Xpinnit", "Registros")">Xpinnit-002-240221</a>
+                        </h2>
+                        <div class="blog-meta">
+                            <span>Febrero 24, 2021</span>
+                            <span> <a href="">Administradores</a></span>
+                            <span><a href="">Software</a>, <a href="">documentar analizar y mejorar el tiempo de trabajo</a></span>
+                        </div>
+                        <p>
+                            Una visión confiable de las operaciones diarias mediante análisis inteligente permite a los ejecutivos cambiar el enfoque del control al desarrollo comercial y crear más valor mediante una productividad operativa óptima.
+                        </p>
+                        <a href="@Url.Action("Xpinnit", "Registros")" class="btn btn-dafault btn-details">Registrarme al evento </a>
+                    </div>
+
+                </article>
+                <article class="wow fadeInDown" data-wow-delay=".3s" data-wow-duration="500ms">
+                    <div class="blog-post-image">
+                        <a href="@Url.Action("jobctrl", "Soluciones")">
+                            <img src="~/images/jobctrl/lading.png" class="img-responsive" />
+                            @*<img src="~/images/jobctrl/maxresdefault.jpg" class="img-responsive" />*@
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <h2 class="blogpost-title">
+                            <a href="@Url.Action("Index", "Registros")">JobCrl-001-130121</a>
+                        </h2>
+                        <div class="blog-meta">
+                            <span>Enero 13, 2021</span>
+                            <span> <a href="">Administradores</a></span>
+                            <span><a href="">Software</a>, <a href="">documentar analizar y mejorar el tiempo de trabajo</a></span>
+                        </div>
+                        <p>
+                            Una visión confiable de las operaciones diarias mediante análisis inteligente permite a los ejecutivos cambiar el enfoque del control al desarrollo comercial y crear más valor mediante una productividad operativa óptima.
+                        </p>
+                        <a href="@Url.Action("Index", "Registros")" class="btn btn-dafault btn-details">Registrarme al evento </a>
+                    </div>
+
+                </article>
+            </div>
+            <!-- Sidebar -->
+            <div class="col-md-4">
+                <div class="sidebar">
+                    <!--<div class="search widget">
+                        <form action="" method="get" class="searchform" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Buscar...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button"> <i class="ion-search"></i> </button>
+                                </span>
+                            </div>--><!-- /input-group -->
+                        <!--</form>
+                    </div>-->
+                    <div class="author widget">
+                        <img class="img-responsive" src="~/images/2.jpg">
+                        <div class="author-body text-center">
+                            @*<div class="author-img">
+                                <img src="~/images/BlueAsae.png" />
+                            </div>*@
+                            <div class="author-bio">
+                                <h3>Asae Consultores</h3>
+                                <p>Nos hemos consolidado como una organización integradora de tecnología, abarcando productos y servicios para mercados verticales y soluciones horizontales, con presencia a nivel nacional y con un grupo de más de 250 profesionales.</p>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="categories widget">
+                        <h3 class="widget-head">Categorías </h3>
+                        <ul>
+                            <li>
+                                <a href="">Software </a> <span class="badge">1</span>
+                            </li>
+                            <li>
+                                <a href="">Gallery</a> <span class="badge">2</span>
+                            </li>
+                            <li>
+                                <a href="">Image</a> <span class="badge">4</span>
+                            </li>
+                            <li>
+                                <a href="">Standard</a> <span class="badge">2</span>
+                            </li>
+                            <li>
+                                <a href="">Status</a> <span class="badge">3</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="recent-post widget">
+                        <h3>Eventos Recientes </h3>
+
+                        <ul>
+                            <li>
+                                <a href="#">Documentar analizar y mejorar el tiempo de trabajo.</a><br>
+                                <time>13 Enero, 2021</time>
+                            </li>
+                            <li>
+                                <a href="#">Statistics,analysis. The key to succes.</a><br>
+                                <time>15 May, 2015</time>
+                            </li>
+                            <li>
+                                <a href="#">Blog post without image, only text.</a><br>
+                                <time>14 May, 2015</time>
+                            </li>
+                            <li>
+                                <a href="#">Blog post with audio player. Share your creations.</a><br>
+                                <time>14 May, 2015</time>
+                            </li>
+                            <li>
+                                <a href="#">Blog post with classic Youtbube player.</a><br>
+                                <time>12 May, 2015</time>
+                            </li>
+                        </ul>
+
+                    </div>*@
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

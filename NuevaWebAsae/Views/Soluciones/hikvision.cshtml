@@ -1,0 +1,2725 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="~/images/ico.ico">
+    <title>Asae Consultores S.A de C.V</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Template CSS Files
+    ================================================== -->
+    <!-- Twitter Bootstrs CSS -->
+    <link href="~/plugins/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!-- Ionicons Fonts Css -->
+    <link href="~/plugins/ionicons/ionicons.min.css" rel="stylesheet" />
+    <!-- animate css -->
+    <link href="~/plugins/animate-css/animate.css" rel="stylesheet" />
+    <!-- Hero area slider css-->
+    @*<link href="~/plugins/slider/slider.css" rel="stylesheet" />*@
+    <!-- owl craousel css -->
+    @*<link href="~/plugins/owl-carousel/owl.carousel.css" rel="stylesheet" />
+        <link href="~/plugins/owl-carousel/owl.theme.css" rel="stylesheet" />*@
+    <!-- Fancybox -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Glegoo" rel="stylesheet" />
+    <link href="~/plugins/facncybox/jquery.fancybox.css" rel="stylesheet" />
+    <!-- template main css file -->
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+    <script src="~/Scripts/whatsapp.js"></script>
+
+
+    <style>
+        #top-bar.animated-header {
+            padding: 15px 0;
+            background: #fff;
+            box-shadow: none;
+        }
+
+        .navbar-header .navbar-brand a {
+            height: auto;
+            display: inline-block;
+            margin-top: 0px;
+        }
+
+        #top-bar {
+            background: #fff;
+            color: #fff;
+            transition: all 0.2s ease-out 0s;
+            padding: 5px 0;
+            box-shadow: 0 0 3px 0 rgb(0 0 0 / 10%);
+            border-bottom: 1px solid #dedede;
+        }
+
+
+        #footer .social li a {
+            font-size: 22px;
+            color: #9e9e9e;
+        }
+
+        #contact-section .address i, #contact-section .email i, #contact-section .phone i {
+            font-size: 45px;
+            color: #b53d3d;
+        }
+
+        #contact-section {
+            padding: 0px 0;
+        }
+
+        #footer .copyright a {
+            color: #b53d3d;
+        }
+
+        #footer .social {
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        #footer .copyright {
+            font-size: 13px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+
+        #hero-area {
+            background-image: url('../../images/hikvision/c5d82b11448849f5977c06b49c5a96e6.jpg') ;
+            background-size: 100% 100%; /*estandar css3*/
+
+/*            background-image: url('../../images/hikvision/11062b_439434b892be4606bd8b5b78febea027_mv2_d_4288_3084_s_4_2 (2).jpg');*/
+            padding: 120px 0;
+
+        }
+
+            #hero-area h2 {
+                font-size: 25px;
+                text-transform: initial;
+                font-family: Helvetica;
+                text-align: center;
+                line-height: 32px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                color: #fff;
+                text-shadow: rgb(0 0 0 / 40%) 0px 4px 5px;
+            }
+
+            #hero-area:before {
+                background: #3e3b3bad;
+            }
+
+            #hero-area .btn {
+                background: #b53c3c;
+                border: none;
+                color: #fff;
+                padding: 15px 35px;
+                margin-top: 30px;
+                font-size: 15px;
+                line-height: 1em;
+                text-transform: initial;
+                letter-spacing: normal;
+                border-radius: 10px;
+                font-family: Helvetica;
+                -webkit-box-shadow: -1px 9px 15px -5px rgba(0,0,0,0.75);
+                -moz-box-shadow: -1px 9px 15px -5px rgba(0,0,0,0.75);
+                box-shadow: -1px 9px 15px -5px rgba(0,0,0,0.75);
+            }
+
+        .btn-lines {
+            width: 45%;
+        }
+
+        #service-page {
+            background-image: linear-gradient( rgb(255 255 255 / 90%), rgb(255 255 255 / 89%) ), url(../../images/hikvision/FondoAsesorias.jpg);
+            background-attachment: fixed;
+        }
+
+            #service-page h2 {
+                font-size: 25px;
+                font-family: roboto,roboto,sans-serif;
+                font-weight: 600;
+                text-transform: initial;
+            }
+
+            #service-page h5 {
+                font-size: 27px;
+                color: #605e5e;
+                font-weight: 400;
+                font-family: roboto;
+                text-transform: initial;
+            }
+
+            #service-page .btn {
+                background: #b53c3c;
+                border: none;
+                color: #fff;
+                padding: 15px 35px;
+                margin-top: 0px;
+                font-size: 15px;
+                line-height: 1em;
+                text-transform: initial;
+                letter-spacing: normal;
+                border-radius: 10px;
+                font-family: Helvetica;
+                -webkit-box-shadow: -1px 9px 15px -5px rgb(0 0 0 / 75%);
+                -moz-box-shadow: -1px 9px 15px -5px rgba(0,0,0,0.75);
+                box-shadow: -1px 9px 15px -5px rgb(0 0 0 / 75%);
+            }
+
+        .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+            padding: 8px;
+            line-height: 1.42857143;
+            vertical-align: top;
+            border-top: 0px solid #fff;
+        }
+
+        .subtitle-des {
+            color: #605e5e;
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-family: roboto,roboto,sans-serif;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        #Table1 {
+            display: none;
+        }
+
+        #h5Titletap {
+            display: none;
+        }
+
+        #BtnTap {
+            display: none;
+        }
+
+        #Table2 {
+            display: block;
+        }
+
+        #h5Titletap2 {
+            display: block;
+        }
+
+        #BtnTap2 {
+            display: block;
+        }
+
+        #service-page2 {
+            background-image: linear-gradient( rgb(255 255 255 / 77%), rgb(255 255 255 / 78%) ), url(../../images/hikvision/FondoAsesorias.jpg);
+            /*background: url('../../images/hikvision/FondoAsesorias.jpg') no-repeat 100%;*/
+            background-attachment: fixed;
+        }
+
+            #service-page2 .btn {
+                background: #b53c3c;
+                border: none;
+                color: #fff;
+                padding: 15px 35px;
+                margin-top: 0px;
+                font-size: 15px;
+                line-height: 1em;
+                text-transform: initial;
+                letter-spacing: normal;
+                border-radius: 10px;
+                font-family: Helvetica;
+                -webkit-box-shadow: -1px 9px 15px -5px rgb(0 0 0 / 75%);
+                -moz-box-shadow: -1px 9px 15px -5px rgba(0,0,0,0.75);
+                box-shadow: -1px 9px 15px -5px rgb(0 0 0 / 75%);
+            }
+
+        #TitleVideo {
+            font-size: 25px;
+            line-height: 30px;
+            color: #b53c3c;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: initial;
+        }
+
+        .ImgCards {
+            width: 80%;
+            height: 190px;
+        }
+
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            height: 490px;
+            width: 100%;
+            background: #fff;
+            margin-bottom: 30px;
+        }
+
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+
+        .card2 {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 100%;
+            background: #fff;
+            margin-bottom: 30px;
+        }
+
+            .card2:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+        .h5TitletaCardIMG {
+            font-family: roboto,roboto,sans-serif;
+            line-height: 20px;
+            color: darkred;
+            font-weight: 700;
+            margin-bottom: 1px;
+            text-transform: initial;
+            font-size: 20px;
+            padding: 5px;
+            text-align: left;
+        }
+
+        .texttoCard {
+            padding: 5px;
+            line-height: 20pt;
+            text-align: left;
+            font-size: 17px;
+            margin-bottom: 1px;
+            text-align: left;
+        }
+
+        .titleBack {
+            margin-top: 10px;
+            line-height: 30px;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: initial;
+            /*margin-top: 60px;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            line-height: 60px;*/
+        }
+
+        #service-page3 {
+            background-image: linear-gradient( rgb(25 24 24 / 90%), rgb(64 64 64 / 89%) ), url(../../images/hikvision/FondoAsesorias.jpg);
+            /*background: url('../../images/hikvision/FondoAsesorias.jpg') no-repeat 100%;*/
+            background-attachment: fixed;
+        }
+
+            #service-page3 h2 {
+                font-family: roboto,roboto,sans-serif;
+                font-size: 25px;
+                line-height: 35px;
+                color: rgb(255, 255, 255);
+                font-weight: 700;
+                margin-top: 20px;
+                margin-bottom: 1px;
+                text-transform: initial;
+                visibility: visible;
+                animation-duration: 300ms;
+                animation-delay: 0.1s;
+                animation-name: fadeInUp;
+            }
+
+            #service-page3 h4 {
+                font-family: roboto,roboto,sans-serif;
+                font-size: 20px;
+                line-height: 20px;
+                color: rgb(255, 255, 255);
+                font-weight: 700;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                text-transform: initial;
+                visibility: visible;
+                animation-duration: 300ms;
+                animation-delay: 0.1s;
+                animation-name: fadeInUp;
+            }
+
+            #service-page3 .btn {
+                width: 70%;
+                background: #fff;
+                border: none;
+                color: rgba(0,0,0,0.75);
+                padding: 15px 35px;
+                margin-top: 0px;
+                font-size: 15px;
+                line-height: 1em;
+                text-transform: initial;
+                letter-spacing: normal;
+                border-radius: 10px;
+                font-family: Helvetica;
+                -webkit-box-shadow: -1px 9px 15px -5px rgb(0 0 0 / 75%);
+                -moz-box-shadow: -1px 9px 15px -5px rgba(0,0,0,0.75);
+                box-shadow: -1px 9px 15px -5px rgb(0 0 0 / 75%);
+            }
+
+        #service-page4 {
+            background-image: linear-gradient( rgb(255 255 255 / 91%), rgb(255 255 255 / 96%) ), url(../../images/hikvision/FondoAsesorias.jpg);
+            /*background: url('../../images/hikvision/FondoAsesorias.jpg') no-repeat 100%;*/
+            background-attachment: fixed;
+            display: none;
+        }
+
+        #service-page5 {
+            display: block;
+        }
+
+        .btnM {
+            background-color: #b53c3c;
+            border: none;
+            color: #fff;
+            padding: 15px 35px;
+            margin-top: 3px;
+            font-size: 16px;
+            font-size: 13px;
+            line-height: 1em;
+            font-family: roboto-bold,roboto,sans-serif;
+            /*text-transform: uppercase;*/
+            letter-spacing: normal;
+            /* border-radius: 0; */
+            transition: -webkit-box-shadow, -moz-box-shadow, box-shadow,background-color .4s;
+            border-radius: 5px 5px 5px 5px;
+            -moz-border-radius: 5px 5px 5px 5px;
+            -webkit-border-radius: 5px 5px 5px 5px;
+            border: 0px solid #000000;
+            width: 100%;
+        }
+
+            .btnM:hover {
+                background-color: #e08282;
+                border: none;
+                color: #fff;
+                padding: 15px 35px;
+                margin-top: 3px;
+                font-size: 16px;
+                font-size: 13px;
+                line-height: 1em;
+                font-family: roboto-bold,roboto,sans-serif;
+                /* text-transform: uppercase; */
+                letter-spacing: normal;
+                /* border-radius: 0; */
+                -webkit-box-shadow: 0px 9px 20px -9px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 9px 20px -9px rgba(0,0,0,0.75);
+                box-shadow: 0px 9px 20px -9px rgba(0,0,0,0.75);
+            }
+
+        .btnMC {
+            background-color: #cccccc;
+            border: none;
+            color: #393939;
+            padding: 15px 35px;
+            margin-top: 3px;
+            font-size: 16px;
+            font-size: 13px;
+            line-height: 1em;
+            font-family: roboto-bold,roboto,sans-serif;
+            /*text-transform: uppercase;*/
+            letter-spacing: normal;
+            /* border-radius: 0; */
+            transition: -webkit-box-shadow, -moz-box-shadow, box-shadow,background-color .4s;
+            border-radius: 5px 5px 5px 5px;
+            -moz-border-radius: 5px 5px 5px 5px;
+            -webkit-border-radius: 5px 5px 5px 5px;
+            border: 0px solid #000000;
+        }
+
+            .btnMC:hover {
+                background-color: #b1b1b1;
+                border: none;
+                color: #fff;
+                padding: 15px 35px;
+                margin-top: 3px;
+                font-size: 16px;
+                font-size: 13px;
+                line-height: 1em;
+                font-family: roboto-bold,roboto,sans-serif;
+                /* text-transform: uppercase; */
+                letter-spacing: normal;
+                /* border-radius: 0; */
+            }
+
+
+        input[type="text"], [type="password"], [type="email"], [type="tel"], textarea, textarea.form-control {
+            height: 40px;
+            margin: 0;
+            padding: 0 10px;
+            vertical-align: middle;
+            background: #fff;
+            border: 2px solid #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 50px;
+            color: #888;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            -o-transition: all .3s;
+            -moz-transition: all .3s;
+            -webkit-transition: all .3s;
+            -ms-transition: all .3s;
+            transition: all .3s;
+        }
+
+        .tooltip-inner {
+            max-width: 350px;
+            /* If max-width does not work, try using width instead */
+            width: 350px;
+        }
+
+        #Camaras1 {
+            display: none;
+        }
+
+        #Camaras2 {
+            display: block;
+        }
+
+        #h5TitleCamaras1 {
+            display: none;
+        }
+
+        #h5TitleCamaras2 {
+            display: block;
+        }
+
+
+
+        @@media only screen and (max-width: 767px) {
+            .navbar-header .navbar-brand a {
+                padding: 0px 40px;
+            }
+        }
+
+        @@media (min-width: 768px) {
+
+            #top-bar {
+                padding: 5px 0;
+            }
+
+
+            #hero-area {
+                padding: 120px 0;
+            }
+
+            .btn-lines {
+                width: 30%;
+            }
+
+            #service-page h2 {
+                font-size: 33px;
+            }
+
+            #service-page .btn-lines {
+                width: 50%;
+                padding: 20px 35px;
+            }
+
+            #hero-area h2 {
+                font-size: 45px;
+                line-height: 50px;
+                margin-top: 25px;
+                margin-bottom: 50px;
+                margin-top: 130px;
+            }
+
+            #hero-area .btn {
+                padding: 20px 35px;
+                margin-top: 30px;
+            }
+
+            #Table1 {
+                display: block;
+            }
+
+            #h5Titletap {
+                display: block;
+            }
+
+            #BtnTap {
+                display: block;
+            }
+
+
+            #h5Titletap2 {
+                display: none;
+            }
+
+            #Table2 {
+                display: none;
+            }
+
+            #BtnTap2 {
+                display: none;
+            }
+
+
+            #service-page2 h2 {
+                font-size: 42px;
+                line-height: 50px;
+                margin-bottom: 50px;
+            }
+
+            .ImgCards {
+                width: 100%;
+                height: 300px;
+            }
+
+            .card {
+                height: 720px;
+                margin-bottom: 50px;
+            }
+
+            .h5TitletaCardIMG {
+                font-size: 27px;
+                line-height: 35px;
+                margin-bottom: 15px;
+            }
+
+            .texttoCard {
+                font-size: 20px;
+            }
+
+            .titleBack {
+                margin-top: 60px;
+                font-size: 42px;
+                font-weight: 700;
+                margin-bottom: 60px;
+                line-height: 60px;
+            }
+
+            #service-page3 h2 {
+                font-size: 42px;
+                line-height: 50px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+
+            #service-page3 h4 {
+                font-size: 27px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                line-height: 35px;
+            }
+
+            #service-page3 .btn {
+                width: 30%;
+            }
+
+            #service-page4 {
+                display: block;
+            }
+
+            #service-page5 {
+                display: none;
+            }
+
+            #Camaras1 {
+                display: block;
+            }
+
+            #Camaras2 {
+                display: none;
+            }
+
+            #h5TitleCamaras1 {
+                display: block;
+            }
+
+            #h5TitleCamaras2 {
+                display: none;
+            }
+        }
+    </style>
+
+    <style>
+
+        .shared-panel {
+            overflow: auto;
+        }
+
+        .shared-panel span {
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .shared {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 5px 0;
+            padding: 0;
+            background: url('../../Assets/img/shared.png') no-repeat;
+            float: left;
+            margin-right: 5px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .shared:hover {
+            opacity: 0.7;
+        }
+
+        .shared.gp {
+            background-position: 0px 0px;
+            background-color: #E62B34;
+        }
+
+        .shared.tt {
+            background-position: 0px -30px;
+            background-color: #43BDF0;
+        }
+
+        .shared.ce {
+            background-position: 0px -60px;
+            background-color: #8A898D;
+        }
+
+        .shared.wa {
+            background-position: 0px -90px;
+            background-color: #0dc143;
+        }
+
+        .shared.fb {
+            background-position: 0px -120px;
+            background-color: #6081C4;
+        }
+
+        .st2 {
+            border-radius: 0;
+        }
+
+        .st3 {
+            border-radius: 5px;
+        }
+
+        .btn-wsp {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            line-height: 63px;
+            bottom: 90px;
+            right: 23px;
+            background: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 300ms ease;
+        }
+
+    .btn-wsp:hover {
+        background: #20ba5a;
+        -webkit-box-shadow: 10px 10px 18px -15px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 18px -15px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 18px -15px rgba(0,0,0,0.75);
+    }
+
+    @@media only screen and (min-width:320px) and (max-width:768px) {
+        .btn-wsp {
+            width: 63px;
+            height: 63px;
+            line-height: 66px;
+        }
+    }
+
+
+    </style>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NT6V24P');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT6V24P"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!--
+       ==================================================
+       Header Section Start
+       ================================================== -->
+    <header id="top-bar" class="navbar-fixed-top animated-header">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="navbar-brand center-block">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img src="~/images/Tickets/LogoAsae.png" width="100%" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="title" style="color: #9E9E9E; font-size: 30px; font-weight: 700; text-transform: initial;margin-bottom: 0px;">
+                        Solicitar una cotización
+                    </h2>
+                    <br />
+                    <p style="color: #9E9E9E;">Envía tu solicitud y en breve un ejecutivo te contactara para atender tu solicitud y brindarte una demo totalmente gratis.</p>
+
+                </div>
+                <div class="modal-body" style=" padding: 25px 25px 30px 25px; background: #f5f5f5; color: #5a5a5a;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <br /><br /><br /><br />
+                            <img src="~/images/hikvision/Hikivision.png" width="100%" />
+                            <br /><br />
+                            <img src="~/images/hikvision/camaras-de-vigilancia-hikvsion.png" width="100%" />
+                            <br />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="inputAddress">Nombre</label>
+                                    <input type="text" class="form-control" id="R_Nombre" placeholder="Nombre completo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Email</label>
+                                    <input type="email" class="form-control" id="R_EPer" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Teléfono </label>
+                                    <input type="tel" class="form-control" id="R_TMov" placeholder="Teléfono">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Teléfono Local</label>
+                                    <input type="tel" class="form-control" id="R_TLoc" placeholder="Teléfono Local">
+                                </div>
+                            </div>
+                            <button type="button" id="BtnRegistrarDemo" class="btnM btn-primary">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p style="font-size:12px;"><span style="text-decoration: underline;">Margaritas 426, Álvaro Obregón, Ciudad de México</span> | <span style="text-decoration: underline;">asae_contactanos@asae.com.mx</span> | <span style="text-decoration: underline;">(55) 53 22 05 00</span></p>
+                        </div>
+
+                    </div>
+                    <button type="button" class="btnMC btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="title" style="color: #9E9E9E; font-size: 30px; font-weight: 700; text-transform: initial;margin-bottom: 0px;">
+                        Descargar página web
+                    </h2>
+                    <br />
+                    <p style="color: #9E9E9E;">Por favor coloca tus datos para descargar los contenidos de la página.</p>
+                </div>
+                <div class="modal-body" style="padding: 25px 25px 30px 25px; background: #f5f5f5; color: #5a5a5a;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <br /><br /><br /><br />
+                            <img src="~/images/hikvision/Hikivision.png" width="100%" />
+                            <br /><br />
+                            <img src="~/images/hikvision/camaras-de-vigilancia-hikvsion.png" width="100%" />
+                            <br />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="inputAddress">Nombre</label>
+                                    <input type="text" class="form-control" id="DW_Nombre" placeholder="Nombre completo">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Email</label>
+                                    <input type="email" class="form-control" id="DW_EPer" placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail4">Teléfono </label>
+                                    <input type="tel" class="form-control" id="DW_TMov" placeholder="Teléfono">
+                                </div>
+                            </div>
+                            <button type="button" id="BtnRegistrarDW" class="btnM btn-primary"> Descargar </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p style="font-size:12px;"><span style="text-decoration: underline;">Margaritas 426, Álvaro Obregón, Ciudad de México</span> | <span style="text-decoration: underline;">asae_contactanos@asae.com.mx</span> | <span style="text-decoration: underline;">(55) 53 22 05 00</span></p>
+                        </div>
+                    </div>
+                    <button type="button" class="btnMC btn-secondary" id="BtnCerrarDW" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    ==================================================
+    Slider Section Start
+    ================================================== -->
+    <section id="hero-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-10">
+                    <div class="block wow fadeInUp text-center" data-wow-delay=".1s">
+                        <!-- Slider -->
+                        <section class="cd-intro">
+                            <h2 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s">
+
+                                Proteja su negocio con nuestros sistemas de seguridad y monitoreo inteligente Hikvision
+                            </h2>
+                            <br />
+                        </section> <!-- cd-intro -->
+
+                        <div class="text-center">
+                            <a class="btn-lines  btn text-center wow fadeInUp animated smooth-scroll" href="#works" data-section="#works" data-wow-delay=".1s">Ver Opciones </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+            </div>
+        </div>
+    </section><!--/#main-slider-->
+
+
+
+
+    <section id="service-page" class="pages service-page" style="padding: 20px 0 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 ">
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="block wow fadeInUp text-center" data-wow-delay=".1s">
+                        <!-- Slider -->
+                        <section class="cd-intro">
+                            <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s">
+                                <img src="~/images/hikvision/Hikivision.png" width="70%" />
+                            </h1>
+                        </section> <!-- cd-intro -->
+                    </div>
+                </div>
+                <div class="col-md-3 ">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <br /><br />
+                        <h2 class="title wow fadeInUp animated animated" data-wow-delay=".1s" data-wow-duration="300ms" style="animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp;">
+
+
+                            Visibilidad total en cada rincón de su empresa
+                        </h2>
+
+                        <h5 class="wow fadeInUp animated" data-wow-delay=".1s" id="h5Titletap">
+                            <br />
+                            Elimine falsas alarmas, riesgos de intrusos y visitantes desconocidos en un solo sistema de videvigilancia.
+                            <br /><br />
+                        </h5>
+
+                        <table width="100%" class="table borderless" id="Table1">
+                            <tbody>
+                                <tr>
+                                    <td width="8%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" src="~/images/hikvision/250check.png" /> </td>
+                                    <td width="46%">
+                                        <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                            Visibilidad en condiciones climáticas adversas.
+                                        </p>
+                                    </td>
+                                    <td width="8%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" src="~/images/hikvision/250check.png" /> </td>
+                                    <td width="46%">
+                                        <p class="subtitle-des wow fadeInUp animated text-justify" data-wow-delay=".1s" data-wow-duration="300ms">
+                                            Video en tiempo real.
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="10PX"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" src="~/images/hikvision/250check.png" /> </td>
+                                    <td>
+                                        <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                            Instalación sencilla.
+                                        </p>
+                                    </td>
+                                    <td width="10PX"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" src="~/images/hikvision/250check.png" /> </td>
+                                    <td>
+                                        <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                            Visibilidad en smartphones, computadoras y centro de monitoreo.
+                                        </p>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-12" id="BtnTap">
+                                <div class="text-center">
+                                    <a class="btn-lines  btn text-center wow fadeInUp animated smooth-scroll" href="#works" data-section="#works" data-wow-delay=".1s">Ver Opciones </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <!-- Slider -->
+                        <section class="cd-intro text-center">
+                            <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s">
+                                <img src="~/images/hikvision/camaras-de-vigilancia-hikvsion.fw.png" width="90%" />
+                                <br /><br />
+                                <img src="~/images/hikvision/Pantalla y Celular Hikvision.gif" width="100%" />
+                            </h1>
+                        </section> <!-- cd-intro -->
+
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <h5 class="" id="h5Titletap2" style="font-size: 19px; line-height: 25px;">
+                        <br />
+                        Elimine falsas alarmas, riesgos de intrusos y visitantes desconocidos en un solo sistema de videvigilancia.
+
+                    </h5>
+                    <table width="100%" class="table borderless" id="Table2">
+                        <tbody>
+                            <tr>
+                                <td width="4%" style="padding: 6px;"><img class="img-responsive" src="~/images/hikvision/250check.png" /> </td>
+                                <td width="46%" style="padding: 0px;">
+                                    <p class="subtitle-des" style="font-size: 15px; ">
+                                        Visibilidad en condiciones climáticas adversas.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="4%" style="padding: 6px;"><img class="img-responsive" src="~/images/hikvision/250check.png" /> </td>
+                                <td width="46%" style="padding: 0px;">
+                                    <p class="subtitle-des text-justify" style="font-size: 15px;">
+                                        Video en tiempo real.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="4%" style="padding: 6px;"><img class="img-responsive" src="~/images/hikvision/250check.png" /> </td>
+                                <td width="46%" style="padding: 0px;">
+                                    <p class="subtitle-des " style="font-size: 15px;">
+                                        Instalación sencilla.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="4%" style="padding: 6px;"><img class="img-responsive" src="~/images/hikvision/250check.png" /> </td>
+                                <td width="46%" style="padding: 0px;">
+                                    <p class="subtitle-des" style="font-size: 15px;">
+                                        Visibilidad en smartphones, computadoras y centro de monitoreo.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="col-md-12" id="BtnTap2">
+                            <div class="text-center">
+                                <a class="btn-lines btn text-center wow fadeInUp animated smooth-scroll" href="#works" data-section="#works">Ver Opciones </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row" id="works">
+                <div class="col-md-12 text-center">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <br /><br /><br /><br />
+                        <h2 class="title wow fadeInUp animated animated" data-wow-delay=".1s" data-wow-duration="300ms" style="animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp; text-align:center;">
+                            Kits Hikvision Listos Para su Negocio u Hogar
+                        </h2>
+                        <br />
+                    </div>
+                </div>
+
+                <div class="col-md-12" id="Camaras1">
+                    <div class="row">
+                        <div class="col-md-1 text-center">
+                        </div>
+
+                        <div class="col-md-5 text-center">
+                            <img src="~/images/hikvision/producto/Paquetes_Hikvision.png" class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s" width="100%" />
+                        </div>
+
+                        <div class="col-md-5 text-center">
+                            <br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <strong style="font-size: 18px;">Paquete V-ACT</strong>
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                2 * C3WN:
+                                <br />
+                                - Bala IP 2 Megapíxel, WiFi, Micrófono integrado. Detección de movimiento, Notificación Push. Ranura Para Memoria. Uso en Exterior.
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                2 * EZ-MINO:
+                                <br />
+                                - Mini Cámara IP 1 Megapíxel, WiFi, detección de movimiento, notificación push. Audio de dos vías. Ranura para memoria. Uso en interior.
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                1 * C6N:
+                                <br />
+                                - Mini Cámara IP PT, 2 Megapíxel, WiFi. Seguimiento Inteligente. Audio de dos vías, notificación push. Ranura para memoria. Uso en interior.
+                            </p>
+                            <br />
+                            <div class="text-center wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <a class="btn-lines btn text-center" href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20del%20paquete%20V-ACT%20de%20Kits%20Hikvision%20Para%20Negocio%20u%20Hogar">Comprar  </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br /><br /><br />
+                    <div class="row">
+                        <div class="col-md-1 text-center">
+                        </div>
+                        <div class="col-md-5 text-center">
+                            <br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <strong style="font-size: 18px;">Paquete V-ACT 2</strong>
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                2 * C3WN:
+                                <br />
+                                - Bala IP 2 Megapíxel, WiFi, Micrófono integrado. Detección de movimiento, Notificación Push. Ranura Para Memoria. Uso en Exterior.
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                2 * EZ-MINO:
+                                <br />
+                                - Mini Cámara IP 1 Megapíxel, WiFi, detección de movimiento, notificación push. Audio de dos vías. Ranura para memoria. Uso en interior.
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                1 * C8C:
+                                <br />
+                                -PT IP 2 Megapíxel, WiFi. Detección humana, seguimiento inteligente, visión nocturna en color. Cobertura Visual 360°, notificación push. Ranura para memoria.
+                            </p>
+                            <br />
+                            <div class="text-center wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <a class="btn-lines btn text-center" href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20del%20paquete%20V-ACT%202%20de%20Kits%20Hikvision%20Para%20Negocio%20u%20Hogar">Comprar </a>
+                            </div>
+                        </div>
+                        <div class="col-md-5 text-center">
+                            <img src="~/images/hikvision/producto/Paquete_Wifi_-_360_Nocturna.gif" class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s" width="100%" />
+                        </div>
+
+                    </div>
+                    <br /><br /><br /><br />
+                    <div class="row">
+                        <div class="col-md-1 text-center">
+                        </div>
+
+                        <div class="col-md-5 text-center">
+                            <img src="~/images/hikvision/producto/EZ-360MKIT.png" class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s" width="100%" />
+                        </div>
+
+                        <div class="col-md-5 text-center">
+                            <br /><br /><br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <strong style="font-size: 18px;">Paquete EZ-360MKIT</strong>
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                1 * EZ-MINO:
+                                <br />
+                                - Mini Cámara IP 1 Megapíxel, WiFi, detección de movimiento, notificación push. Audio de dos vías. Ranura para memoria. Uso en interior.
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                1 * C6TC:
+                                <br />
+                                - Mini Cámara IP PT, 2 Megapíxel, WiFi. Seguimiento Inteligente. Audio de dos vías, notificación push. Ranura para memoria. Uso en interior.
+                            </p>
+                            <br /><br />
+                            <div class="text-center wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <a class="btn-lines btn text-center" href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20del%20paquete%20EZ-360MKIT%20de%20Kits%20Hikvision%20Para%20Negocio%20u%20Hogar">Comprar  </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br /><br /><br />
+                    <div class="row">
+                        <div class="col-md-1 text-center">
+                        </div>
+                        <div class="col-md-5 text-center">
+                            <br /><br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <strong style="font-size: 18px;">Paquete HIK5MPSLQKIT</strong>
+                            </p>
+                            <br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                KIT ANALOGICO TURBOHD 5 Megapixel /
+                                <br /><br />
+                                * DVR 4 Canales
+                                <br /><br />
+                                * 4 Cámaras Bala, Exterior, 2.8 mm.
+                                <br /><br />
+                                * Fuente de Poder
+                                <br /><br />
+                                * Accesorios de Instalación.
+                                <br /><br />
+                                * Cables hasta 15mts
+                            </p>
+                            <br />
+                            <div class="text-center wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <a class="btn-lines btn text-center" href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20del%20paquete%20HIK5MPSLQKIT%20de%20Kits%20Hikvision%20Para%20Negocio%20u%20Hogar">Comprar </a>
+                            </div>
+                        </div>
+                        <div class="col-md-5 text-center">
+                            <img src="~/images/hikvision/producto/HIK5MPSLQKIT.png" class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s" width="100%" />
+                        </div>
+
+                    </div>
+                    <br /><br /><br /><br />
+                    <div class="row">
+                        <div class="col-md-1 text-center">
+                        </div>
+
+                        <div class="col-md-5 text-center">
+                            <img src="~/images/hikvision/producto/KIP4MP_4B.png" class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s" width="100%" />
+                        </div>
+
+                        <div class="col-md-5 text-center">
+                            <br /><br /><br /><br /><br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <strong style="font-size: 18px;">Paquete KIP4MP/4B</strong>
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                KIT IP 4 Megapixeles
+                                <br /><br />
+                                * NVR de 4 Canales
+                                <br /><br />
+                                * 4 Cámaras IP Bala. Exteriores
+                            </p>
+                            <br />
+                            <div class="text-center wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <a class="btn-lines btn text-center" href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20del%20paquete%20KIP4MP/4B%20de%20Kits%20Hikvision%20Para%20Negocio%20u%20Hogar">Comprar  </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br /><br /><br />
+                    <div class="row">
+                        <div class="col-md-1 text-center">
+                        </div>
+                        <div class="col-md-5 text-center">
+                            <br /><br /><br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <strong style="font-size: 18px;">Paquete KH1080P4BC</strong>
+                            </p>
+                            <br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                KIT COLORVU TURBOHD 1080P
+                                <br /><br />
+                                * DVR 4 Canales
+                                <br /><br />
+                                * 4 Cámaras Bala, Exterior, lente 2.8mm.
+                                <br /><br />
+                                * Fuente de alimentación, accesorios de video y corriente.
+                            </p>
+                            <br />
+                            <div class="text-center wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <a class="btn-lines btn text-center" href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20del%20paquete%20KH1080P4BC%20de%20Kits%20Hikvision%20Para%20Negocio%20u%20Hogar">Comprar </a>
+                            </div>
+                        </div>
+                        <div class="col-md-5 text-center">
+                            <img src="~/images/hikvision/producto/KH1080P4BC.png" class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s" width="100%" />
+                        </div>
+
+                    </div>
+                    <br /><br /><br />
+                </div>
+
+                <div class="col-md-12" id="Camaras2">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <strong style="font-size: 18px;">Paquete V-ACT</strong>
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                2 * C3WN:
+                                <br />
+                                - Bala IP 2 Megapíxel, WiFi, Micrófono integrado. Detección de movimiento, Notificación Push. Ranura Para Memoria. Uso en Exterior.
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                2 * EZ-MINO:
+                                <br />
+                                - Mini Cámara IP 1 Megapíxel, WiFi, detección de movimiento, notificación push. Audio de dos vías. Ranura para memoria. Uso en interior.
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                1 * C6N:
+                                <br />
+                                - Mini Cámara IP PT, 2 Megapíxel, WiFi. Seguimiento Inteligente. Audio de dos vías, notificación push. Ranura para memoria. Uso en interior.
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <img src="~/images/hikvision/producto/Paquetes_Hikvision.png" class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s" width="100%" />
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <br />
+                            <div class="text-center wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <a class="btn-lines btn text-center" href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20del%20paquete%20V-ACT%20de%20Kits%20Hikvision%20Para%20Negocio%20u%20Hogar">Comprar  </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 text-center">
+                            <br /><br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <strong style="font-size: 18px;">Paquete V-ACT 2</strong>
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                2 * C3WN:
+                                <br />
+                                - Bala IP 2 Megapíxel, WiFi, Micrófono integrado. Detección de movimiento, Notificación Push. Ranura Para Memoria. Uso en Exterior.
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                2 * EZ-MINO:
+                                <br />
+                                - Mini Cámara IP 1 Megapíxel, WiFi, detección de movimiento, notificación push. Audio de dos vías. Ranura para memoria. Uso en interior.
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                1 * C8C:
+                                <br />
+                                -PT IP 2 Megapíxel, WiFi. Detección humana, seguimiento inteligente, visión nocturna en color. Cobertura Visual 360°, notificación push. Ranura para memoria.
+                            </p>
+                        </div>
+                        <div class="col-md-5 text-center">
+                            <img src="~/images/hikvision/producto/Paquete_Wifi_-_360_Nocturna.gif" class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s" width="100%" />
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <br />
+                            <div class="text-center wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <a class="btn-lines btn text-center" href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20del%20paquete%20V-ACT%202%20de%20Kits%20Hikvision%20Para%20Negocio%20u%20Hogar">Comprar </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <br /><br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <strong style="font-size: 18px;">Paquete EZ-360MKIT</strong>
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                1 * EZ-MINO:
+                                <br />
+                                - Mini Cámara IP 1 Megapíxel, WiFi, detección de movimiento, notificación push. Audio de dos vías. Ranura para memoria. Uso en interior.
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                1 * C6TC:
+                                <br />
+                                - Mini Cámara IP PT, 2 Megapíxel, WiFi. Seguimiento Inteligente. Audio de dos vías, notificación push. Ranura para memoria. Uso en interior.
+                            </p>
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                            <img src="~/images/hikvision/producto/EZ-360MKIT.png" class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s" width="100%" />
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                            <br />
+                            <div class="text-center wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <a class="btn-lines btn text-center" href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20del%20paquete%20EZ-360MKIT%20de%20Kits%20Hikvision%20Para%20Negocio%20u%20Hogar">Comprar  </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <strong style="font-size: 18px;">Paquete HIK5MPSLQKIT</strong>
+                            </p>
+                            <br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                KIT ANALOGICO TURBOHD 5 Megapixel /
+                                <br />
+                                * DVR 4 Canales
+                                <br />
+                                * 4 Cámaras Bala, Exterior, 2.8 mm.
+                                <br />
+                                * Fuente de Poder
+                                <br />
+                                * Accesorios de Instalación.
+                                <br />
+                                * Cables hasta 15mts
+                            </p>
+
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <img src="~/images/hikvision/producto/HIK5MPSLQKIT.png" class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s" width="100%" />
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <br />
+                            <div class="text-center wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <a class="btn-lines btn text-center" href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20del%20paquete%20HIK5MPSLQKIT%20de%20Kits%20Hikvision%20Para%20Negocio%20u%20Hogar">Comprar </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <strong style="font-size: 18px;">Paquete KIP4MP/4B</strong>
+                            </p>
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                KIT IP 4 Megapixeles
+                                <br />
+                                * NVR de 4 Canales
+                                <br />
+                                * 4 Cámaras IP Bala. Exteriores
+                            </p>
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                            <img src="~/images/hikvision/producto/KIP4MP_4B.png" class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s" width="100%" />
+                        </div>
+
+                        <div class="col-md-12 text-center">
+                            <br />
+                            <div class="text-center wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <a class="btn-lines btn text-center" href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20del%20paquete%20KIP4MP/4B%20de%20Kits%20Hikvision%20Para%20Negocio%20u%20Hogar">Comprar  </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <strong style="font-size: 18px;">Paquete KH1080P4BC</strong>
+                            </p>
+                            <br />
+                            <p class="subtitle-des wow fadeInUp animated text-center" data-wow-delay=".1s" data-wow-duration="300ms">
+                                KIT COLORVU TURBOHD 1080P
+                                <br />
+                                * DVR 4 Canales
+                                <br />
+                                * 4 Cámaras Bala, Exterior, lente 2.8mm.
+                                <br />
+                                * Fuente de alimentación, accesorios de video y corriente.
+                            </p>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <img src="~/images/hikvision/producto/KH1080P4BC.png" class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s" width="100%" />
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <br />
+                            <div class="text-center wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms">
+                                <a class="btn-lines btn text-center" href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20del%20paquete%20KH1080P4BC%20de%20Kits%20Hikvision%20Para%20Negocio%20u%20Hogar">Comprar </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s" id="h5TitleCamaras1">
+                        <br />
+                        <h5 class="wow fadeInUp animated text-center" data-wow-delay=".1s">
+                            Somos expertos en sistemas de seguridad <br />
+                            de videovigilancia. Si está buscando una <br />
+                            solución a la medida, contáctenos.
+                            <br /><br />
+                        </h5>
+                    </div>
+
+                    <div class="block wow fadeInUp" data-wow-delay=".1s" id="h5TitleCamaras2">
+                        <br />
+                        <h5 class="wow fadeInUp animated text-center" data-wow-delay=".1s" style="font-size: 18px; line-height: 25px;">
+                            Somos expertos en sistemas de seguridad <br />
+                            de videovigilancia. Si está buscando una <br />
+                            solución a la medida, contáctenos.
+                            <br /><br />
+                        </h5>
+                    </div>
+                </div>
+                <div class="col-md-2 col-xs-12">
+                </div>
+                <div class="col-md-8 col-xs-12">
+                    <div class="text-center">
+                        <a class="btn-lines btn text-center" href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20de%20los%20Kits%20Hikvision%20Listos%20Para%20su%20Negocio%20u%20Hogar">Contactar ahora  </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section><!--/#main-slider-->
+
+
+
+    <section class="pages service-page" style="background-color: #fff; padding: 20px 0 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 ">
+                </div>
+
+                <div class="col-md-2 col-xs-4">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <!-- Slider -->
+                        <section class="cd-intro">
+                            <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s">
+                                <img src="~/images/hikvision/SERVICIOS_I_G_B.png" width="100%" />
+                            </h1>
+                        </section>
+                        <!-- cd-intro -->
+                    </div>
+                </div>
+                <div class="col-md-2 col-xs-4">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <!-- Slider -->
+                        <section class="cd-intro">
+                            <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s">
+                                <img src="~/images/hikvision/telefono-mabe-servicio-tecnico-mexico.jpg" width="100%" />
+                            </h1>
+                        </section>
+                        <!-- cd-intro -->
+                    </div>
+                </div>
+                <div class="col-md-2 col-xs-4">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <!-- Slider -->
+                        <section class="cd-intro">
+                            <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".1s">
+                                <img src="~/images/hikvision/Weber_Logo.png" width="100%" />
+                            </h1>
+                        </section>
+                        <!-- cd-intro -->
+                    </div>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <style>
+
+        .container {
+            padding: 2px 16px;
+        }
+    </style>
+
+    <section id="service-page2" class="pages service-page" style="padding: 20px 0 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-10">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <h2 class="title wow fadeInUp animated animated text-center" id="TitleVideo" data-wow-delay=".1s" data-wow-duration="300ms" style=" visibility: visible; animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp;">
+
+                            Todo el poder de la inteligencia artificial en un sistema de videovigilancia con:
+
+                        </h2>
+
+                    </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-4">
+
+                    <div class="card wow fadeInUp animated text-center" data-wow-delay=".1s" style="padding: 1em; ">
+                        <img class="card-img-top ImgCards" src="~/images/hikvision/Alertas De Cruce de Linea.gif" />
+                        <div class="card-body">
+                            <h5 class="card-title h5TitletaCardIMG" style=" visibility: visible; animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp;">Alertas de Cruce de Línea</h5>
+                            <p class="subtitle-des wow fadeInUp animated texttoCard" data-wow-delay=".1s" data-wow-duration="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 0.5s; animation-name: fadeInUp; ">
+                                Se genera una alerta únicamente cuando un objeto cruce la línea en una dirección establecida.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card wow fadeInUp animated text-center" data-wow-delay=".1s" style="padding: 1em;">
+                        <img class="card-img-top ImgCards" src="~/images/hikvision/Seguimiento de Merodeo.gif" />
+                        <div class="card-body">
+                            <h5 class="card-title h5TitletaCardIMG" style="visibility: visible; animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp;">
+                                Seguimiento de Merodeo
+                            </h5>
+                            <p class="subtitle-des wow fadeInUp animated  texttoCard" data-wow-delay=".1s" data-wow-duration="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                Detecta si una persona permanece como sospechoso durante un tiempo determinado cerca de la valla, de las puertas de acceso o en cualquier zona delimitada. Esto nos ayuda a detectar intentos de robo, asaltos o cualquier acción que pueda atentar contra la seguridad de las personas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card wow fadeInUp animated text-center" data-wow-delay=".1s" style="padding: 1em;">
+                        <img class="card-img-top ImgCards" src="~/images/hikvision/Reconocimiento Facial.jpg" />
+                        <div class="card-body">
+                            <h5 class="card-title h5TitletaCardIMG" style="visibility: visible; animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp;">
+                                Reconocimiento Facial
+                            </h5>
+                            <p class="subtitle-des wow fadeInUp animated  texttoCard" data-wow-delay=".1s" data-wow-duration="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                Proporciona control de presencia mediante reconocimiento facial, generando alarmas cuando se detecta un rostro de una persona no registrada en nuestra base de datos; ofrece también detección con infrarrojo, lo que facilita la identificación de rostros en espacios con poca luz.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-4">
+                    <div class="card wow fadeInUp animated text-center" data-wow-delay=".1s" style="padding: 1em;">
+                        <img class="card-img-top ImgCards" src="~/images/hikvision/Reconocimiento de Matriculas.jpg" />
+                        <div class="card-body">
+                            <h5 class="card-title h5TitletaCardIMG" style="visibility: visible; animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp;">
+
+                                Reconocimiento de matrículas
+                            </h5>
+                            <p class="subtitle-des wow fadeInUp animated  texttoCard" data-wow-delay=".1s" data-wow-duration="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                El reconocimiento automático de matrículas (ANPR) es una tecnología que utiliza reconocimiento óptico de caracteres (OCR) para leer las matrículas de los vehículos en tiempo real y permite el acceso de manera instantánea.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card wow fadeInUp animated text-center" data-wow-delay=".1s" style="padding: 1em; ">
+                        <img class="card-img-top ImgCards" src="~/images/hikvision/Visibilidad Térmica.jpg" />
+                        <div class="card-body">
+                            <h5 class="card-title h5TitletaCardIMG" style="visibility: visible; animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp;">
+
+                                Visibilidad en todo tipo de condiciones climatológicas
+                            </h5>
+                            <p class="subtitle-des wow fadeInUp animated texttoCard" data-wow-delay=".1s" data-wow-duration="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                Gracias a los sistemas de detección de calor Hikvision, siempre se tiene total visibilidad sobre movimiento de personas en todo tipo de condiciones climatológicas, ayudando a detectar intrusiones para la protección de perímetros.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+            <br /><br />
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <a class="btn-lines  btn text-center wow fadeInDown" data-toggle="modal" data-target="#exampleModal" data-wow-delay=".1s">Cotizar Ahora </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="service-page3" style=" padding: 20px 40px; ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <div class="block wow fadeInUp" data-wow-delay=".1s">
+                        <h2 class="title wow fadeInUp animated animated text-center titleBack" data-wow-delay=".1s" data-wow-duration="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp;">
+                            ¿Cómo te ayudamos a proteger tu complejo residencial?
+
+                        </h2>
+                        <table>
+                            <tr>
+                                <td width="11%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" src="~/images/hikvision/phone.png" /> </td>
+                                <td width="3%"> </td>
+                                <td>
+                                    <h4 class="title wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" style=" visibility: visible; animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp;">
+                                        1. Asesoría Gratuita
+                                        <br />
+                                    </h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="11%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" src="~/images/hikvision/lupa.png" /> </td>
+                                <td width="3%"> </td>
+                                <td>
+                                    <h4 class="title wow fadeInUp animated animated " data-wow-delay=".1s" data-wow-duration="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp;">
+                                        2. Levantamiento de necesidades en las instalaciones
+                                    </h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="11%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" src="~/images/hikvision/check.png" /> </td>
+                                <td width="3%"> </td>
+                                <td>
+                                    <h4 class="title wow fadeInUp animated animated" data-wow-delay=".1s" data-wow-duration="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp;">
+                                        3. Cotización
+                                        <br />
+                                    </h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="11%"><img class="img-responsive wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" src="~/images/hikvision/herramienta.png" /> </td>
+                                <td width="3%"> </td>
+                                <td>
+                                    <h4 class="title wow fadeInUp animated animated" data-wow-delay=".1s" data-wow-duration="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 0.3s; animation-name: fadeInUp;">
+                                        4. Instalación y prueba de equipo
+                                        <br />
+                                    </h4>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                </div>
+
+
+
+            </div>
+            <br /><br />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <a class="btn-lines btn text-center" data-toggle="modal" data-target="#exampleModal">Cotizar Ahora </a>
+                    </div>
+                </div>
+            </div>
+
+            <br /><br />
+        </div>
+    </section>
+
+
+    <style>
+        .accordion {
+            font-family: roboto,roboto,sans-serif;
+            font-size: 25px;
+            line-height: 35px;
+            /*color: rgb(255, 255, 255);*/
+            font-weight: 700;
+            margin-top: 5px;
+            margin-bottom: 1px;
+            /**/
+            background-color: #b53d3d;
+            color: #313437;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+            .accordion:hover, .accordion:focus {
+                color: #b53c3c;
+                background-color: #af5b5a;
+                box-shadow: 0 0px 5px rgba(0, 0, 0, .6);
+                transition: all 0.5s ease 0s;
+            }
+
+        /* .active, .accordion:hover {
+            background-color: #ccc;
+        }*/
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            margin-top: 20px;
+            border: solid 1px #b53c3c;
+            transition: all 0.5s ease 0s;
+        }
+    </style>
+    <section id="service-page5" class="pages service-page" style="padding: 20px 0 40px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2 class="title wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" style=" color: rgb(94 94 94); font-size: 40px; line-height: 50px;  color: rgb(101 98 100); font-weight: 700; margin-bottom: 15px; text-transform: initial; text-align:center; ">
+                            ¿Por qué ASAE?
+                            <br />
+                        </h2>
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <div id="accordion">
+                <button class="accordion" style=" background-image: linear-gradient( rgb(255 255 255 / 67%), rgb(255 255 255 / 67%) ), url('../../images/Tickets/Consulting-Business-1024x683.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">Implementación</button>
+                <div class="panel">
+                    <p style="text-align: left; font-size: 18px;">
+                        Contamos con la experiencia de proyectos realizados a lo largo de los años a nivel nacional en soluciones de tecnología. Además, proporcionamos servicios profesionales de alta calidad a los problemas complejos que enfrenta tu negocio.
+                    </p>
+                </div>
+
+                <button class="accordion" style=" background-image: linear-gradient( rgb(255 255 255 / 67%), rgb(255 255 255 / 67%) ), url('../../images/Tickets/brainstorming-business-colleagues-1374363_0.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">Asistencia Técnica</button>
+                <div class="panel">
+                    <p style="text-align: left; font-size: 18px;">
+                        Disponemos de un equipo completo de diseñadores, ingenieros y técnicos especializados de primer nivel listos para desarrollar soluciones personalizadas según sus necesidades y requerimientos.
+                    </p>
+                </div>
+
+                <button class="accordion" style=" background-image: linear-gradient( rgb(255 255 255 / 67%), rgb(255 255 255 / 67%) ), url('../../images/Tickets/ditl_collab.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">Capacitación a Usuarios</button>
+                <div class="panel">
+                    <p style="text-align: left; font-size: 18px;">
+                        En cada implementación nos esforzamos en conocer y entender las necesidades de nuestros clientes para obtener resultados satisfactorios en corto tiempo.
+                    </p>
+                </div>
+
+                <button class="accordion" style=" background-image: linear-gradient( rgb(255 255 255 / 67%), rgb(255 255 255 / 67%) ), url('../../images/Tickets/plan-de-capacitación.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">Consultoría de Negocios</button>
+                <div class="panel">
+                    <p style="text-align: left; font-size: 18px;">
+                        Los acompañamos durante todo el proceso de implementación de la solución tecnológica para que la transferencia del conocimiento sea de forma natural.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+
+    <section id="service-page4" class="pages service-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block">
+                        <h2 class="title wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" style=" color: rgb(94 94 94); font-size: 40px; line-height: 50px;  color: rgb(101 98 100); font-weight: 700; margin-bottom: 15px; text-transform: initial; text-align:center; ">
+                            ¿Por qué ASAE?
+                            <br />
+                        </h2>
+                        <br />
+                    </div>
+                </div>
+                <div class="col col-sm-4 ">
+                    <ul class="nav nav-tabs nav-stacked text-center wow fadeInUp animated" role="tablist" data-wow-delay=".1s" data-wow-duration="300ms">
+                        <li role="presentation" style="font-size:18px;font-family: roboto-bold,roboto,sans-serif; background-image: url('../../images/Tickets/Consulting-Business-1024x683.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Implementación</a></li>
+                        <li role="presentation" style="font-size:18px;font-family: roboto-bold,roboto,sans-serif; background-image: url('../../images/Tickets/brainstorming-business-colleagues-1374363_0.jpg'); background-size: cover;background-position: center;background-repeat: no-repeat;"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Asistencia Técnica</a></li>
+                        <li role="presentation" style="font-size:18px;font-family: roboto-bold,roboto,sans-serif; background-image: url('../../images/Tickets/ditl_collab.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Capacitación a Usuarios</a></li>
+                        <li role="presentation" style="font-size:18px;font-family: roboto-bold,roboto,sans-serif; background-image: url('../../images/Tickets/plan-de-capacitación.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"><a href="#usuarios" aria-controls="usuarios" role="tab" data-toggle="tab">Consultoría de Negocios</a></li>
+                    </ul>
+                </div>
+                <div class="col col-sm-8">
+                    <div class="block">
+                        <div class="row tab-content">
+                            <div role="tabpanel" class="tab-pane fade active in" id="home">
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <p class="subtitle-des wow fadeInUp animated " data-wow-delay=".1s" data-wow-duration="300ms" style="text-align: left; font-size: 18px; margin-bottom: 1px; visibility: visible; animation-duration: 500ms; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                            Contamos con la experiencia de proyectos realizados a lo largo de los años a nivel nacional en soluciones de tecnología. Además, proporcionamos servicios profesionales de alta calidad a los problemas complejos que enfrenta tu negocio.
+                                        </p>
+                                        <br />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11 text-center">
+                                        <img src="../../images/Tickets/Consulting-Business-1024x683.jpg" width="70%" class="wow fadeInUp animated" data-wow-delay=".1s" data-wow-duration="300ms" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="profile">
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <p class="subtitle-des" style="text-align: left; font-size: 18px; margin-bottom: 1px;">
+                                            Disponemos de un equipo completo de diseñadores, ingenieros y técnicos especializados de primer nivel listos para desarrollar soluciones personalizadas según sus necesidades y requerimientos.
+                                        </p>
+                                        <br />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11 text-center" style="opacity: 0.8;">
+                                        <img src="~/images/Tickets/brainstorming-business-colleagues-1374363_0.jpg" width="70%" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="messages">
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <p class="subtitle-des " style="text-align: left; font-size: 18px; margin-bottom: 1px;">
+                                            En cada implementación nos esforzamos en conocer y entender las necesidades de nuestros clientes para obtener resultados satisfactorios en corto tiempo.
+                                        </p>
+                                        <br />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11 text-center" style="opacity: 0.8;">
+                                        <img src="~/images/Tickets/ditl_collab.png" width="70%" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="usuarios">
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11">
+                                        <p class="subtitle-des" style="text-align: left; font-size: 18px; margin-bottom: 1px;">
+                                            Los acompañamos durante todo el proceso de implementación de la solución tecnológica para que la transferencia del conocimiento sea de forma natural.
+                                        </p>
+                                        <br />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1">
+                                    </div>
+                                    <div class="col-md-11 text-center" style="opacity: 0.8;">
+                                        <img src="~/images/Tickets/plan-de-capacitación.jpg" width="70%" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <style>
+
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+            border-width: 0;
+        }
+
+        .nav-stacked > li + li {
+            margin-top: 0px;
+        }
+
+        .nav-tabs > li > a {
+            padding: 50px 50px 50px 50px !important;
+            color: #666365;
+            background-color: #fdfdfdc9;
+            border: 0px;
+            border-radius: 0px;
+            margin: 0;
+        }
+
+            .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+                background-color: #7a625661;
+                color: #FFFFFF;
+                z-index: 99;
+                transition: all 0.5s ease 0s;
+            }
+
+        .nav-tabs > li.active > a {
+            color: #FFFFFF;
+            background-color: #b33d3c;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, .6);
+            z-index: 100;
+        }
+
+            .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+                color: #FFFFFF;
+                background-color: #af5b5a;
+                box-shadow: 0 0px 5px rgba(0, 0, 0, .6);
+                transition: all 0.5s ease 0s;
+            }
+    </style>
+
+    <section id="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="block">
+                        <h2 class="subtitle wow fadeInDown" data-wow-duration="300ms" data-wow-delay=".1s">Envíanos un mensaje.</h2>
+                        <p class="subtitle-des wow fadeInDown" data-wow-duration="300ms" data-wow-delay=".1s">
+                            Estamos a su disposición, para más información o para programar una reunión, le pedimos que rellene el siguiente formulario y nuestros consultores se pondrán en contacto con usted.
+                        </p>
+                        <div class="contact-form">
+                            <form id="contact-form" method="#" action="#" role="form">
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="300ms" data-wow-delay=".6s">
+                                    <input type="text" placeholder="Tu Nombre" class="form-control" name="name" id="name">
+                                </div>
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="300ms" data-wow-delay=".8s">
+                                    <input type="email" placeholder="Tu Email" class="form-control" name="email" id="email">
+                                </div>
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="300ms" data-wow-delay="1s">
+                                    <input type="text" placeholder="Teléfono" class="form-control" name="phone" id="phone">
+                                </div>
+
+                                <div class="form-group wow fadeInDown" data-wow-duration="300ms" data-wow-delay="1.2s">
+                                    <textarea rows="6" placeholder="Mensaje" class="form-control" name="message" id="message">Me gustaría recibir más información acerca de hikvision</textarea>
+                                </div>
+
+                                <div class="g-recaptcha" data-sitekey="6LdXFXcUAAAAABTN8TrSf30UgdaxPjFL1FB4vcaS"></div>
+                                <br />
+                                <div id='alertBoxes'></div><span class='timer' id='timer'></span>
+                                <br />
+                                <div id="success" class="success">
+                                    Gracias, tú mensaje ha sido envido.
+                                </div>
+
+                                <div id="error" class="error">
+                                    Lo sentimos. Intenta más tarde.
+                                </div>
+
+                                <div id="submit" class="wow fadeInDown" data-wow-duration="300ms" data-wow-delay="1.4s">
+                                    <input type="submit" id="contact-submit" class="btn btn-default btn-send" value="Enviar mensaje" style="border-radius: 5px; width: 100%;">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="map-area">
+                        <h2 class="subtitle  wow fadeInDown" data-wow-duration="300ms" data-wow-delay=".1s">Ubicación </h2>
+                        <p class="subtitle-des wow fadeInDown" data-wow-duration="300ms" data-wow-delay=".1s">
+                            Visitas nuestras instalaciones!.
+
+                        </p>
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.429625988862!2d-99.18184978509457!3d19.350541386931017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fff0308f9987%3A0xfb047a70088b8f85!2sAsae+Consultores%2C+S.A.+de+C.V.!5e0!3m2!1ses-419!2smx!4v1530717966296" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+
+                        <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Compartir pagina  </h2>
+                        <div class="widget-content">
+                            <div class="shared-panel">
+                                <a target="_blank" class="shared fb st3" title="Facebook"></a>
+                                <a target="_blank" class="shared tt st3" title="Twitter"></a>
+                                @*<a target="_blank" class="shared gp st3" title="Google+"></a>*@
+                                <a class="shared wa st3" data-action='share/whatsapp/share' title="WhatsApp"></a>
+                                <a target="_blank" class="shared ce st3" title="Email"></a>
+                            </div>
+                        </div>
+
+                        <h2 class="subtitle  wow fadeInDown" data-wow-duration="500ms" data-wow-delay=".3s">Descargar pagina </h2>
+                        <a  class="text-left wow fadeInDown" onclick="ValidarDescarga()" style="cursor: pointer">
+                            <img src="~/images/boton-descargar-pdf.gif" width="40%" />
+                        </a>
+
+                        <a href="../PDF/LandingPage/Formato-hikvision.pdf" id="BtnIniciarDW" class="text-left wow fadeInDown" download="hikvision-sistemas-de-seguridad" style="display:none;" >
+                            <img src="~/images/boton-descargar-pdf.gif" width="40%" />
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row address-details">
+                <div class="col-md-4">
+                    <div class="address wow fadeInLeft" data-wow-duration="300ms" data-wow-delay=".1s">
+                        <i class="ion-ios-location-outline"></i>
+                        <h5>Margaritas 426, Álvaro Obregón, Ciudad de México</h5>
+                    </div>
+                </div>
+                <!--
+                    <div class="col-md-3">
+                        <div class="address wow fadeInLeft" data-wow-duration="300ms" data-wow-delay=".1s">
+                            <i class="ion-ios-location-outline"></i>
+                            <h5>125 , Kings Street,Melbourne <br>United Kingdom,600562</h5>
+                        </div>
+                    </div>
+
+                -->
+                <div class="col-md-4">
+                    <div class="email wow fadeInLeft" data-wow-duration="300ms" data-wow-delay=".7s">
+                        <a href="mailto:asae_contactanos@asae.com.mx">
+                            <i class="ion-ios-email-outline"></i>
+                            <p style="color: rgb(181 62 62);"><br /> asae_contactanos@asae.com.mx</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="phone wow fadeInLeft" data-wow-duration="300ms" data-wow-delay=".1s">
+                        <i class="ion-ios-telephone-outline"></i>
+                        <p>(55) 53 22 05 00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+    ==================================================
+    Footer Section Start
+    ================================================== -->
+    <footer id="footer">
+        <div class="container">
+
+            <div class="col-md-12">
+                <!-- Social Media -->
+                <ul class="social">
+                    <li>
+                        <img src="~/images/AsaeLogo.png" width="100%" />
+                    </li>
+                    <br />
+                    <br />
+                    <li>
+                        <a href="https://www.facebook.com/AsaeConsultoresMX/" class="Facebook">
+                            <i class="ion-social-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/asaeconsultores" class="Twitter">
+                            <i class="ion-social-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://mx.linkedin.com/company/asae-consultores-s.a.-de-c.v." class="Linkedin">
+                            <i class="ion-social-linkedin"></i>
+                        </a>
+                    </li>
+                    @*<li>
+                            <a href="#" class="Google Plus">
+                                <i class="ion-social-googleplus"></i>
+                            </a>
+                        </li>*@
+                </ul>
+                <br />
+            </div>
+            <div class="col-md-12">
+                <p class="copyright">
+                    Copyright: <span>
+                        <script>document.write(new Date().getFullYear())</script>
+                    </span> . All Rights Reserved
+                    <a href="#" target="_blank">Asae Consultores S.A de C.V</a>. <br>
+                    Aviso de privacidad
+                    <a href="@Url.Action("AvisoPrivacidad", "Home")" target="_blank">
+                        Asae Consultores S.A de C.V
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer> <!-- /#footer -->
+
+    <a href="https://api.whatsapp.com/send?phone=+5215527739808&text=Buen%20día,%20Solicito%20conocer%20más%20información%20de%20seguridad%20y%20monitoreo%20inteligente%20Hikvision" class="btn-wsp" target="_blank">
+        <i class="fa fa-whatsapp icono"></i>
+    </a>
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v9.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat"
+         attribution=setup_tool
+         page_id="682320818526294"
+         theme_color="#0A7CFF">
+    </div>
+
+    <!-- Template Javascript Files
+    ================================================== -->
+    <!-- jquery -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="~/plugins/jQurey/jquery.min.js"></script>
+    <!-- Form Validation -->
+    @*<script src="~/plugins/form-validation/jquery.form.js"></script>*@
+    <script src="~/plugins/form-validation/jquery.validate.min.js"></script>
+    <!-- owl carouserl js -->
+    @*<script src="~/plugins/owl-carousel/owl.carousel.min.js"></script>*@
+    <!-- bootstrap js -->
+    <script src="~/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- wow js -->
+    <script src="~/plugins/wow-js/wow.min.js"></script>
+    <!-- slider js -->
+    <script src="~/plugins/slider/slider.js"></script>
+    <!-- Fancybox -->
+    @*<script src="~/plugins/facncybox/jquery.fancybox.js"></script>*@
+    <!-- template main js -->
+    <script src="~/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="~/Scripts/bootstrap-notify.js"></script>
+
+    <script src="~/Scripts/main.js"></script>
+
+
+    @*<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>*@
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#testimonial-slider").owlCarousel({
+                items: 1,
+                itemsDesktop: [1000, 1],
+                itemsDesktopSmall: [979, 1],
+                itemsTablet: [768, 1],
+                pagination: true,
+                navigation: true,
+                navigationText: ["", ""],
+                slideSpeed: 1000,
+                autoPlay: true
+            });
+        });
+    </script>
+
+    <script>
+        function ValidarDescarga()
+        {
+            var pathname = window.location.pathname;
+            var arreglo = [];
+            var obj = {};
+            obj['Ingreso'] = pathname;
+
+            arreglo.push(obj);
+
+            var jsonObject = {
+                "Usuario": arreglo
+            };
+            $.ajax({
+                url: "@Url.Action("ComprobarSolicitudDW", "Registros")",
+                async: false,
+                type: "POST",
+                data: JSON.stringify(jsonObject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                error: function (response) {
+                    $("#exampleModalCenter").modal("show");
+                },
+                success: function (response) {
+                    if (response.Respuesta == 1) {
+                        var lnk = document.getElementById('BtnIniciarDW');
+                        if (lnk) {
+                            lnk.click();
+                        }
+                    } else {
+                        $("#exampleModalCenter").modal("show");
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            var timeSlide = 0;
+            $('#timer').hide(0);
+            $('#timer').css('display', 'none');
+            $('#BtnRegistrarDW').click(function () {
+                $('.box-success,.box-error').slideUp(timeSlide);
+                setTimeout(function () {
+
+                    if (validaFromDW()) {
+                        if (ValidFormEmailDW()) {
+                            var pathname = window.location.pathname;
+                            var arreglo = [];
+                            var obj = {};
+                            obj['Nombre'] = $('#DW_Nombre').val();
+                            obj['CorreoPersonal'] = $('#DW_EPer').val();
+                            obj['TelefonoMovil'] = $('#DW_TMov').val();
+                            obj['Ingreso'] = pathname;
+
+                            arreglo.push(obj);
+
+                            var jsonObject = {
+                                "Usuario": arreglo
+                            };
+
+                            $.ajax({
+                                url: "@Url.Action("SolicitudDW", "Registros")",
+                                async: false,
+                                type: "POST",
+                                data: JSON.stringify(jsonObject),
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                error: function (response) {
+                                    console.log(response);
+                                    swal({
+                                        title: "Algo ocurrió !",
+                                        text: "Ha ocurrido un problema, inténtalo mas tarde ",
+                                        icon: "warning",
+                                        button: "Aceptar",
+                                    });
+                                },
+                                success: function (response) {
+                                    if (response.Respuesta == 1) {
+                                        var lnk = document.getElementById('BtnIniciarDW');
+                                        if (lnk) {
+                                            lnk.click();
+                                        }
+
+                                        $("#BtnCerrarDW").trigger("click");
+
+                                    } else {
+                                        swal({
+                                            title: "¡Ha ocurrido algo! ",
+                                            text: response.RespuestaText,
+                                            icon: "warning"
+                                        });
+                                    }
+                                }
+                            });
+                        }
+                    } else {
+                        $.notify({
+	                    icon: 'fa fa-paw',
+	                    message: "Formulario incompleto."
+                        },{
+                            type: 'danger',
+                            allow_dismiss: false,
+                            animate: {
+		                        enter: 'animated rollIn',
+		                        exit: 'animated rollOut'
+	                        }
+                        });
+                    }
+                }, timeSlide);
+                return false;
+            });
+        });
+
+        function validaFromDW() {
+            var respuesta = false;
+
+            $('#DW_Nombre').css("border", "2px solid #FF5722");
+            $('#DW_EPer').css("border", "2px solid #FF5722");
+            $('#DW_TMov').css("border", "2px solid #FF5722");
+
+            if ($('#DW_Nombre').val().length > 0) {
+                $('#DW_Nombre').css("border", "2px solid #fff");
+            }
+
+            if ($('#DW_EPer').val().length > 0) {
+                $('#DW_EPer').css("border", "2px solid #fff");
+            }
+
+            if ($('#DW_TMov').val().length > 0) {
+                $('#DW_TMov').css("border", "2px solid #fff");
+            }
+
+            if ($('#DW_Nombre').val().length > 0) {
+                if ($('#DW_EPer').val().length > 0) {
+                    if ($('#DW_TMov').val().length > 0) {
+                        respuesta = true;
+                    }
+                }
+            }
+            return respuesta;
+        }
+
+        function ValidFormEmailDW() {
+            var respuesta = false;
+
+            if (CorreoFromDW() == "ok") {
+                $('#DW_EPer').css("border", "2px solid #fff");
+                respuesta = true;
+            } else {
+
+                $('#DW_EPer').css("border", "2px solid #FF5722");
+
+                $.notify({
+                    icon: 'fa fa-paw',
+                    message: "Correo electrónico invalido."
+                }, {
+                    type: 'danger',
+                    allow_dismiss: false,
+                    animate: {
+                        enter: 'animated rollIn',
+                        exit: 'animated rollOut'
+                    }
+                });
+            }
+            return respuesta;
+        }
+
+    </script>
+
+    <script>
+
+        $(document).on('click', ".shared", function () {
+            var url = window.location.href;
+            var title = document.title;
+
+            url = encodeURIComponent(url);
+            title = encodeURIComponent(title);
+
+            //Boton Facebook
+            if ($(this).hasClass('fb')) {
+                url = 'https://www.facebook.com/sharer/sharer.php?u=' + url + '&t=' + title;
+
+                //Boton Twitter
+            } else if ($(this).hasClass('tt')) {
+                user = 'asaeconsultores';//Nuestro usuario de twitter para mostrar como user
+                url = 'https://twitter.com/intent/tweet?text=' + title + '&url=' + url + '&via=' + user;
+
+                //Boyton Google Plus
+            } else if ($(this).hasClass('gp')) {
+                url = 'https://plus.google.com/share?url=' + url;
+
+                //Boton WhtsApp
+            } else if ($(this).hasClass('wa')) {
+                url = 'https://api.whatsapp.com/send?text="' + document.title + '" - "' + window.location.href + '"';
+
+                //Boton correo electronico
+            } else if ($(this).hasClass('ce')) {
+                url = 'mailto:?subject=' + title + '&body=' + url;
+
+                //Ningun boton valido
+            } else return;
+
+            //Abrimos la url
+
+            window.open(url.replace('+', '%2b'), '_blank');
+        });
+
+        $(document).ready(function () {
+            $('#contact-form').validate({
+                rules: {
+                    name: {
+                        required: true, minlength: 4
+                    }
+                    , email: {
+                        required: true, email: true
+                    }
+                    , subject: {
+                        required: false,
+                    }
+                    , message: {
+                        required: true,
+                    }
+                    ,
+                }
+                , messages: {
+                    user_name: {
+                        required: "Come on, you have a name don't you?",
+                        minlength: "Your name must consist of at least 2 characters"
+                    }
+                    , email: {
+                        required: "Por favor ingrese su dirección de correo electrónico.",
+                    }
+                    , message: {
+                        required: "Coloca tu mensaje",
+                        minlength: "Your name must consist of at least 2 characters"
+                    }
+                    ,
+                }
+                , submitHandler: function (form) {
+                    EnvioForm();
+                }
+            });
+        });
+
+        function EnvioForm()
+        {
+            var timeSlide = 500;
+            setTimeout(function () {
+
+                if (valida()) {
+                    var arreglo = [];
+                    var obj = {};
+
+                    obj['nombre'] = $('#name').val();
+                    obj['email'] = $('#email').val();
+                    obj['mensaje'] = $('#message').val();
+                    obj['telefono'] = $('#phone').val();
+                    obj['recaptcha'] = grecaptcha.getResponse();
+
+                    arreglo.push(obj);
+
+                    var jsonObject = {
+                        "Email": arreglo
+                    };
+
+                    $.ajax({
+                        url: "@Url.Action("MensajeHikvision", "Email")",
+                        type: "POST",
+                        data: JSON.stringify(jsonObject),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        error: function (response) {
+                            swal({
+                                title: "¡Ha ocurrido algo! ",
+                                text: 'Lo sentimos. Intenta más tarde.',
+                                icon: "warning"
+                            })
+                            grecaptcha.reload();
+                            grecaptcha.reset();
+                        },
+                        success: function (response) {
+                            if (response == "ok") {
+
+                                swal({
+                                    title: "Mensaje enviado. !",
+                                    text: response.RespuestaText,
+                                    icon: "success",
+                                    button: "Aceptar",
+                                })
+                                    .then((value) => {
+                                        location.reload();
+                                        //window.location.href = '@Url.Action("hikvision", "Soluciones")';
+                                    });
+                            } else {
+                                swal({
+                                    title: "¡Ha ocurrido algo! ",
+                                    text: response,
+                                    icon: "warning"
+                                });
+
+                                grecaptcha.reload();
+                                grecaptcha.reset();
+
+                            }
+                        }
+                    });
+
+                }
+                else {
+                    swal({
+                        title: "¡Ha ocurrido algo! ",
+                        text: "Recapcha no verificado",
+                        icon: "warning"
+                    });
+                }
+            }, timeSlide);
+
+        }
+
+        function valida() {
+            var respuesta = false;
+            var response = grecaptcha.getResponse();
+
+            if (response.length == 0) {
+                respuesta = false; //"Captcha no verificado";
+            } else {
+                respuesta = true;
+            }
+            return respuesta;
+        };
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+            var timeSlide = 0;
+            $('#timer').hide(0);
+            $('#timer').css('display', 'none');
+            $('#BtnRegistrarDemo').click(function () {
+                $('.box-success,.box-error').slideUp(timeSlide);
+                setTimeout(function () {
+
+                    if (validaLogin()) {
+                        if (ValidFormEmail()) {
+                            var arreglo = [];
+                            var obj = {};
+                            obj['Nombre'] = $('#R_Nombre').val();
+                            obj['CorreoPersonal'] = $('#R_EPer').val();
+                            obj['TelefonoMovil'] = $('#R_TMov').val();
+                            obj['TelefonoLocal'] = $('#R_TLoc').val();
+
+                            arreglo.push(obj);
+
+                            var jsonObject = {
+                                "Usuario": arreglo
+                            };
+
+                            console.log(jsonObject);
+
+                            $.ajax({
+                                url: "@Url.Action("SolicitudHikvision", "Registros")",
+                                type: "POST",
+                                data: JSON.stringify(jsonObject),
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                error: function (response) {
+                                    console.log(response);
+                                    swal({
+                                        title: "Algo ocurrió !",
+                                        text: "Ha ocurrido un problema, inténtalo mas tarde ",
+                                        icon: "warning",
+                                        button: "Aceptar",
+                                    });
+                                },
+                                success: function (response) {
+                                    if (response.RespuestaText == "ok") {
+                                        swal({
+                                            title: "Solicitud enviada. !",
+                                            //text: response.RespuestaText,
+                                            icon: "success",
+                                            button: "Aceptar",
+                                        })
+                                            .then((value) => {
+                                                window.location.reload();
+                                            });
+                                    } else {
+                                        swal({
+                                            title: "¡Ha ocurrido algo! ",
+                                            text: response.RespuestaText,
+                                            icon: "warning"
+                                        });
+                                    }
+                                }
+                            });
+                        }
+                    } else {
+                        $.notify({
+	                    icon: 'fa fa-paw',
+	                    message: "Formulario incompleto."
+                        },{
+                            type: 'danger',
+                            allow_dismiss: false,
+                            animate: {
+		                        enter: 'animated rollIn',
+		                        exit: 'animated rollOut'
+	                        }
+                        });
+                    }
+                }, timeSlide);
+                return false;
+            });
+        });
+
+        function validaLogin() {
+            var respuesta = false;
+
+            $('#R_Nombre').css("border", "2px solid #FF5722");
+            $('#R_TMov').css("border", "2px solid #FF5722");
+            $('#R_EPer').css("border", "2px solid #FF5722");
+
+            if ($('#R_Nombre').val().length > 0) {
+                $('#R_Nombre').css("border", "2px solid #fff");
+            }
+
+            if ($('#R_EPer').val().length > 0) {
+                $('#R_EPer').css("border", "2px solid #fff");
+            }
+
+            if ($('#R_TMov').val().length > 0) {
+                $('#R_TMov').css("border", "2px solid #fff");
+            }
+
+            if ($('#R_Nombre').val().length > 0) {
+                if ($('#R_EPer').val().length > 0) {
+                    if ($('#R_TMov').val().length > 0) {
+                        respuesta = true;
+                    }
+                }
+            }
+
+            return respuesta;
+        }
+
+        function ValidFormEmail() {
+            var respuesta = false;
+
+            if (CorreoFromJob() == "ok") {
+                $('#R_EPer').css("border", "2px solid #fff");
+                respuesta = true;
+            } else {
+
+                $('#R_EPer').css("border", "2px solid #FF5722");
+
+                $.notify({
+	            icon: 'fa fa-paw',
+	            message: "Correo electrónico invalido."
+                },{
+                    type: 'danger',
+                    allow_dismiss: false,
+                    animate: {
+		                enter: 'animated rollIn',
+		                exit: 'animated rollOut'
+	                }
+                });
+            }
+            return respuesta;
+        }
+
+        $(document).ready(function () {
+            // NO ESCRIBIR LETRAS
+            $('#R_TMov').on('input', function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+
+            $('#R_TLoc').on('input', function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+
+            $('#DW_TMov').on('input', function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
+
+</body>
+</html>
+

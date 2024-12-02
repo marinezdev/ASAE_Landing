@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "ConsultarWork";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4">
+
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Listado de vacantes registradas </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="table-responsive p-0">
+
+                                <table class="table align-items-center mb-0 table-hover table-striped" id="TableListInmuebles">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Categoría </th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Titulo  </th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Dirección  </th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Sueldo </th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha Registro</th>
+                                            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Usuario </th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @{
+                                            foreach (var cat in ViewBag.Vacantes)
+                                            {
+                                                <tr>
+                                                    <td class="align-middle"> <p class="text-xs text-secondary mb-0 text-center"> @cat.Nombre </p></td>
+                                                    <td class="align-middle"> <p class="text-xs font-weight-bold mb-0 text-center">@cat.Titulo </p></td>
+                                                    <td class="align-middle"> <p class="text-xs font-weight-bold mb-0 text-center">@cat.Direccion </p></td>
+                                                    <td class="align-middle"> <p class="text-xs font-weight-bold mb-0 text-center">@cat.Sueldo </p></td>
+                                                    <td class="align-middle"> <p class="text-xs font-weight-bold mb-0 text-center">@cat.FechaRegistro </p></td>
+                                                    <td class="align-middle"> <p class="text-xs font-weight-bold mb-0 text-center">@cat.Usuario </p></td>
+                                                    <td>
+                                                        <button class="btn bg-gradient-info" onclick="MostrarVacante(@cat.Id)"><span class="btn-label"><i class="fa fa-pencil-square" aria-hidden="true"></i></span>&nbsp;&nbsp;Mostrar</button>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br />
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

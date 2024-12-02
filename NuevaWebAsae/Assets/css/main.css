@@ -1,0 +1,123 @@
+﻿.help-block {
+    color: #e293d3;
+    font-size: 11px;
+    line-height: 16px;
+    margin-top: 8px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+    .help-block::before {
+        content: "\f071 ";
+        font-family: FontAwesome;
+    }
+
+.iconoseguro {
+    color: #1a6cb7;
+}
+
+.good {
+    color: #4caf50;
+    font-size: 11px;
+}
+
+.help-block2 {
+    color: #a73791;
+    font-size: 15px;
+    line-height: 16px;
+    margin-top: 8px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+    .help-block2::before {
+        content: "\f071 ";
+        font-family: FontAwesome;
+    }
+
+.alert {
+    border: 0px;
+    position: relative;
+    padding: .95rem 1.25rem;
+    border-radius: 1px;
+    color: inherit;
+    background-color: #ffffff;
+    -webkit-box-shadow: 1px 1px 14px 0px rgba(18, 38, 63, 0.26);
+    -moz-box-shadow: 1px 1px 14px 0px rgba(18, 38, 63, 0.26);
+    box-shadow: 1px 1px 14px 0px rgba(18, 38, 63, 0.26);
+}
+
+    .alert [data-notify="icon"] {
+        display: block;
+    }
+
+        .alert [data-notify="icon"]::before {
+            line-height: 35px;
+            font-size: 22px;
+            display: block;
+            left: 15px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35px;
+            height: 35px;
+            border-radius: 30px;
+            text-align: center;
+            color: #fff;
+        }
+
+    .alert [data-notify="title"] {
+        display: block;
+        color: #2b2b2b;
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .alert [data-notify="message"] {
+        font-size: 13px;
+        color: #908e8e;
+    }
+
+
+    .alert .close {
+        background: rgba(255, 255, 255, 0.8);
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        top: 12px !important;
+        border-radius: 50%;
+        display: none;
+    }
+
+.alert-warning {
+    border-left: 4px solid #FFAD46;
+    text-align: center;
+}
+
+    .alert-warning [data-notify="icon"]:before {
+        background: #FFAD46;
+        text-align: center;
+    }
+#Mapa_ubicacion{
+    display:block;
+}
+
+@media (max-width:767px) {
+    .alert-warning {
+        width: 80%;
+    }
+    #Mapa_ubicacion {
+        display: none;
+    }
+
+}
+
+
+.navbar-vertical .navbar-nav > .nav-item .nav-link.active .icon {
+    background-image: linear-gradient( 310deg, #2176fe 0%, #21c5fd 100%);
+}
+
+.bg-gradient-primary {
+    background-image: linear-gradient( 310deg, #3f5eab 0%, #68c3e8 100%);
+}

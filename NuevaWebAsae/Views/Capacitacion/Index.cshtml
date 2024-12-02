@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<!--
+==================================================
+    Global Page Section Start
+================================================== -->
+<section class="global-page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h2>Capacitación</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="@Url.Action("Index", "Home")">
+                                <i class="ion-ios-home"></i>
+                                Asae Consultores
+                            </a>
+                        </li>
+                        <li class="active">Capacitación  </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="service-page" class="pages service-page">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-md-12">
+                <div class="block">
+                    <p style="color: #777;" class="text-justify wow fadeInUp" data-wow-delay=".3s" data-wow-duration="500ms">
+                        Ofrecemos capacitación presencial & online, te ayudamos a organizar tus capacitaciones a través de nuestros capacitadores. Tenemos cursos especiales para tu empresa o bien para el público en general, con valor curricular y con la acreditación ante la secretaria del trabajo.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <br /><br /><br /><br />
+                <div class="row service-parts">
+                    <div class="col-md-4 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="about-col">
+                            <a href="@Url.Action("Empresarial", "Capacitacion")">
+                                <div class="img">
+                                    <img src="~/images/Capacitacion/capacitacion2016_principal.jpg" width="100%">
+                                </div>
+                                <h4 class="text-center">Capacitación Empresarial </h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="800ms">
+                            <a href="@Url.Action("InterpretacionesNormas", "Capacitacion")">
+                                <div class="img">
+                                    <img src="~/images/Capacitacion/iso.jpg" width="100%">
+                                </div>
+                                <h4>Interpretaciones de Normas </h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="1s">
+                            <a href="@Url.Action("PublicoGeneral", "Capacitacion")">
+                                <div class="img">
+                                    <img src="~/images/Capacitacion/9.jpg" width="100%">
+                                </div>
+                                <h4>Público en General </h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <div class="block wow fadeInUp animated" data-wow-duration="400ms" data-wow-delay="800ms">
+                            <a href="@Url.Action("Office", "Capacitacion")">
+                                <div class="img">
+                                    <img src="~/images/Capacitacion/14.jpg" width="100%">
+                                </div>
+                                <h4>Office </h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+

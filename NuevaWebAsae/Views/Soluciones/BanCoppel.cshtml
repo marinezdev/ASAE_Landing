@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "BanCoppel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #hero-area {
+        background: url('../../images/xpinnit/Cambia-de-aire.jpg') no-repeat 50%;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 230px 0;
+        color: #fff;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        position: relative;
+    }
+
+        #hero-area:before {
+            content: '';
+            z-index: 9;
+            background-image: linear-gradient(114deg, #05215682 11%,#929600a6 94%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+    .cd-headline.slide .cd-words-wrapper {
+        color: #fff;
+    }
+
+    #call-to-action {
+        background-image: linear-gradient( 114deg, #0c4b8d 30%, #0c4b8d 99%);
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 80px 0;
+        text-align: center;
+        position: relative;
+        color: #fff;
+    }
+
+        #call-to-action .block .btn-contact {
+            background: #fff;
+            border: none;
+            color: #3f51b5;
+            padding: 16px 35px;
+            margin-top: 20px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 0;
+        }
+</style>
+
+<!--
+==================================================
+Slider Section Start
+================================================== -->
+<section id="hero-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="block wow fadeInUp" data-wow-delay=".3s">
+                    <!-- Slider -->
+                    <section class="cd-intro">
+                        <h1 class="wow fadeInUp animated cd-headline slide" data-wow-delay=".4s">
+                            <span style="color:#fff"> Estados de cuenta bancoppel</span><br><br>
+                            <img src="~/images/BanCoppel/LogoCopel.png" width="40%" />
+                            <br />
+                            <br />
+                            <span class="cd-words-wrapper">
+                                <b class="is-visible">Disponibilidad</b>
+                                <b>Accesibilidad</b>
+                                <b>Seguridad</b>
+                                <b>Compatibilidad</b>
+                                <b>Configuración de envíos</b>
+                            </span>
+                        </h1>
+                    </section> <!-- cd-intro -->
+                    <!-- /.slider -->
+                    @*<h2 class="wow fadeInUp animated" data-wow-delay=".6s" style="color:#fff">
+                            Asae Tu mejor Aliado en soluciones de Tecnología.
+                        </h2>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/#main-slider-->
+<!--
+==================================================
+    Service Page Section  Start
+================================================== -->
+<section id="service-page" class="pages service-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+
+                    <h2 class="title wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms" style="color: rgb(37 66 139); text-align:center;">
+                        Estados de cuenta bancoppel
+                    </h2>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="block">
+                    <br>
+                    <video controls="controls" width="100%" height="640">
+                        <source src="~/images/BanCoppel/Asae-BanCoppel.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--
+==================================================
+    Service Page Section  Start
+================================================== -->
+<section id="service-page" class="pages service-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="block">
+
+                    <h2 class="title wow fadeInUp animated" data-wow-delay=".3s" data-wow-duration="500ms" style="color:rgb(37 66 139); text-align:center;">
+                        Consulta tus estados de cuenta
+                        <br />
+                        De manera fácil y segura , desde cualquier lugar
+                    </h2>
+
+                    <p class="subtitle-des wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms" style="text-align:center; font-size:20px;">
+                        <br /><br />
+                        <strong>Disponibilidad de tus estados de cuenta</strong><br />
+                        Consultar tu estado de cuenta no tiene ningún costo<br />
+                        <strong>Seguridad de tu información</strong><br />
+                        Tu información esta segura con nosotros.<br />
+                        <strong>Configura el envió de tus estados de cuenta</strong><br />
+
+                        Recibe tus estados de cuenta de forma cómoda
+                    </p>
+                    <br />
+                    <div class="text-center">
+                        <img src="~/images/BanCoppel/Captura1.JPG" width="50%" />
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="block">
+                    <br>
+                    <img class="img-responsive wow fadeInUp animated" data-wow-delay=".5s" data-wow-duration="500ms" src="~/images/BanCoppel/localhost_51668_(Laptop with MDPI screen).png" width="90%" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,285 @@
+﻿
+@{
+    ViewBag.Title = "BlogShow";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<link href="~/Assets/js/plugins/chart.js/datasc.css" rel="stylesheet" />
+<style>
+        table.dataTable thead th {
+            border-bottom: 1px solid #111;
+        }
+
+        table.dataTable tfoot th {
+            border-top: 1px solid #111;
+        }
+
+        table.dataTable.no-footer {
+            border-bottom: 0px solid rgb(255 255 255 / 90%);
+        }
+
+        .btn {
+            margin-bottom: 0;
+            letter-spacing: -0.025rem;
+            text-transform: uppercase;
+            box-shadow: 0 4px 7px -1px rgb(0 0 0 / 11%), 0 2px 4px -1px rgb(0 0 0 / 7%);
+            background-size: 150%;
+            background-position-x: 25%;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+            color: rgb(255 255 255 / 90%) !important;
+            border: 0px solid #979797;
+            background-color: white;
+            background-image: linear-gradient( 310deg, #2152ff 0%, #21d4fd 100%);
+            border-radius: 0.5rem;
+        }
+</style>
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card ">
+                        <div class="card card-blog card-plain">
+                            <div class="position-relative">
+                                <a class="d-block blur-shadow-image">
+                                    @Html.Raw(ViewBag.Imagen)
+                                </a>
+                            </div>
+                            <div class="card-body pb-0">
+                                <p class="text-gradient text-primary text-gradient font-weight-bold text-sm text-uppercase">@ViewBag.Categoria</p>
+                                <a href="javascript:;">
+                                    <h4>
+                                        @ViewBag.Titulo
+                                    </h4>
+                                </a>
+                                <p>
+                                    @ViewBag.Resumen
+                                </p>
+                                <div class='d-flex align-items-center justify-content-between'>
+                                    <button type="button" class="btn btn-outline-primary mt-3" onclick="MostrarArticulo(@ViewBag.Id)">Editar artículo </button>
+                                    <button type="button" class="btn btn-outline-info mt-3" onclick="DesactivarArtiuclo(@ViewBag.Id)">Desactivar artículo  </button>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-4">
+                        <div class="card-header pb-0">
+                            <div class="row">
+                                <div class="col-lg-12 col-12">
+                                    <h6>Nota   </h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-12">
+                                    @Html.Raw(ViewBag.Contenido)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body pb-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="row">
+                <div class="card mb-4">
+                    <div class="card-header pb-0">
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <div class="alert alert-info alert-dismissible fade show" role="alert" style="width:100%; color:rgb(255 255 255 / 90%)">
+                                    <span class="alert-text"><strong>Fecha publicación: </strong> @ViewBag.FechaRegistro</span>
+                                </div>
+                                <div class="alert alert-info alert-dismissible fade show" role="alert" style="width:100%; color:rgb(255 255 255 / 90%)">
+                                    <span class="alert-text"><strong>Autor: </strong> @ViewBag.Autor</span>
+                                </div>
+                                <div class="alert alert-info alert-dismissible fade show" role="alert" style="width:100%; color:rgb(255 255 255 / 90%)">
+                                    <span class="alert-text"><strong>Total, de visitas: </strong> @ViewBag.TotalVistas</span>
+                                </div>
+                                <div class="alert alert-info alert-dismissible fade show" role="alert" style="width:100%; color:rgb(255 255 255 / 90%)">
+                                    <span class="alert-text"><strong>Total, comentarios: </strong> @ViewBag.TotalComentarios</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body pb-0">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card mb-4">
+                    <div class="card-header pb-0">
+                        <div class="row">
+                            <div class="col-lg-6 col-7">
+                                <h6> Comentarios </h6>
+                                <hr />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div class="table-responsive p-0">
+
+                                    <table class="table align-items-center mb-0 table-hover table-striped" id="TableList">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre </th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email </th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Comentario </th>
+                                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha Registro</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @{
+                                                foreach (var cat in ViewBag.Comentarios)
+                                                {
+                                                    <tr>
+                                                        <td class="align-middle"> <p class="text-xs text-secondary mb-0 text-center"> @cat.Nombre </p></td>
+                                                        <td class="align-middle"> <p class="text-xs font-weight-bold mb-0 text-center">@cat.Email </p></td>
+                                                        <td class="align-middle"> <p class="text-xs font-weight-bold mb-0 text-center">@cat.Comentarios </p></td>
+                                                        <td class="align-middle"> <p class="text-xs font-weight-bold mb-0 text-center">@cat.FechaRegistro </p></td>
+                                                        <td>
+                                                            <button class="btn bg-gradient-info" onclick="DesactivarComentario(@cat.Id)"><span class="btn-label"><i class="fa fa-trash" aria-hidden="true"></i></span></button>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body pb-0">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#TableList').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+            },
+        });
+    });
+
+    function DesactivarArtiuclo(Id)
+    {
+        var obj = {};
+        obj['Id'] = Id;
+
+        var jsonObject = {
+            "Articulo": obj
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("DesactivarArticulo", "Adm")",
+            data: JSON.stringify(jsonObject),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: Resultado,
+            error: Error
+        });
+    }
+
+    function Resultado(result) {
+        if (result.Resultado > 0) {
+            swal({
+                title: "Operación exitosa",
+                text: "Articulo desactivado !",
+                icon: "success",
+                button: "Aceptar",
+            })
+            .then((value) => {
+                window.location.href = '@Url.Action("ConsultaArticulo", "Adm")';
+            });
+        } else {
+            Mensaje(result.ResultadoText);
+        }
+    }
+
+    function MostrarArticulo(Id) {
+        window.location.href = '@Url.Action("BlogEdit", "Adm")?Id='+Id;
+    }
+
+    $(document).ready(function () {
+        $('#Menu_Blog').addClass(" nav-link active");
+    });
+
+
+    function DesactivarComentario(Id) {
+        var obj = {};
+        obj['Id'] = Id;
+
+        var jsonObject = {
+            "Comentario": obj
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("DesactivarComentario", "Adm")",
+            data: JSON.stringify(jsonObject),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: ResultadoComentario,
+            error: Error
+        });
+    }
+
+    function ResultadoComentario(result) {
+        if (result.Resultado > 0) {
+            swal({
+                title: "Operación exitosa",
+                text: "Comentario desactivado !",
+                icon: "success",
+                button: "Aceptar",
+            })
+            .then((value) => {
+                location.reload();
+            });
+        } else {
+            Mensaje(result.ResultadoText);
+        }
+    }
+
+
+    function Error(result) {
+        Mensaje("Problemas en la ejecución, intento mas tarde!");
+    }
+
+    function Mensaje(text) {
+        $.notify({
+            icon: 'fa fa-paw',
+            message: text
+        }, {
+            type: 'warning',
+            allow_dismiss: false,
+            animate: {
+                enter: 'animated rollIn',
+                exit: 'animated rollOut'
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $('#Menu_Blog').addClass(" nav-link active");
+    });
+</script>

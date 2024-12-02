@@ -1,0 +1,1887 @@
+﻿
+@{
+    ViewBag.Title = "NewWork";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<style>
+    .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+        margin-left: -1px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .input-group .form-control:not(:first-child) {
+        border-left: 0;
+        padding-left: 7px;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="~/Assets/js/plugins/EditorText/css/froala_editor.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/froala_style.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/code_view.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/draggable.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/colors.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/emoticons.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/image_manager.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/image.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/line_breaker.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/table.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/char_counter.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/video.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/fullscreen.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/file.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/quick_insert.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/help.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/third_party/spell_checker.css" rel="stylesheet" />
+<link href="~/Assets/js/plugins/EditorText/css/plugins/special_characters.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.css">
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4">
+
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Registrar nueva vacante </h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body pb-0">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12">
+                            <div class="row">
+
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-group">
+                                        <label for="largeInput">* Titulo  </label>
+                                        <input type="text" class="form-control form-control" id="Text_Titulo" onchange="ValidaInput('Text_Titulo')" value="@if (ViewBag.vacante != null) {@ViewBag.vacante.Titulo}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="largeInput">* Empresa  </label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-gradient-dark waves-effect" type="button" data-bs-toggle="modal" data-bs-target="#AgregarEmpresa" style="padding: 11px 23px;"><i class="fa fa-plus"></i></button>
+                                            </div>
+                                            <select class="form-control" id="Select_Empresa" onchange="CargaDepartamentos(this.value)">
+                                                <option value="0">SELECCIONAR </option>
+                                                @foreach (var item1 in ViewBag.Empresas)
+                                                {
+                                                    <option value="@item1.Id">@item1.RazonSocial.ToUpper()</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="largeInput">* Departamento :  </label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-gradient-dark waves-effect" type="button" id="BtnAbrirNuevoDEpartamento" style="padding: 11px 23px;"><i class="fa fa-plus"></i></button>
+                                            </div>
+                                            <select class="form-control" id="Select_Departamento" onchange="CargaPuestos(this.value)">
+                                                <option value="0">SELECCIONAR </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="largeInput">* Puesto :  </label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-gradient-dark waves-effect" type="button" id="BtnBuscar2" data-toggle="modal" data-target="#AgregarEmpresa" style="padding: 11px 23px;" data-toggle="tooltip" data-placement="top" title="Agregar Nueva Empresa"><i class="fa fa-plus"></i></button>
+                                            </div>
+                                            <select class="form-control" id="Select_Puesto" onchange="ValidaSelect('Select_Puesto')">
+                                                <option value="0">SELECCIONAR </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="largeInput">* Cliente :  </label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-gradient-dark waves-effect" type="button" id="BTnNuevoCliente2" data-toggle="modal" data-target="#AgregarCliente" style="padding: 11px 23px;" data-toggle="tooltip" data-placement="top" title="Agregar Nueva Empresa"><i class="fa fa-plus"></i></button>
+                                            </div>
+                                            <select class="form-control" id="Select_Cliente" onchange="CargaProyectosServicios(this.value)">
+                                                <option value="0">SELECCIONAR </option>
+                                                @foreach (var item1 in ViewBag.Clientes)
+                                                {
+                                                    <option value="@item1.Id">@item1.Nombre.ToUpper()</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="largeInput">* Proyecto o servicio :  </label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-gradient-dark waves-effect" type="button" id="BTnNuevoProyecto" style="padding: 11px 23px;" data-toggle="tooltip" data-placement="top" title="Agregar Nueva Empresa"><i class="fa fa-plus"></i></button>
+                                            </div>
+                                            <select class="form-control" id="Select_Proyecto" onchange="ValidaSelect('Select_Proyecto')">
+                                                <option value="0">SELECCIONAR </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="largeInput">* Esquema de Contratación :  </label>
+                                        <div class="select2-input">
+                                            <select id="Select_EsquemaContratacion" name="Select_EsquemaContratacion" class="form-control" style="width:100%" onchange="ValidaSelect('Select_EsquemaContratacion')">
+                                                <option value="0">Seleccionar</option>
+                                                @foreach (var item1 in ViewBag.EsquemaContratacion)
+                                                {
+
+
+                                                    <option value="@item1.Id" @(ViewBag.vacante != null && item1.Id == ViewBag.vacante.Cat_EsquemaContratacion.Id ? "selected" : "")>
+                                                        @item1.Nombre.ToUpper()
+                                                    </option>
+
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-8 col-lg-8">
+                                    <div class="form-group">
+                                        <label for="largeInput">* Dirección centro de rabajo :  </label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-gradient-dark waves-effect" type="button" id="BTnNuevoCentroTrabajo" style="padding: 11px 23px;" data-toggle="tooltip" data-placement="top" title="Agregar Nueva Empresa"><i class="fa fa-plus"></i></button>
+                                            </div>
+                                            <select class="form-control" id="Select_Centro_Trabajo" onchange="ValidaSelect('Select_Centro_Trabajo')">
+                                                <option value="0">SELECCIONAR </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="largeInput">* Modalidad  :  </label>
+                                        <div class="select2-input">
+                                            <select id="Select_Modalidad" name="Select_Modalidad" class="form-control" style="width:100%" onchange="ValidaSelect('Select_Modalidad')">
+                                                <option value="0">Seleccionar</option>
+                                                @foreach (var item1 in ViewBag.Modalidad)
+                                                {
+                                                    <option value="@item1.Id" @(ViewBag.vacante != null && item1.Id == ViewBag.vacante.Cat_Modalidad.Id ? "selected" : "")>
+                                                        @item1.Nombre.ToUpper()
+                                                    </option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="largeInput">* Jornada de trabajo   :  </label>
+                                        <div class="select2-input">
+                                            <select id="Select_Jornada" name="Select_Jornada" class="form-control" style="width:100%" onchange="ValidaSelect('Select_Jornada')">
+                                                <option value="0">Seleccionar</option>
+                                                @foreach (var item1 in ViewBag.JornadaTrabajo)
+                                                {
+                                                    <option value="@item1.Id" @(ViewBag.vacante != null && item1.Id == ViewBag.vacante.Cat_JornadaTrabajo.Id ? "selected" : "")>
+                                                        @item1.Nombre.ToUpper()
+                                                    </option>
+
+
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <br />
+                                    <div class="form-check form-switch">
+                                        <input disabled checked class="form-check-input" type="checkbox" id="AgregarSalario" name="AgregarSalario" onchange="AgregarSalarios()" @(ViewBag.vacante != null && ViewBag.vacante.Salario == 1 ? "checked" : "")>
+                                        <label class="form-check-label" for="AgregarSalario">Mostrar salario  </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <br />
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="AgregarFechaCierre" name="AgregarFechaCierre" onchange="AgregarFecha()">
+                                        <label class="form-check-label" for="AgregarFechaCierre">Agregar fecha cierre  </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group" id="DivAgregarSueldo" style="display:none;">
+                                        <label for="largeInput">* Salario (Rango inicial) </label>
+                                        <input type="text" class="form-control input-number numberPositivo" id="Text_Sueldo" value="@if (ViewBag.vacante != null) {@ViewBag.vacante.SalarioInicial}" onchange="ValidaInput('Text_Sueldo')">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group" id="DivAgregarSueldoF" style="display:none;">
+                                        <label for="largeInput"> Salario (Rango final)   </label>
+                                        <input type="text" class="form-control input-number numberPositivo" id="Text_SueldoF" value="@if (ViewBag.vacante != null) {@ViewBag.vacante.SalarioFinal}">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4">
+                                    <div class="form-group" id="DivAgregarFechaCierre" style="display:none;">
+                                        <label for="example-date-input" class="form-control-label">* Fecha cierre</label>
+                                        <input class="form-control" type="date" value="" id="date_FechaCierre">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="BuscarEmpleado" name="BuscarEmpleado" onchange="BuscarEmpleados()">
+                                        <label class="form-check-label" for="BuscarEmpleado">Cubrir el perfil de un empleado  </label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 col-lg-4" id="DivCheckFechaBaja" style="display: none;">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="AgregarFechaBaja" name="AgregarFechaBaja" onchange="AgregarFechaBajas()">
+                                        <label class="form-check-label" for="AgregarFechaBaja">Agregar fecha de baja  </label>
+                                    </div>
+                                </div>
+
+                                <div id="DivCubrirPersonal" class="col-md-12 col-lg-12" style="display: none;">
+                                    <div class="row">
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="largeInput">* Empleado :  </label>
+                                                <div class="select2-input">
+                                                    <select id="Select_Empleado" name="Select_Empleado" class="form-control" style="width:100%" onchange="ValidaSelect('Select_Empleado')">
+                                                        <option value="0">Seleccionar</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-4 col-lg-4" id="DivAgregarFechaBaja" style="display: none;">
+                                            <div class="form-group">
+                                                <label for="example-date-input" class="form-control-label"> * Fecha baja </label>
+                                                <input class="form-control" type="date" value="" id="date_FechaBaja">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-lg-4" id="DivMotivoBaja" style="display: none;">
+                                            <div class="form-group">
+                                                <label for="largeInput">* Motivo de baja </label>
+                                                <div class="select2-input">
+                                                    <select id="Select_MotivoBaja" name="Select_MotivoBaja" class="form-control" style="width:100%" onchange="ValidaSelect('Select_MotivoBaja')">
+                                                        <option value="0">Seleccionar</option>
+                                                        @foreach (var item1 in ViewBag.MotivosBajaEmpleado)
+                                                        {
+                                                            <option value="@item1.Id">@item1.Nombre.ToUpper()</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="RecibirNotificacion" name="RecibirNotificacion" @(ViewBag.vacante != null && ViewBag.vacante.Notificacion == 1 ? "checked" : "")>
+                                        <label class="form-check-label" for="RecibirNotificacion">Recibir notificación de las postulaciones   </label>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-header pb-0">
+                    <div class="row">
+                        <div class="col-lg-6 col-7">
+                            <h6>Información del empleo</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pb-0">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-12">
+                                <div id="editor">
+                                    <textarea name="editor_content" id="edit">
+                                           @if (ViewBag.VacantesPlantilla != null)
+                                            {
+                                               @Html.Raw(@ViewBag.VacantesPlantilla.Titulo)
+                                               @Html.Raw(@ViewBag.VacantesPlantilla.Contenido)
+                                            }
+                                           @if (ViewBag.vacante != null)
+                                            {
+                                               @Html.Raw(@ViewBag.vacante.Titulo)
+                                               @Html.Raw(@ViewBag.vacante.Contenido)
+                                            }
+                                    </textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4">
+                                <button type="button" id="BtnRegistrar" class="btn bg-gradient-info w-100 mt-4 mb-0">Registrar  </button>
+                                <br /><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="AgregarEmpresa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nueva empresa</h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <label for="largeInput">* Razón social  </label>
+                            <input type="text" class="form-control" id="RazonSocial_Empresa_Modal" onchange="ValidaInput('RazonSocial_Empresa_Modal')" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <label for="largeInput">* Nombre comercial  </label>
+                            <input type="text" class="form-control" id="NombreComercial_Empresa_Modal" onchange="ValidaInput('NombreComercial_Empresa_Modal')" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <label for="largeInput">* Alias  </label>
+                            <input type="text" class="form-control" id="Alias_Empresa_Modal" onchange="ValidaInput('Alias_Empresa_Modal')" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <label for="largeInput">* RFC </label>
+                            <input type="text" class="form-control" id="RFC_Empresa_Modal" onchange="ValidaInput('RFC_Empresa_Modal')" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="BtnCerrarEmpresa"> Cancelar</button>
+                <button type="button" class="btn bg-gradient-info" id="BTnNuevaEmpresa">Agregar  </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="AgregarDepartamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nueva Departamento</h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <label for="largeInput">* Nombre Departamento </label>
+                            <input type="text" class="form-control" id="Nombre_Departamento" onchange="ValidaInput('Nombre_Departamento')" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="BtnCerrarDepartamento"> Cancelar</button>
+                <button type="button" class="btn btn-primary" id="BTnNuevoDepartamento">Agregar  </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="AgregarPuesto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Puesto</h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <label for="largeInput">* Nombre Puesto </label>
+                            <input type="text" class="form-control" id="Nombre_Puesto" onchange="ValidaInput('Nombre_Puesto')" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="BtnCerrarPuesto"> Cancelar</button>
+                <button type="button" class="btn btn-primary" id="BTnNuevoPuesto">Agregar  </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="AgregarProyectoServicio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Proyecto o servicio </h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <label for="largeInput">* Nombre Proyecto o servicio  </label>
+                            <input type="text" class="form-control" id="Nombre_Proyecto_Modal" onchange="ValidaInput('Nombre_Proyecto_Modal')" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="BtnCerrarProyectoServicio"> Cancelar</button>
+                <button type="button" class="btn btn-primary" id="BTnNuevoProyectoServicio">Agregar  </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="AgregarCliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Cliente </h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="form-group">
+                            <label for="largeInput">* Nombre Cliente </label>
+                            <input type="text" class="form-control" id="Nombre_Cliente_Modal" onchange="ValidaInput('Nombre_Cliente_Modal')" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="BtnCerrarCliente"> Cancelar</button>
+                <button type="button" class="btn btn-primary" id="BTnNuevoCliente">Agregar  </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="AgregarCentroTrabajo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Centro de Trabajo </h5>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label for="largeInput">* Código postal  </label>
+                            <input type="text" class="form-control input-number" id="CP_Trabajo" maxlength="6" placeholder="Código postal" onchange="CPBuscar_Trabajo(this.value)" onkeypress="return soloNum(event)">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-lg-8">
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label for="largeInput">* Calle  </label>
+                            <input type="text" class="form-control" id="Calle_Trabajo" placeholder="" onchange="ValidaInput('Calle_Trabajo')" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label for="largeInput">* Número exterior </label>
+                            <input type="text" class="form-control" id="NumExterior_Trabajo" placeholder="" onchange="ValidaInput('NumExterior_Trabajo')" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label for="largeInput">Interior </label>
+                            <input type="text" class="form-control" id="NumInterior_Trabajo" placeholder="" onchange="ValidaInput('NumInterior_Trabajo')" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label for="largeInput">* Estado  </label>
+                            <select class="form-control" id="Select_Estado_Trabajo" onchange="callEstados_Trabajo(this.value)">
+                                <option value="0">SELECCIONAR </option>
+                                @foreach (var item1 in ViewBag.Estados)
+                                {
+                                    <option value="@item1.Id">@item1.Estado.ToUpper()</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label for="largeInput">* Ciudad o Municipio </label>
+                            <select class="form-control" id="Select_Delegacion_Municipio_Trabajo" onchange="callColonias_Trabajo(this.value)">
+                                <option value="0">SELECCIONAR </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="form-group">
+                            <label for="largeInput">* Colonia  </label>
+                            <select class="form-control" id="Select_Colonia_Trabajo" onchange="callCP_Trabajo(this.value)">
+                                <option value="0">SELECCIONAR </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label for="largeInput">¿ Entre que calles está el domicilio ? </label>
+                            <input type="text" class="form-control" id="EntreCalle_Trabajo" placeholder="" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label for="largeInput">Referencias, ¿ Qué se encuentra cerca ?</label>
+                            <input type="text" class="form-control" id="Referencias_Trabajo" placeholder="" onkeyup="mayus(this);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="BtnCerrarCentroTrabajo"> Cancelar</button>
+                <button type="button" class="btn btn-primary" id="BTnAgregarCentroTrabajo">Agregar  </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-notification" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+    <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="modal-title-notification">Procesando solicitud </h6>
+                <button type="button" class="btn-close text-dark" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    <img src="~/images/loading-gif-png-4.gif" width="25%" height="100px" />
+                    <h4 class="text-gradient text-info mt-4">Espera un momento!</h4>
+                    <p>Estamos registrando tu solicitud.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.7/purify.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/froala_editor.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/align.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/char_counter.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/code_beautifier.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/code_view.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/colors.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/draggable.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/emoticons.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/entities.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/file.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/font_size.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/font_family.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/fullscreen.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/image.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/image_manager.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/line_breaker.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/inline_style.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/link.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/lists.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/paragraph_format.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/paragraph_style.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/quick_insert.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/quote.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/table.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/save.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/url.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/video.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/help.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/print.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/third_party/spell_checker.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/special_characters.min.js"></script>
+<script type="text/javascript" src="~/Assets/js/plugins/EditorText/js/plugins/word_paste.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+
+<script>
+    $('#BtnRegistrar').click(function () {
+        if (ValidarFormulairo()) {
+
+            $("#BtnRegistrar").prop("disabled", true);
+            $("#modal-notification").modal('show');
+
+            setTimeout(function () {
+                EnviarInformacion();
+            }, 2000);
+
+        } else {
+            $.notify({
+                message: "Formulario incompleto!."
+            }, {
+                type: 'danger'
+            });
+        }
+    });
+
+    function EnviarInformacion() {
+
+        var EmpresaPuestos = new Object();
+        EmpresaPuestos.Id = $("#Select_Puesto option:selected").val();
+
+        var Cat_ProyectoServicios = new Object();
+        Cat_ProyectoServicios.Id = $("#Select_Proyecto option:selected").val();
+
+        var Cat_EsquemaContratacion = new Object();
+        Cat_EsquemaContratacion.Id = $("#Select_EsquemaContratacion option:selected").val();
+
+        var ClienteDirecciones = new Object();
+        ClienteDirecciones.Id = $("#Select_Centro_Trabajo option:selected").val();
+
+        var Cat_Modalidad = new Object();
+        Cat_Modalidad.Id = $("#Select_Modalidad option:selected").val();
+
+        var Cat_JornadaTrabajo = new Object();
+        Cat_JornadaTrabajo.Id = $("#Select_Jornada option:selected").val();
+
+        var Cat_MotivosBajaEmpleado = new Object();
+        Cat_MotivosBajaEmpleado.Id = $("#Select_MotivoBaja option:selected").val();
+
+        var Empleados = new Object();
+        if ($("#BuscarEmpleado").is(':checked')) {
+            Empleados = $("#Select_Empleado option:selected").val();
+        }
+
+        var Vacante = new Object();
+        Vacante.EmpresaPuestos = EmpresaPuestos;
+        Vacante.Cat_ProyectoServicios = Cat_ProyectoServicios;
+        Vacante.Cat_EsquemaContratacion = Cat_EsquemaContratacion;
+        Vacante.ClienteDirecciones = ClienteDirecciones;
+        Vacante.Cat_Modalidad = Cat_Modalidad;
+        Vacante.Cat_JornadaTrabajo = Cat_JornadaTrabajo;
+        Vacante.Cat_MotivosBajaEmpleado = Cat_MotivosBajaEmpleado;
+        Vacante.Empleados = Empleados;
+        Vacante.Titulo = $('#Text_Titulo').val();
+        Vacante.Contenido = $('#edit').val().replace('<p data-f-id="pbf" style="text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;">Powered by <a href="https://www.froala.com/wysiwyg-editor?pb=1" title="Froala Editor">Froala Editor</a></p>', '');
+
+        Vacante.FechaCierre = null;
+        if ($("#AgregarFechaCierre").is(':checked')) {
+            if ($('#date_FechaCierre').val().length > 0) {
+                Vacante.FechaCierre = $('#date_FechaCierre').val();
+            }
+        }
+
+        Vacante.SalarioInicial = null;
+        Vacante.SalarioFinal = null;
+        if ($("#AgregarSalario").is(':checked')) {
+            if ($('#Text_Sueldo').val().length > 0) {
+                Vacante.Salario = 1;
+                Vacante.SalarioInicial = $('#Text_Sueldo').val().replace(/,/g, '');
+                Vacante.SalarioFinal = $('#Text_SueldoF').val().replace(/,/g, '');
+            }
+        } else {
+            Vacante.Salario = 0;
+        }
+        Vacante.IdEmpleadoBaja = null;
+        Vacante.FechaBaja = null;
+        if ($("#BuscarEmpleado").is(':checked')) {
+            Vacante.IdEmpleadoBaja = $('#Select_Empleado').val();
+
+            if ($("#AgregarFechaBaja").is(':checked')) {
+                Vacante.FechaBaja = $('#date_FechaBaja').val();
+            }
+        }
+
+        if ($("#RecibirNotificacion").is(':checked')) {
+            Vacante.Notificacion = 1;
+        } else {
+            Vacante.Notificacion = 0;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("Vacante_Agregar", "Vacantes")",
+            async: false,
+            data: JSON.stringify(Vacante),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+
+                $("#modal-notification").modal("hide");
+                $("#BtnRegistrar").prop("disabled", false);
+
+                if (result.Id > 0) {
+
+
+                    swal({
+                        title: "Nueva vacante registrada.",
+                        text: "Se ha enviado un correo electrónico, notificando la nueva vacante a personal de RH.",
+                        imageUrl: "../Assets/img/small-logos/1237439_verificado.png",
+                        showCancelButton: false,
+                        confirmButtonColor: "#3070A9",
+                        confirmButtonText: "Aceptar",
+                        closeOnConfirm: false,
+                    },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                            location.reload();
+                        }
+                    });
+
+                } else {
+                    swal({
+                        title: "Problemas en la solicitud",
+                        text: "Vacante no registrada !",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    }).then((willDelete) => {
+
+                    });
+                }
+
+            },
+            error: function () {
+                $("#modal-notification").modal("hide");
+                $("#BtnRegistrar").prop("disabled", false);
+            }
+        });
+
+    }
+
+    function ValidarFormulairo() {
+        var result = false;
+        var From = false;
+        var FechaCierre = false;
+        var Sueldo = false;
+        var CubrirEmpleado = false;
+
+
+        $('#Text_Titulo').css("border", "1px solid #e293d3");
+        $('#Select_Empresa').css("border", "1px solid #e293d3");
+        $('#Select_Departamento').css("border", "1px solid #e293d3");
+        $('#Select_Puesto').css("border", "1px solid #e293d3");
+        $('#Select_Cliente').css("border", "1px solid #e293d3");
+        $('#Select_Proyecto').css("border", "1px solid #e293d3");
+        $('#Select_EsquemaContratacion').css("border", "1px solid #e293d3");
+        $('#Select_Centro_Trabajo').css("border", "1px solid #e293d3");
+        $('#Select_Modalidad').css("border", "1px solid #e293d3");
+        $('#Select_Jornada').css("border", "1px solid #e293d3");
+        $('#Text_Sueldo').css("border", "1px solid #e293d3");
+
+        if ($('#Text_Titulo').val().length > 0) {
+            $('#Text_Titulo').css("border", "1px solid #d2d6da");
+        }
+
+        if ($("#Select_Empresa option:selected").val() > 0) {
+            $('#Select_Empresa').css("border", "1px solid #d2d6da");
+        }
+
+        if ($("#Select_Departamento option:selected").val() > 0) {
+            $('#Select_Departamento').css("border", "1px solid #d2d6da");
+        }
+
+        if ($("#Select_Puesto option:selected").val() > 0) {
+            $('#Select_Puesto').css("border", "1px solid #d2d6da");
+        }
+
+        if ($("#Select_Cliente option:selected").val() > 0) {
+            $('#Select_Cliente').css("border", "1px solid #d2d6da");
+        }
+
+        if ($("#Select_Proyecto option:selected").val() > 0) {
+            $('#Select_Proyecto').css("border", "1px solid #d2d6da");
+        }
+
+        if ($("#Select_EsquemaContratacion option:selected").val() > 0) {
+            $('#Select_EsquemaContratacion').css("border", "1px solid #d2d6da");
+        }
+
+        if ($("#Select_Centro_Trabajo option:selected").val() > 0) {
+            $('#Select_Centro_Trabajo').css("border", "1px solid #d2d6da");
+        }
+
+        if ($("#Select_Modalidad option:selected").val() > 0) {
+            $('#Select_Modalidad').css("border", "1px solid #d2d6da");
+        }
+
+        if ($("#Select_Jornada option:selected").val() > 0) {
+            $('#Select_Jornada').css("border", "1px solid #d2d6da");
+        }
+
+        if ($("#AgregarFechaCierre").is(':checked')) {
+            $('#date_FechaCierre').css("border", "1px solid #e293d3");
+
+            if ($('#date_FechaCierre').val().length > 0) {
+                $('#date_FechaCierre').css("border", "1px solid #d2d6da");
+                FechaCierre = true;
+            }
+        } else {
+            FechaCierre = true;
+        }
+
+        if ($("#AgregarSalario").is(':checked')) {
+            $('#Text_Sueldo').css("border", "1px solid #e293d3");
+
+            if ($('#Text_Sueldo').val().length > 0) {
+                $('#Text_Sueldo').css("border", "1px solid #d2d6da");
+                Sueldo = true;
+            }
+        } else {
+            Sueldo = true;
+        }
+
+        if ($("#BuscarEmpleado").is(':checked')) {
+            $('#Select_Empleado').css("border", "1px solid #e293d3");
+
+            if ($("#Select_Empleado option:selected").val() > 0) {
+                $('#Select_Empleado').css("border", "1px solid #d2d6da");
+
+                if ($("#AgregarFechaBaja").is(':checked')) {
+                    $('#date_FechaBaja').css("border", "1px solid #e293d3");
+                    $('#Select_MotivoBaja').css("border", "1px solid #e293d3");
+
+                    if ($('#date_FechaBaja').val().length > 0) {
+                        $('#date_FechaBaja').css("border", "1px solid #d2d6da");
+
+                        if ($("#Select_MotivoBaja option:selected").val() > 0) {
+                            $('#Select_MotivoBaja').css("border", "1px solid #d2d6da");
+                            CubrirEmpleado = true;
+                        }
+                    }
+
+                } else {
+                    CubrirEmpleado = true;
+                }
+            }
+        } else {
+            CubrirEmpleado = true;
+        }
+
+        if ($('#Text_Titulo').val().length > 0) {
+            if ($("#Select_Empresa option:selected").val() > 0) {
+                if ($("#Select_Departamento option:selected").val() > 0) {
+                    if ($("#Select_Puesto option:selected").val() > 0) {
+                        if ($("#Select_Cliente option:selected").val() > 0) {
+                            if ($("#Select_Proyecto option:selected").val() > 0) {
+                                if ($("#Select_EsquemaContratacion option:selected").val() > 0) {
+                                    if ($("#Select_Centro_Trabajo option:selected").val() > 0) {
+                                        if ($("#Select_Modalidad option:selected").val() > 0) {
+                                            if ($("#Select_Jornada option:selected").val() > 0) {
+                                                if ($('#edit').val().length > 0) {
+                                                    From = true;
+                                                } else {
+                                                    $.notify({
+                                                        message: "Agrega la información del empleo!."
+                                                    }, {
+                                                        type: 'danger'
+                                                    });
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if (From) {
+            if (FechaCierre) {
+                if (Sueldo) {
+                    if (CubrirEmpleado) {
+                        result = true;
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
+
+</script>
+
+<script>
+    $('#BTnNuevaEmpresa').click(function () {
+
+        var RazonSocial = $('#RazonSocial_Empresa_Modal').val();
+        $('#RazonSocial_Empresa_Modal').css("border", "1px solid #e293d3");
+
+        var NombreComercial = $('#NombreComercial_Empresa_Modal').val();
+        $('#NombreComercial_Empresa_Modal').css("border", "1px solid #e293d3");
+
+        var Alias = $('#Alias_Empresa_Modal').val();
+        $('#Alias_Empresa_Modal').css("border", "1px solid #e293d3");
+
+        var RFC = $('#RFC_Empresa_Modal').val();
+        $('#RFC_Empresa_Modal').css("border", "1px solid #e293d3");
+
+
+        if ($('#RazonSocial_Empresa_Modal').val().length > 0) {
+            $('#RazonSocial_Empresa_Modal').css("border", "1px solid #d2d6da");
+        }
+
+        if ($('#NombreComercial_Empresa_Modal').val().length > 0) {
+            $('#NombreComercial_Empresa_Modal').css("border", "1px solid #d2d6da");
+        }
+
+        if ($('#Alias_Empresa_Modal').val().length > 0) {
+            $('#Alias_Empresa_Modal').css("border", "1px solid #d2d6da");
+        }
+
+        if ($('#RFC_Empresa_Modal').val().length > 0) {
+            $('#RFC_Empresa_Modal').css("border", "1px solid #d2d6da");
+        }
+
+        var resul = false;
+
+        if (RazonSocial.length > 0) {
+            if (NombreComercial.length > 0) {
+                if (Alias.length > 0) {
+                    if (RFC.length > 0) {
+                        resul = true;
+                    }
+                }
+            }
+        }
+
+        if (resul) {
+            $.notify({
+                message: "Modulo en desarrollo!."
+            }, {
+                type: 'danger'
+            });
+            @*var obj = {};
+            obj['RazonSocial'] = RazonSocial;
+            obj['NombreComercial'] = NombreComercial;
+            obj['Alias'] = Alias;
+            obj['RFC'] = RFC;
+
+            var jsonObject = {
+                "Empresas": obj
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Empresas_Agregar", "Empresas")",
+                async: false,
+                data: JSON.stringify(jsonObject),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: resultadoEmpresas,
+                error: errores
+            });*@
+
+        } else {
+            $.notify({
+                message: "Formulario incompleto!."
+            }, {
+                type: 'danger'
+            });
+        }
+    });
+
+    function resultadoEmpresas(data) {
+      switch (data.Id) {
+          case -1:
+                swal({
+                    title: "Algo ocurrió !",
+                    text: 'La Empresa que intentas agregar ya se encuentra registrada.',
+                    icon: "warning",
+                    button: "Aceptar",
+                });
+                $('#RFC_Empresa_Modal').css("border", "1px solid #f44336");
+                break;
+            case 0:
+                swal({
+                    title: "Algo ocurrió !",
+                    text: '',
+                    icon: "warning",
+                    button: "Aceptar",
+                });
+                break;
+
+            default:
+            // code block
+        }
+
+        if (data.Id > 0)
+        {
+            swal({
+                title: "¡Nueva empresa agregada!",
+              /*  text: '',*/
+                icon: "success",
+                button: "Aceptar",
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Consulta_Empresas", "Empresas")",
+                data: '',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    $("#Select_Empresa_Empleado").empty();
+                    $("#Select_Departamento_Empleado").empty();
+                    $("#Select_Puesto_Empleado").empty();
+
+                    var option = $(document.createElement('option'));
+                    option.text("SELECCIONAR");
+                    option.val(0);
+
+                    var option2 = $(document.createElement('option'));
+                    option2.text("SELECCIONAR");
+                    option2.val(0);
+
+                    var option3 = $(document.createElement('option'));
+                    option3.text("SELECCIONAR");
+                    option3.val(0);
+
+                    $("#Select_Empresa_Empleado").append(option);
+                    $("#Select_Departamento_Empleado").append(option2);
+                    $("#Select_Puesto_Empleado").append(option3);
+
+                    if (result.length > 0) {
+                        $(result).each(function () {
+                            var option = $(document.createElement('option'));
+
+                            option.text(this.RazonSocial.toUpperCase());
+                            option.val(this.Id);
+
+                            $("#Select_Empresa_Empleado").append(option);
+                        });
+
+                        $('#Select_Empresa_Empleado option[value="' + data.Id + '"]').attr("selected", true);
+                    }
+                },
+                error: errores
+            });
+
+            $("#BtnCerrarEmpresa").trigger("click");
+            $('#RazonSocial_Empresa_Modal').val('');
+            $('#NombreComercial_Empresa_Modal').val('');
+            $('#Alias_Empresa_Modal').val('');
+            $('#RFC_Empresa_Modal').val('');
+        }
+    }
+</script>
+
+<script>
+function BuscarEmpleados() {
+if ($('#BuscarEmpleado').prop('checked')) {
+
+$("#DivCubrirPersonal").show();
+$("#DivCheckFechaBaja").show();
+
+var EmpresaPuestos = new Object();
+EmpresaPuestos.Id = $('#Select_Puesto').val();
+
+$.ajax({
+type: "POST",
+url: "@Url.Action("Empleados_Seleccionar_IdPuesto", "Empleado")",
+data: JSON.stringify(EmpresaPuestos),
+contentType: "application/json; charset=utf-8",
+dataType: "json",
+success: function (result) {
+
+console.log(result);
+$("#Select_Empleado").empty();
+
+var option = $(document.createElement('option'));
+option.text("SELECCIONAR");
+option.val(0);
+
+$("#Select_Empleado").append(option);
+
+if (result.length > 0) {
+$(result).each(function () {
+var option = $(document.createElement('option'));
+
+option.text(this.Personas.Nombre.toUpperCase() + " " + this.Personas.ApPaterno.toUpperCase() + " " + this.Personas.ApMaterno.toUpperCase());
+option.val(this.Id);
+
+$("#Select_Empleado").append(option);
+});
+}
+},
+error: function () {
+$("#Select_Empleado").empty();
+
+var option = $(document.createElement('option'));
+option.text("SELECCIONAR");
+option.val(0);
+
+$("#Select_Empleado").append(option);
+}
+});
+
+} else {
+$("#DivCubrirPersonal").css("display", "none");
+$("#DivCheckFechaBaja").css("display", "none");
+}
+}
+
+function AgregarFecha() {
+if ($('#AgregarFechaCierre').prop('checked')) {
+
+$("#DivAgregarFechaCierre").show();
+
+} else {
+$("#DivAgregarFechaCierre").css("display", "none");
+
+}
+}
+
+function AgregarSalarios() {
+if ($('#AgregarSalario').prop('checked')) {
+
+$("#DivAgregarSueldo").show();
+$("#DivAgregarSueldoF").show();
+
+} else {
+$("#DivAgregarSueldo").css("display", "none");
+$("#DivAgregarSueldoF").css("display", "none");
+}
+}
+
+function AgregarFechaBajas() {
+if ($('#AgregarFechaBaja').prop('checked')) {
+
+$("#DivAgregarFechaBaja").show();
+$("#DivMotivoBaja").show();
+
+} else {
+$("#DivAgregarFechaBaja").css("display", "none");
+$("#DivMotivoBaja").css("display", "none");
+
+}
+}
+</script>
+
+<script>
+function CargaDepartamentos(valor) {
+if (valor > 0) {
+$('#Select_Empresa').css("border", "1px solid #cccccc");
+
+var obj = {};
+obj['Id'] = valor;
+
+var jsonObject = {
+"Empresas": obj
+};
+
+$.ajax({
+type: "POST",
+url: "@Url.Action("Departamentos_Seleccionar_IdEmpresa", "Departamentos")",
+data: JSON.stringify(jsonObject),
+contentType: "application/json; charset=utf-8",
+dataType: "json",
+success: function (result) {
+$("#Select_Departamento").empty();
+$("#Select_Puesto").empty();
+
+var option2 = $(document.createElement('option'));
+option2.text("SELECCIONAR");
+option2.val(0);
+
+var option3 = $(document.createElement('option'));
+option3.text("SELECCIONAR");
+option3.val(0);
+
+$("#Select_Departamento").append(option2);
+$("#Select_Puesto").append(option3);
+
+if (result.length > 0) {
+$(result).each(function () {
+var option = $(document.createElement('option'));
+
+option.text(this.Nombre.toUpperCase());
+option.val(this.Id);
+
+$("#Select_Departamento").append(option);
+});
+
+/*$('#Select_Departamento_Empleado option[value="' + valor + '"]').attr("selected", true);*/
+}
+},
+error: errores
+});
+
+
+var Empresas = new Object();
+Empresas.Id = valor;
+
+$.ajax({
+type: "POST",
+url: "@Url.Action("Cat_Clientes_Listar_IdEmpresa", "Cliente")",
+data: JSON.stringify(Empresas),
+contentType: "application/json; charset=utf-8",
+dataType: "json",
+success: function (result) {
+$("#Select_Cliente").empty();
+
+var option = $(document.createElement('option'));
+option.text("SELECCIONAR");
+option.val(0);
+
+$("#Select_Cliente").append(option);
+
+if (result.length > 0) {
+$(result).each(function () {
+var option = $(document.createElement('option'));
+
+option.text(this.Nombre.toUpperCase());
+option.val(this.Id);
+
+$("#Select_Cliente").append(option);
+});
+}
+},
+error: errores
+});
+
+if (valor == 1) {
+$("#BTnNuevoCliente2").prop('disabled', false);
+$("#BTnNuevoProyecto").prop('disabled', false);
+} else {
+$("#BTnNuevoCliente2").prop('disabled', true);
+$("#BTnNuevoProyecto").prop('disabled', true);
+}
+
+}
+}
+
+function CargaPuestos(valor) {
+if (valor > 0) {
+$('#Select_Departamento').css("border", "1px solid #cccccc");
+
+var obj = {};
+obj['Id'] = valor;
+
+var jsonObject = {
+"EmpresasDepartamento": obj
+};
+
+$.ajax({
+type: "POST",
+url: "@Url.Action("Departamentos_Seleccionar_IdDepartamento", "Puestos")",
+data: JSON.stringify(jsonObject),
+contentType: "application/json; charset=utf-8",
+dataType: "json",
+success: function (result) {
+$("#Select_Puesto").empty();
+
+var option = $(document.createElement('option'));
+option.text("SELECCIONAR");
+option.val(0);
+
+$("#Select_Puesto").append(option);
+
+
+if (result.length > 0) {
+
+
+$(result).each(function () {
+var option = $(document.createElement('option'));
+
+option.text(this.Nombre.toUpperCase());
+option.val(this.Id);
+
+$("#Select_Puesto").append(option);
+});
+
+/*$('#Select_Puesto_Empleado option[value="' + valor + '"]').attr("selected", true);*/
+}
+},
+error: errores
+});
+}
+}
+
+function CargaProyectosServicios(valor)
+{
+if ($('#Select_Cliente option:selected').val() > 0) {
+$('#Select_Cliente').css("border", "1px solid #cccccc");
+} else {
+$('#Select_Cliente').css("border", "1px solid #f44336");
+}
+
+if (valor > 0) {
+
+var obj2 = {};
+obj2['Id'] = valor;
+
+var jsonObject2 = {
+"Cat_Clientes": obj2
+};
+
+$.ajax({
+type: "POST",
+url: "@Url.Action("ClienteDirecciones_Seleccionar_IdCliente", "ClienteDirecciones")",
+async: false,
+data: JSON.stringify(jsonObject2),
+contentType: "application/json; charset=utf-8",
+dataType: "json",
+success: function (result) {
+
+$("#Select_Centro_Trabajo").empty();
+
+var option = $(document.createElement('option'));
+option.text("SELECCIONAR");
+option.val(0);
+
+$("#Select_Centro_Trabajo").append(option);
+
+if (result.length > 0) {
+$(result).each(function () {
+var option = $(document.createElement('option'));
+
+option.text(this.Direccion.toUpperCase());
+option.val(this.Id);
+
+$("#Select_Centro_Trabajo").append(option);
+});
+}
+},
+error: function () {
+
+$("#Select_Centro_Trabajo").empty();
+
+var option = $(document.createElement('option'));
+option.text("SELECCIONAR");
+option.val(0);
+
+$("#Select_Centro_Trabajo").append(option);
+}
+});
+
+var obj = {};
+obj['Id'] = valor;
+
+var jsonObject = {
+"Cat_Clientes": obj
+};
+
+$.ajax({
+type: "POST",
+url: "@Url.Action("ProyectoServicios_Seleccionar_IdCliente", "ProyectoServicios")",
+data: JSON.stringify(jsonObject),
+contentType: "application/json; charset=utf-8",
+dataType: "json",
+success: function (result) {
+
+$("#Select_Proyecto").empty();
+
+var option = $(document.createElement('option'));
+option.text("SELECCIONAR");
+option.val(0);
+
+$("#Select_Proyecto").append(option);
+
+
+if (result.length > 0) {
+
+$(result).each(function () {
+var option = $(document.createElement('option'));
+
+option.text(this.Nombre.toUpperCase());
+option.val(this.Id);
+
+$("#Select_Proyecto").append(option);
+});
+
+/*$('#Select_Puesto_Empleado option[value="' + valor + '"]').attr("selected", true);*/
+}
+},
+error: errores
+});
+
+/* CargaCentroTrabajo();*/
+}
+}
+
+function errores(data) {
+swal({
+title: "UPS",
+text: 'Se ha presentado un problema #18595',
+
+type: "warning",
+button: "Aceptar",
+});
+}
+
+</script>
+<script>(function () {
+        new FroalaEditor("#edit", {
+            attribution: false,
+            events: {
+                "image.beforeUpload": function (files) {
+                    var editor = this;
+                    if (files.length) {
+                        // Create a File Reader.
+                        var reader = new FileReader();
+                        // Set the reader to insert images when they are loaded.
+                        reader.onload = function (e) {
+                            var result = e.target.result;
+                            editor.image.insert(result, null, null, editor.image.get());
+                        };
+                        // Read image as base64.
+                        reader.readAsDataURL(files[0]);
+                    }
+                    editor.popups.hideAll();
+                    // Stop default upload chain.
+                    return false;
+                }
+            }
+        })
+
+    })()
+
+
+    function ValidaInput(name) {
+        if ($('#' + name).val().length > 0) {
+            $('#' + name).css("border", "1px solid #d2d6da");
+            $('#' + name).css("border-left", "none");
+        } else {
+            $('#' + name).css("border", "1px solid #e293d3");
+        }
+    }
+
+    function ValidaSelect(name) {
+        if ($('#' + name + ' option:selected').val() > 0) {
+            $('#' + name).css("border", "1px solid #d2d6da");
+        } else {
+            $('#' + name).css("border", "1px solid #e293d3");
+        }
+    }
+
+    function Mayus(e) {
+        e.value = e.value.toUpperCase();
+    }
+
+    const MILLARES = ",";
+    const DECIMALES = ".";
+    const DTFLOCAL = new Intl.NumberFormat('en-US');
+
+    // Formatear solamente numeros decimales positivos
+    function numberFormatPositivo(e) {
+        if (this.value === "") {
+            return;
+        }
+        // Obtenemos un array con el numero y los decimales si hay
+        let contenido = "";
+        if (MILLARES === ",") {
+            contenido = this.value.replace(/[^0-9\.]/g, "").split(".");
+        } else {
+            contenido = this.value.replace(/[^0-9\,]/g, "").split(",");
+        }
+        // añadimos los separadores de miles al primer numero del array
+        contenido[0] = contenido[0].length ? DTFLOCAL.format(parseInt(contenido[0])) : "0";
+        // Juntamos el numero con los decimales si hay decimales
+        this.value = contenido.length > 1 ? contenido.slice(0, 2).join(".") : contenido[0];
+    }
+
+    window.onload = function () {
+        //SE EJECUTA DESPUES CARGAR EL CODIGO CSS y HTML
+        // Creamos el evento keyup
+        document.querySelectorAll(".numberPositivo").forEach(el => el.addEventListener("keyup", numberFormatPositivo));
+    };
+
+    $(document).ready(function () {
+        $('#Menu_work').addClass("nav-link active");
+        $('#TitlePage').html("Bolsa de trabajo");
+        $('#SubTitlePage').html("Nueva Vacante");
+        AgregarSalarios();
+    });
+
+    $(document).ready(function () {-
+        $('div[style="z-index:9999;width:100%;position:relative"]').remove();
+        $("a[href='https://www.froala.com/wysiwyg-editor?k=u']").remove();
+        $("*").filter(function () {
+            return $(this).css("background-color") === "#EF5350";
+        }).remove();
+        $('#fr-logo').remove();
+
+
+        setInterval(function () {
+            EliminaPublicidad();
+        }, 100);
+
+    });
+
+    function EliminaPublicidad() {
+        // Remove the HTML code
+        $('div[style="z-index:9999;width:100%;position:relative"]').remove();
+        $("a[href='https://www.froala.com/wysiwyg-editor?k=u']").remove();
+        $("*").filter(function () {
+            return $(this).css("background-color") === "#EF5350";
+        }).remove();
+        $('#fr-logo').remove();
+    }
+    </script>
+
+@if (ViewBag.vacante != null)
+{
+    @*INICIO PINTAR INFORMACIÓN*@
+    <script>
+    $(document).ready(function () {
+
+        if (@ViewBag.vacante.Salario === 1) {
+         AgregarSalarios();
+        }
+
+        if ("@ViewBag.vacante.FechaCierre" !== "01/01/0001 12:00:00 a. m.") {
+            $('#AgregarFechaCierre').prop('checked', true);
+            AgregarFecha();
+
+            var fechaCierre = "@ViewBag.vacante.FechaCierre";
+            var fechaFormatted = fechaCierre.split(' ')[0].split('/').reverse().join('-');
+
+            $('#date_FechaCierre').val(fechaFormatted);
+        }
+
+        //PINTADO FEO ESTAR PREPARADO :(
+        ObtenerEmpresaDepa();
+
+
+    });
+
+
+    //1.Obtener Empresa Departamento Por IdPuesto
+    function ObtenerEmpresaDepa() {
+        var EmpresaPuestos = new Object();
+        EmpresaPuestos.Id = @ViewBag.vacante.EmpresaPuestos.Id;
+
+        var Vacante = new Object();
+        Vacante.EmpresaPuestos = EmpresaPuestos;
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("Vacante_Consultar", "Vacantes")",
+            async: false,
+            data: JSON.stringify(Vacante),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (R) {
+                var IdEmpresa = R.Id
+
+                $('#Select_Empresa option[value="' + IdEmpresa + '"]').attr("selected", true);
+        //2.CARGAR DEPARTAMENTOS
+                var obj = {};
+                obj['Id'] = IdEmpresa;
+
+                var jsonObject = {
+                    "Empresas": obj
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("Departamentos_Seleccionar_IdEmpresa", "Departamentos")",
+                    data: JSON.stringify(jsonObject),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        $("#Select_Departamento").empty();
+                        $("#Select_Puesto").empty();
+
+                        var option2 = $(document.createElement('option'));
+                        option2.text("SELECCIONAR");
+                        option2.val(0);
+
+                        var option3 = $(document.createElement('option'));
+                        option3.text("SELECCIONAR");
+                        option3.val(0);
+
+                        $("#Select_Departamento").append(option2);
+                        $("#Select_Puesto").append(option3);
+
+                        if (result.length > 0) {
+                            $(result).each(function () {
+                                var option = $(document.createElement('option'));
+
+                                option.text(this.Nombre.toUpperCase());
+                                option.val(this.Id);
+
+                                $("#Select_Departamento").append(option);
+                            });
+
+                            var idDepartamento = R.EmpresaPuestos.EmpresasDepartamento.Id;
+                            $('#Select_Departamento option[value="' + idDepartamento + '"]').attr("selected", true);
+
+            //3.CARGAR PUESTO
+                            var obj3 = {};
+                            obj3['Id'] = idDepartamento;
+
+                            var jsonObject3 = {
+                                "EmpresasDepartamento": obj3
+                            };
+
+                            $.ajax({
+                                type: "POST",
+                                url: "@Url.Action("Departamentos_Seleccionar_IdDepartamento", "Puestos")",
+                                data: JSON.stringify(jsonObject3),
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "json",
+                                success: function (result) {
+                                    $("#Select_Puesto").empty();
+
+                                    var option = $(document.createElement('option'));
+                                    option.text("SELECCIONAR");
+                                    option.val(0);
+
+                                    $("#Select_Puesto").append(option);
+
+                                    if (result.length > 0) {
+                                        $(result).each(function () {
+                                            var option = $(document.createElement('option'));
+                                            option.text(this.Nombre.toUpperCase());
+                                            option.val(this.Id);
+                                            $("#Select_Puesto").append(option);
+                                        });
+                                    }
+
+
+                                    $('#Select_Puesto option[value="' + EmpresaPuestos.Id + '"]').attr("selected", true);
+
+
+                                    //OBTENER CLIENTE POR ID del servicio
+                                     var Cat_ProyectoServicios = new Object();
+                                    Cat_ProyectoServicios.Id = @ViewBag.vacante.Cat_ProyectoServicios.Id;
+
+                                    var Vacante = new Object();
+                                    Vacante.Cat_ProyectoServicios = Cat_ProyectoServicios;
+
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "@Url.Action("Vacante_ConsultarProyecto", "Vacantes")",
+                                        async: false,
+                                        data: JSON.stringify(Vacante),
+                                        contentType: "application/json; charset=utf-8",
+                                        dataType: "json",
+                                        success: function (result) {
+                                            var idProyectoServicios = result.Id
+                                            var idDirecccion = result.ClienteDirecciones.Id;
+
+                                            $('#Select_Cliente').val(idProyectoServicios);
+                                            //CARGAR PROYECTO O SERVICIO
+
+                                                var obj2 = {};
+                                                obj2['Id'] = idProyectoServicios;
+
+                                                var jsonObject2 = {
+                                                    "Cat_Clientes": obj2
+                                                };
+
+                                                $.ajax({
+                                                    type: "POST",
+                                                    url: "@Url.Action("ClienteDirecciones_Seleccionar_IdCliente", "ClienteDirecciones")",
+                                                    async: false,
+                                                    data: JSON.stringify(jsonObject2),
+                                                    contentType: "application/json; charset=utf-8",
+                                                    dataType: "json",
+                                                    success: function (result) {
+
+                                                        $("#Select_Centro_Trabajo").empty();
+
+                                                        var option = $(document.createElement('option'));
+                                                        option.text("SELECCIONAR");
+                                                        option.val(0);
+
+                                                        $("#Select_Centro_Trabajo").append(option);
+
+                                                        if (result.length > 0) {
+                                                            $(result).each(function () {
+                                                                var option = $(document.createElement('option'));
+
+                                                                option.text(this.Direccion.toUpperCase());
+                                                                option.val(this.Id);
+
+                                                                $("#Select_Centro_Trabajo").append(option);
+                                                            });
+                                                        }
+
+                                                        $('#Select_Centro_Trabajo option[value="' + idDirecccion + '"]').attr("selected", true);
+
+
+
+                                                    },
+                                                    error: function () {
+
+                                                        $("#Select_Centro_Trabajo").empty();
+
+                                                        var option = $(document.createElement('option'));
+                                                        option.text("SELECCIONAR");
+                                                        option.val(0);
+
+                                                        $("#Select_Centro_Trabajo").append(option);
+                                                    }
+                                                });
+
+                                                var obj = {};
+                                                obj['Id'] = idProyectoServicios;
+
+                                                var jsonObject = {
+                                                    "Cat_Clientes": obj
+                                                };
+
+                                                $.ajax({
+                                                    type: "POST",
+                                                    url: "@Url.Action("ProyectoServicios_Seleccionar_IdCliente", "ProyectoServicios")",
+                                                    data: JSON.stringify(jsonObject),
+                                                    contentType: "application/json; charset=utf-8",
+                                                    dataType: "json",
+                                                    success: function (result) {
+
+                                                        $("#Select_Proyecto").empty();
+
+                                                        var option = $(document.createElement('option'));
+                                                        option.text("SELECCIONAR");
+                                                        option.val(0);
+
+                                                        $("#Select_Proyecto").append(option);
+
+
+                                                        if (result.length > 0) {
+
+                                                            $(result).each(function () {
+                                                                var option = $(document.createElement('option'));
+
+                                                                option.text(this.Nombre.toUpperCase());
+                                                                option.val(this.Id);
+
+                                                                $("#Select_Proyecto").append(option);
+                                                            });
+
+                                                            $('#Select_Proyecto option[value="' + Cat_ProyectoServicios.Id + '"]').attr("selected", true);
+                                                        }
+                                                    },
+                                                    error: errores
+                                                });
+
+
+                                            if (@ViewBag.vacante.IdEmpleadoBaja > 0) {
+                                                var Idbaja =@ViewBag.vacante.IdEmpleadoBaja;
+                                                    $('#BuscarEmpleado').prop('checked', true);
+                                                    BuscarEmpleados();
+                                                $('#Select_Empleado option[value="' + Idbaja + '"]').attr("selected", true);
+                                            }
+
+
+                                            if (@ViewBag.vacante.Cat_MotivosBajaEmpleado.Id > 0) {
+                                                var IdMbaja =@ViewBag.vacante.Cat_MotivosBajaEmpleado.Id;
+                                                $('#AgregarFechaBaja').prop('checked', true);
+                                                AgregarFechaBajas();
+                                                $('#Select_MotivoBaja option[value="' + IdMbaja + '"]').attr("selected", true);
+
+                                                var fechaBaja = "@ViewBag.vacante.FechaBaja";
+                                                var fechaFbaja = fechaBaja.split(' ')[0].split('/').reverse().join('-');
+
+                                                $('#date_FechaBaja').val(fechaFbaja);
+                                            }
+                                        },
+                                        error: function () {
+
+                                        }
+                                    });
+
+                                },
+                                error: errores
+                            });
+
+                        }
+                    },
+                    error: errores
+                });
+
+
+
+
+            },
+            error: function () {
+                alert('valio en el paso 1 :(')
+            }
+        });
+    }
+    </script>
+    @*FIN PINTAR INFORMACIÓN*@
+}
